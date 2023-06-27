@@ -3,14 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - ground
-  - enemy
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - neko
+  - 
   - Water
   - UI
   - 

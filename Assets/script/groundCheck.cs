@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class groundCheck : MonoBehaviour
 {
+<<<<<<< HEAD
     private string groundTag = "ground";
     private bool isGround;
     private bool isGroundEnter, isGroundStay, isGroundExit;
@@ -48,4 +49,17 @@ public class groundCheck : MonoBehaviour
               isGroundExit = true;
           }
      }
+=======
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+>>>>>>> 75a25fae69896b08d2dadff28967600e838859a5
 }
