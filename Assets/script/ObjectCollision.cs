@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class ObjectCollision : MonoBehaviour
 {
-    public float damage;
-
-    public bool playerStepOn;
+    private float HP;
+///<summary>
+/// このオブジェクトをプレイヤーが踏んだかどうか
+///</summary>
+    private bool playerStepOn;
+    
     // Start is called before the first frame update
     void Start()
     {

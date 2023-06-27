@@ -5,7 +5,6 @@ using UnityEngine;
 public class daikonmandoragora : MonoBehaviour
 {
     #region //variables
-    public float speed;
     public float gravity;
 
     private SpriteRenderer sr = null;
@@ -26,13 +25,7 @@ public class daikonmandoragora : MonoBehaviour
     }
 
     void Update()
-    {/*
-        if(fumaretatoki){
-
-        }
-        else{
-            rb.Sleep();
-        }
-        */
+    {
+        
     }
 }
