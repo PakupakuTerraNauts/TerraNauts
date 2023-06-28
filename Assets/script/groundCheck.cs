@@ -4,15 +4,48 @@ using UnityEngine;
 
 public class groundCheck : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private string groundTag = "ground";
+    private bool isGround;
+    private bool isGroundEnter, isGroundStay, isGroundExit;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool IsGround()
+     {    
+          if (isGroundEnter || isGroundStay)
+          {
+              isGround = true;
+          }
+          else if (isGroundExit)
+          {
+              isGround = false;
+          }
+
+          isGroundEnter = false;
+          isGroundStay = false;
+          isGroundExit = false;
+          return isGround;
+     }
+
+     private void OnTriggerEnter2D(Collider2D collision)
+     {
+          if (collision.tag == groundTag)
+          {
+              isGroundEnter = true;
+          }
+     }
+
+     private void OnTriggerStay2D(Collider2D collision)
+     {
+          if (collision.tag == groundTag)
+          {
+              isGroundStay = true;
+          }
+     }
+
+     private void OnTriggerExit2D(Collider2D collision)
+     {
+          if (collision.tag == groundTag)
+          {
+              isGroundExit = true;
+          }
+     }
 }
