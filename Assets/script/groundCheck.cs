@@ -5,7 +5,7 @@ using UnityEngine;
 public class groundCheck : MonoBehaviour
 {
     private string groundTag = "ground";
-    private bool isGround;
+    private bool isGround = false;
     private bool isGroundEnter, isGroundStay, isGroundExit;
 
     public bool IsGround()

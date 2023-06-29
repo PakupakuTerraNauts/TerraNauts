@@ -6,9 +6,9 @@ public class Player : MonoBehaviour
 {
     public groundCheck ground;
     public groundCheck head;
-    public float speed = 2;
-    private float gravity = 3;
-    private float jumpSpeed = 9;
+    public float speed = 3;
+    private float gravity = 4;
+    private float jumpSpeed = 6;
     private float jumpHeight = 2;
     private float jumpLimitTime = 3;
 
@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     private float jumpTime = 0.0f;
     private bool isGround = false;
     private bool isJump = false;
-    private bool isRun = false;
+    private bool isWalk = false;
     private bool isHead = false;
     //private bool isDown = false;
     private Animator anim = null;
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(/*!isDown*/false){
+        if(/*!isDown*/true){
             isGround = ground.IsGround();
             isHead = ground.IsGround();
 
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     }
 
 ///<summary>
-/// Y???????v?Z?A?W?????v???i???B???x???????B
+/// calculate Y conponent, return speed.
 ///</summary>
 
     private float GetYSpeed(){
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
                 isJump = false;
             }
         }
-        // 2?i?W?????v??????elseif???????B
+        // 2dan-jump koko
         else if(isJump){
             bool pushUpKey = false;
             if(verticalKey > 0 || wKey || upKey){
@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
 
 
 ///<summary>
-/// X???????v?Z?A???x???????B
+/// calculate X conponent, return speed.
 ///</summary>
     private float GetXSpeed(){
         float horizontalKey = Input.GetAxis("Horizontal");
@@ -107,16 +107,16 @@ public class Player : MonoBehaviour
 
         if(horizontalKey > 0 || rightKey || dKey){
             transform.localScale = new Vector3(1, 1, 1);
-            isRun = true;
+            isWalk = true;
             xSpeed = speed;
         }
         else if(horizontalKey < 0 || leftKey || aKey){
             transform.localScale = new Vector3(-1, 1, 1);
-            isRun = true;
+            isWalk = true;
             xSpeed = -speed;
         }
         else{
-            isRun = false;
+            isWalk = false;
             xSpeed = 0.0f;
         }
 
@@ -126,12 +126,12 @@ public class Player : MonoBehaviour
     
     
 ///<summary>
-/// ?A?j???[?V??????????
+/// animation
+///</summary>
     private void SetAnimation(){
-        anim.SetBool("jump_player", isJump);
-        anim.SetBool("ground_player", isGround);
-        anim.SetBool("run_player", isRun);
+        anim.SetBool("jump_neko", isJump);
+        anim.SetBool("ground_neko", isGround);
+        anim.SetBool("walk_neko", isWalk);
     }
-    
-    
+        
 }
