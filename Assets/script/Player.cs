@@ -11,29 +11,63 @@ public class Player : MonoBehaviour
     private float jumpSpeed = 6;
     private float jumpHeight = 2;
     private float jumpLimitTime = 3;
+    private float HP = 100;
 
     private float jumpPos = 0.0f;
     private float jumpTime = 0.0f;
+    private float continueTime = 0.0f; //’²‚×‚é
+    private float blinkTime = 0.0f;
     private bool isGround = false;
     private bool isJump = false;
     private bool isWalk = false;
     private bool isHead = false;
-    //private bool isDown = false;
+    private bool isDown = false;
+    private bool isContinue = false;
+    private bool nonDownAnim = false;
     private Animator anim = null;
     private Rigidbody2D rb = null;
     private CapsuleCollider2D capcol = null;
-    //private string enemyTag = "enemy";
-    
+    private SpriteRenderer sr = null; 
+    private string enemyTag = "enemy";
+    private string hitAreaTag = "HitArea";
+
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         capcol = GetComponent<CapsuleCollider2D>();
+        sr = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update(){
+        if(isContinue){
+            if(blinkTime > 0.2f){
+                sr.enabled = true;
+                blinkTime = 0.0f;
+            }
+            else if(blinkTime > 0.1f){
+                sr.enabled = false;
+            }
+            else{
+                sr.enabled = true;
+            }
+
+            if(continueTime > 1.0f){
+                isContinue = false;
+                blinkTime = 0.0f;
+                continueTime = 0.0f;
+                sr.enabled = true;
+            }
+            else{
+                blinkTime += Time.deltaTime;
+                continueTime += Time.deltaTime;
+            }
+        }
     }
 
     void FixedUpdate()
     {
-        if(/*!isDown*/true){
+        if(!isDown){
             isGround = ground.IsGround();
             isHead = ground.IsGround();
 
@@ -122,7 +156,38 @@ public class Player : MonoBehaviour
 
         return xSpeed;
     }
+
+
+    private bool IsContinueWaitin(){
+        return IsDownAnimEnd();
+    }
+
+    private bool IsDownAnimEnd(){
+        if(isDown && anim != null){
+            AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo(0);
+            if(currentState.IsName("neko_die")){
+                if(currentState.normalizedTime >= 1){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+    public void ContinuePlayer(){
+        isDown = false;
+        anim.Play("neko_die");
+        isJump = false;
+        isWalk = false;
+        isContinue = true;
+    }
     
+    private void OnCollisionEnter2D(Collision2D collision){
+        if(collision.collider.tag == enemyTag){
+            HP = HP - 10;
+        }
+    }
     
     
 ///<summary>
