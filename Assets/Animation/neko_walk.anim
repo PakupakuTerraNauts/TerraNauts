@@ -7,7 +7,11 @@ AnimationClip:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: neko_walk
+<<<<<<< HEAD
   serializedVersion: 7
+=======
+  serializedVersion: 6
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
   m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1

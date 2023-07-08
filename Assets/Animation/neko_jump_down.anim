@@ -7,12 +7,17 @@ AnimationClip:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: neko_jump_down
+<<<<<<< HEAD
   serializedVersion: 7
+=======
+  serializedVersion: 6
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
   m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
   m_RotationCurves: []
   m_CompressedRotationCurves: []
+<<<<<<< HEAD
   m_EulerCurves:
   - curve:
       serializedVersion: 2
@@ -190,11 +195,27 @@ AnimationClip:
     - time: 1.1666666
       value: {fileID: 21300000, guid: 5dbdb7ef9881fe8448d05a03921f31bf, type: 3}
     - time: 1.3333334
+=======
+  m_EulerCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 7b56c999534c8b14e9e862ad5b1e8101, type: 3}
+    - time: 0.5
+      value: {fileID: 21300000, guid: e929bae099fcb3147b1c86d3d13be3b8, type: 3}
+    - time: 0.75
+      value: {fileID: 21300000, guid: 5dbdb7ef9881fe8448d05a03921f31bf, type: 3}
+    - time: 1
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
       value: {fileID: 21300000, guid: b14644d11eda74d49a8ea0a55418da8a, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
+<<<<<<< HEAD
     flags: 2
   - serializedVersion: 2
     curve:
@@ -205,12 +226,25 @@ AnimationClip:
     - time: 1.1666666
       value: {fileID: 21300000, guid: 06583ddda7e992447b27f60e4b31b796, type: 3}
     - time: 1.3333334
+=======
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 027040210738d90498f9cc8b80607392, type: 3}
+    - time: 0.5
+      value: {fileID: 21300000, guid: 06fbe63ad1e8bfe42ad4ffdc68ce7038, type: 3}
+    - time: 0.75
+      value: {fileID: 21300000, guid: 06583ddda7e992447b27f60e4b31b796, type: 3}
+    - time: 1
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
       value: {fileID: 21300000, guid: 7f5fdd5879b884447969c2171c705b57, type: 3}
     attribute: m_Sprite
     path: neko-default-ken
     classID: 212
     script: {fileID: 0}
+<<<<<<< HEAD
     flags: 2
+=======
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -219,6 +253,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
+<<<<<<< HEAD
       path: 128304360
       attribute: 4
       script: {fileID: 0}
@@ -246,14 +281,19 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
+=======
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
       path: 0
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+<<<<<<< HEAD
       isIntCurve: 0
       isSerializeReferenceCurve: 0
+=======
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
     - serializedVersion: 2
       path: 1705782800
       attribute: 0
@@ -261,6 +301,7 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+<<<<<<< HEAD
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
@@ -288,6 +329,15 @@ AnimationClip:
     - {fileID: 21300000, guid: b14644d11eda74d49a8ea0a55418da8a, type: 3}
     - {fileID: 21300000, guid: 0a1c5d195df771148aa97385e8b6adfa, type: 3}
     - {fileID: 21300000, guid: 027040210738d90498f9cc8b80607392, type: 3}
+=======
+    pptrCurveMapping:
+    - {fileID: 21300000, guid: 7b56c999534c8b14e9e862ad5b1e8101, type: 3}
+    - {fileID: 21300000, guid: e929bae099fcb3147b1c86d3d13be3b8, type: 3}
+    - {fileID: 21300000, guid: 5dbdb7ef9881fe8448d05a03921f31bf, type: 3}
+    - {fileID: 21300000, guid: b14644d11eda74d49a8ea0a55418da8a, type: 3}
+    - {fileID: 21300000, guid: 027040210738d90498f9cc8b80607392, type: 3}
+    - {fileID: 21300000, guid: 06fbe63ad1e8bfe42ad4ffdc68ce7038, type: 3}
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
     - {fileID: 21300000, guid: 06583ddda7e992447b27f60e4b31b796, type: 3}
     - {fileID: 21300000, guid: 7f5fdd5879b884447969c2171c705b57, type: 3}
   m_AnimationClipSettings:
@@ -295,7 +345,11 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
+<<<<<<< HEAD
     m_StopTime: 1.3666667
+=======
+    m_StopTime: 1.0166667
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -310,6 +364,7 @@ AnimationClip:
     m_KeepOriginalPositionXZ: 0
     m_HeightFromFeet: 0
     m_Mirror: 0
+<<<<<<< HEAD
   m_EditorCurves:
   - serializedVersion: 2
     curve:
@@ -567,6 +622,10 @@ AnimationClip:
     classID: 4
     script: {fileID: 0}
     flags: 0
+=======
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events: []

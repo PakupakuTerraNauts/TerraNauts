@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 1b41822f43753db4bb60c0bbac501aed
-=======
-<<<<<<<< HEAD:Assets/texture/hoshi1-opp.png.meta
-guid: 1b41822f43753db4bb60c0bbac501aed
-========
-guid: c54905efd8f71544a9bbba35564d67e5
->>>>>>>> 75a25fae69896b08d2dadff28967600e838859a5:Assets/texture/tori-pitch4-opp_20230620230401.png.meta
->>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
+guid: a6390159547af984c9bb3ee6a5b8b7e1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

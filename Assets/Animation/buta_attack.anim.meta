@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animation/buta_attack.anim.meta
 guid: dcec5aaf846dbb14eb6e727b3a0770d1
+========
+guid: bc6dce1c1fd6ad342886de50cd516074
+>>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b:Assets/Animation/neko_jump_down.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

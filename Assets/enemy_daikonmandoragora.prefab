@@ -33,7 +33,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 2
+=======
+  m_RootOrder: 0
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6414261224048672606
 SpriteRenderer:
@@ -97,6 +101,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+<<<<<<< HEAD
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -116,6 +121,8 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+=======
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -132,6 +139,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+<<<<<<< HEAD
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -151,6 +159,8 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+=======
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -169,7 +179,11 @@ BoxCollider2D:
   m_EdgeRadius: 0.01
 --- !u!95 &5176955426633239368
 Animator:
+<<<<<<< HEAD
   serializedVersion: 5
+=======
+  serializedVersion: 4
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -186,5 +200,9 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+<<<<<<< HEAD
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+=======
+  m_KeepAnimatorControllerStateOnDisable: 0
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b

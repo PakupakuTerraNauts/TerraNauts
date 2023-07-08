@@ -3,14 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags:
   - enemy
   - ground
+=======
+  tags: []
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
+<<<<<<< HEAD
   - ken
+=======
+  - 
+>>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
   - Water
   - UI
   - 
