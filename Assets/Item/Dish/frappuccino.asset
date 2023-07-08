@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1f364177abb4705bd7eadcca64e59a, type: 3}
+  m_Name: frappuccino
+  m_EditorClassIdentifier: 
+  _id: frappuccino
+  _itemName: "\u30D5\u30ED\u30FC\u30BA\u30F3\u30C1\u30E7\u30B3\u30D5\u30E9\u30DA\u30C1\u30FC\u30CE"
+  _itemType: 1
+  _icon: {fileID: 0}
+  _floor: 5
+  foods:
+  - _dishType: 15
+    _dishValue: 1
+  - _dishType: 17
+    _dishValue: 1
+  - _dishType: 13
+    _dishValue: 1
+  - _dishType: 2
+    _dishValue: 1
+  status:
+  - _statusType: 2
+    _statusValue: 5
+  - _statusType: 0
+    _statusValue: 5

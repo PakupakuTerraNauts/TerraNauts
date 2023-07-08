@@ -1,17 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
+//Escapeボタンでメニュー画面表示
 public class MenuChange : MonoBehaviour
 {
     private bool isLoaded = false;
     public KittenGet _kittenGet;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     // Update is called once per frame
     [System.Obsolete]

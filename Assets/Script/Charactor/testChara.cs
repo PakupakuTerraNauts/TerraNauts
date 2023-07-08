@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class testChara : MonoBehaviour
+//テスト用キャラ操作
+public class testChara: MonoBehaviour
 {
     private float speed = 0.05f;
-
+    
 
     void Start()
     {
@@ -16,6 +16,7 @@ public class testChara : MonoBehaviour
     {
         Vector2 position = transform.position;
 
+        //テスト用のキャラ操作
         if (Input.GetKey("a"))
         {
             position.x -= speed;
@@ -28,13 +29,9 @@ public class testChara : MonoBehaviour
         {
             position.y += speed;
         }
-        else if (Input.GetKey("down"))
-        {
-            position.y -= speed;
-        }
 
         transform.position = position;
     }
 
-
+    
 }

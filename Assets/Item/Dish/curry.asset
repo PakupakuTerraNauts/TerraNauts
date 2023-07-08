@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1f364177abb4705bd7eadcca64e59a, type: 3}
+  m_Name: curry
+  m_EditorClassIdentifier: 
+  _id: curry
+  _itemName: "\u590F\u91CE\u83DC\u30AB\u30EC\u30FC"
+  _itemType: 1
+  _icon: {fileID: 0}
+  _floor: 4
+  foods:
+  - _dishType: 10
+    _dishValue: 1
+  - _dishType: 14
+    _dishValue: 1
+  - _dishType: 0
+    _dishValue: 1
+  - _dishType: 1
+    _dishValue: 1
+  - _dishType: 2
+    _dishValue: 1
+  status:
+  - _statusType: 2
+    _statusValue: 5
+  - _statusType: 3
+    _statusValue: 4
