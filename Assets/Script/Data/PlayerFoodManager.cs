@@ -33,6 +33,8 @@ public class ItemData
     }
 }
 
+
+//食材の個数を管理
 public class PlayerFoodManager : MonoBehaviour
 {
     [SerializeField] private List<ItemData>_itemDataList = new List<ItemData>();   //プレイヤーの所持アイテム

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using UnityEditor;
 
 
 public enum ItemType
@@ -13,7 +12,7 @@ public enum ItemType
 
 public enum DishType
 {
-    meet,
+    meat,
     grass,
     water,
     egg,
@@ -43,8 +42,10 @@ public enum StatusType
     CRITDMG
 }
 
+
+//食材、レシピのデータを登録するアセットを生成できる
 [Serializable]
-[CreateAssetMenu(menuName = "BlogAssets/ItemSourceData")]
+[CreateAssetMenu(menuName = "ItemSourceData")]
 public class FoodSourceData : ScriptableObject
 {
     //固有ID
@@ -102,7 +103,7 @@ public class FoodSourceData : ScriptableObject
     class DishData
     {
         public DishType _dishType = default;
-        public int _dishValue = default;
+        public int _dishValue = 1;
     }
     [SerializeField]
     DishData[] foods = default;
@@ -115,7 +116,6 @@ public class FoodSourceData : ScriptableObject
          {
              foodType[i] = foods[i]._dishType;
              foodString[i] = foodType[i].ToString();
-             Debug.Log(i + ":" + foodString[i]);
         }
          return foodString;
     }
@@ -141,7 +141,7 @@ public class FoodSourceData : ScriptableObject
     class StatusData
     {
         public StatusType _statusType = default;
-        public int _statusValue = default;
+        public int _statusValue = 1;
     }
     [SerializeField]
     StatusData[] status = default;
@@ -154,7 +154,6 @@ public class FoodSourceData : ScriptableObject
         {
             statusType[i] = status[i]._statusType;
             statusString[i] = statusType[i].ToString();
-            Debug.Log(i + ":" + statusString[i]);
         }
         return statusString;
     }

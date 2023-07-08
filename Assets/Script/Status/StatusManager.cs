@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//ステータス表示
 public class StatusManager : MonoBehaviour
 {
 

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1f364177abb4705bd7eadcca64e59a, type: 3}
+  m_Name: oden
+  m_EditorClassIdentifier: 
+  _id: oden
+  _itemName: "\u30C4\u30F3\u30C4\u30F3\u304A\u3067\u3093"
+  _itemType: 1
+  _icon: {fileID: 0}
+  _floor: 1
+  foods:
+  - _dishType: 3
+    _dishValue: 1
+  - _dishType: 4
+    _dishValue: 1
+  - _dishType: 5
+    _dishValue: 1
+  - _dishType: 2
+    _dishValue: 1
+  status:
+  - _statusType: 0
+    _statusValue: 3
+  - _statusType: 1
+    _statusValue: 3
+  - _statusType: 2
+    _statusValue: 3
+  - _statusType: 4
+    _statusValue: 1

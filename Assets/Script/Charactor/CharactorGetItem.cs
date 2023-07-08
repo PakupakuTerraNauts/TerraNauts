@@ -3,56 +3,73 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//キャラクターがアイテムをゲットした時の処理
 public class CharactorGetItem : MonoBehaviour
 {
-
-    private FoodSourceData food;
-    public PlayerFoodManager playerFoodManager;
+    //Script
+    public PlayerFoodManager _playerFoodManager;
     public PlayerRecipeManager _playerRecipeManager;
-    public ItemDataBase itemDataBase;
-    public GameObject meetObject;
+    //
+    public GameObject meatObject;
     public GameObject waterObject;
     public GameObject grassObject;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject HPObject;
 
     // Update is called once per frame
     void Update()
     {
-        SetText("meet", meetObject);
+        SetText("meat", meatObject);
         SetText("water", waterObject);
         SetText("grass", grassObject);
+        SetHPText();
+        SetHpBar();
     }
 
+    //アイテムと衝突
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        //タグが "item" のアイテム
         if (collision.gameObject.tag == "item")
         {
-            Debug.Log("Hit -> " + collision.gameObject.name);
-            food = itemDataBase.ItemSearch(collision.gameObject.name);
             int count = 1;
-            playerFoodManager.CountItem(collision.gameObject.name, count);
+            //アイテム追加
+            _playerFoodManager.CountItem(collision.gameObject.name, count);
 
         }
+        //タグが "recipe" のアイテム
         else if (collision.gameObject.tag == "recipe")
         {
-            food = itemDataBase.ItemSearch(collision.gameObject.name);
             int count = 1;
+            //アイテム追加
             _playerRecipeManager.CountItem(collision.gameObject.name, count);
         }
 
     }
 
+    //肉、水、草の所持数をゲーム画面に表示
     public void SetText(string foodS, GameObject foodObject)
     {
         Text _text = foodObject.GetComponent<Text>();
-        //playerFoodManager = GameObject.FindObjectOfType<playerFoodManager>();
         string id = foodS;
-        string _textS = playerFoodManager.GetItemCount(id).ToString("d");
+        string _textS = _playerFoodManager.GetItemCount(id).ToString("d");
         _text.text = _textS;
+    }
+
+    //HPテキストを表示
+    public void SetHPText()
+    {
+        Text hptext = HPObject.GetComponent<Text>();
+        string maxHP = Status.HP.ToString("d");
+        string nowHP = Status.nowHP.ToString("d");
+        hptext.text = nowHP + "/" + maxHP;
+    }
+
+    //HPバーを表示
+    public void SetHpBar()
+    {
+        GameObject _HPSlider = GameObject.Find("HPSlider");
+        Slider HPSlider_S = _HPSlider.GetComponent<Slider>();
+        HPSlider_S.maxValue = Status.HP;
+        HPSlider_S.value = Status.nowHP;
     }
 }
