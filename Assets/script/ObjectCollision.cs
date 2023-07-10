@@ -9,11 +9,8 @@ public class ObjectCollision : MonoBehaviour
 /// このオブジェクトをプレイヤーが踏んだかどうか
 ///</summary>
     private bool playerStepOn;
-    
-
     public float damage;
 
-    public bool playerStepOn;
     // Start is called before the first frame update
     void Start()
     {

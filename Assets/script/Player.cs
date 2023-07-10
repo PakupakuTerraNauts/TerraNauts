@@ -149,50 +149,17 @@ public class Player : MonoBehaviour
         if(horizontalKey > 0 || rightKey || dKey){
             transform.localScale = new Vector3(1, 1, 1);
             isWalk = true;
-
-        float xSpeed = 0.0f;
-
-
-        if(horizontalKey > 0 || rightKey || dKey){
-            transform.localScale = new Vector3(1, 1, 1);
-            isRun = true;
-            xSpeed = speed;
         }
         else if(horizontalKey < 0 || leftKey || aKey){
             transform.localScale = new Vector3(-1, 1, 1);
 
             isWalk = true;
-
-
-            isRun = true;
-            xSpeed = -speed;
-        }
-        else{
-            isRun = false;
-            xSpeed = 0.0f;
-        }
-
-        return xSpeed;
-    }
-    
-    
-    
-///<summary>
-/// アニメーションを設定
-    private void SetAnimation(){
-        anim.SetBool("jump_player", isJump);
-        anim.SetBool("ground_player", isGround);
-        anim.SetBool("run_player", isRun);
-    }
-    
-    
             xSpeed = -speed;
         }
         else{
             isWalk = false;
             xSpeed = 0.0f;
         }
-
         return xSpeed;
     }
 
@@ -238,4 +205,7 @@ public class Player : MonoBehaviour
         anim.SetBool("ground_neko", isGround);
         anim.SetBool("walk_neko", isWalk);
     }
+
+
+}
 
