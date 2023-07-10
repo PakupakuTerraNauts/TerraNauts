@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-<<<<<<< HEAD
     public groundCheck ground;
     public groundCheck head;
     public float speed = 3;
@@ -16,7 +15,7 @@ public class Player : MonoBehaviour
 
     private float jumpPos = 0.0f;
     private float jumpTime = 0.0f;
-    private float continueTime = 0.0f; //調べる
+    private float continueTime = 0.0f;
     private float blinkTime = 0.0f;
     private bool isGround = false;
     private bool isJump = false;
@@ -32,41 +31,10 @@ public class Player : MonoBehaviour
     private string enemyTag = "enemy";
     private string hitAreaTag = "HitArea";
 
-=======
-<<<<<<< HEAD
-    public groundCheck ground;
-    public groundCheck head;
-    public float speed = 2;
-    private float gravity = 3;
-    private float jumpSpeed = 9;
-    private float jumpHeight = 2;
-    private float jumpLimitTime = 3;
-
-    private float jumpPos = 0.0f;
-    private float jumpTime = 0.0f;
-    private bool isGround = false;
-    private bool isJump = false;
-    private bool isRun = false;
-    private bool isHead = false;
-    //private bool isDown = false;
-    private Animator anim = null;
-    private Rigidbody2D rb = null;
-    private CapsuleCollider2D capcol = null;
-    //private string enemyTag = "enemy";
-=======
-    public float speed;
-    
-    private Animator anim = null;
-    private Rigidbody2D rb = null;
-    private string enemyTag = "Enemy";
->>>>>>> 75a25fae69896b08d2dadff28967600e838859a5
-    
->>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-<<<<<<< HEAD
         capcol = GetComponent<CapsuleCollider2D>();
         sr = GetComponent<SpriteRenderer>();
     }
@@ -100,20 +68,11 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         if(!isDown){
-=======
-<<<<<<< HEAD
+
         capcol = GetComponent<CapsuleCollider2D>();
-    }
+        }
 
-    void FixedUpdate()
-=======
-    }
-
-    void Update()
->>>>>>> 75a25fae69896b08d2dadff28967600e838859a5
-    {
         if(/*!isDown*/false){
->>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
             isGround = ground.IsGround();
             isHead = ground.IsGround();
 
@@ -130,11 +89,7 @@ public class Player : MonoBehaviour
     }
 
 ///<summary>
-<<<<<<< HEAD
 /// calculate Y conponent, return speed.
-=======
-/// Y成分の計算、ジャンプを司る。速度を返す。
->>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
 ///</summary>
 
     private float GetYSpeed(){
@@ -154,11 +109,8 @@ public class Player : MonoBehaviour
                 isJump = false;
             }
         }
-<<<<<<< HEAD
+
         // 2dan-jump koko
-=======
-        // 2段ジャンプはこのelseifに書く。
->>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
         else if(isJump){
             bool pushUpKey = false;
             if(verticalKey > 0 || wKey || upKey){
@@ -182,11 +134,7 @@ public class Player : MonoBehaviour
 
 
 ///<summary>
-<<<<<<< HEAD
 /// calculate X conponent, return speed.
-=======
-/// X成分の計算、速度を返す。
->>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
 ///</summary>
     private float GetXSpeed(){
         float horizontalKey = Input.GetAxis("Horizontal");
@@ -195,32 +143,27 @@ public class Player : MonoBehaviour
         bool rightKey = Input.GetKey("right");
         bool aKey = Input.GetKey("a");
         bool leftKey = Input.GetKey("left");
-<<<<<<< HEAD
+
         
 
         if(horizontalKey > 0 || rightKey || dKey){
             transform.localScale = new Vector3(1, 1, 1);
             isWalk = true;
-=======
+
         float xSpeed = 0.0f;
 
 
         if(horizontalKey > 0 || rightKey || dKey){
             transform.localScale = new Vector3(1, 1, 1);
-<<<<<<< HEAD
             isRun = true;
-=======
-            anim.SetBool("run_player", true);
->>>>>>> 75a25fae69896b08d2dadff28967600e838859a5
->>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
             xSpeed = speed;
         }
         else if(horizontalKey < 0 || leftKey || aKey){
             transform.localScale = new Vector3(-1, 1, 1);
-<<<<<<< HEAD
+
             isWalk = true;
-=======
-<<<<<<< HEAD
+
+
             isRun = true;
             xSpeed = -speed;
         }
@@ -243,9 +186,6 @@ public class Player : MonoBehaviour
     }
     
     
-=======
-            anim.SetBool("run_player", true);
->>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
             xSpeed = -speed;
         }
         else{
@@ -270,7 +210,7 @@ public class Player : MonoBehaviour
                 }
             }
         }
-<<<<<<< HEAD
+
         return false;
     }
 
@@ -298,8 +238,4 @@ public class Player : MonoBehaviour
         anim.SetBool("ground_neko", isGround);
         anim.SetBool("walk_neko", isWalk);
     }
-        
-=======
->>>>>>> 75a25fae69896b08d2dadff28967600e838859a5
->>>>>>> 8654ea4f8de298b9a51b59631adc1a89103b448b
-}
+

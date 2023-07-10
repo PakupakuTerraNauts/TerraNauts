@@ -1,0 +1,9 @@
+diff a/Assets/enemy_daikonmandoragora.prefab b/Assets/enemy_daikonmandoragora.prefab	(rejected hunks)
+@@ -139,6 +139,7 @@
+   m_Enabled: 1
+   m_Density: 1
+   m_Material: {fileID: 0}
++<<<<<<< HEAD
+   m_IncludeLayers:
+     serializedVersion: 2
+     m_Bits: 0
