@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Debidora : MonoBehaviour
 {
-    [SerializeField] private GameObject DebidoraFire;
-    [SerializeField] private GameObject DebidoraPain;
+    [SerializeField] private GameObject FirePrefab;
+    [SerializeField] private GameObject PainPrefab;
     private Animator _animator;
     public float hp = 50;
     public bool isStart = true;
@@ -78,15 +78,12 @@ public class Debidora : MonoBehaviour
                 transform.Translate(-0.3f, 0f, 0f);
                 yield return new WaitForSeconds(0.05f);
             }
-            if (DebidoraPain != null)
+            if (PainPrefab != null)
             {
-                DebidoraPain.SetActive(true);
+                GameObject newFire = Instantiate(PainPrefab, new Vector3(-5.8f, -1.41f, 0f), new Quaternion(0f, 0f, 0f, 0f));
+                Destroy(newFire, 0.1f);
             }
             yield return new WaitForSeconds(0.1f);
-            if (DebidoraPain != null)
-            {
-                DebidoraPain.SetActive(false);
-            }
             _animator.SetBool("IsPiyopiying", true);
             _animator.SetBool("IsDashing", false);
             yield return new WaitForSeconds(3.0f);
@@ -103,21 +100,18 @@ public class Debidora : MonoBehaviour
             _animator.SetBool("IsWaiting", false);
             _animator.SetBool("IsBreathing", true);
             yield return new WaitForSeconds(1.5f);
-            if (DebidoraFire != null)
+            if (FirePrefab != null)
             {
-                DebidoraFire.SetActive(true);
+                GameObject newFire = Instantiate(FirePrefab, new Vector3(-2.05f, -0.92f, 0f), new Quaternion(0f, 180f, 0f, 0f));
+                Destroy(newFire, 3.5f);
             }
             yield return new WaitForSeconds(3.5f);
-            if (DebidoraFire != null)
-            {
-                DebidoraFire.SetActive(false);
-            }
             _animator.SetBool("IsWaiting", true);
             _animator.SetBool("IsBreathing", false);
             yield return new WaitForSeconds(2f);
             for (int i = 0; i < 20; i++)
             {
-                transform.Translate(-0.12f, -0.22f, 0f);
+                transform.Translate(-0.15f, -0.22f, 0f);
                 yield return new WaitForSeconds(0.05f);
             }
             for (int i = 0; i < 20; i++)
