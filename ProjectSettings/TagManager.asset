@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: ground
+    uniqueID: 2745859775
+    locked: 0
+  - name: player
+    uniqueID: 1767592729
+    locked: 0
+  - name: enemy
+    uniqueID: 2930993929
+    locked: 0
+  - name: sord
+    uniqueID: 3098888737
+    locked: 0
