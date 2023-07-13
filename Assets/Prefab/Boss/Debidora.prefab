@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1396122413030666385
 SpriteRenderer:
@@ -123,3 +123,4 @@ MonoBehaviour:
   PainPrefab: {fileID: 5936016513909637907, guid: d4d82aa7177b65744b6a091f22ef0ddf, type: 3}
   hp: 50
   isStart: 1
+  isDead: 0

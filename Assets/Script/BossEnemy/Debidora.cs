@@ -9,6 +9,7 @@ public class Debidora : MonoBehaviour
     private Animator _animator;
     public float hp = 50;
     public bool isStart = true;
+    public bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,14 +25,20 @@ public class Debidora : MonoBehaviour
         {
             //if hp is 0, stop Battle Coroutine
             hp = 0;
+            isDead = true;
             _animator.SetTrigger("Dead");
-            StopCoroutine(Battle());
+            StopCoroutine("Battle");
+            Destroy(gameObject, 5f);
         }
         else if(isStart)
         {
             //Start Battle Coroutine
             isStart = false;
             StartCoroutine("Battle");
+        }
+        if(Input.GetKeyDown(KeyCode.Space) && isDead == false)
+        {
+            hp -= 10;
         }
     }
 
@@ -80,8 +87,8 @@ public class Debidora : MonoBehaviour
             }
             if (PainPrefab != null)
             {
-                GameObject newFire = Instantiate(PainPrefab, new Vector3(-5.8f, -1.41f, 0f), new Quaternion(0f, 0f, 0f, 0f));
-                Destroy(newFire, 0.1f);
+                GameObject newPain = Instantiate(PainPrefab, new Vector3(-5.8f, -1.41f, 0f), new Quaternion(0f, 0f, 0f, 0f));
+                Destroy(newPain, 0.1f);
             }
             yield return new WaitForSeconds(0.1f);
             _animator.SetBool("IsPiyopiying", true);
