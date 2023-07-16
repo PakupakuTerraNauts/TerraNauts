@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shrine.unity
     guid: 8b1de17a221083a4bb9c9bccde673246
+  - enabled: 1
+    path: Assets/Scenes/RestRoom.unity
+    guid: acd9218ba34b0b140b9f81fa434e1483
   m_configObjects: {}
