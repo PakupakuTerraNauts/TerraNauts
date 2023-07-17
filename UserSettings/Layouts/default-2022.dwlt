@@ -247,6 +247,7 @@ MonoBehaviour:
   - {fileID: 13}
   - {fileID: 16}
   - {fileID: 17}
+  - {fileID: 13}
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &11
@@ -424,6 +425,7 @@ MonoBehaviour:
     y: 73.6
     width: 344.6
     height: 300.6
+
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1434,6 +1436,7 @@ MonoBehaviour:
     y: 73.6
     width: 502.19995
     height: 701.8
+
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
