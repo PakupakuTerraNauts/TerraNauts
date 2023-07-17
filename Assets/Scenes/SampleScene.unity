@@ -1262,10 +1262,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_sabochan
       objectReference: {fileID: 0}
-    - target: {fileID: 4418901023636382583, guid: 9ee709e56f648e046a4a9c25892c1f6b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8412970312040704202, guid: 9ee709e56f648e046a4a9c25892c1f6b, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1628,14 +1624,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4564110515886744080, guid: d96eab1d8250cba4eaca1c48e94bbb59, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: f70c43c8b65e3f24aa0af4e8cbd52bc0, type: 2}
-    - target: {fileID: 6150731865856064587, guid: d96eab1d8250cba4eaca1c48e94bbb59, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.56
-      objectReference: {fileID: 0}
     - target: {fileID: 7665600109357842133, guid: d96eab1d8250cba4eaca1c48e94bbb59, type: 3}
       propertyPath: m_RootOrder
       value: 9

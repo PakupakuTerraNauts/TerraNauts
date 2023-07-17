@@ -8,6 +8,12 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
+<<<<<<< HEAD
+=======
+	"last_search.310DEAF1" = ""
+	"OpenInspectorPreview.310DEAF1" = "0"
+	"currentGroup.310DEAF1" = "all"
+>>>>>>> b31988766a97d7437de92bffb6db54ae9535ead1
 }
 providers = {
 	performance = {

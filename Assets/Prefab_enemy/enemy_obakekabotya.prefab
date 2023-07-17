@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5899739732455882416}
   m_Layer: 0
   m_Name: enemy_obakekabotya
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 2203602517660000035}
   - {fileID: 7156731453600517656}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4190763725626265109
 SpriteRenderer:
