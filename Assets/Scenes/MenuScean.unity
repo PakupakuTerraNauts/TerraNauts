@@ -4089,10 +4089,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-        m_MethodName: ActivateOrNotActivate
-        m_Mode: 6
+      - m_Target: {fileID: 318123544}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: PushButton
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5001,7 +5001,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 352608386}
   m_HandleRect: {fileID: 352608385}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5449,7 +5449,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1133848074}
   m_HandleRect: {fileID: 1133848073}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
