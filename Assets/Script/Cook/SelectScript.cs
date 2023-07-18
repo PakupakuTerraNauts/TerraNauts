@@ -35,7 +35,7 @@ public class SelectScript : MonoBehaviour
             if(_selectedObject != null)
             {
                 button = _selectedObject.GetComponent<Button>();
-                if(_selectedObject.name != "CookButton")
+                if(_selectedObject.name != "CookButton" && button != null)
                 {
                     _pushDishButton.PushButton(button);
                 }
