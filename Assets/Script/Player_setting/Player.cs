@@ -29,7 +29,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb = null;
     private CapsuleCollider2D capcol = null;
     private SpriteRenderer sr = null; 
-    private string enemyTag = "enemy";
+    private string enemyTag = "Enemy";
+    private string sakebigoe = "Sakebigoe";
     private string hitAreaTag = "HitArea";
 
     void Start()
@@ -73,7 +74,7 @@ public class Player : MonoBehaviour
         capcol = GetComponent<CapsuleCollider2D>();
         }
 
-        if(/*!isDown*/false){
+        if(/*!isDown*/true){
             isGround = ground.IsGround();
             isHead = ground.IsGround();
 
@@ -96,7 +97,7 @@ public class Player : MonoBehaviour
 ///</summary>
     private bool PlayerNormalAttack(){
 
-        if(Input.GetKey("Enter")){
+        if(Input.GetKey("Return")){
             return true;
         }
         return false;
@@ -207,6 +208,14 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.collider.tag == enemyTag){
             HP = HP - 10;
+        }
+        if(collision.collider.tag == sakebigoe){
+            HP = HP - 20;
+        }
+        
+        if(HP <= 0){
+            anim.Play("neko_die");
+            isDown = true;
         }
     }
     
