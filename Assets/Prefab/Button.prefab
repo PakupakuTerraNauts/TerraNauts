@@ -89,7 +89,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1242362937913246072}
-  - component: {fileID: 1545407601704844634}
+  - component: {fileID: 8272054539149457601}
   m_Layer: 0
   m_Name: PrefabRecipeButton
   m_TagString: Untagged
@@ -112,7 +112,7 @@ Transform:
   m_Father: {fileID: 456649371504642187}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1545407601704844634
+--- !u!114 &8272054539149457601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5427552742369529213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd975a2ad75dd4599afecc21b01fc510, type: 3}
+  m_Script: {fileID: 11500000, guid: cafb4588088624b1dbd8a396128526e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _itemDataBase: {fileID: 11400000, guid: 0b37f3c9104f5421d8021c6705818be3, type: 2}
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1545407601704844634}
+      - m_Target: {fileID: 8272054539149457601}
         m_TargetAssemblyTypeName: PushRecipeButton, Assembly-CSharp
         m_MethodName: RecipeButton
         m_Mode: 2

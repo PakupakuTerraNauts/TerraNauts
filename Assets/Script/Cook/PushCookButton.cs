@@ -23,6 +23,7 @@ public class PushCookButton : MonoBehaviour
 
     GameObject _dishNameObject;
     Text _dishNameText;
+    public static bool cookOK;
 
     void Start()
     {
@@ -46,7 +47,7 @@ public class PushCookButton : MonoBehaviour
         int statusCount;
 
 
-        bool cookOK = true;
+        cookOK = false;
 
         //食材が足りるか判定
         for(int i = 0; i < foodTypes.Length; i++)
@@ -54,6 +55,10 @@ public class PushCookButton : MonoBehaviour
             if(_playerFoodManager.GetItemCount(foodTypes[i]) < _foodSourceData.GetFoodValue(foodTypes[i])){
                 cookOK = false;
                 break;
+            }
+            else
+            {
+                cookOK = true;
             }
         }
 
@@ -94,6 +99,8 @@ public class PushCookButton : MonoBehaviour
                 }
             }
         }
+
+        ChangeText();
     }
 
     //食材とステータスのテキストを更新

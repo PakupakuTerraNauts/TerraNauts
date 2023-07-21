@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ground
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -41,6 +43,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
   - name: ground
     uniqueID: 2745859775
     locked: 0
@@ -52,4 +55,14 @@ TagManager:
     locked: 0
   - name: sord
     uniqueID: 3098888737
+=======
+  - name: New Layer 1
+    uniqueID: 4276083553
+    locked: 0
+  - name: New Layer 2
+    uniqueID: 1445844987
+    locked: 0
+  - name: ken
+    uniqueID: 57282359
+>>>>>>> 36d6c887e252b2bde3403b3b83e6891911157059
     locked: 0
