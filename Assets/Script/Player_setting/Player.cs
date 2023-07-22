@@ -70,15 +70,16 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         if(!isDown){
-
-        capcol = GetComponent<CapsuleCollider2D>();
+            capcol = GetComponent<CapsuleCollider2D>();
         }
 
         if(/*!isDown*/true){
             isGround = ground.IsGround();
             isHead = ground.IsGround();
 
-            isNAttack = PlayerNormalAttack();
+            if(isNAttack = PlayerNormalAttack()){
+                anim.Play("neko_NormalAttack");
+            }
 
             float xSpeed = GetXSpeed();
             float ySpeed = GetYSpeed();
@@ -97,9 +98,12 @@ public class Player : MonoBehaviour
 ///</summary>
     private bool PlayerNormalAttack(){
 
-        if(Input.GetKey("Return")){
+        if(Input.GetKey("return")){
+            Debug.Log("let's attack!");
             return true;
+
         }
+        Debug.Log("no attack");
         return false;
     }
 
@@ -164,10 +168,10 @@ public class Player : MonoBehaviour
         if(horizontalKey > 0 || rightKey || dKey){
             transform.localScale = new Vector3(1, 1, 1);
             isWalk = true;
+            xSpeed = speed;
         }
         else if(horizontalKey < 0 || leftKey || aKey){
             transform.localScale = new Vector3(-1, 1, 1);
-
             isWalk = true;
             xSpeed = -speed;
         }
@@ -227,7 +231,6 @@ public class Player : MonoBehaviour
         anim.SetBool("jump_neko", isJump);
         anim.SetBool("ground_neko", isGround);
         anim.SetBool("walk_neko", isWalk);
-        anim.SetBool("nattack_neko", isNAttack);
     }
 
 }
