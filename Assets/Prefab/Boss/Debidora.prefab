@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1396122413030666385
 SpriteRenderer:
@@ -123,9 +123,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirePrefab: {fileID: 5279804191183549288, guid: d920208c9bef32e4ebf889d081af836b, type: 3}
   PainPrefab: {fileID: 5936016513909637907, guid: d4d82aa7177b65744b6a091f22ef0ddf, type: 3}
+  FramePrefab: {fileID: 3345073747274605833, guid: e3a0538cf5f64184aa266f41ada48901, type: 3}
+  LightPrefab: {fileID: 3512144067388066458, guid: fcf1092b47e77c24cb63a88aea2f37e9, type: 3}
   hp: 50
   isStart: 1
   isDead: 0
+  isDying: 0
 --- !u!50 &7675967604840532133
 Rigidbody2D:
   serializedVersion: 4
@@ -152,7 +155,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!68 &684031269364665705
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -182,7 +185,7 @@ EdgeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
