@@ -18,11 +18,12 @@ public class RecipeSelect : MonoBehaviour
         {
             _pushRecipeButton = GameObject.Find("PrefabRecipeButton").GetComponent<PushRecipeButton>();
             _selectedObject = EventSystem.current.currentSelectedGameObject;
-            if (_selectedObject != null)
+            if (_selectedObject != null &&  button != null)
             {
                 button = _selectedObject.GetComponent<Button>();
                 _pushRecipeButton.RecipeButton(button);
-            }
+            }    
+            
         }
     }
 }
