@@ -4,22 +4,11 @@ using UnityEngine;
 
 public class ObjectCollision : MonoBehaviour
 {
-    private float HP;
+    //private float HP;
 ///<summary>
 /// このオブジェクトをプレイヤーが踏んだかどうか
 ///</summary>
     private bool playerStepOn;
-    public float damage;
+    //public float damage;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
