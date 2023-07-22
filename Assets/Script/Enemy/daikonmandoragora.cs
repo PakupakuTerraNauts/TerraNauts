@@ -5,15 +5,16 @@ using UnityEngine;
 public class daikonmandoragora : MonoBehaviour
 {
     #region //variables
-    public float speed;
+    //public float speed;
     public float gravity;
 
+    private bool isDead = false;
     private SpriteRenderer sr = null;
     private Rigidbody2D rb = null;
     private ObjectCollision oc = null;
     private Animator anim = null;
     private BoxCollider2D col = null;
-    //private bool isDead = false;
+    private string playerTag = "Player";
     #endregion
 
     void Start()
@@ -26,18 +27,13 @@ public class daikonmandoragora : MonoBehaviour
     }
 
     void Update()
-
     {
-
-        {/*
-            if(fumaretatoki){
-
-            }
-            else{
-                rb.Sleep();
-            }
-            */
-        }
     }
 
+    private void OnTriggerEnter2D(Collision2D collision)
+    {
+        if(collision.collider.tag == playerTag){
+            anim.Play("radissh_fumare");
+        }
+    }
 }

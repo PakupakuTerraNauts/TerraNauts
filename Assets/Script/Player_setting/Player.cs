@@ -29,7 +29,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb = null;
     private CapsuleCollider2D capcol = null;
     private SpriteRenderer sr = null; 
-    private string enemyTag = "enemy";
+    private string enemyTag = "Enemy";
+    private string sakebigoe = "Sakebigoe";
     private string hitAreaTag = "HitArea";
 
     void Start()
@@ -69,15 +70,16 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         if(!isDown){
-
-        capcol = GetComponent<CapsuleCollider2D>();
+            capcol = GetComponent<CapsuleCollider2D>();
         }
 
-        if(/*!isDown*/false){
+        if(/*!isDown*/true){
             isGround = ground.IsGround();
             isHead = ground.IsGround();
 
-            isNAttack = PlayerNormalAttack();
+            if(isNAttack = PlayerNormalAttack()){
+                anim.Play("neko_NormalAttack");
+            }
 
             float xSpeed = GetXSpeed();
             float ySpeed = GetYSpeed();
@@ -96,9 +98,12 @@ public class Player : MonoBehaviour
 ///</summary>
     private bool PlayerNormalAttack(){
 
-        if(Input.GetKey("Enter")){
+        if(Input.GetKey("return")){
+            Debug.Log("let's attack!");
             return true;
+
         }
+        Debug.Log("no attack");
         return false;
     }
 
@@ -163,10 +168,10 @@ public class Player : MonoBehaviour
         if(horizontalKey > 0 || rightKey || dKey){
             transform.localScale = new Vector3(1, 1, 1);
             isWalk = true;
+            xSpeed = speed;
         }
         else if(horizontalKey < 0 || leftKey || aKey){
             transform.localScale = new Vector3(-1, 1, 1);
-
             isWalk = true;
             xSpeed = -speed;
         }
@@ -208,6 +213,14 @@ public class Player : MonoBehaviour
         if(collision.collider.tag == enemyTag){
             HP = HP - 10;
         }
+        if(collision.collider.tag == sakebigoe){
+            HP = HP - 20;
+        }
+        
+        if(HP <= 0){
+            anim.Play("neko_die");
+            isDown = true;
+        }
     }
     
     
@@ -218,7 +231,6 @@ public class Player : MonoBehaviour
         anim.SetBool("jump_neko", isJump);
         anim.SetBool("ground_neko", isGround);
         anim.SetBool("walk_neko", isWalk);
-        anim.SetBool("nattack_neko", isNAttack);
     }
 
 }

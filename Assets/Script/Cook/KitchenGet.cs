@@ -22,10 +22,16 @@ public class KittenGet : MonoBehaviour
         trigger = true;
         _collider = collision;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        trigger = true;
+        _collider = collision;
+    }
     //調理台から出た時
     private void OnTriggerExit2D()
     {
         trigger = false;
+        _collider = null;
     }
 
     [System.Obsolete]
@@ -41,7 +47,7 @@ public class KittenGet : MonoBehaviour
 
         
         //プレイヤーが調理台前で"E"を押した時
-        if (trigger && _collider.gameObject.tag == ("Player") && Input.GetKeyDown(KeyCode.E))
+        if (trigger && _collider.gameObject.tag == ("Player") && Input.GetKeyDown(KeyCode.E) )
         {
             isKittenLoaded = !isKittenLoaded;
             if (isKittenLoaded)
