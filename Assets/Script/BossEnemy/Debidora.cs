@@ -6,10 +6,14 @@ public class Debidora : MonoBehaviour
 {
     [SerializeField] private GameObject FirePrefab;
     [SerializeField] private GameObject PainPrefab;
+    [SerializeField] private GameObject FramePrefab;
+    [SerializeField] private GameObject LightPrefab;
     private Animator _animator;
     public float hp = 50;
     public bool isStart = true;
     public bool isDead = false;
+    public bool isDying = false;
+    private Vector3 nowPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +32,11 @@ public class Debidora : MonoBehaviour
             isDead = true;
             _animator.SetTrigger("Dead");
             StopCoroutine("Battle");
-            Destroy(gameObject, 5f);
+            if(isDying == false)
+            {
+                isDying = true;
+                StartCoroutine("Dead");
+            }
         }
         else if(isStart)
         {
@@ -87,7 +95,7 @@ public class Debidora : MonoBehaviour
             }
             if (PainPrefab != null)
             {
-                GameObject newPain = Instantiate(PainPrefab, new Vector3(-5.8f, -1.41f, 0f), new Quaternion(0f, 0f, 0f, 0f));
+                GameObject newPain = Instantiate(PainPrefab, new Vector3(transform.position.x, transform.position.y, 0f), new Quaternion(0f, 0f, 0f, 0f));
                 Destroy(newPain, 0.1f);
             }
             yield return new WaitForSeconds(0.1f);
@@ -140,6 +148,30 @@ public class Debidora : MonoBehaviour
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
             yield return new WaitForSeconds(3.0f);
         }
+    }
+
+    IEnumerator Dead()
+    {
+        yield return new WaitForSeconds(2f);
+        nowPosition = transform.position;
+        for (int i = 0; i <= 30; i++)
+        {
+            transform.position += new Vector3((0f - nowPosition.x) / 30f, (2.6f - nowPosition.y) / 30f);
+            yield return new WaitForSeconds(0.05f);
+        }
+        yield return new WaitForSeconds(0.5f);
+        for (int i = 20; i >= 0; i--)
+        {
+            transform.localScale = new Vector3(i / 40f, i / 40f, i / 40f);
+            yield return new WaitForSeconds(0.05f);
+        }
+        if(FramePrefab != null)
+        {
+            GameObject newFrame = Instantiate(FramePrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), new Quaternion(0f, 0f, 0f, 0f));
+            GameObject newLight = Instantiate(LightPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), new Quaternion(0f, 0f, 0f, 0f));
+        }
+        yield return new WaitForSeconds(0.05f);
+        Destroy(gameObject);
     }
 
 }
