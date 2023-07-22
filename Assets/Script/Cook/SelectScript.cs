@@ -20,9 +20,14 @@ public class SelectScript : MonoBehaviour
     {
         //一番上のボタンをセレクト
         _gameObject = GameObject.Find("RecipeContent_C");
-        _firstObj = _gameObject.transform.GetChild(0).gameObject;
-        _firstButton = _firstObj.GetComponent<Button>();
-        _firstButton.Select();
+
+        if (_gameObject.transform.GetChild(0).gameObject != null)
+        {
+            _firstObj = _gameObject.transform.GetChild(0).gameObject;
+            _firstButton = _firstObj.GetComponent<Button>();
+            _firstButton.Select();
+        }
+            
     }
 
     // Update is called once per frame
