@@ -166,12 +166,12 @@ public class Player : MonoBehaviour
         
 
         if(horizontalKey > 0 || rightKey || dKey){
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(2, 2, 2);
             isWalk = true;
             xSpeed = speed;
         }
         else if(horizontalKey < 0 || leftKey || aKey){
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-2, 2, 2);
             isWalk = true;
             xSpeed = -speed;
         }
