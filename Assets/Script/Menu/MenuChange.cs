@@ -6,7 +6,7 @@ using UnityEngine;
 public class MenuChange : MonoBehaviour
 {
     private bool isLoaded = false;
-    public KittenGet _kittenGet;
+    //public KittenGet _kittenGet;
 
     // Update is called once per frame
     [System.Obsolete]
@@ -14,8 +14,8 @@ public class MenuChange : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!_kittenGet.isKittenLoaded)
-            {
+            //if (!_kittenGet.isKittenLoaded)
+            //{
                 isLoaded = !isLoaded;
                 if (isLoaded)
                 {
@@ -26,7 +26,7 @@ public class MenuChange : MonoBehaviour
                     Application.UnloadLevel("MenuScean");
                     Resources.UnloadUnusedAssets();
                 }
-            }
+            //}
             
         }
 
