@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public float speed = 3;
     private float gravity = 4;
     private float jumpSpeed = 6;
-    private float jumpHeight = 2;
+    public float jumpHeight = 2;
     private float jumpLimitTime = 3;
     private float HP = 100;
 

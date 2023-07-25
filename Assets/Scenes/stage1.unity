@@ -2031,7 +2031,7 @@ GameObject:
   - component: {fileID: 401567193}
   m_Layer: 7
   m_Name: Tilemap_ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74552,11 +74552,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1440699103653740715, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
       propertyPath: m_Offset.y
-      value: -0.73444545
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2879555459971201280, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
       propertyPath: speed
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3006529743241696003, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
       propertyPath: m_LocalScale.x
