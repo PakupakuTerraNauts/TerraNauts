@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public float speed = 3;
     private float gravity = 4;
     private float jumpSpeed = 6;
-    private float jumpHeight = 2;
+    public float jumpHeight = 2;
     private float jumpLimitTime = 3;
     private float HP = 100;
 
@@ -74,11 +74,12 @@ public class Player : MonoBehaviour
         }
 
         if(/*!isDown*/true){
+            isNAttack = false;
             isGround = ground.IsGround();
             isHead = ground.IsGround();
 
             if(isNAttack = PlayerNormalAttack()){
-                anim.Play("neko_NormalAttack");
+                anim.SetTrigger("nAttack_neko");
             }
 
             float xSpeed = GetXSpeed();
@@ -99,11 +100,9 @@ public class Player : MonoBehaviour
     private bool PlayerNormalAttack(){
 
         if(Input.GetKey("return")){
-            Debug.Log("let's attack!");
             return true;
 
         }
-        Debug.Log("no attack");
         return false;
     }
 
@@ -166,12 +165,12 @@ public class Player : MonoBehaviour
         
 
         if(horizontalKey > 0 || rightKey || dKey){
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(2, 2, 2);
             isWalk = true;
             xSpeed = speed;
         }
         else if(horizontalKey < 0 || leftKey || aKey){
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-2, 2, 2);
             isWalk = true;
             xSpeed = -speed;
         }

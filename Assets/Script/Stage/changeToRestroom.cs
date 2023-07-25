@@ -7,7 +7,7 @@ public class changeToRestroom : MonoBehaviour
 {
  
     [SerializeField] GameObject Player;
-    static public Vector2 PlayerLocation = new Vector2(113.1f, -0.6f);
+    static public Vector2 PlayerLocation = new Vector2(-0.5f, 0.75f);
 
     private void Start() {
         Player.transform.position = PlayerLocation;    
