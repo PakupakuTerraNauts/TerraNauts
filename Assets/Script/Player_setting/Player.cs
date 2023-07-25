@@ -74,11 +74,12 @@ public class Player : MonoBehaviour
         }
 
         if(/*!isDown*/true){
+            isNAttack = false;
             isGround = ground.IsGround();
             isHead = ground.IsGround();
 
             if(isNAttack = PlayerNormalAttack()){
-                anim.Play("neko_NormalAttack");
+                anim.SetTrigger("nAttack_neko");
             }
 
             float xSpeed = GetXSpeed();
@@ -99,11 +100,9 @@ public class Player : MonoBehaviour
     private bool PlayerNormalAttack(){
 
         if(Input.GetKey("return")){
-            Debug.Log("let's attack!");
             return true;
 
         }
-        Debug.Log("no attack");
         return false;
     }
 
