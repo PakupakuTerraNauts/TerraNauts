@@ -11,7 +11,14 @@ public class Player : MonoBehaviour
     private float jumpSpeed = 6;
     public float jumpHeight = 2;
     private float jumpLimitTime = 3;
-    private float HP = 100;
+    public static int HP = 100;
+    public static int nowHP = 100;
+
+    public static int ATK = 100;
+    public static int DEF = 0;
+    public static int SPD = 100;
+    public static int CRITRATE = 50;
+    public static int CRITDMG = 50;
 
     private float jumpPos = 0.0f;
     private float jumpTime = 0.0f;
@@ -210,13 +217,13 @@ public class Player : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.collider.tag == enemyTag){
-            HP = HP - 10;
+            nowHP = nowHP - 10;
         }
         if(collision.collider.tag == sakebigoe){
-            HP = HP - 20;
+            nowHP = nowHP - 20;
         }
         
-        if(HP <= 0){
+        if(nowHP <= 0){
             anim.Play("neko_die");
             isDown = true;
         }
