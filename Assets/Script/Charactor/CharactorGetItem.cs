@@ -15,6 +15,14 @@ public class CharactorGetItem : MonoBehaviour
     public GameObject grassObject;
     public GameObject HPObject;
 
+    private void Start()
+    {
+        int count = 1;
+        _playerRecipeManager.CountItem("meatBun", count);
+        _playerRecipeManager.CountItem("hamburger", count);
+        _playerRecipeManager.CountItem("tapiocaMilkTea", count);
+    }
+
     // Update is called once per frame
     void Update()
     {

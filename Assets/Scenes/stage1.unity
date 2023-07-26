@@ -76003,10 +76003,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 286397172198059380, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora
@@ -76181,7 +76177,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2157956632971966031, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
