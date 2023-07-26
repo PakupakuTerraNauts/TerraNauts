@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     private bool isHead = false;
     private bool isDown = false;
     private bool isNAttack = false;
+    private bool isAAttack = false;
     private bool isContinue = false;
     private bool nonDownAnim = false;
     private Animator anim = null;
@@ -71,15 +72,14 @@ public class Player : MonoBehaviour
     {
         if(!isDown){
             capcol = GetComponent<CapsuleCollider2D>();
-        }
-
-        if(/*!isDown*/true){
-            isNAttack = false;
             isGround = ground.IsGround();
             isHead = ground.IsGround();
 
-            if(isNAttack = PlayerNormalAttack()){
+            if(isNAttack = PlayerNormalAttack() && isGround){
                 anim.SetTrigger("nAttack_neko");
+            }
+            if(isAAttack = PlayerAerialAttack() && !isGround){
+                anim.SetTrigger("aAttack_neko");
             }
 
             float xSpeed = GetXSpeed();
@@ -99,9 +99,19 @@ public class Player : MonoBehaviour
 ///</summary>
     private bool PlayerNormalAttack(){
 
-        if(Input.GetKey("return")){
+        if(Input.GetKey("return") && !anim.IsInTransition(0)){
             return true;
 
+        }
+        return false;
+    }
+
+///<summary>
+/// player's aerial attack
+///</sumamry>
+    private bool PlayerAerialAttack(){
+        if(Input.GetKey("return") && !anim.IsInTransition(0)){
+            return true;
         }
         return false;
     }
