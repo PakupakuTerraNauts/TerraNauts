@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1759818403427738165}
   - component: {fileID: 8467843178279644252}
   - component: {fileID: 2062678850249258333}
+  - component: {fileID: -4017630569159485165}
   m_Layer: 0
   m_Name: pork
   m_TagString: item
@@ -158,3 +159,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.4488502, y: 2.5680373}
   m_EdgeRadius: 0
+--- !u!114 &-4017630569159485165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369336574802605525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c3a149067ac4e4c9573fce1e197a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objName: pork

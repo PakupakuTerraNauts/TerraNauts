@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 924881381947563885}
   - component: {fileID: 3484227602075378853}
   m_Layer: 0
-  m_Name: tapiocaMilkTea
+  m_Name: steamedRadish
   m_TagString: recipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c3a149067ac4e4c9573fce1e197a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objName: tapiocaMilkTea
+  _objName: steamedRadish

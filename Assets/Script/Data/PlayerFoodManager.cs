@@ -6,7 +6,7 @@ public class ItemData
 {
     public string id;   //アイテムid
 
-    private int count;  //所持数
+    public int count;  //所持数
 
     //コンストラクタ
     public ItemData(string id, int count = 1)
@@ -37,7 +37,7 @@ public class ItemData
 //食材の個数を管理
 public class PlayerFoodManager : MonoBehaviour
 {
-    [SerializeField] private List<ItemData>_itemDataList = new List<ItemData>();   //プレイヤーの所持アイテム
+    [SerializeField] static List<ItemData>_itemDataList = new List<ItemData>();   //プレイヤーの所持アイテム
 
     //アイテムを取得
     public void CountItem(string itemId, int count)

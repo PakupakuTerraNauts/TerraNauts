@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8939059125813201517}
   - component: {fileID: 2003242956153352760}
   - component: {fileID: 7411444851335718409}
+  - component: {fileID: -4458380680249949021}
   m_Layer: 0
   m_Name: essence
   m_TagString: item
@@ -158,3 +159,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.4488502, y: 2.5680373}
   m_EdgeRadius: 0
+--- !u!114 &-4458380680249949021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8744671341141900407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c3a149067ac4e4c9573fce1e197a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objName: essence

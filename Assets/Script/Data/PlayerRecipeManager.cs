@@ -6,7 +6,7 @@ using UnityEngine;
 //レシピの個数を管理
 public class PlayerRecipeManager : MonoBehaviour
 {
-    [SerializeField] private List<ItemData> _itemDataList = new List<ItemData>();   //プレイヤーの所持アイテム
+    [SerializeField] static List<ItemData> _itemDataList = new List<ItemData>();   //プレイヤーの所持アイテム
 
     //アイテムを取得
     public void CountItem(string itemId, int count)
