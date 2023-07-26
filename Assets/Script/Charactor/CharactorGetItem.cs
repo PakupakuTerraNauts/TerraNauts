@@ -18,9 +18,13 @@ public class CharactorGetItem : MonoBehaviour
     private void Start()
     {
         int count = 1;
-        _playerRecipeManager.CountItem("meatBun", count);
-        _playerRecipeManager.CountItem("hamburger", count);
-        _playerRecipeManager.CountItem("tapiocaMilkTea", count);
+        if(_playerRecipeManager.GetItemCount("meatBun") != 1)
+        {
+            _playerRecipeManager.CountItem("meatBun", count);
+            _playerRecipeManager.CountItem("hamburger", count);
+            _playerRecipeManager.CountItem("tapiocaMilkTea", count);
+        }
+        
     }
 
     // Update is called once per frame

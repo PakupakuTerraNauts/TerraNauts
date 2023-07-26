@@ -20,7 +20,7 @@ public class ItemJenerate : MonoBehaviour
         {
             int number = Random.Range(1, 100);
             Instantiate(items, this.transform.position, Quaternion.identity);
-            if (number <= 40)
+            if (number <= 30)
             {
                 Instantiate(rareItem, this.transform.position, Quaternion.identity);
             }
