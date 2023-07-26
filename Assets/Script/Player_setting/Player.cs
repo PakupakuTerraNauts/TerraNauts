@@ -71,14 +71,11 @@ public class Player : MonoBehaviour
     {
         if(!isDown){
             capcol = GetComponent<CapsuleCollider2D>();
-        }
-
-        if(/*!isDown*/true){
-            isNAttack = false;
             isGround = ground.IsGround();
             isHead = ground.IsGround();
 
             if(isNAttack = PlayerNormalAttack()){
+                Debug.Log("isNAttack == true!");
                 anim.SetTrigger("nAttack_neko");
             }
 
@@ -99,7 +96,7 @@ public class Player : MonoBehaviour
 ///</summary>
     private bool PlayerNormalAttack(){
 
-        if(Input.GetKey("return")){
+        if(Input.GetKey("return") && !anim.IsInTransition(0)){
             return true;
 
         }
