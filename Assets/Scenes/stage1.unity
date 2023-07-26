@@ -74306,9 +74306,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1314550714194338191, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314550714194338191, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c83a6ca3e3b6f4c9fa2d3c415e4dba28, type: 3}
+    - target: {fileID: 3968201982240996812, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3968201982240996812, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c83a6ca3e3b6f4c9fa2d3c415e4dba28, type: 3}
     - target: {fileID: 4546650955027188084, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5268687970940625476, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5268687970940625476, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5268687970940625476, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 70.9
       objectReference: {fileID: 0}
     - target: {fileID: 6476339644283992648, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
       propertyPath: m_Pivot.x
