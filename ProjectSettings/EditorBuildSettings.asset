@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CookingScean.unity
     guid: 6a3f81ef646124925b51e73fcc27ea6d
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: fd2265375ff72425b87990ae37f773ec
   m_configObjects: {}
