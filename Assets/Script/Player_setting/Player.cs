@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -226,6 +227,7 @@ public class Player : MonoBehaviour
         if(nowHP <= 0){
             anim.Play("neko_die");
             isDown = true;
+            StartCoroutine(PlayerDie());
         }
     }
     
@@ -238,6 +240,15 @@ public class Player : MonoBehaviour
         anim.SetBool("ground_neko", isGround);
         anim.SetBool("walk_neko", isWalk);
     }
+
+    IEnumerator PlayerDie()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("GameOver");
+        nowHP = HP;
+        yield break;
+    }
+
 
 }
 
