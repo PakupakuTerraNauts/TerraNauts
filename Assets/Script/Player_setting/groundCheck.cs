@@ -30,6 +30,7 @@ public class groundCheck : MonoBehaviour
      {
           if (collision.tag == groundTag)
           {
+            Debug.Log("‰½‚©‚ª”»’è‚É“ü‚è‚Ü‚µ‚½");
               isGroundEnter = true;
           }
      }
@@ -38,6 +39,7 @@ public class groundCheck : MonoBehaviour
      {
           if (collision.tag == groundTag)
           {
+            Debug.Log("‰½‚©‚ª”»’è‚É“ü‚è‘±‚¯‚Ä‚¢‚Ü‚·");
               isGroundStay = true;
           }
      }
@@ -46,6 +48,7 @@ public class groundCheck : MonoBehaviour
      {
           if (collision.tag == groundTag)
           {
+            Debug.Log("‰½‚©‚ª”»’è‚ð‚Å‚Ü‚µ‚½");
               isGroundExit = true;
           }
      }
