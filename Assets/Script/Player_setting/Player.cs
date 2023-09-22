@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
     public groundCheck ground;
     public groundCheck head;
     public HPBar HP;
-    public EnemyTriggerCheck enemyCheck;
     public float speed = 3;
     public float gravity = 2;
     private float jumpSpeed = 6;
@@ -55,7 +54,8 @@ public class Player : MonoBehaviour
                     anim.SetTrigger("aAttack_neko");
             }
             isAttack = false;
-        }
+            }
+        
 
         if(isContinue){
             if(blinkTime > 0.2f){
@@ -100,6 +100,14 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(0, -gravity);
         }
     }
+
+    #region//damage
+    private void OnCollisionEnter2D(Collision2D collision){
+        if(collision.collider.tag == enemyTag){ //contact damage
+            HP.UpdateHP(10.0f);
+        }
+    }
+    #endregion
 
 ///<summary>
 /// player's normal attack
