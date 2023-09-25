@@ -103,8 +103,12 @@ public class Player : MonoBehaviour
 
     #region//damage
     private void OnCollisionEnter2D(Collision2D collision){
-        if(collision.collider.tag == enemyTag){ //contact damage
-            HP.UpdateHP(10.0f);
+        if(collision.collider.tag == enemyTag){
+            HP.UpdateHP(10.0f);         //contact damage
+        }
+
+        if(collision.collider.tag == sakebigoe){
+            HP.UpdateHP(20.0f);         //daikonmandoragora's voice damage
         }
     }
     #endregion

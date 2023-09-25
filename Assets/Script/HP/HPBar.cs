@@ -8,11 +8,16 @@ public class HPBar : MonoBehaviour
     [SerializeField] private Image hpGauge;
     [SerializeField] private float maxHealth;
 
-    private float currentHealth;
+    public float currentHealth;
+    public static HPBar instance;
 
     void Awake(){
         currentHealth = maxHealth;
+        if(instance == null){
+            instance = this;
+        }
     }
+    
     public void UpdateHP(float damage){
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
         hpGauge.fillAmount = currentHealth / maxHealth;

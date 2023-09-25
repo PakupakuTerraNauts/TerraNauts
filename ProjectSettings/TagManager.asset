@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - ground
+  - Sword
   layers:
   - Default
   - TransparentFX
@@ -15,6 +16,7 @@ TagManager:
   - UI
   - Sword
   - Ground
+  - Enemy
   - 
   - 
   - 
@@ -36,8 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - background
   - 
   m_SortingLayers:
   - name: Default
