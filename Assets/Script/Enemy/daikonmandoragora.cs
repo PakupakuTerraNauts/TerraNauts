@@ -21,7 +21,7 @@ public class daikonmandoragora : MonoBehaviour
     private string swordTag = "Sword";
     #endregion
 
-    void Start()
+    void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
@@ -30,11 +30,11 @@ public class daikonmandoragora : MonoBehaviour
         col = GetComponent<BoxCollider2D>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         hp = HPBar.instance.currentHealth;
         if(hp <= 0.0f){
-            anim.Play("raddissh_die");
+            anim.Play("radissh_die");
             isDead = true;
             col.enabled = false;
             Destroy(gameObject, 3f);
@@ -52,7 +52,7 @@ public class daikonmandoragora : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<Collider>().tag == swordTag && !isDead){
+        if(collision.tag == swordTag && !isDead){
             HP.UpdateHP(10.0f); // player kara kougekiryoku wo syutoku suru.
         }
     }

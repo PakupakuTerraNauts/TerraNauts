@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 9
-  HP: {fileID: 0}
+  HP: {fileID: 5316156391757234676}
 --- !u!1 &1640962808493572471
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 7105823576796019064}
   m_Layer: 0
   m_Name: sakebigoe
-  m_TagString: Untagged
+  m_TagString: Sakebigoe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

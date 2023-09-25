@@ -106,9 +106,12 @@ public class Player : MonoBehaviour
         if(collision.collider.tag == enemyTag){
             HP.UpdateHP(10.0f);         //contact damage
         }
+// sabotenn toka ha contact damage ga takai kamo.
+    }
 
-        if(collision.collider.tag == sakebigoe){
-            HP.UpdateHP(20.0f);         //daikonmandoragora's voice damage
+    private void OnTriggerStay2D(Collider2D collision){
+        if(collision.tag == sakebigoe){
+            HP.UpdateHP(20.0f);         // daikonmandoragora's voice damage
         }
     }
     #endregion
