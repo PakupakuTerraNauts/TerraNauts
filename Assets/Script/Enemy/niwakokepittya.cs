@@ -25,16 +25,17 @@ public class niwakokepittya : MonoBehaviour
 
         hp = HPBar.instance.currentHealth;
     }
-/*
+
     void Update(){
         if(sr.isVisible){
+            rb.WakeUp();
             anim.Play("tori_pitch");    //player no houkou wo mukaseru.
         }
         else{
-            rb.sleep();
+            rb.Sleep();
         }
     }
-*/
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -44,7 +45,7 @@ public class niwakokepittya : MonoBehaviour
         }
         
         if(hp <= 0.0f){
-            anim.Play("niwakokepittya_die");
+            anim.Play("tori_die");
             isDead = true;
             capcol.enabled = false;
             Destroy(gameObject, 3f);
