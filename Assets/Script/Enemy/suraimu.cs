@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class suraimu : MonoBehaviour
 {
-    private HPBar HP;
+    #region //variables
+    public float gravity;
+    public HPBar HP;
 
     private float hp = 0.0f;
     private bool isDead = false;
@@ -13,6 +15,7 @@ public class suraimu : MonoBehaviour
     private Rigidbody2D rb = null;
     private SpriteRenderer sr = null;
     private string swordTag = "Sword";
+    #endregion
 
     void Start(){
         anim = GetComponent<Animator>();
@@ -23,17 +26,10 @@ public class suraimu : MonoBehaviour
         hp = HPBar.instance.currentHealth;
     }
 
-    void Update(){
-        if(sr.isVisible){   //‰æ–ÊŠO‚Å‚Í“®‚©‚È‚¢
-            anim.Play("suraimu_furueru");
-        } else {
-            rb.Sleep();
-        }
-    }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == swordTag){
+        if(collision.tag == swordTag && !isDead){
             HP.UpdateHP(10.0f);     //player no kougekiryoku wo tukutte koko ni ireru.
             hp -= 10.0f;            //koko mo kougekiryoku.
         }

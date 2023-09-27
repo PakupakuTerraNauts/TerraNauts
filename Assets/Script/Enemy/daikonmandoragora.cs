@@ -14,9 +14,10 @@ public class daikonmandoragora : MonoBehaviour
     private bool isFumareta = false;
     private SpriteRenderer sr = null;
     private Rigidbody2D rb = null;
-    private ObjectCollision oc = null;
+    //private ObjectCollision oc = null;
     private Animator anim = null;
     private CapsuleCollider2D capcol = null;
+    //private BoxCollider2D boxcol = null;
     private string playerTag = "Player";
     private string swordTag = "Sword";
     #endregion
@@ -26,8 +27,9 @@ public class daikonmandoragora : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        oc = GetComponent<ObjectCollision>();
+        //oc = GetComponent<ObjectCollision>();
         capcol = GetComponent<CapsuleCollider2D>();
+        //boxcol = GetComponent<BoxCollider2D>();
 
         hp = HPBar.instance.currentHealth;
     }
@@ -53,7 +55,8 @@ public class daikonmandoragora : MonoBehaviour
         if(hp <= 0.0f){
             anim.Play("radissh_die");
             isDead = true;
-            capcol.enabled = false;
+            //capcol.enabled = false;
+            //boxcol.enabled = false;
             Destroy(gameObject, 3f);
         }
     }

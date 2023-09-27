@@ -4,15 +4,51 @@ using UnityEngine;
 
 public class niwakokepittya : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    #region //variables
+    public float gravity;
+    public HPBar HP;
 
-    // Update is called once per frame
-    void Update()
+    private float hp = 0.0f;
+    private bool isDead = false;
+    private Animator anim = null;
+    private CapsuleCollider2D capcol = null;
+    private Rigidbody2D rb = null;
+    private SpriteRenderer sr = null;
+    private string swordTag = "Sword";
+    #endregion
+
+    void Start(){
+        anim = GetComponent<Animator>();
+        capcol = GetComponent<CapsuleCollider2D>();
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+
+        hp = HPBar.instance.currentHealth;
+    }
+/*
+    void Update(){
+        if(sr.isVisible){
+            anim.Play("tori_pitch");    //player no houkou wo mukaseru.
+        }
+        else{
+            rb.sleep();
+        }
+    }
+*/
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.tag == swordTag && !isDead){
+            HP.UpdateHP(10.0f);     //player no kougekiryoku wo tukutte koko ni ireru.
+            hp -= 10.0f;            //koko mo kougekiryoku.
+        }
         
+        if(hp <= 0.0f){
+            anim.Play("niwakokepittya_die");
+            isDead = true;
+            capcol.enabled = false;
+            Destroy(gameObject, 3f);
+        }
     }
 }
+
