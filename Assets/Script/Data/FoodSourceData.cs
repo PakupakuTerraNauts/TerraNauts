@@ -77,6 +77,11 @@ public class FoodSourceData : ScriptableObject
         get { return _itemType; }
     }
 
+    public ItemType GetItemType()
+    {
+        return _itemType;
+    }
+
 
     //アイコン
     [SerializeField]

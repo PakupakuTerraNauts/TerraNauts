@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - ground
+  - item
+  - recipe
+  - menu
   layers:
   - Default
   - TransparentFX

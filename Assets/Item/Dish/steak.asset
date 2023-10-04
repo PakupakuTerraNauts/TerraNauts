@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: steak
   _itemName: "\u8C5A\u7684\u30B9\u30C6\u30FC\u30AD"
   _itemType: 1
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 7107d38e5500446d691d6f237f2c3348, type: 3}
   _floor: 2
   foods:
   - _dishType: 6
