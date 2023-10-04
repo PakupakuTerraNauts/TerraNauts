@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: essence
   _itemName: "\u3046\u307E\u3059\u304E\u30A8\u30AD\u30B9"
   _itemType: 0
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 3750df56ac1604360ae89dda9ed843c8, type: 3}
   _floor: 1
   foods: []
   status: []

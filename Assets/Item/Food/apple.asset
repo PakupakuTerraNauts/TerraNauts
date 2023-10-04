@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: apple
   _itemName: "\u30B9\u30A4\u30FC\u30C8\u308A\u3093\u3054"
   _itemType: 0
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 0b3901e3d2e2d4aadbd02c982188d831, type: 3}
   _floor: 5
   foods: []
   status: []

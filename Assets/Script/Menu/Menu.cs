@@ -33,9 +33,21 @@ public class Menu : MonoBehaviour
     public ItemDataBase _itemDataBase;
     FoodSourceData _foodSourceData;
 
-    public Sprite _menuSprite1;
-    public Sprite _menuSprite2;
+    public Sprite _statusSprite;
+    public Sprite _itemSprite;
+    public Sprite _skillSprite;
+    public Sprite _settingSprite;
+    public Sprite _loadSprite;
+    public Sprite _exitSprite;
+    public Sprite _push_statusSprite;
+    public Sprite _push_itemSprite;
+    public Sprite _push_skillSprite;
+    public Sprite _push_settingSprite;
+    public Sprite _push_loadSprite;
+    public Sprite _push_exitSprite;
 
+    public GameObject _exit_button;
+    public GameObject _volume_slider;
 
     void Start() {
         _status = GameObject.Find("StatusCanvas");
@@ -45,8 +57,8 @@ public class Menu : MonoBehaviour
         _load = GameObject.Find("LoadCanvas");
         _exit = GameObject.Find("ExitCanvas");
 
-        _viewFoodText = GameObject.Find("FoodContent");
-        _viewRecipeText = GameObject.Find("RecipeContent");
+        _viewFoodText = GameObject.Find("TileFoodContent");
+        _viewRecipeText = GameObject.Find("TileDishContent");
 
         _main = GameObject.Find("Main");
         _playerFoodManager = _main.GetComponent<PlayerFoodManager>();
@@ -62,7 +74,7 @@ public class Menu : MonoBehaviour
 
         CanvasOff();
         _status.SetActive(true);
-         _statusButton.GetComponent<Image>().sprite = _menuSprite2;
+        _statusButton.GetComponent<Image>().sprite = _push_statusSprite;
 
     }
 
@@ -75,37 +87,42 @@ public class Menu : MonoBehaviour
         {
             case 0:
                 _status.SetActive(true);
-                _statusButton.GetComponent<Image>().sprite = _menuSprite2;
+                _statusButton.GetComponent<Image>().sprite = _push_statusSprite;
                 break;
 
             case 1:
                 _item.SetActive(true);
-                _itemButton.GetComponent<Image>().sprite = _menuSprite2;
+                _itemButton.GetComponent<Image>().sprite = _push_itemSprite;
 
                 TextDelete(_viewFoodText);
                 SetFoodText();
                 TextDelete(_viewRecipeText);
                 SetRecipeText();
+
+                //_viewFoodText.transform.GetChild(0).GetComponent<Button>().Select();
+
                 break;
 
             case 2:
                 _skill.SetActive(true);
-                _skillButton.GetComponent<Image>().sprite = _menuSprite2;
+                _skillButton.GetComponent<Image>().sprite = _push_skillSprite;
                 break;
 
             case 3:
                 _setting.SetActive(true);
-                _settingButton.GetComponent<Image>().sprite = _menuSprite2;
+                _settingButton.GetComponent<Image>().sprite = _push_settingSprite;
+                _volume_slider.GetComponent<Slider>().Select();
                 break;
 
             case 4:
                 _load.SetActive(true);
-                _loadButton.GetComponent<Image>().sprite = _menuSprite2;
+                _loadButton.GetComponent<Image>().sprite = _push_loadSprite;
                 break;
 
             case 5:
                 _exit.SetActive(true);
-                _exitButton.GetComponent<Image>().sprite = _menuSprite2;
+                _exitButton.GetComponent<Image>().sprite = _push_exitSprite;
+                _exit_button.GetComponent<Button>().Select();
                 break;
              
             default:
@@ -122,12 +139,12 @@ public class Menu : MonoBehaviour
         _load.SetActive(false);
         _exit.SetActive(false);
 
-        _statusButton.GetComponent<Image>().sprite = _menuSprite1;
-        _itemButton.GetComponent<Image>().sprite = _menuSprite1;
-        _skillButton.GetComponent<Image>().sprite = _menuSprite1;
-        _settingButton.GetComponent<Image>().sprite = _menuSprite1;
-        _loadButton.GetComponent<Image>().sprite = _menuSprite1;
-        _exitButton.GetComponent<Image>().sprite = _menuSprite1;
+        _statusButton.GetComponent<Image>().sprite = _statusSprite;
+        _itemButton.GetComponent<Image>().sprite = _itemSprite;
+        _skillButton.GetComponent<Image>().sprite = _skillSprite;
+        _settingButton.GetComponent<Image>().sprite = _settingSprite;
+        _loadButton.GetComponent<Image>().sprite = _loadSprite;
+        _exitButton.GetComponent<Image>().sprite = _exitSprite;
     }
 
     public void PushExit()
@@ -156,15 +173,17 @@ public class Menu : MonoBehaviour
         {
             _foodSourceData = _itemDataBase.ItemSearch(_id[i]);
 
+            
+
             int _count = _playerFoodManager.GetItemCount(_id[i]);
             _textPrefab = (GameObject)Instantiate(_prefab3Object, transform.position, Quaternion.identity);
             _textPrefab.transform.SetParent(_viewFoodText.transform, false);
 
-            GameObject _cloneObject = GameObject.Find("Button(Clone)");
-            Text _cloneText = _cloneObject.transform.GetChild(0).GetComponent<Text>();
-            Text _cloneText2 = _cloneObject.transform.GetChild(2).GetComponent<Text>();
-            _cloneText.text = _foodSourceData.itemName;
-            _cloneText2.text = _count.ToString("d");
+            GameObject _cloneObject = GameObject.Find("ItemButton(Clone)");
+            Image _cloneImage = _cloneObject.transform.GetChild(0).GetComponent<Image>();
+            Text _cloneText = _cloneObject.transform.GetChild(1).GetComponent<Text>();
+            _cloneImage.sprite = _foodSourceData.icon;
+            _cloneText.text = "✖︎"+ _count.ToString("d");
             _cloneObject.name = _id[i];
 
         }
@@ -178,18 +197,19 @@ public class Menu : MonoBehaviour
         {
             _foodSourceData = _itemDataBase.ItemSearch(_id[i]);
 
-            int _count = _playerRecipeManager.GetItemCount(_id[i]);
             _textPrefab = (GameObject)Instantiate(_prefab3Object, transform.position, Quaternion.identity);
             _textPrefab.transform.SetParent(_viewRecipeText.transform, false);
 
-            GameObject _cloneObject = GameObject.Find("Button(Clone)");
-            Text _cloneText = _cloneObject.transform.GetChild(0).GetComponent<Text>();
-            Text _cloneText2 = _cloneObject.transform.GetChild(2).GetComponent<Text>();
-            _cloneText.text = _foodSourceData.itemName + "のレシピ";
-            _cloneText2.text = _count.ToString("d");
+            GameObject _cloneObject = GameObject.Find("ItemButton(Clone)");
+            Image _cloneImage = _cloneObject.transform.GetChild(0).GetComponent<Image>();
+            Text _cloneText = _cloneObject.transform.GetChild(1).GetComponent<Text>();
+
+            _cloneImage.sprite = _foodSourceData.icon;
+            _cloneText.text = "";
             _cloneObject.name = _id[i];
 
         }
     }
+
 
 }

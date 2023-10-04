@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: fire
   _itemName: "\u3042\u3076\u308A\u30D5\u30A1\u30A4\u30A2"
   _itemType: 0
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 89f0cff6bb4cd4414b40320af2f9e484, type: 3}
   _floor: 3
   foods: []
   status: []

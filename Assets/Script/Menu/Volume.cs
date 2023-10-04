@@ -14,14 +14,15 @@ public class Volume : MonoBehaviour
 	{
 		audioSource = GameObject.Find("BGM").GetComponent<AudioSource>();
 		audioSlider = GameObject.Find("Volume").GetComponent<Slider>();
-		audioSource.volume = nowVolume;
+
+        audioSource.volume = nowVolume;
 		audioSlider.value = nowVolume;
 	}
 
-	public void SoundSliderOnValueChange(float newSliderValue)
+	public void ChangeVolume()
 	{
-		audioSource.volume = newSliderValue;
-		nowVolume = audioSource.volume;
+        audioSource.volume = audioSlider.value;
+		nowVolume = audioSlider.value;
+    }
 
-	}
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: mashroom
   _itemName: "\u3046\u307E\u3044\u30C0\u30B1"
   _itemType: 0
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: b86420f0209a24d2393f1c3e5be64953, type: 3}
   _floor: 2
   foods: []
   status: []

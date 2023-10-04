@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: chocolate
   _itemName: "\u30D6\u30E9\u30C3\u30AF\u30C1\u30E7\u30B3"
   _itemType: 0
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 04896d6d4b8824b80b61c4c506cbb033, type: 3}
   _floor: 5
   foods: []
   status: []

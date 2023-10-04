@@ -5,64 +5,84 @@ using UnityEngine.UI;
 
 public class cookingAnimation : MonoBehaviour
 {
-    private GameObject _animationObj;
-    private GameObject _textObj;
-    private Animator animator1;
-    private Animator animator2;
-    private bool cook;
-    private GameObject _animationToggleObj;
-    private Toggle animationToggle;
+    public GameObject _AnimationCanvas;
+    public GameObject _animationChara;
+    public GameObject _CompleteText;
+    public GameObject _Ani_DishName;
+    public GameObject _dishBack;
+    public GameObject _dishIcon;
 
-    private GameObject _animationBack;
-         
+    public ItemDataBase _itemDataBase;
+    FoodSourceData _foodSourceData;
+
+    Text cmp_Text;
+    Text dishText;
+    Image dishImage;
+
+    bool animation = true;
+    public GameObject animationObj;
+    Text animationText;
 
     // Start is called before the first frame update
     void Start()
     {
-        _animationObj = GameObject.Find("CookingAnimation");
-        _textObj = GameObject.Find("Complete");
-        animator1 = _animationObj.GetComponent<Animator>();
-        animator2 = _textObj.GetComponent<Animator>();
-        _animationObj.SetActive(false);
-        _textObj.SetActive(false);
-
-        _animationToggleObj = GameObject.Find("AnimationToggle");
-        animationToggle = _animationToggleObj.GetComponent<Toggle>();
-
-
-        _animationBack = GameObject.Find("AnimationBack");
-        _animationBack.SetActive(false);
-  
+        cmp_Text = _CompleteText.GetComponent<Text>();
+        dishText = _Ani_DishName.GetComponent<Text>();
+        dishImage = _dishIcon.GetComponent<Image>();
+        animationText = animationObj.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-    }
-
-    public void PushButton()
-    {
-        if(PushCookButton.cookOK == true && animationToggle.isOn == true)
+        if(Input.GetKeyDown(KeyCode.C) && PushCookButton.cookOK && animation)
         {
-            _animationObj.SetActive(true);
-            _animationBack.SetActive(true);
-            animator1.SetBool("push", true);
-            StartCoroutine(Textstart());
+            Debug.Log("アニメーションスタート");
+            _AnimationCanvas.SetActive(true);
+            _animationChara.SetActive(true);
+            _CompleteText.SetActive(false);
+            _Ani_DishName.SetActive(false);
+            _dishBack.SetActive(false);
+            _dishIcon.SetActive(false);
+
+            StartCoroutine("Stop");
+            
         }
 
-        
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            if(animation)
+            {
+                animation = false;
+                animationText.text = "アニメーションオフ";
+            }else
+            {
+                animation = true;
+                animationText.text = "アニメーションオン";
+            }
+        }
     }
 
-    IEnumerator Textstart()
+    IEnumerator Stop()
     {
         yield return new WaitForSeconds(2);
-        _textObj.SetActive(true);
-        animator2.SetBool("en", true);
-        yield return new WaitForSeconds(3);
-        _animationObj.SetActive(false);
-        _textObj.SetActive(false);
-        _animationBack.SetActive(false);
 
-        yield break;
+        _foodSourceData = _itemDataBase.ItemSearch(PushDishButton.nowPushDish);
+        dishImage.sprite = _foodSourceData.icon;
+        dishText.text = _foodSourceData.itemName;
+
+        _animationChara.SetActive(false);
+        _CompleteText.SetActive(true);
+        _Ani_DishName.SetActive(true);
+        _dishBack.SetActive(true);
+        _dishIcon.SetActive(true);
+
+        StartCoroutine("EndAnimation");
+    }
+
+    IEnumerator EndAnimation()
+    {
+        yield return new WaitForSeconds(2);
+        _AnimationCanvas.SetActive(false);
     }
 }
