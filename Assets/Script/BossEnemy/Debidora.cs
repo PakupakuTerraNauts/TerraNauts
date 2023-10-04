@@ -64,7 +64,7 @@ public class Debidora : MonoBehaviour
 
             for (int i = 0; i < 110; i++)
             {
-                transform.Translate(-0.1f, 0f, 0f);
+                transform.Translate(-0.2f, 0f, 0f);
                 yield return new WaitForSeconds(0.05f);
             }
             yield return new WaitForSeconds(0.5f);
@@ -73,16 +73,16 @@ public class Debidora : MonoBehaviour
 
             for (int i = 0; i < 110; i++)
             {
-                transform.Translate(-0.1f, 0f, 0f);
+                transform.Translate(-0.2f, 0f, 0f);
                 yield return new WaitForSeconds(0.05f);
             }
             yield return new WaitForSeconds(0.5f);
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
             yield return new WaitForSeconds(0.5f);
-
-            for (int i = 0; i < 45; i++)
+            
+            for (int i = 0; i < 40; i++)
             {
-                transform.Translate(0f, -0.1f, 0f);
+                transform.Translate(0f, -0.2f, 0f);
                 yield return new WaitForSeconds(0.05f);
             }
             yield return new WaitForSeconds(0.5f);
@@ -90,12 +90,12 @@ public class Debidora : MonoBehaviour
             _animator.SetBool("IsDashing", true);
             for (int i = 0; i < 40; i++)
             {
-                transform.Translate(-0.3f, 0f, 0f);
+                transform.Translate(-0.6f, 0f, 0f);
                 yield return new WaitForSeconds(0.05f);
             }
             if (PainPrefab != null)
             {
-                GameObject newPain = Instantiate(PainPrefab, new Vector3(transform.position.x, transform.position.y, 0f), new Quaternion(0f, 0f, 0f, 0f));
+                GameObject newPain = Instantiate(PainPrefab, new Vector3(transform.position.x - 0.5f, transform.position.y + 0.2f, 0f), new Quaternion(0f, 0f, 0f, 0f));
                 Destroy(newPain, 0.1f);
             }
             yield return new WaitForSeconds(0.1f);
@@ -105,10 +105,11 @@ public class Debidora : MonoBehaviour
             _animator.SetBool("IsPiyopiying", false);
             _animator.SetBool("IsWaiting", true);
             yield return new WaitForSeconds(1.0f);
+            transform.Translate(2f, 0f, 0f);
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
-            for (int i = 0; i < 45; i++)
+            for (int i = 0; i < 40; i++)
             {
-                transform.Translate(0f, 0.1f, 0f);
+                transform.Translate(0f, 0.2f, 0f);
                 yield return new WaitForSeconds(0.05f);
             }
             yield return new WaitForSeconds(1.0f);
@@ -117,7 +118,7 @@ public class Debidora : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             if (FirePrefab != null)
             {
-                GameObject newFire = Instantiate(FirePrefab, new Vector3(-2.05f, -0.92f, 0f), new Quaternion(0f, 180f, 0f, 0f));
+                GameObject newFire = Instantiate(FirePrefab, new Vector3(transform.position.x+7.8f, transform.position.y-6.6f, 0f), new Quaternion(0f, 180f, 0f, 0f));
                 Destroy(newFire, 3.5f);
             }
             yield return new WaitForSeconds(3.5f);
@@ -126,22 +127,22 @@ public class Debidora : MonoBehaviour
             yield return new WaitForSeconds(2f);
             for (int i = 0; i < 20; i++)
             {
-                transform.Translate(-0.15f, -0.22f, 0f);
+                transform.Translate(-0.275f, -0.4f, 0f);
                 yield return new WaitForSeconds(0.05f);
             }
             for (int i = 0; i < 20; i++)
             {
-                transform.Translate(-0.15f, 0.22f, 0f);
+                transform.Translate(-0.275f, 0.4f, 0f);
                 yield return new WaitForSeconds(0.05f);
             }
             for (int i = 0; i < 20; i++)
             {
-                transform.Translate(-0.15f, -0.22f, 0f);
+                transform.Translate(-0.275f, -0.4f, 0f);
                 yield return new WaitForSeconds(0.05f);
             }
             for (int i = 0; i < 20; i++)
             {
-                transform.Translate(-0.15f, 0.22f, 0f);
+                transform.Translate(-0.275f, 0.4f, 0f);
                 yield return new WaitForSeconds(0.05f);
             }
             yield return new WaitForSeconds(1.0f);
