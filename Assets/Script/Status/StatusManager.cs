@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //ステータス表示
-public class StatusManager : MonoBehaviour
+public class StatusManager:MonoBehaviour
 {
 
     public GameObject HPObject;
@@ -17,7 +17,7 @@ public class StatusManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class StatusPlus_pushRecipe : MonoBehaviour
+public class StatusPlus_pushRecipe:MonoBehaviour
 {
     GameObject _selectedObject;
     FoodSourceData _foodSourceData;
@@ -39,7 +39,7 @@ public class StatusPlus_pushRecipe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (EventSystem.current.currentSelectedGameObject)
+        if(EventSystem.current.currentSelectedGameObject)
         {
             ReSetText();
 
@@ -53,7 +53,7 @@ public class StatusPlus_pushRecipe : MonoBehaviour
             {
                 statusCount = _foodSourceData.GetStatusValue(statusTypes[i]);
 
-                switch (statusTypes[i])
+                switch(statusTypes[i])
                 {
                     case "HP":
                         HP_Text.text = "+" + statusCount.ToString("d");
@@ -75,7 +75,7 @@ public class StatusPlus_pushRecipe : MonoBehaviour
                         break;
                 }
             }
-            
+
         }
 
     }

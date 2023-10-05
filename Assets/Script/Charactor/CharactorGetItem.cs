@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //キャラクターがアイテムをゲットした時の処理
-public class CharactorGetItem : MonoBehaviour
+public class CharactorGetItem:MonoBehaviour
 {
-    //Script
+    //Manager
     public PlayerFoodManager _playerFoodManager;
     public PlayerRecipeManager _playerRecipeManager;
     //
@@ -24,7 +24,7 @@ public class CharactorGetItem : MonoBehaviour
             _playerRecipeManager.CountItem("hamburger", count);
             _playerRecipeManager.CountItem("tapiocaMilkTea", count);
         }
-        
+
     }
 
     // Update is called once per frame
@@ -41,7 +41,7 @@ public class CharactorGetItem : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         //タグが "item" のアイテム
-        if (collision.gameObject.tag == "item")
+        if(collision.gameObject.tag == "item")
         {
             int count = 1;
             //アイテム追加
@@ -49,7 +49,7 @@ public class CharactorGetItem : MonoBehaviour
 
         }
         //タグが "recipe" のアイテム
-        else if (collision.gameObject.tag == "recipe")
+        else if(collision.gameObject.tag == "recipe")
         {
             int count = 1;
             //アイテム追加

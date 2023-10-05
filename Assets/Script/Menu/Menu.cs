@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //メニュー画面の制御
-public class Menu : MonoBehaviour
+public class Menu:MonoBehaviour
 {
     GameObject _status;
     GameObject _item;
@@ -49,7 +49,8 @@ public class Menu : MonoBehaviour
     public GameObject _exit_button;
     public GameObject _volume_slider;
 
-    void Start() {
+    void Start()
+    {
         _status = GameObject.Find("StatusCanvas");
         _item = GameObject.Find("ItemCanvas");
         _skill = GameObject.Find("SkillCanvas");
@@ -124,7 +125,7 @@ public class Menu : MonoBehaviour
                 _exitButton.GetComponent<Image>().sprite = _push_exitSprite;
                 _exit_button.GetComponent<Button>().Select();
                 break;
-             
+
             default:
                 break;
         }
@@ -149,17 +150,17 @@ public class Menu : MonoBehaviour
 
     public void PushExit()
     {
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;//ゲームプレイ終了
-        #else
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;//ゲームプレイ終了
+#else
             Application.Quit();
             //ゲームプレイ終了
-        #endif
+#endif
     }
 
     public void TextDelete(GameObject _objectText)
     {
-        foreach (Transform child in _objectText.transform)
+        foreach(Transform child in _objectText.transform)
         {
             GameObject.Destroy(child.gameObject);
         }
@@ -169,11 +170,11 @@ public class Menu : MonoBehaviour
     {
         string[] _id = _playerFoodManager.GetItemId();
 
-        for (int i = 0; i < _id.Length; i++)
+        for(int i = 0; i < _id.Length; i++)
         {
             _foodSourceData = _itemDataBase.ItemSearch(_id[i]);
 
-            
+
 
             int _count = _playerFoodManager.GetItemCount(_id[i]);
             _textPrefab = (GameObject)Instantiate(_prefab3Object, transform.position, Quaternion.identity);
@@ -183,7 +184,7 @@ public class Menu : MonoBehaviour
             Image _cloneImage = _cloneObject.transform.GetChild(0).GetComponent<Image>();
             Text _cloneText = _cloneObject.transform.GetChild(1).GetComponent<Text>();
             _cloneImage.sprite = _foodSourceData.icon;
-            _cloneText.text = "✖︎"+ _count.ToString("d");
+            _cloneText.text = "✖︎" + _count.ToString("d");
             _cloneObject.name = _id[i];
 
         }
@@ -193,7 +194,7 @@ public class Menu : MonoBehaviour
     {
         string[] _id = _playerRecipeManager.GetItemId();
 
-        for (int i = 0; i < _id.Length; i++)
+        for(int i = 0; i < _id.Length; i++)
         {
             _foodSourceData = _itemDataBase.ItemSearch(_id[i]);
 

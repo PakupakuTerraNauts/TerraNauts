@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //調理ボタンを押した時の処理
-public class PushCookButton : MonoBehaviour
+public class PushCookButton:MonoBehaviour
 {
     //Script
     public ItemDataBase _itemDataBase;
@@ -76,7 +76,7 @@ public class PushCookButton : MonoBehaviour
     void Update()
     {
         //調理ボタン(Cキー)が押された時
-        if (Input.GetKeyDown(KeyCode.C))
+        if(Input.GetKeyDown(KeyCode.C))
         {
             _foodSourceData = _itemDataBase.ItemSearch(PushDishButton.nowPushDish);
 
@@ -91,9 +91,9 @@ public class PushCookButton : MonoBehaviour
             cookOK = false;
 
             //食材が足りるか判定
-            for (int i = 0; i < foodTypes.Length; i++)
+            for(int i = 0; i < foodTypes.Length; i++)
             {
-                if (_playerFoodManager.GetItemCount(foodTypes[i]) < _foodSourceData.GetFoodValue(foodTypes[i]))
+                if(_playerFoodManager.GetItemCount(foodTypes[i]) < _foodSourceData.GetFoodValue(foodTypes[i]))
                 {
                     cookOK = false;
                     break;
@@ -105,20 +105,20 @@ public class PushCookButton : MonoBehaviour
             }
 
             //食材が足りた場合、食材を減らし、ステータスを上昇
-            if (cookOK)
+            if(cookOK)
             {
                 //食材を減らす
-                for (int i = 0; i < foodTypes.Length; i++)
+                for(int i = 0; i < foodTypes.Length; i++)
                 {
                     foodCount = _foodSourceData.GetFoodValue(foodTypes[i]);
                     _playerFoodManager.UseItem(foodTypes[i], foodCount);
                 }
 
                 //ステータス上昇
-                for (int i = 0; i < statusTypes.Length; i++)
+                for(int i = 0; i < statusTypes.Length; i++)
                 {
                     statusCount = _foodSourceData.GetStatusValue(statusTypes[i]);
-                    switch (statusTypes[i])
+                    switch(statusTypes[i])
                     {
                         case "HP":
                             Status.HP += statusCount;
@@ -147,7 +147,7 @@ public class PushCookButton : MonoBehaviour
             ChangeText();
         }
     }
-    
+
 
     //食材とステータスのテキストを更新
     public void ChangeText()
@@ -161,7 +161,7 @@ public class PushCookButton : MonoBehaviour
         string[] statusTypes = _foodSourceData.GetStatusType();
         int statusCount;
 
-        for (int i = 0; i < foodTypes.Length; i++)
+        for(int i = 0; i < foodTypes.Length; i++)
         {
             _textPrefab = (GameObject)Instantiate(_prefabObject, transform.position, Quaternion.identity);
             _textPrefab.transform.SetParent(_viewFoodText.transform, false);
@@ -177,10 +177,10 @@ public class PushCookButton : MonoBehaviour
 
         StatusRe();
 
-        for (int i = 0; i < statusTypes.Length; i++)
+        for(int i = 0; i < statusTypes.Length; i++)
         {
             statusCount = _foodSourceData.GetStatusValue(statusTypes[i]);
-            switch (statusTypes[i])
+            switch(statusTypes[i])
             {
                 case "HP":
                     _HP_plus_text.text = "+" + statusCount.ToString("d");
@@ -207,7 +207,7 @@ public class PushCookButton : MonoBehaviour
     //テキスト削除
     public void TextDelete(GameObject _objectText)
     {
-        foreach (Transform child in _objectText.transform)
+        foreach(Transform child in _objectText.transform)
         {
             GameObject.Destroy(child.gameObject);
         }
