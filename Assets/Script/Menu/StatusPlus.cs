@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class StatusPlus : MonoBehaviour
+public class StatusPlus:MonoBehaviour
 {
     GameObject _selectedObject;
     FoodSourceData _foodSourceData;
@@ -76,19 +76,19 @@ public class StatusPlus : MonoBehaviour
             _firstButton.Select();
         }
 
-        
-        
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (EventSystem.current.currentSelectedGameObject && EventSystem.current.currentSelectedGameObject.tag == "item")
+        if(EventSystem.current.currentSelectedGameObject && EventSystem.current.currentSelectedGameObject.tag == "item")
         {
             _selectedObject = EventSystem.current.currentSelectedGameObject;
             SelectRecipe(_selectedObject);
         }
-        else if (EventSystem.current.currentSelectedGameObject && EventSystem.current.currentSelectedGameObject.tag != "item")
+        else if(EventSystem.current.currentSelectedGameObject && EventSystem.current.currentSelectedGameObject.tag != "item")
         {
             beforObj.GetComponent<Button>().Select();
             SelectRecipe(beforObj);
@@ -111,7 +111,7 @@ public class StatusPlus : MonoBehaviour
     public void TextDelete()
     {
         GameObject _objectText = GameObject.Find("MenuFoodContent");
-        foreach (Transform child in _objectText.transform)
+        foreach(Transform child in _objectText.transform)
         {
             GameObject.Destroy(child.gameObject);
         }
@@ -123,12 +123,12 @@ public class StatusPlus : MonoBehaviour
 
         ReSetText();
 
-        if (_foodSourceData.itemType == ItemType.FOOD)
+        if(_foodSourceData.itemType == ItemType.FOOD)
         {
             _foodNameText.text = _foodSourceData.itemName;
             _dishNameText.text = "";
         }
-        else if (_foodSourceData.itemType == ItemType.DISH)
+        else if(_foodSourceData.itemType == ItemType.DISH)
         {
             _dishNameText.text = _foodSourceData.itemName;
             _foodNameText.text = "";
@@ -139,11 +139,11 @@ public class StatusPlus : MonoBehaviour
         statusTypes = _foodSourceData.GetStatusType();
         int statusCount;
 
-        for (int i = 0; i < statusTypes.Length; i++)
+        for(int i = 0; i < statusTypes.Length; i++)
         {
             statusCount = _foodSourceData.GetStatusValue(statusTypes[i]);
 
-            switch (statusTypes[i])
+            switch(statusTypes[i])
             {
                 case "HP":
                     HP_Text.text = "+" + statusCount.ToString("d");
@@ -174,7 +174,7 @@ public class StatusPlus : MonoBehaviour
         GameObject _main = GameObject.Find("Main");
         PlayerFoodManager _playerFoodManager = _main.GetComponent<PlayerFoodManager>();
 
-        for (int k = 0; k < foodTypes.Length; k++)
+        for(int k = 0; k < foodTypes.Length; k++)
         {
             _textRecipePrefab = (GameObject)Instantiate(FoodPrefab, transform.position, Quaternion.identity);
             _textRecipePrefab.transform.SetParent(GameObject.Find("MenuFoodContent").transform, false);
@@ -193,6 +193,6 @@ public class StatusPlus : MonoBehaviour
 
     public bool HasChild(GameObject gameObject)
     {
-        return 0 < gameObject.transform.childCount;  
+        return 0 < gameObject.transform.childCount;
     }
 }

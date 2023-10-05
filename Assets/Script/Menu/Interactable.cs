@@ -5,10 +5,10 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 //　最初にフォーカスするゲームオブジェクトを設定,セレクトでボタンが押される
-public class Interactable : MonoBehaviour
+public class Interactable:MonoBehaviour
 {
-	[SerializeField]
-	private GameObject firstSelect;
+    [SerializeField]
+    private GameObject firstSelect;
     Button button;
 
     GameObject selectObj;
@@ -25,8 +25,7 @@ public class Interactable : MonoBehaviour
     {
         selectObj = EventSystem.current.currentSelectedGameObject;
 
-        
-        switch (selectObj.name)
+        switch(selectObj.name)
         {
             case "StatusButton":
                 _menu.PushButton(0);

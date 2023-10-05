@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
-public class GameOverMenu : MonoBehaviour
+public class GameOverMenu:MonoBehaviour
 {
     [SerializeField]
     private GameObject firstSelect;
@@ -28,7 +28,7 @@ public class GameOverMenu : MonoBehaviour
         Text = selectObj.transform.GetChild(0).GetComponent<Text>();
 
 
-        switch (selectObj.name)
+        switch(selectObj.name)
         {
             case "ContinueButton":
                 SetTextColor();
@@ -58,18 +58,18 @@ public class GameOverMenu : MonoBehaviour
 
     public void OnClickTitleButton(int i)
     {
-        switch (i)
+        switch(i)
         {
             case 0:
                 SceneManager.LoadScene("stage1");
                 break;
             case 1:
-#if UNITY_EDITOR
+                #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;//ゲームプレイ終了
-#else
-                    Application.Quit();
-                    //ゲームプレイ終了
-#endif
+                #else
+                Application.Quit();
+                //ゲームプレイ終了
+                #endif
                 break;
         }
     }

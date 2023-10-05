@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //レシピのテキストを押した時の処理
-public class PushDishButton : MonoBehaviour
+public class PushDishButton:MonoBehaviour
 {
     private string _objectName;
     private GameObject _main;
@@ -80,12 +80,6 @@ public class PushDishButton : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     //レシピのボタンが押された時
     public void PushButton(Button onButton)
     {
@@ -116,7 +110,7 @@ public class PushDishButton : MonoBehaviour
             Text _cloneText2 = _cloneObject.transform.GetChild(1).GetComponent<Text>();
             _foodSourceData_f = _itemDataBase.ItemSearch(foodTypes[i]);
             _cloneImage.sprite = _foodSourceData_f.icon;
-            _cloneText2.text = _playerFoodManager.GetItemCount(foodTypes[i])+"/1";
+            _cloneText2.text = _playerFoodManager.GetItemCount(foodTypes[i]) + "/1";
             _dishNameText.text = _foodSourceData.itemName;
             _cloneObject.name = foodTypes[i];
         }
@@ -124,11 +118,11 @@ public class PushDishButton : MonoBehaviour
         StatusRe();
 
         //ステータスのテキスト更新
-        for (int i = 0; i < statusTypes.Length; i++)
+        for(int i = 0; i < statusTypes.Length; i++)
         {
-            
+
             statusCount = _foodSourceData.GetStatusValue(statusTypes[i]);
-            switch (statusTypes[i])
+            switch(statusTypes[i])
             {
                 case "HP":
                     _HP_plus_text.text = "+" + statusCount.ToString("d");
@@ -155,7 +149,7 @@ public class PushDishButton : MonoBehaviour
     //テキスト削除
     public void TextDelete(GameObject _objectText)
     {
-        foreach (Transform child in _objectText.transform)
+        foreach(Transform child in _objectText.transform)
         {
             GameObject.Destroy(child.gameObject);
         }

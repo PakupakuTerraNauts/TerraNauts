@@ -4,21 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //Cookingメニューにレシピを表示
-public class CookingMenu : MonoBehaviour
+public class CookingMenu:MonoBehaviour
 {
     //Script
     public ItemDataBase _itemDataBase;
     PlayerRecipeManager _playerRecipeManager;
     FoodSourceData _foodSourceData;
-
-
+    //
     public GameObject _prefabObject;
+    public GameObject _animationCanvas;
+
     GameObject _viewRecipeText;
     GameObject _textPrefab;
     GameObject _main;
 
-    public GameObject _animationCanvas;
     
+
 
 
     void Start()
@@ -40,7 +41,7 @@ public class CookingMenu : MonoBehaviour
     //テキストを削除
     public void TextDelete(GameObject _objectText)
     {
-        foreach (Transform child in _objectText.transform)
+        foreach(Transform child in _objectText.transform)
         {
             GameObject.Destroy(child.gameObject);
         }
@@ -52,7 +53,7 @@ public class CookingMenu : MonoBehaviour
         Debug.Log("SetRecipeText");
         string[] _id = _playerRecipeManager.GetItemId();
 
-        for (int i = 0; i < _id.Length; i++)
+        for(int i = 0; i < _id.Length; i++)
         {
             _foodSourceData = _itemDataBase.ItemSearch(_id[i]);
 

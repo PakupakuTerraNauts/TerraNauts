@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 
-public class TitleMenu : MonoBehaviour
+public class TitleMenu:MonoBehaviour
 {
     [SerializeField]
     private GameObject firstSelect;
@@ -29,7 +29,7 @@ public class TitleMenu : MonoBehaviour
         Text = selectObj.transform.GetChild(0).GetComponent<Text>();
 
 
-        switch (selectObj.name)
+        switch(selectObj.name)
         {
             case "StartButton":
                 SetTextColor();
@@ -79,12 +79,12 @@ public class TitleMenu : MonoBehaviour
                 SceneManager.LoadScene("stage1");
                 break;
             case 1:
-                #if UNITY_EDITOR
-                    UnityEditor.EditorApplication.isPlaying = false;//ゲームプレイ終了
-                #else
+#if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;//ゲームプレイ終了
+#else
                     Application.Quit();
                     //ゲームプレイ終了
-                #endif
+#endif
                 break;
         }
     }

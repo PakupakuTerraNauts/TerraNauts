@@ -46,7 +46,7 @@ public enum StatusType
 //食材、レシピのデータを登録するアセットを生成できる
 [Serializable]
 [CreateAssetMenu(menuName = "ItemSourceData")]
-public class FoodSourceData : ScriptableObject
+public class FoodSourceData:ScriptableObject
 {
     //固有ID
     [SerializeField]
@@ -115,22 +115,22 @@ public class FoodSourceData : ScriptableObject
 
     public string[] GetFoodType()
     {
-         string[] foodString = new string[foods.Length];
-         DishType[] foodType = new DishType[foods.Length];
-         for (int i = 0; i < foods.Length; i++)
-         {
-             foodType[i] = foods[i]._dishType;
-             foodString[i] = foodType[i].ToString();
+        string[] foodString = new string[foods.Length];
+        DishType[] foodType = new DishType[foods.Length];
+        for(int i = 0; i < foods.Length; i++)
+        {
+            foodType[i] = foods[i]._dishType;
+            foodString[i] = foodType[i].ToString();
         }
-         return foodString;
+        return foodString;
     }
 
     public int GetFoodValue(string _foodType)
     {
-        for (int i = 0; i < foods.Length; i++)
+        for(int i = 0; i < foods.Length; i++)
         {
             string dishTypeString = foods[i]._dishType.ToString();
-            if (dishTypeString == _foodType)
+            if(dishTypeString == _foodType)
             {
                 return foods[i]._dishValue;
             }
@@ -138,7 +138,7 @@ public class FoodSourceData : ScriptableObject
         return 0;
     }
 
-    
+
 
 
     //ステータスの種類と数
@@ -165,10 +165,10 @@ public class FoodSourceData : ScriptableObject
 
     public int GetStatusValue(string _statusType)
     {
-        for (int i = 0; i < status.Length; i++)
+        for(int i = 0; i < status.Length; i++)
         {
             string statusTypeString = status[i]._statusType.ToString();
-            if (statusTypeString == _statusType)
+            if(statusTypeString == _statusType)
             {
                 return status[i]._statusValue;
             }

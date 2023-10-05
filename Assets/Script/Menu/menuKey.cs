@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class menuKey : MonoBehaviour
+public class menuKey:MonoBehaviour
 {
     public GameObject status_button;
     public GameObject item_button;
@@ -16,16 +16,16 @@ public class menuKey : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E))
         {
             GameObject nowObj = EventSystem.current.currentSelectedGameObject;
-            switch (nowObj.name)
+            switch(nowObj.name)
             {
                 case "StatusButton":
                     item_button.GetComponent<Button>().Select();
@@ -52,7 +52,7 @@ public class menuKey : MonoBehaviour
                     break;
 
                 default:
-                    if (GameObject.Find("ItemCanvas"))
+                    if(GameObject.Find("ItemCanvas"))
                     {
                         skill_button.GetComponent<Button>().Select();
                     }
@@ -60,17 +60,17 @@ public class menuKey : MonoBehaviour
                     {
                         load_button.GetComponent<Button>().Select();
                     }
-              
+
                     break;
             }
 
-            
+
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetKeyDown(KeyCode.Q))
         {
             GameObject nowObj = EventSystem.current.currentSelectedGameObject;
-            switch (nowObj.name)
+            switch(nowObj.name)
             {
                 case "StatusButton":
                     exit_button.GetComponent<Button>().Select();
@@ -97,7 +97,7 @@ public class menuKey : MonoBehaviour
                     break;
 
                 default:
-                    if (GameObject.Find("ItemCanvas"))
+                    if(GameObject.Find("ItemCanvas"))
                     {
                         status_button.GetComponent<Button>().Select();
                     }
