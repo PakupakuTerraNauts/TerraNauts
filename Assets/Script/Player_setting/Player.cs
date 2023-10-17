@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     private bool isAttack = false;
     private bool isContinue = false;
     private bool isDamaged = false;
+    private bool coolTime = false;
     //private bool nonDownAnim = false;
     private Animator anim = null;
     private Rigidbody2D rb = null;
@@ -129,7 +130,7 @@ public class Player : MonoBehaviour
 /// player's normal attack
 ///</summary>
     private bool PlayerAttack(){
-        if(Input.GetKey("return") && !anim.IsInTransition(0)){
+        if(Input.GetKeyDown("return") && !isAttack){
             return true;
 
         }
@@ -219,6 +220,7 @@ public class Player : MonoBehaviour
     }
 
     private IEnumerator AttackCool(){
+        isAttack = false;
         yield return new WaitForSeconds(5.0f);
         Debug.Log("アタッククールタイム チャージド");
     }
