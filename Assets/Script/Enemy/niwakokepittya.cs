@@ -28,8 +28,10 @@ public class niwakokepittya : MonoBehaviour
 
     void Update(){
         if(sr.isVisible){
-            rb.WakeUp();
-            anim.Play("tori_pitch");    //player no houkou wo mukaseru.
+            if(!isDead){
+                rb.WakeUp();
+                anim.Play("tori_pitch");    //player no houkou wo mukaseru.
+            }
         }
         else{
             rb.Sleep();

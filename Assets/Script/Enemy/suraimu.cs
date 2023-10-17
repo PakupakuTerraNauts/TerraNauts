@@ -26,6 +26,18 @@ public class suraimu : MonoBehaviour
         hp = HPBar.instance.currentHealth;
     }
 
+    void Update(){
+        if(sr.isVisible){
+            if(!isDead){
+                rb.WakeUp();
+                anim.Play("suraimu_furueru");
+            }
+        }
+        else{
+            rb.Sleep();
+        }
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

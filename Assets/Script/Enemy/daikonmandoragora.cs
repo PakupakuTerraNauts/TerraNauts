@@ -17,7 +17,6 @@ public class daikonmandoragora : MonoBehaviour
     //private ObjectCollision oc = null;
     private Animator anim = null;
     private CapsuleCollider2D capcol = null;
-    //private BoxCollider2D boxcol = null;
     private string playerTag = "Player";
     private string swordTag = "Sword";
     #endregion
@@ -29,7 +28,6 @@ public class daikonmandoragora : MonoBehaviour
         anim = GetComponent<Animator>();
         //oc = GetComponent<ObjectCollision>();
         capcol = GetComponent<CapsuleCollider2D>();
-        //boxcol = GetComponent<BoxCollider2D>();
 
         hp = HPBar.instance.currentHealth;
     }
@@ -41,7 +39,7 @@ public class daikonmandoragora : MonoBehaviour
         if(collision.collider.tag == playerTag && !isFumareta){
             anim.Play("radissh_fumare");
             isFumareta = true;
-            capcol.tag = "Enemy";  //enemy ja naku sitoite.
+            StartCoroutine("ChangeTag");
         }
     }
 
@@ -59,5 +57,11 @@ public class daikonmandoragora : MonoBehaviour
             //boxcol.enabled = false;
             Destroy(gameObject, 3f);
         }
+    }
+
+    private IEnumerator ChangeTag(){
+        Debug.Log("タグチェンジコルーチン");
+        yield return new WaitForSeconds(5.0f);
+        capcol.tag = "Enemy";
     }
 }
