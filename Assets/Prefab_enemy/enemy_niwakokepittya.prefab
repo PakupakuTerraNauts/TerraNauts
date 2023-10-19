@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 2068537238519845894}
   - component: {fileID: 864682664187668825}
   - component: {fileID: 1174305833296853537}
-  - component: {fileID: 7717130221160192098}
+  - component: {fileID: 6751897694717785505}
   m_Layer: 0
   m_Name: enemy_niwakokepittya
   m_TagString: Enemy
@@ -462,7 +462,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &7717130221160192098
+--- !u!114 &6751897694717785505
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -476,6 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: 9
   HP: {fileID: 3098180837881635306}
+  PlayerObject: {fileID: 0}
 --- !u!1 &6268880550649028620
 GameObject:
   m_ObjectHideFlags: 0

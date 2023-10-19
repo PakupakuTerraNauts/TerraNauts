@@ -55,8 +55,9 @@ public class Player : MonoBehaviour
                     anim.SetTrigger("nAttack_neko");
                 else if (!isGround)
                     anim.SetTrigger("aAttack_neko");
+                
+                StartCoroutine("AttackCool");
             }
-            StartCoroutine("AttackCool");
 
             if (isDamaged){
                 if(blinkTime > 0.2f){

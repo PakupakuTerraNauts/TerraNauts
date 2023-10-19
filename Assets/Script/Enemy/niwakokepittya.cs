@@ -7,9 +7,13 @@ public class niwakokepittya : MonoBehaviour
     #region //variables
     public float gravity;
     public HPBar HP;
+    public GameObject PlayerObject;
 
     private float hp = 0.0f;
+    private float toriPosition_x = 0.0f;
+    private float playerPosition_x = 0.0f;
     private bool isDead = false;
+    private bool isLeft = true;
     private Animator anim = null;
     private CapsuleCollider2D capcol = null;
     private Rigidbody2D rb = null;
@@ -28,9 +32,15 @@ public class niwakokepittya : MonoBehaviour
 
     void Update(){
         if(sr.isVisible){
+
+            Vector3 toriPosition = this.transform.position;
+            Vector3 playerPosition = PlayerObject.transform.position;
+            toriPosition_x = toriPosition.x;
+            playerPosition_x = playerPosition.x;
+
             if(!isDead){
                 rb.WakeUp();
-                anim.Play("tori_pitch");    //player no houkou wo mukaseru.
+                anim.Play("tori_pitch");
             }
         }
         else{
@@ -52,6 +62,17 @@ public class niwakokepittya : MonoBehaviour
             capcol.enabled = false;
             Destroy(gameObject, 3f);
         }
+    }
+
+    public void DirectJudge(){
+        if(playerPosition_x > toriPosition_x && isLeft){
+                    transform.localScale = new Vector3(-1, 1, 1);
+                    isLeft = false;
+                }
+                else if(playerPosition_x < toriPosition_x && !isLeft){
+                    transform.localScale = new Vector3(1, 1, 1);
+                    isLeft = true;
+                }
     }
 }
 

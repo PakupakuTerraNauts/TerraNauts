@@ -43,7 +43,7 @@ public class suraimu : MonoBehaviour
     {
         if(collision.tag == swordTag && !isDead){
             HP.UpdateHP(10.0f);     //player no kougekiryoku wo tukutte koko ni ireru.
-            hp -= 10.0f;            //koko mo kougekiryoku.
+            hp = hp - 10.0f;            //koko mo kougekiryoku.
         }
         
         if(hp <= 0.0f){

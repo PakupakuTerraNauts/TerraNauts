@@ -12,6 +12,7 @@ public class daikonmandoragora : MonoBehaviour
     private float hp = 0.0f;
     private bool isDead = false;
     private bool isFumareta = false;
+    private bool isLooked = false;
     private SpriteRenderer sr = null;
     private Rigidbody2D rb = null;
     //private ObjectCollision oc = null;
@@ -32,6 +33,28 @@ public class daikonmandoragora : MonoBehaviour
         hp = HPBar.instance.currentHealth;
     }
 
+    void Update(){
+        if(sr.isVisible){
+            if(!isDead && !isLooked){
+                isLooked = true;
+                rb.WakeUp();
+                anim.Play("radissh_umari");
+            }
+        }
+        else{
+            isLooked = false;
+            rb.Sleep();
+        }
+
+        if(hp <= 0.0f){
+            anim.Play("radissh_die");
+            isDead = true;
+            capcol.enabled = false;
+            //boxcol.enabled = false;
+            Destroy(gameObject, 3f);
+        }
+    }
+
     
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -47,15 +70,7 @@ public class daikonmandoragora : MonoBehaviour
     {
         if(collision.tag == swordTag && !isDead){
             HP.UpdateHP(10.0f); // player kara kougekiryoku wo syutoku suru.
-            hp -= 10.0f;
-        }
-
-        if(hp <= 0.0f){
-            anim.Play("radissh_die");
-            isDead = true;
-            //capcol.enabled = false;
-            //boxcol.enabled = false;
-            Destroy(gameObject, 3f);
+            hp = hp - 10.0f;
         }
     }
 
