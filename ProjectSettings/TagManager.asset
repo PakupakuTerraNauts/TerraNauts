@@ -6,9 +6,7 @@ TagManager:
   tags:
   - Enemy
   - ground
-  - Sword
-  - Sakebigoe
-  layers:
+    layers:
   - Default
   - TransparentFX
   - Ignore Raycast
@@ -17,7 +15,7 @@ TagManager:
   - UI
   - Sword
   - Ground
-  - Enemy
+    - 
   - 
   - 
   - 
@@ -39,7 +37,7 @@ TagManager:
   - 
   - 
   - 
-  - background
+  -
   - 
   m_SortingLayers:
   - name: Default
