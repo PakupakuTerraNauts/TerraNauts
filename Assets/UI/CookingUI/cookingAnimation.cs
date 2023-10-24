@@ -24,6 +24,8 @@ public class cookingAnimation : MonoBehaviour
     public GameObject animationObj;
     public GameObject animationToggle;
 
+    public GameObject CTO_Obj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,7 @@ public class cookingAnimation : MonoBehaviour
         dishImage = _dishIcon.GetComponent<Image>();
         toggle = animationToggle.GetComponent<Toggle>();
         toggle.isOn = true;
+        CTO_Obj.SetActive(false);
     }
 
     // Update is called once per frame
@@ -49,6 +52,11 @@ public class cookingAnimation : MonoBehaviour
 
             StartCoroutine("Stop");
             
+        }
+        if(Input.GetKeyDown(KeyCode.C) && PushCookButton.cookOK && !animation)
+        {
+            CTO_Obj.SetActive(true);
+            StartCoroutine("CTO");
         }
 
         if(Input.GetKeyDown(KeyCode.Q))
@@ -86,5 +94,11 @@ public class cookingAnimation : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         _AnimationCanvas.SetActive(false);
+    }
+
+    IEnumerator CTO()
+    {
+        yield return new WaitForSeconds(1);
+        CTO_Obj.SetActive(false);
     }
 }
