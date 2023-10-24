@@ -18,10 +18,11 @@ public class cookingAnimation : MonoBehaviour
     Text cmp_Text;
     Text dishText;
     Image dishImage;
+    Toggle toggle;
 
     bool animation = true;
     public GameObject animationObj;
-    Text animationText;
+    public GameObject animationToggle;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,8 @@ public class cookingAnimation : MonoBehaviour
         cmp_Text = _CompleteText.GetComponent<Text>();
         dishText = _Ani_DishName.GetComponent<Text>();
         dishImage = _dishIcon.GetComponent<Image>();
-        animationText = animationObj.GetComponent<Text>();
+        toggle = animationToggle.GetComponent<Toggle>();
+        toggle.isOn = true;
     }
 
     // Update is called once per frame
@@ -54,11 +56,11 @@ public class cookingAnimation : MonoBehaviour
             if(animation)
             {
                 animation = false;
-                animationText.text = "アニメーションオフ";
+                toggle.isOn = false;
             }else
             {
                 animation = true;
-                animationText.text = "アニメーションオン";
+                toggle.isOn = true;
             }
         }
     }
