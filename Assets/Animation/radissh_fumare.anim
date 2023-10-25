@@ -103,7 +103,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: 
+    path:
     classID: 58
     script: {fileID: 0}
     flags: 0
@@ -180,7 +180,7 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
       isSerializeReferenceCurve: 0
-    pptrCurveMapping:
+        pptrCurveMapping:
     - {fileID: 21300000, guid: b780011c4fdfafc4dbd1e3b1d16d668e, type: 3}
     - {fileID: 21300000, guid: 42e63d8ac81843c43bc9cae35c00127b, type: 3}
     - {fileID: 21300000, guid: b780011c4fdfafc4dbd1e3b1d16d668e, type: 3}
@@ -189,7 +189,7 @@ AnimationClip:
     - {fileID: 21300000, guid: f2c8c7afc7f46514bbc8b94065ae9652, type: 3}
     - {fileID: 21300000, guid: d1efb263cd1ce4746a53788429f2b48d, type: 3}
     - {fileID: 21300000, guid: a48683332e40560418ea61c3b92c4112, type: 3}
-    - {fileID: 21300000, guid: 8774661b1300c034c80847d40ee59342, type: 3}
+        - {fileID: 21300000, guid: 8774661b1300c034c80847d40ee59342, type: 3}
     - {fileID: 21300000, guid: eb8191e06f6afa144aa1a21e12244f96, type: 3}
     - {fileID: 21300000, guid: eb8191e06f6afa144aa1a21e12244f96, type: 3}
   m_AnimationClipSettings:
@@ -299,7 +299,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: 
+    path:
     classID: 58
     script: {fileID: 0}
     flags: 0

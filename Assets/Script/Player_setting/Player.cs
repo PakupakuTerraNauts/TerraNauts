@@ -7,10 +7,11 @@ public class Player : MonoBehaviour
 {
     public groundCheck ground;
     public groundCheck head;
-    public float speed = 3;
-    private float gravity = 4;
+    public HPBar HP;
+    public float speed;
+    public float gravity;
     private float jumpSpeed = 6;
-    public float jumpHeight = 2;
+    private float jumpHeight = 2;
     private float jumpLimitTime = 3;
     public static int HP = 100;
     public static int nowHP = 100;
@@ -25,22 +26,26 @@ public class Player : MonoBehaviour
     private float jumpTime = 0.0f;
     private float continueTime = 0.0f;
     private float blinkTime = 0.0f;
+    private float invincibleTime = 0.0f;
     private bool isGround = false;
     private bool isJump = false;
     private bool isWalk = false;
     private bool isHead = false;
     private bool isDown = false;
-    private bool isNAttack = false;
+    //private bool isNAttack = false;
+    //private bool isAAttack = false;
+    private bool isAttack = false;
     private bool isContinue = false;
-    private bool nonDownAnim = false;
+    private bool isDamaged = false;
+    private bool coolTime = false;
+    //private bool nonDownAnim = false;
     private Animator anim = null;
     private Rigidbody2D rb = null;
     private CapsuleCollider2D capcol = null;
     private SpriteRenderer sr = null; 
     private string enemyTag = "Enemy";
     private string sakebigoe = "Sakebigoe";
-    private string hitAreaTag = "HitArea";
-
+    
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -49,52 +54,59 @@ public class Player : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
+
     private void Update(){
-        if(isContinue){
-            if(blinkTime > 0.2f){
-                sr.enabled = true;
-                blinkTime = 0.0f;
-            }
-            else if(blinkTime > 0.1f){
-                sr.enabled = false;
-            }
-            else{
-                sr.enabled = true;
+        if(!isDown){
+            isAttack = PlayerAttack();
+
+            if(isAttack){
+                if(isGround)
+                    anim.SetTrigger("nAttack_neko");
+                else if (!isGround)
+                    anim.SetTrigger("aAttack_neko");
+                
+                StartCoroutine("AttackCool");
             }
 
-            if(continueTime > 1.0f){
-                isContinue = false;
-                blinkTime = 0.0f;
-                continueTime = 0.0f;
-                sr.enabled = true;
-            }
-            else{
-                blinkTime += Time.deltaTime;
-                continueTime += Time.deltaTime;
+            if (isDamaged){
+                if(blinkTime > 0.2f){
+                    sr.enabled = true;
+                    blinkTime = 0.0f;
+                }
+                else if (blinkTime > 0.1f){
+                    sr.enabled = false;
+                }
+                else{
+                    sr.enabled = true;
+                }
+
+                if(continueTime > 1.0f){
+                    isDamaged = false;
+                    blinkTime = 0f;
+                    continueTime = 0f;
+                    sr.enabled = true;
+                }
+                else{
+                    blinkTime += Time.deltaTime;
+                    continueTime += Time.deltaTime;
+                }
             }
         }
+        
     }
+
 
     void FixedUpdate()
     {
         if(!isDown){
-            capcol = GetComponent<CapsuleCollider2D>();
-        }
-
-        if(/*!isDown*/true){
-            isNAttack = false;
             isGround = ground.IsGround();
             isHead = ground.IsGround();
-
-            if(isNAttack = PlayerNormalAttack()){
-                anim.SetTrigger("nAttack_neko");
-            }
 
             float xSpeed = GetXSpeed();
             float ySpeed = GetYSpeed();
 
             SetAnimation();
-
+            
             rb.velocity = new Vector2(xSpeed, ySpeed);
         }
         else{
@@ -102,22 +114,43 @@ public class Player : MonoBehaviour
         }
     }
 
+    #region//damage
+    private void OnCollisionEnter2D(Collision2D collision){
+           
+        if(collision.collider.tag == enemyTag && !isDamaged){
+            HP.UpdateHP(10.0f);         //contact damage
+            isDamaged = true;
+        }
+        
+    }
+// sabotenn toka ha contact damage ga takai kamo.
+
+    private void OnTriggerStay2D(Collider2D collision){
+        
+        if(collision.tag == sakebigoe && !isDamaged){
+            HP.UpdateHP(20.0f);         // daikonmandoragora's voice damage
+            isDamaged = true;
+        }
+
+    }
+
+    #endregion
+
 ///<summary>
 /// player's normal attack
 ///</summary>
-    private bool PlayerNormalAttack(){
-
-        if(Input.GetKey("return")){
+    private bool PlayerAttack(){
+        if(Input.GetKeyDown("return") && !isAttack){
             return true;
 
         }
         return false;
     }
 
+
 ///<summary>
 /// calculate Y conponent, return speed.
 ///</summary>
-
     private float GetYSpeed(){
         float verticalKey = Input.GetAxis("Vertical");
         bool wKey = Input.GetKey("w");
@@ -169,8 +202,6 @@ public class Player : MonoBehaviour
         bool rightKey = Input.GetKey("right");
         bool aKey = Input.GetKey("a");
         bool leftKey = Input.GetKey("left");
-
-        
 
         if(horizontalKey > 0 || rightKey || dKey){
             transform.localScale = new Vector3(2, 2, 2);
@@ -239,6 +270,11 @@ public class Player : MonoBehaviour
         anim.SetBool("jump_neko", isJump);
         anim.SetBool("ground_neko", isGround);
         anim.SetBool("walk_neko", isWalk);
+    }
+
+    private IEnumerator AttackCool(){
+        isAttack = false;
+        yield return new WaitForSeconds(5.0f);
     }
 
     IEnumerator PlayerDie()

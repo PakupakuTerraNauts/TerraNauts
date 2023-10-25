@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
-  - {fileID: 14}
+- {fileID: 14}
   - {fileID: 15}
   - {fileID: 12}
   - {fileID: 16}
@@ -296,7 +296,7 @@ MonoBehaviour:
     m_Text: Game
     m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
-  m_Pos:
+m_Pos:
     serializedVersion: 2
     x: 215
     y: 83
@@ -410,7 +410,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
-  m_SceneHierarchy:
+m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
@@ -940,7 +940,7 @@ MonoBehaviour:
     - {fileID: 125101126262471257, guid: 5f1358da78ea97247aefbf5aa2cbfc76, type: 2}
     - {fileID: 5379430651060588489, guid: e67a543f9fe796a4c96917a5edac70c4, type: 2}
     - {fileID: -1685425824245585347, guid: 472bdfab22d363445a6b844f73f92d65, type: 2}
-    m_ValueSerializationHelper:
+        m_ValueSerializationHelper:
     - e00: 1
       e01: 0
       e02: 0

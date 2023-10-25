@@ -148,7 +148,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 0
+inSlope: 0
         outSlope: 0
         tangentMode: 136
         weightedMode: 0
@@ -236,7 +236,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Offset.y
-    path: 
+    path:
     classID: 58
     script: {fileID: 0}
     flags: 0
@@ -261,7 +261,7 @@ AnimationClip:
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
     genericBindings:
-    - serializedVersion: 2
+- serializedVersion: 2
       path: 0
       attribute: 1
       script: {fileID: 0}
@@ -324,7 +324,7 @@ AnimationClip:
       isPPtrCurve: 0
       isIntCurve: 0
       isSerializeReferenceCurve: 0
-    - serializedVersion: 2
+- serializedVersion: 2
       path: 0
       attribute: 413499720
       script: {fileID: 0}
@@ -554,7 +554,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 0
+inSlope: 0
         outSlope: 0
         tangentMode: 136
         weightedMode: 0
@@ -642,7 +642,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Offset.y
-    path: 
+    path:
     classID: 58
     script: {fileID: 0}
     flags: 0

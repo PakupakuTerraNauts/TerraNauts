@@ -240,7 +240,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -377,7 +377,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -438,7 +438,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (19)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -499,7 +499,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -560,7 +560,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -804,7 +804,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (27)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -926,7 +926,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (22)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1170,7 +1170,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (38)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1353,7 +1353,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (39)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1466,7 +1466,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1930,7 +1930,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (34)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2095,7 +2095,7 @@ BoxCollider2D:
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ExcludeLayers:
+      m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
@@ -2256,7 +2256,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -66931,7 +66931,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -67114,7 +67114,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (20)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -67297,7 +67297,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (18)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -67358,7 +67358,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (21)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -67541,7 +67541,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (28)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -67602,7 +67602,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -68049,7 +68049,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (41)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -68742,7 +68742,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (24)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -69047,7 +69047,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (35)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -69108,7 +69108,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -69230,7 +69230,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (36)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -69554,7 +69554,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -69676,7 +69676,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (33)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -70164,7 +70164,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (29)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -70513,7 +70513,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (31)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -70818,7 +70818,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -71268,7 +71268,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (40)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -71329,7 +71329,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (17)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -71639,7 +71639,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (37)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -72043,7 +72043,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -72226,7 +72226,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (30)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -72409,7 +72409,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (26)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -72470,7 +72470,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (43)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -72629,7 +72629,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -72812,7 +72812,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -72995,7 +72995,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (16)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -73178,7 +73178,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (42)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -73461,7 +73461,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (32)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -73788,7 +73788,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (25)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -73910,7 +73910,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -73976,7 +73976,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya (23)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -74815,14 +74815,14 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
+    m_Name:
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
+    m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2131439091
+  --- !u!114 &2131439091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74885,7 +74885,7 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 143
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -75550,7 +75550,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_niwakokepittya
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+        m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -75558,8 +75558,8 @@ PrefabInstance:
 --- !u!1001 &9094178411292482992
 PrefabInstance:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
+      serializedVersion: 2
+    m_Modification:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:

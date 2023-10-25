@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1474342095607439652}
   - component: {fileID: 8697527383142275788}
   - component: {fileID: 7987183017175338642}
-  - component: {fileID: 9100923506664974221}
+- component: {fileID: 9100923506664974221}
   - component: {fileID: 286397172198059380}
   - component: {fileID: 8022097738084018225}
   m_Layer: 0
@@ -266,3 +266,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 9
+  

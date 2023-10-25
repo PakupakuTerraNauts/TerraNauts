@@ -30,7 +30,7 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
+- serializedVersion: 3
         time: 40.016666
         value: 1
         inSlope: Infinity
@@ -73,7 +73,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: 
+    path:
     classID: 58
     script: {fileID: 0}
     flags: 0
@@ -129,7 +129,7 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
       isSerializeReferenceCurve: 0
-    pptrCurveMapping:
+        pptrCurveMapping:
     - {fileID: 21300000, guid: b780011c4fdfafc4dbd1e3b1d16d668e, type: 3}
     - {fileID: 21300000, guid: 42e63d8ac81843c43bc9cae35c00127b, type: 3}
     - {fileID: 21300000, guid: b780011c4fdfafc4dbd1e3b1d16d668e, type: 3}
@@ -169,7 +169,7 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
+- serializedVersion: 3
         time: 40.016666
         value: 1
         inSlope: Infinity
@@ -212,7 +212,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: 
+    path:
     classID: 58
     script: {fileID: 0}
     flags: 0
