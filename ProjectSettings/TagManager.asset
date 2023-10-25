@@ -6,7 +6,10 @@ TagManager:
   tags:
   - Enemy
   - ground
-    layers:
+  - item
+  - recipe
+  - menu
+  layers:
   - Default
   - TransparentFX
   - Ignore Raycast

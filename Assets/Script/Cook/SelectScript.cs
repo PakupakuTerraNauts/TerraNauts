@@ -5,47 +5,44 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 //ボタンセレクトとプッシュ
-public class SelectScript : MonoBehaviour
+public class SelectScript:MonoBehaviour
 {
 
-    GameObject _gameObject;
+    public GameObject _gameObject;
     GameObject _firstObj;
     Button _firstButton;
-    GameObject _selectedObject;
-    Button button;
 
-    PushDishButton _pushDishButton;
+    public PushDishButton _pushDishButton;
+    GameObject selectObj;
+
+    GameObject beforObj;
 
     void Start()
     {
         //一番上のボタンをセレクト
-        _gameObject = GameObject.Find("RecipeContent_C");
-
-        if (_gameObject.transform.GetChild(0).gameObject != null)
+        if(_gameObject.transform.GetChild(1).gameObject != null)
         {
-            _firstObj = _gameObject.transform.GetChild(0).gameObject;
+            _firstObj = _gameObject.transform.GetChild(1).gameObject;
             _firstButton = _firstObj.GetComponent<Button>();
             _firstButton.Select();
         }
-            
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (EventSystem.current.currentSelectedGameObject)
+
+        if(EventSystem.current.currentSelectedGameObject && EventSystem.current.currentSelectedGameObject.tag == "item")
         {
-            _pushDishButton = GameObject.Find("PrefabCookButton").GetComponent<PushDishButton>();
-            _selectedObject = EventSystem.current.currentSelectedGameObject;
-            if(_selectedObject != null)
-            {
-                button = _selectedObject.GetComponent<Button>();
-                if(_selectedObject.name != "CookButton" && button != null)
-                {
-                    _pushDishButton.PushButton(button);
-                }
-            }
+            selectObj = EventSystem.current.currentSelectedGameObject;
+            _pushDishButton.PushButton(selectObj.GetComponent<Button>());
         }
-        
+        else if(EventSystem.current.currentSelectedGameObject && EventSystem.current.currentSelectedGameObject.tag != "item")
+        {
+            beforObj.GetComponent<Button>().Select();
+            _pushDishButton.PushButton(beforObj.GetComponent<Button>());
+        }
+
+        beforObj = selectObj;
     }
 }

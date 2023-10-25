@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -12,6 +13,14 @@ public class Player : MonoBehaviour
     private float jumpSpeed = 6;
     private float jumpHeight = 2;
     private float jumpLimitTime = 3;
+    public static int HP = 100;
+    public static int nowHP = 100;
+
+    public static int ATK = 100;
+    public static int DEF = 0;
+    public static int SPD = 100;
+    public static int CRITRATE = 50;
+    public static int CRITDMG = 50;
 
     private float jumpPos = 0.0f;
     private float jumpTime = 0.0f;
@@ -211,6 +220,49 @@ public class Player : MonoBehaviour
         return xSpeed;
     }
 
+
+    private bool IsContinueWaitin(){
+        return IsDownAnimEnd();
+    }
+
+    private bool IsDownAnimEnd(){
+        if(isDown && anim != null){
+            AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo(0);
+            if(currentState.IsName("neko_die")){
+                if(currentState.normalizedTime >= 1){
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+
+    public void ContinuePlayer(){
+        isDown = false;
+        anim.Play("neko_die");
+        isJump = false;
+        isWalk = false;
+        isContinue = true;
+    }
+    
+    private void OnCollisionEnter2D(Collision2D collision){
+        if(collision.collider.tag == enemyTag){
+            nowHP = nowHP - 10;
+        }
+        if(collision.collider.tag == sakebigoe){
+            nowHP = nowHP - 20;
+        }
+        
+        if(nowHP <= 0){
+            anim.Play("neko_die");
+            isDown = true;
+            StartCoroutine(PlayerDie());
+        }
+    }
+    
+    
 ///<summary>
 /// animation
 ///</summary>
@@ -223,6 +275,16 @@ public class Player : MonoBehaviour
     private IEnumerator AttackCool(){
         isAttack = false;
         yield return new WaitForSeconds(5.0f);
-        Debug.Log("アタッククールタイム チャージド");
     }
+
+    IEnumerator PlayerDie()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("GameOver");
+        nowHP = HP;
+        yield break;
+    }
+
+
 }
+

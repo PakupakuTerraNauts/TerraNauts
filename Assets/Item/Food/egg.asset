@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: egg
   _itemName: "\u5375\u30DC\u30FC\u30EB"
   _itemType: 0
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 2d2c4c3a26f5d4205ba1da4ca8e7441a, type: 3}
   _floor: 1
   foods: []
   status: []
