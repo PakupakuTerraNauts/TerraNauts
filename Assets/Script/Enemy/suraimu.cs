@@ -6,9 +6,9 @@ public class suraimu : MonoBehaviour
 {
     #region //variables
     public float gravity;
-    public HPBar HP;
+    //public HPBar HP;
 
-    private float hp = 0.0f;
+    //private float hp = 0.0f;
     private bool isDead = false;
     private Animator anim = null;
     private CircleCollider2D circol = null;
@@ -23,7 +23,7 @@ public class suraimu : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
 
-        hp = HPBar.instance.currentHealth;
+        //hp = HPBar.instance.currentHealth;
     }
 
     void Update(){
@@ -38,7 +38,7 @@ public class suraimu : MonoBehaviour
         }
     }
 
-
+/*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == swordTag && !isDead){
@@ -53,4 +53,5 @@ public class suraimu : MonoBehaviour
             Destroy(gameObject, 3f);
         }
     }
+    */
 }
