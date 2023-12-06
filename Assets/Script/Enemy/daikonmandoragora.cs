@@ -7,9 +7,9 @@ public class daikonmandoragora : MonoBehaviour
     #region //variables
     //public float speed;
     public float gravity;
-    public HPBar HP;
+    //public HPBar HP;
 
-    private float hp = 0.0f;
+    //private float hp = 0.0f;
     private bool isDead = false;
     private bool isFumareta = false;
     private bool isLooked = false;
@@ -30,7 +30,7 @@ public class daikonmandoragora : MonoBehaviour
         //oc = GetComponent<ObjectCollision>();
         capcol = GetComponent<CapsuleCollider2D>();
 
-        hp = HPBar.instance.currentHealth;
+        //hp = HPBar.instance.currentHealth;
     }
 
     void Update(){
@@ -39,19 +39,12 @@ public class daikonmandoragora : MonoBehaviour
                 isLooked = true;
                 rb.WakeUp();
                 anim.Play("radissh_umari");
+                rb.velocity = new Vector2(0, -gravity);
             }
         }
         else{
             isLooked = false;
             rb.Sleep();
-        }
-
-        if(hp <= 0.0f){
-            anim.Play("radissh_die");
-            isDead = true;
-            capcol.enabled = false;
-            //boxcol.enabled = false;
-            Destroy(gameObject, 3f);
         }
     }
 
@@ -66,14 +59,14 @@ public class daikonmandoragora : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+/*    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == swordTag && !isDead){
             HP.UpdateHP(10.0f); // player kara kougekiryoku wo syutoku suru.
             hp = hp - 10.0f;
         }
     }
-
+*/
     private IEnumerator ChangeTag(){
         Debug.Log("タグチェンジコルーチン");
         yield return new WaitForSeconds(5.0f);
