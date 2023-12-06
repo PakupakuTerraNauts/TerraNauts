@@ -55,20 +55,18 @@ public class kanikanioyabun : MonoBehaviour
             }
         }
         else{
-            //rb.sleep();
+            rb.Sleep();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
-        if(collision.collider.tag == swordTag){
-            nowHP = nowHP - Player.ATK;
+        if(collision.collider.tag == swordTag && !isDead){
+            nowHP = nowHP - ATK_player;
         }
-
         if(nowHP <= 0){
             anim.Play("kani_die");
             isDead = true;
-            //Destroy(GameObject, 3f);
+            Destroy(gameObject, 3f);
         }
     }
-
 }

@@ -16,11 +16,11 @@ public class Player : MonoBehaviour
     public static int HP = 100;
     public static int nowHP = 100;
 
-    public static int ATK = 100;
-    public static int DEF = 0;
-    public static int SPD = 100;
-    public static int CRITRATE = 50;
-    public static int CRITDMG = 50;
+    public static float ATK = 100;
+    public static float DEF = 0;
+    public static float SPD = 100;
+    public static float CRITRATE = 50;
+    public static float CRITDMG = 50;
 
     private float jumpPos = 0.0f;
     private float jumpTime = 0.0f;
@@ -42,13 +42,18 @@ public class Player : MonoBehaviour
     private SpriteRenderer sr = null; 
     private string enemyTag = "Enemy";
     private string sakebigoe = "Sakebigoe";
-    
+    // ignore collision
+    public butamogura buta;
+    private BoxCollider2D buta_col = null;
+
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         capcol = GetComponent<CapsuleCollider2D>();
         sr = GetComponent<SpriteRenderer>();
+        
+        buta_col = buta.boxcol;
     }
 
 
