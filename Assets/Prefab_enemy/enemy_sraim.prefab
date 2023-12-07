@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8434496031737765830}
   - component: {fileID: 1774757505401768869}
   - component: {fileID: 232620138789013954}
-  - component: {fileID: 1145450071608326838}
+  - component: {fileID: 3123229055413477026}
   m_Layer: 0
   m_Name: enemy_sraim
   m_TagString: Enemy
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4451197271024878643
 SpriteRenderer:
@@ -171,7 +171,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &1145450071608326838
+--- !u!114 &3123229055413477026
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,8 +180,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4273213815457045693}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6347012174a6743d194ed06c5bfc1088, type: 3}
+  m_Script: {fileID: 11500000, guid: 223d62dba46699546bd80176b1cb0951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: {fileID: 4534490885142806426, guid: f5ee8281215e0493e920d2293c12a575, type: 3}
-  rareItem: {fileID: 8744671341141900407, guid: e657b5041d0e54718bff5a7861fdcddf, type: 3}
+  gravity: 5
