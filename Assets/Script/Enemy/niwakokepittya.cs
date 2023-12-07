@@ -6,10 +6,10 @@ public class niwakokepittya : MonoBehaviour
 {
     #region //variables
     public float gravity;
-    public HPBar HP;
+    //public HPBar HP;
     public GameObject PlayerObject;
 
-    private float hp = 0.0f;
+    //private float hp = 0.0f;
     private float toriPosition_x = 0.0f;
     private float playerPosition_x = 0.0f;
     private bool isDead = false;
@@ -27,7 +27,7 @@ public class niwakokepittya : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
 
-        hp = HPBar.instance.currentHealth;
+        //hp = HPBar.instance.currentHealth;
     }
 
     void Update(){
@@ -49,7 +49,7 @@ public class niwakokepittya : MonoBehaviour
         }
     }
 
-
+/*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == swordTag && !isDead){
@@ -64,7 +64,7 @@ public class niwakokepittya : MonoBehaviour
             Destroy(gameObject, 3f);
         }
     }
-
+*/
     public void DirectJudge(){
         if(playerPosition_x > toriPosition_x && isLeft){
                     transform.localScale = new Vector3(-1, 1, 1);

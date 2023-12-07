@@ -9,10 +9,8 @@ public class butamogura : MonoBehaviour
     [Header ("速度")] public float speed;
 
     private bool isDead = false;
+    private bool isEndAnim = true;
 
-    private Vector3 butamoguraposition;
-
-    private Vector3 position_player;
     private float ATK_player;
     private Animator anim = null;
     private Rigidbody2D rb = null;
@@ -20,6 +18,7 @@ public class butamogura : MonoBehaviour
     private string swordTag = "Sword";
     // playerオブジェクト取得　インスペクターで操作
     [Header ("どこに向かって攻撃するか(プレイヤー)")] public GameObject Player;
+    [Header ("自分")] public GameObject Butamogura;
     // ステートAIに使用
     private enum State{
         inGround,
@@ -37,8 +36,7 @@ public class butamogura : MonoBehaviour
     }
 
     void Update(){
-        butamoguraposition = this.gameObject.transform.position;
-
+        
         if(sr.isVisible){
             if(!isDead){
                 rb.WakeUp();
@@ -48,7 +46,9 @@ public class butamogura : MonoBehaviour
                         inGroundUpdate();
                         break;
                     case State.Move:
-                        MoveUpdate();
+                        if(isEndAnim){
+                            MoveUpdate();
+                        }
                         break;
                     case State.Attack:
                         AttackUpdate();
@@ -62,6 +62,11 @@ public class butamogura : MonoBehaviour
         else{
             rb.Sleep();
         }
+    }
+
+    private void endAnimation(){
+        isEndAnim = true;
+        return;
     }
 
     ///<summary>
@@ -89,19 +94,23 @@ public class butamogura : MonoBehaviour
     /// 移動→攻撃
     /// </summary>
     private void MoveUpdate(){
+        
         // 距離を詰める
-        butamoguraposition = Vector3.MoveTowards(butamoguraposition, Player.transform.position, speed*Time.deltaTime); // 自分の位置, ターゲットの位置, 速度
-
-        if(Vector3.Distance(butamoguraposition, Player.transform.position) < 2.0f){
+        Butamogura.transform.position = Vector3.MoveTowards(Butamogura.transform.position, Player.transform.position, speed); // 自分の位置, ターゲットの位置, 速度
+        if(Vector3.Distance(Butamogura.transform.position, Player.transform.position) < 4.0f){
             ChangeState(State.Attack);
             return;
         }
+        // スピード0.1でもコルーチンなしだと速すぎる
+        // クールタイムがないと上下にガクガクする
+        StartCoroutine("MoveCoolTime");
     }
     /// <summary>
     /// 攻撃→移動(待機)
     /// </summary>
     private void AttackUpdate(){
         anim.Play("buta_attack");
+        isEndAnim = false;
 
         if(sr.isVisible){
             ChangeState(State.Move);
@@ -111,5 +120,9 @@ public class butamogura : MonoBehaviour
             ChangeState(State.inGround);
             return;
         }
+    }
+
+    private IEnumerator MoveCoolTime(){
+        yield return new WaitForSeconds(10.0f);
     }
 }
