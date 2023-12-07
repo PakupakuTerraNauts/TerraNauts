@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public groundCheck ground;
     public groundCheck head;
-    //public HPBar HP;
+    // public HPBar HP;
     public float speed;
     public float gravity;
     private float jumpSpeed = 6;
@@ -32,13 +32,10 @@ public class Player : MonoBehaviour
     private bool isWalk = false;
     private bool isHead = false;
     private bool isDown = false;
-    //private bool isNAttack = false;
-    //private bool isAAttack = false;
     private bool isAttack = false;
     private bool isContinue = false;
     private bool isDamaged = false;
     private bool coolTime = false;
-    //private bool nonDownAnim = false;
     private Animator anim = null;
     private Rigidbody2D rb = null;
     private CapsuleCollider2D capcol = null;
@@ -118,8 +115,8 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(0, -gravity);
         }
     }
-
-/*    #region//damage
+/*
+    #region//damage
     private void OnCollisionEnter2D(Collision2D collision){
            
         if(collision.collider.tag == enemyTag && !isDamaged){
@@ -139,8 +136,8 @@ public class Player : MonoBehaviour
 
     }
 
-    #endregion*/
-
+    #endregion
+*/
 ///<summary>
 /// player's normal attack
 ///</summary>
