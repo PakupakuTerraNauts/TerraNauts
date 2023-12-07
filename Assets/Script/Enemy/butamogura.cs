@@ -42,7 +42,7 @@ public class butamogura : MonoBehaviour
         if(sr.isVisible){
             if(!isDead){
                 rb.WakeUp();
-                switch(State)
+                switch(nowState)
                 {
                     case State.inGround:
                         inGroundUpdate();
