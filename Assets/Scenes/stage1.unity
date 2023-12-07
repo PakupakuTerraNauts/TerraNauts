@@ -643,6 +643,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -1073,6 +1105,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -1640,6 +1704,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 34
@@ -1765,6 +1861,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -2110,6 +2238,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -66678,6 +66838,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -66926,6 +67118,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 42
@@ -66995,6 +67219,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -67182,6 +67438,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -67614,6 +67902,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -67961,6 +68281,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 57
@@ -68214,6 +68566,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 45
@@ -68432,6 +68816,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -68497,6 +68913,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 46
@@ -68561,6 +69009,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -68801,6 +69281,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -68865,6 +69377,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -68991,6 +69535,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -69179,10 +69755,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (43)
       objectReference: {fileID: 0}
-    - target: {fileID: 1981204065453202354, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
-      propertyPath: _HPSlider
-      value: 
-      objectReference: {fileID: 457998529}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -69511,6 +70083,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -69636,6 +70240,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -70056,131 +70692,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 646ea9b1695b8214bb6f4e832f6a9bee, type: 3}
---- !u!1001 &1213203857
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 708821134}
-    m_Modifications:
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172426960701344603, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1925770955}
-    - target: {fileID: 1700466305120930236, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_Name
-      value: Enemy_HPCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3662587405106448613, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: _HPSlider
-      value: 
-      objectReference: {fileID: 86342219}
-    - target: {fileID: 7202064126566332986, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
 --- !u!1001 &1218056343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70420,6 +70931,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -70485,6 +71028,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -70549,6 +71124,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -70741,6 +71348,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -71117,6 +71756,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 51
@@ -71242,6 +71913,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -71636,6 +72339,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -71767,6 +72502,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -71820,141 +72587,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
---- !u!1001 &1480301993
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1289886919}
-    m_Modifications:
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.0025
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.0025
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.0025
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172426960701344603, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1925770955}
-    - target: {fileID: 1700466305120930236, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_Name
-      value: Enemy_HPCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3662587405106448613, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: _HPSlider
-      value: 
-      objectReference: {fileID: 1480301995}
-    - target: {fileID: 7202064126566332986, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
---- !u!224 &1480301994 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-  m_PrefabInstance: {fileID: 1480301993}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1480301995 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3795292884428426713, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-  m_PrefabInstance: {fileID: 1480301993}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1499782571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72432,6 +73064,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -72619,6 +73283,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -72683,6 +73379,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -73030,6 +73758,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 55
@@ -73094,6 +73854,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -73221,6 +74013,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 44
@@ -73285,6 +74109,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -73411,6 +74267,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -73643,8 +74531,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_sraim (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1145450071608326838, guid: 646ea9b1695b8214bb6f4e832f6a9bee, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2455396234104476976, guid: 646ea9b1695b8214bb6f4e832f6a9bee, type: 3}
@@ -73747,8 +74634,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_sraim
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1145450071608326838, guid: 646ea9b1695b8214bb6f4e832f6a9bee, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2455396234104476976, guid: 646ea9b1695b8214bb6f4e832f6a9bee, type: 3}
@@ -73892,6 +74778,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -74604,6 +75522,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 48
@@ -74668,6 +75618,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -74810,6 +75792,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 53
@@ -74875,6 +75889,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -74939,6 +75985,38 @@ PrefabInstance:
     - target: {fileID: 354150525770838197, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_Name
       value: enemy_daikonmandoragora (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812393379377696507, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
@@ -75106,141 +76184,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2067276402
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 421056373}
-    m_Modifications:
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.0025
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.0025
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.0025
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172426960701344603, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1925770955}
-    - target: {fileID: 1700466305120930236, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_Name
-      value: Enemy_HPCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3662587405106448613, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: _HPSlider
-      value: 
-      objectReference: {fileID: 2067276404}
-    - target: {fileID: 7202064126566332986, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
---- !u!224 &2067276403 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1057529729170709932, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-  m_PrefabInstance: {fileID: 2067276402}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2067276404 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3795292884428426713, guid: a45b77c098eb1437888280290f1f1d6c, type: 3}
-  m_PrefabInstance: {fileID: 2067276402}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2090602589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75489,10 +76432,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_daikonmandoragora
       objectReference: {fileID: 0}
-    - target: {fileID: 1981204065453202354, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
-      propertyPath: _HPSlider
-      value: 
-      objectReference: {fileID: 576976979}
     - target: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
       propertyPath: m_RootOrder
       value: 13

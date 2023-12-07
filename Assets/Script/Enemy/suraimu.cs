@@ -6,7 +6,6 @@ public class suraimu : MonoBehaviour
 {
     #region //variables
     public float gravity;
-
     private bool isDead = false;
     
     private Animator anim = null;

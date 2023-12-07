@@ -4,11 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - ground
+  - Enemy
   - item
   - recipe
-  - menu
   layers:
   - Default
   - TransparentFX
@@ -16,9 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Sword
-  - Ground
-    - 
+  - enemy
   - 
   - 
   - 
@@ -40,7 +37,9 @@ TagManager:
   - 
   - 
   - 
-  -
+  - 
+  - 
+  - 
   - 
   m_SortingLayers:
   - name: Default
