@@ -20,7 +20,7 @@ public class kanikanioyabun : MonoBehaviour
     private Animator anim = null;
     
 
-    public float ATK_player = Player.ATK;
+    private float ATK_player = Player.ATK;
     private string swordTag = "Sword";
     #endregion
 

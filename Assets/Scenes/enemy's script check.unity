@@ -2127,52 +2127,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!1 &1350123767 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7878340349147535364, guid: 4efa27667a33da847914d3709e7ac88d, type: 3}
-  m_PrefabInstance: {fileID: 31410380318155592}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &1350123769
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1350123767}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &1350123770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1350123767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71c7255ce16402843981050b8809bff3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: 5
-  speed: 3
 --- !u!1 &1851171235 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7536202179305582385, guid: 57c11d6f6b5e2994ea629a344ef050f8, type: 3}
@@ -2190,10 +2144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f49d284f8d16c488f39b63439f9325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 5
-  speed: 4
-  boxcol: {fileID: 0}
-  Player: {fileID: 699703028}
 --- !u!50 &1851171241
 Rigidbody2D:
   serializedVersion: 4
@@ -2318,28 +2268,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6490771607372550264, guid: 4efa27667a33da847914d3709e7ac88d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7878340349147535364, guid: 4efa27667a33da847914d3709e7ac88d, type: 3}
       propertyPath: m_Name
       value: enemy_kanikanioyabun
       objectReference: {fileID: 0}
-    - target: {fileID: 7878340349147535364, guid: 4efa27667a33da847914d3709e7ac88d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7878340349147535364, guid: 4efa27667a33da847914d3709e7ac88d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1350123769}
-    - targetCorrespondingSourceObject: {fileID: 7878340349147535364, guid: 4efa27667a33da847914d3709e7ac88d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1350123770}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4efa27667a33da847914d3709e7ac88d, type: 3}
 --- !u!1001 &1189614804177363843
 PrefabInstance:
@@ -2673,6 +2609,38 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2805846087967646894, guid: 57c11d6f6b5e2994ea629a344ef050f8, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805846087967646894, guid: 57c11d6f6b5e2994ea629a344ef050f8, type: 3}
+      propertyPath: m_Points.Array.data[0].x
+      value: -1.0271304
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805846087967646894, guid: 57c11d6f6b5e2994ea629a344ef050f8, type: 3}
+      propertyPath: m_Points.Array.data[0].y
+      value: -1.2842008
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805846087967646894, guid: 57c11d6f6b5e2994ea629a344ef050f8, type: 3}
+      propertyPath: m_Points.Array.data[1].x
+      value: -0.077837944
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805846087967646894, guid: 57c11d6f6b5e2994ea629a344ef050f8, type: 3}
+      propertyPath: m_Points.Array.data[1].y
+      value: -1.2336668
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805846087967646894, guid: 57c11d6f6b5e2994ea629a344ef050f8, type: 3}
+      propertyPath: m_Points.Array.data[2].x
+      value: 0.7969363
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805846087967646894, guid: 57c11d6f6b5e2994ea629a344ef050f8, type: 3}
+      propertyPath: m_Points.Array.data[2].y
+      value: -1.2883029
+      objectReference: {fileID: 0}
+    - target: {fileID: 6899274086483604594, guid: 57c11d6f6b5e2994ea629a344ef050f8, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 699703028}
     - target: {fileID: 7536202179305582385, guid: 57c11d6f6b5e2994ea629a344ef050f8, type: 3}
       propertyPath: m_Name
       value: enemy_butamogura

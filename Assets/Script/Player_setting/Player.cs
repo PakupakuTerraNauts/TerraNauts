@@ -42,9 +42,6 @@ public class Player : MonoBehaviour
     private SpriteRenderer sr = null; 
     private string enemyTag = "Enemy";
     private string sakebigoe = "Sakebigoe";
-    // ignore collision
-    public butamogura buta;
-    private BoxCollider2D buta_col = null;
 
     void Start()
     {
@@ -52,8 +49,6 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         capcol = GetComponent<CapsuleCollider2D>();
         sr = GetComponent<SpriteRenderer>();
-        
-        buta_col = buta.boxcol;
     }
 
 
