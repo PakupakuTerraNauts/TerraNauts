@@ -41,6 +41,7 @@ public class niwakokepittya : MonoBehaviour
             if(!isDead){
                 rb.WakeUp();
                 anim.Play("tori_pitch");
+                rb.velocity = new Vector2(0, -gravity);
             }
         }
         else{

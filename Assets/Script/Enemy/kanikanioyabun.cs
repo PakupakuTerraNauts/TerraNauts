@@ -7,10 +7,10 @@ public class kanikanioyabun : MonoBehaviour
     #region // variables
     public float gravity;
     public float speed;
-    private float second = 0.0f;
     public float nowHP;
 
-    public float ATK_player = Player.ATK;
+    private float second;
+
 
     private bool isDead = false;
     private bool isLeft = false;
@@ -18,9 +18,12 @@ public class kanikanioyabun : MonoBehaviour
     private Rigidbody2D rb = null;
     private SpriteRenderer sr = null;
     private Animator anim = null;
+    
 
+    public float ATK_player = Player.ATK;
     private string swordTag = "Sword";
     #endregion
+
 
     void Start(){
         rb = GetComponent<Rigidbody2D>();

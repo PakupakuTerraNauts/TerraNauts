@@ -6,10 +6,8 @@ public class suraimu : MonoBehaviour
 {
     #region //variables
     public float gravity;
-    //public HPBar HP;
-
-    //private float hp = 0.0f;
     private bool isDead = false;
+    
     private Animator anim = null;
     private CircleCollider2D circol = null;
     private Rigidbody2D rb = null;
@@ -22,8 +20,6 @@ public class suraimu : MonoBehaviour
         circol = GetComponent<CircleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-
-        //hp = HPBar.instance.currentHealth;
     }
 
     void Update(){
@@ -31,6 +27,7 @@ public class suraimu : MonoBehaviour
             if(!isDead){
                 rb.WakeUp();
                 anim.Play("suraimu_furueru");
+                rb.velocity = new Vector2(0, -gravity);
             }
         }
         else{

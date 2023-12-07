@@ -251,8 +251,6 @@ public class Player : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision){
 
-        Physics2D.IgnoreCollision(capcol, buta_col);
-
         if(collision.collider.tag == enemyTag){
             nowHP = nowHP - 10;
         }
@@ -290,6 +288,4 @@ public class Player : MonoBehaviour
         yield break;
     }
 
-
 }
-

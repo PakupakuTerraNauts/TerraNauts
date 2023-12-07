@@ -133,7 +133,8 @@ GameObject:
   - component: {fileID: 2068537238519845894}
   - component: {fileID: 864682664187668825}
   - component: {fileID: 1174305833296853537}
-    m_Layer: 0
+  - component: {fileID: 4132849772957616531}
+  m_Layer: 0
   m_Name: enemy_niwakokepittya
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -153,8 +154,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2448961188950974137}
-    m_Father: {fileID: 0}
-  m_RootOrder: 61
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7864426173593029205
 SpriteRenderer:
@@ -279,7 +280,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -291,3 +292,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &4132849772957616531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4143304229097219757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d821677fa424bf4394b19d95339b993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: 5
+  HP: {fileID: 0}
+  PlayerObject: {fileID: 0}

@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class butamogura : MonoBehaviour
 {
-    
     #region // variables
-    [Header ("é‡åŠ›")] public float gravity;
-    [Header ("é€Ÿåº¦")] public float speed;
-    [Header ("HP")] public float nowHP;
-
-    public float ATK_player = Player.ATK;
+    [Header ("d—Í")] public float gravity;
+    [Header ("‘¬“x")] public float speed;
 
     private bool isDead = false;
 
-    public BoxCollider2D boxcol = null;
+    private Vector3 butamoguraposition;
+
+    private Vector3 position_player;
+    private float ATK_player;
     private Animator anim = null;
     private Rigidbody2D rb = null;
     private SpriteRenderer sr = null;
     private string swordTag = "Sword";
-    // playerã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå–å¾—ã€€ã‚¤ãƒ³ã‚¹ãƒšã‚¯ã‚¿ãƒ¼ã§æ“ä½œ 
-    [Header ("ã©ã“ã«å‘ã‹ã£ã¦æ”»æ’ƒã™ã‚‹ã‹(ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼)")] public Player player;
-    
-    // ã‚¹ãƒ†ãƒ¼ãƒˆAIã«ä½¿ç”¨ 
+    // playerƒIƒuƒWƒFƒNƒgæ“¾@ƒCƒ“ƒXƒyƒNƒ^[‚Å‘€ì
+    [Header ("‚Ç‚±‚ÉŒü‚©‚Á‚ÄUŒ‚‚·‚é‚©(ƒvƒŒƒCƒ„[)")] public GameObject Player;
+    // ƒXƒe[ƒgAI‚Ég—p
     private enum State{
         inGround,
         Move,
@@ -30,18 +28,17 @@ public class butamogura : MonoBehaviour
     }
     private State nowState = State.inGround;
     private State nextState = State.inGround;
-    private Vector3 playerPosition = new Vector3(0.0f, 0.0f, 0.0f);
-    private Vector3 butamoguraPosition;
     #endregion
 
-    private void Start(){
-        boxcol = GetComponent<BoxCollider2D>();
+    void Start(){
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
     }
 
     void Update(){
+        butamoguraposition = this.gameObject.transform.position;
+
         if(sr.isVisible){
             if(!isDead){
                 rb.WakeUp();
@@ -63,23 +60,22 @@ public class butamogura : MonoBehaviour
             }
         }
         else{
-
             rb.Sleep();
         }
     }
 
     ///<summary>
-    /// é·ç§»ã™ã‚‹ã‚¹ãƒ†ãƒ¼ãƒˆã®è¨­å®š 
+    /// ‘JˆÚ‚·‚éƒXƒe[ƒg‚Ìİ’è
     ///</summary>
-    void ChangeState(State next){
+    private void ChangeState(State next){
         nextState = next;
     }
 
 
     /// <summary>
-    /// å¾…æ©Ÿâ†’ç§»å‹• 
+    /// ‘Ò‹@¨ˆÚ“®
     /// </summary>
-    void inGroundUpdate(){
+    private void inGroundUpdate(){
         if(sr.isVisible){
             rb.WakeUp();
             ChangeState(State.Move);
@@ -90,23 +86,21 @@ public class butamogura : MonoBehaviour
         }
     }
     /// <summary>
-    /// ç§»å‹•â†’æ”»æ’ƒ 
+    /// ˆÚ“®¨UŒ‚
     /// </summary>
-    void MoveUpdate(){
-        // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¨ã¶ãŸã®ä½ç½®ã‚’æ›´æ–° 
-        playerPosition = player.transform.position;
-        butamoguraPosition = this.transform.position;
-        // è·é›¢ã‚’è©°ã‚ã‚‹ 
-        butamoguraPosition = Vector3.MoveTowards(butamoguraPosition, playerPosition, speed); // è‡ªåˆ†ã®ä½ç½®, ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®ä½ç½®, é€Ÿåº¦ 
+    private void MoveUpdate(){
+        // ‹——£‚ğ‹l‚ß‚é
+        butamoguraposition = Vector3.MoveTowards(butamoguraposition, Player.transform.position, speed*Time.deltaTime); // ©•ª‚ÌˆÊ’u, ƒ^[ƒQƒbƒg‚ÌˆÊ’u, ‘¬“x
 
-        if(Vector3.Distance(butamoguraPosition, playerPosition) < 2.0f){
+        if(Vector3.Distance(butamoguraposition, Player.transform.position) < 2.0f){
             ChangeState(State.Attack);
             return;
         }
     }
     /// <summary>
-    /// æ”»æ’ƒâ†’ç§»å‹•(å¾…æ©Ÿ) 
-    void AttackUpdate(){
+    /// UŒ‚¨ˆÚ“®(‘Ò‹@)
+    /// </summary>
+    private void AttackUpdate(){
         anim.Play("buta_attack");
 
         if(sr.isVisible){
@@ -114,20 +108,8 @@ public class butamogura : MonoBehaviour
             return;
         }
         else{
-            anim.Play("buta_default");
             ChangeState(State.inGround);
             return;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision){
-        if(collision.collider.tag == swordTag && !isDead){
-            nowHP = nowHP - ATK_player;
-        }
-        if(nowHP <= 0){
-            anim.Play("buta_die");
-            isDead = true;
-            Destroy(gameObject, 3f);
         }
     }
 }

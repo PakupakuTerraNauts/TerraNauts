@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7987183017175338642}
   - component: {fileID: 286397172198059380}
   - component: {fileID: 9100923506664974221}
-  - component: {fileID: 710412470498234940}
+  - component: {fileID: 4518528997996607840}
   m_Layer: 0
   m_Name: enemy_daikonmandoragora
   m_TagString: Enemy
@@ -37,7 +37,7 @@ Transform:
   m_Children:
   - {fileID: 2812393379377696507}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &269727774310172092
 SpriteRenderer:
@@ -207,7 +207,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -254,7 +254,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -1.5}
   serializedVersion: 2
   m_Radius: 2.56
---- !u!114 &710412470498234940
+--- !u!114 &4518528997996607840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f9d017d1d7256438a020157b286903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 9
+  gravity: 5
 --- !u!1001 &3002415851570025303
 PrefabInstance:
   m_ObjectHideFlags: 0
