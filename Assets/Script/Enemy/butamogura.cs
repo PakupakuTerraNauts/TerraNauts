@@ -11,13 +11,16 @@ public class butamogura : MonoBehaviour
     private bool isDead = false;
     private bool isEndAnim = true;
 
-    private float ATK_player;
+    private float hp = 0.0f;
+    private float ATK_player = 0.0f;
+
+    private HPBar HP;
     private Animator anim = null;
     private Rigidbody2D rb = null;
     private SpriteRenderer sr = null;
     private string swordTag = "Sword";
     // playerオブジェクト取得　インスペクターで操作
-    [Header ("どこに向かって攻撃するか(プレイヤー)")] public GameObject Player;
+    [Header ("どこに向かって攻撃するか(プレイヤー)")] public GameObject player;
     [Header ("自分")] public GameObject Butamogura;
     // ステートAIに使用
     private enum State{
@@ -33,6 +36,10 @@ public class butamogura : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        HP = GetComponent<HPBar>();
+
+        ATK_player = Player.ATK;
+        hp = HPBar.instance.currentHealth;
     }
 
     void Update(){
@@ -96,8 +103,8 @@ public class butamogura : MonoBehaviour
     private void MoveUpdate(){
         
         // 距離を詰める
-        Butamogura.transform.position = Vector3.MoveTowards(Butamogura.transform.position, Player.transform.position, speed); // 自分の位置, ターゲットの位置, 速度
-        if(Vector3.Distance(Butamogura.transform.position, Player.transform.position) < 4.0f){
+        Butamogura.transform.position = Vector3.MoveTowards(Butamogura.transform.position, player.transform.position, speed); // 自分の位置, ターゲットの位置, 速度
+        if(Vector3.Distance(Butamogura.transform.position, player.transform.position) < 4.0f){
             ChangeState(State.Attack);
             return;
         }
@@ -124,5 +131,19 @@ public class butamogura : MonoBehaviour
 
     private IEnumerator MoveCoolTime(){
         yield return new WaitForSeconds(10.0f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == swordTag && !isDead){
+            HP.UpdateHP(ATK_player);
+            hp = hp - ATK_player;
+        }
+        
+        if(hp <= 0.0f){
+            anim.Play("buta_die");
+            isDead = true;
+            Destroy(gameObject, 3f);
+        }
     }
 }

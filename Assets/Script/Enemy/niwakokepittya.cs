@@ -6,10 +6,11 @@ public class niwakokepittya : MonoBehaviour
 {
     #region //variables
     public float gravity;
-    //public HPBar HP;
+    private HPBar HP;
     public GameObject PlayerObject;
 
-    //private float hp = 0.0f;
+    private float ATK_player = 0.0f;
+    private float hp = 0.0f;
     private float toriPosition_x = 0.0f;
     private float playerPosition_x = 0.0f;
     private bool isDead = false;
@@ -26,8 +27,10 @@ public class niwakokepittya : MonoBehaviour
         capcol = GetComponent<CapsuleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        HP = GetComponent<HPBar>();
 
-        //hp = HPBar.instance.currentHealth;
+        ATK_player = Player.ATK;
+        hp = HPBar.instance.currentHealth;
     }
 
     void Update(){
@@ -49,12 +52,11 @@ public class niwakokepittya : MonoBehaviour
         }
     }
 
-/*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == swordTag && !isDead){
-            HP.UpdateHP(10.0f);     //player no kougekiryoku wo tukutte koko ni ireru.
-            hp -= 10.0f;            //koko mo kougekiryoku.
+            HP.UpdateHP(ATK_player);
+            hp = hp - ATK_player;
         }
         
         if(hp <= 0.0f){
@@ -64,7 +66,7 @@ public class niwakokepittya : MonoBehaviour
             Destroy(gameObject, 3f);
         }
     }
-*/
+
     public void DirectJudge(){
         if(playerPosition_x > toriPosition_x && isLeft){
                     transform.localScale = new Vector3(-1, 1, 1);

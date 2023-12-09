@@ -6,12 +6,17 @@ public class suraimu : MonoBehaviour
 {
     #region //variables
     public float gravity;
+    private float hp = 0.0f;
+    private float ATK_player = 0.0f;
+
     private bool isDead = false;
     
+    private HPBar HP;
     private Animator anim = null;
     private CircleCollider2D circol = null;
     private Rigidbody2D rb = null;
     private SpriteRenderer sr = null;
+
     private string swordTag = "Sword";
     #endregion
 
@@ -20,6 +25,10 @@ public class suraimu : MonoBehaviour
         circol = GetComponent<CircleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        HP = GetComponent<HPBar>();
+
+        ATK_player = Player.ATK;
+        hp = HPBar.instance.currentHealth;
     }
 
     void Update(){
@@ -35,12 +44,12 @@ public class suraimu : MonoBehaviour
         }
     }
 
-/*
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == swordTag && !isDead){
-            HP.UpdateHP(10.0f);     //player no kougekiryoku wo tukutte koko ni ireru.
-            hp = hp - 10.0f;            //koko mo kougekiryoku.
+            HP.UpdateHP(ATK_player);
+            hp = hp - ATK_player;
         }
         
         if(hp <= 0.0f){
@@ -50,5 +59,4 @@ public class suraimu : MonoBehaviour
             Destroy(gameObject, 3f);
         }
     }
-    */
 }

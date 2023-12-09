@@ -7,20 +7,20 @@ public class kanikanioyabun : MonoBehaviour
     #region // variables
     public float gravity;
     public float speed;
-    public float nowHP;
 
     private float second;
-
+    private float hp = 0.0f;
 
     private bool isDead = false;
     private bool isLeft = false;
+    private float ATK_player = 0.0f;
+
+    private HPBar HP;
 
     private Rigidbody2D rb = null;
     private SpriteRenderer sr = null;
     private Animator anim = null;
     
-
-    private float ATK_player = Player.ATK;
     private string swordTag = "Sword";
     #endregion
 
@@ -29,11 +29,16 @@ public class kanikanioyabun : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        HP = GetComponent<HPBar>();
+
+        ATK_player = Player.ATK;
+        hp = HPBar.instance.currentHealth;
     }
 
     void FixedUpdate(){
         second += Time.deltaTime;
         if(sr.isVisible){
+            rb.velocity = new Vector2(0, -gravity);
             if(!isDead){
                 rb.WakeUp();
                 anim.Play("kani_default");
@@ -59,11 +64,12 @@ public class kanikanioyabun : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision){
-        if(collision.collider.tag == swordTag && !isDead){
-            nowHP = nowHP - ATK_player;
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.tag == swordTag && !isDead){
+            HP.UpdateHP(ATK_player);
+            hp = hp - ATK_player;
         }
-        if(nowHP <= 0){
+        if(hp <= 0){
             anim.Play("kani_die");
             isDead = true;
             Destroy(gameObject, 3f);

@@ -7,16 +7,15 @@ public class kinokohoushi : MonoBehaviour
     # region // variables
     // 動かない　float重力のみ
     public float gravity;
-    public float nowHP;
+    private float hp = 0.0f;
+    private float ATK_player = 0.0f;
 
     private bool isDead = false;
 
+    private HPBar HP;
     private Rigidbody2D rb = null;
     private Animator anim = null;
     private SpriteRenderer sr = null;
-
-
-    public float ATK_player = Player.ATK;
 
     private string swordTag = "Sword";
     # endregion
@@ -25,6 +24,9 @@ public class kinokohoushi : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+
+        hp = HPBar.instance.currentHealth;
+        ATK_player = Player.ATK;
     }
 
     // アニメーション流すだけなのでUpdate
@@ -41,10 +43,11 @@ public class kinokohoushi : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.collider.tag == swordTag){
-            nowHP = nowHP - ATK_player;
+            HP.UpdateHP(ATK_player);
+            hp = hp - ATK_player;
         }
 
-        if(nowHP <= 0){
+        if(hp <= 0){
             anim.Play("kinoko_die");
             isDead = true;
             //Destroy(GameObject, 2f);

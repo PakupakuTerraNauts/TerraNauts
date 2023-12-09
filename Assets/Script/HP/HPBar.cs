@@ -11,7 +11,7 @@ public class HPBar : MonoBehaviour
     public float currentHealth;
     public static HPBar instance;
 
-    void Awake(){
+    public void Awake(){
         currentHealth = maxHealth;
         if(instance == null){
             instance = this;

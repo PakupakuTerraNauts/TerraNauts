@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - item
   - recipe
+  - Sword
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - Water
   - UI
   - enemy
-  - 
-  - 
+  - HPbar
+  - HPgauge
   - 
   - 
   - 

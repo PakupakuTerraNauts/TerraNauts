@@ -13,14 +13,14 @@ public class Player : MonoBehaviour
     private float jumpSpeed = 6;
     private float jumpHeight = 2;
     private float jumpLimitTime = 3;
-    public static int HP = 100;
-    public static int nowHP = 100;
+    public static float HP = 100;
+    public static float nowHP = 100;
 
-    public static float ATK = 100;
-    public static float DEF = 0;
-    public static float SPD = 100;
-    public static float CRITRATE = 50;
-    public static float CRITDMG = 50;
+    public static float ATK = 100.0f;
+    public static float DEF = 0.0f;
+    public static float SPD = 100.0f;
+    public static float CRITRATE = 50.0f;
+    public static float CRITDMG = 50.0f;
 
     private float jumpPos = 0.0f;
     private float jumpTime = 0.0f;

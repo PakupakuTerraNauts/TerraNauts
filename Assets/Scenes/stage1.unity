@@ -72056,24 +72056,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3136481711131276926, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
   m_PrefabInstance: {fileID: 9094178411292482992}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1370699124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370699117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bca82a0f172e04a48aadbfebeb0ebea7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerFoodManager: {fileID: 1876327029}
-  _playerRecipeManager: {fileID: 1876327028}
-  meatObject: {fileID: 1907639658}
-  waterObject: {fileID: 1231301318}
-  grassObject: {fileID: 725826071}
-  HPObject: {fileID: 1445258700}
 --- !u!1001 &1382467949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77087,6 +77069,30 @@ PrefabInstance:
       propertyPath: gravity
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
+      propertyPath: HPObject
+      value: 
+      objectReference: {fileID: 1445258700}
+    - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
+      propertyPath: meatObject
+      value: 
+      objectReference: {fileID: 1907639658}
+    - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
+      propertyPath: grassObject
+      value: 
+      objectReference: {fileID: 725826071}
+    - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
+      propertyPath: waterObject
+      value: 
+      objectReference: {fileID: 1231301318}
+    - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
+      propertyPath: _playerFoodManager
+      value: 
+      objectReference: {fileID: 1876327029}
+    - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
+      propertyPath: _playerRecipeManager
+      value: 
+      objectReference: {fileID: 1876327028}
     - target: {fileID: 7547936862573549243, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2
@@ -77094,10 +77100,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3136481711131276926, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1370699124}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
 --- !u!114 &9094178411292482993 stripped
 MonoBehaviour:

@@ -6,9 +6,11 @@ public class daikonmandoragora : MonoBehaviour
 {
     #region //variables
     public float gravity;
-    //public HPBar HP;
-
-    //private float hp = 0.0f;
+    private float hp = 0.0f;
+    
+    private HPBar HP;
+    private float ATK_player = 0.0f;
+    
     private bool isDead = false;
     private bool isSteppedOn = false;
     private bool isLooked = false;
@@ -19,7 +21,6 @@ public class daikonmandoragora : MonoBehaviour
     private string playerTag = "Player";
     private string swordTag = "Sword";
 
-    [Header("プレイヤー")] public Player player;
     #endregion
 
     void Start()
@@ -28,8 +29,10 @@ public class daikonmandoragora : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         capcol = GetComponent<CapsuleCollider2D>();
+        HP = GetComponent<HPBar>();
 
-        //hp = HPBar.instance.currentHealth;
+        ATK_player = Player.ATK;
+        hp = HPBar.instance.currentHealth;
     }
 
 // Switching true/false of islooked
@@ -59,20 +62,21 @@ public class daikonmandoragora : MonoBehaviour
         }
     }
 
-/*    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == swordTag && !isDead){
-            nowHP = nowHP - ATK_player;
+            HP.UpdateHP(ATK_player);
+            hp = hp - ATK_player;
         }
 
-        if(nowHP <= 0.0f){
+        if(hp <= 0.0f){
             anim.Play("radissh_die");
             isDead = true;
             capcol.enabled = false;
             Destroy(gameObject, 3f);
         }
     }
-*/
+
     private IEnumerator ChangeTag(){
         yield return new WaitForSeconds(5.0f);
         capcol.tag = "Enemy";
