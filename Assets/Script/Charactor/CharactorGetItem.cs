@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //キャラクターがアイテムをゲットした時の処理
-public class CharactorGetItem : MonoBehaviour
+public class CharactorGetItem:MonoBehaviour
 {
-    //Script
+    //Manager
     public PlayerFoodManager _playerFoodManager;
     public PlayerRecipeManager _playerRecipeManager;
     //
@@ -14,6 +14,18 @@ public class CharactorGetItem : MonoBehaviour
     public GameObject waterObject;
     public GameObject grassObject;
     public GameObject HPObject;
+
+    private void Start()
+    {
+        int count = 1;
+        if(_playerRecipeManager.GetItemCount("meatBun") != 1)
+        {
+            _playerRecipeManager.CountItem("meatBun", count);
+            _playerRecipeManager.CountItem("hamburger", count);
+            _playerRecipeManager.CountItem("tapiocaMilkTea", count);
+        }
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -29,7 +41,7 @@ public class CharactorGetItem : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         //タグが "item" のアイテム
-        if (collision.gameObject.tag == "item")
+        if(collision.gameObject.tag == "item")
         {
             int count = 1;
             //アイテム追加
@@ -37,7 +49,7 @@ public class CharactorGetItem : MonoBehaviour
 
         }
         //タグが "recipe" のアイテム
-        else if (collision.gameObject.tag == "recipe")
+        else if(collision.gameObject.tag == "recipe")
         {
             int count = 1;
             //アイテム追加
@@ -59,8 +71,8 @@ public class CharactorGetItem : MonoBehaviour
     public void SetHPText()
     {
         Text hptext = HPObject.GetComponent<Text>();
-        string maxHP = Status.HP.ToString("d");
-        string nowHP = Status.nowHP.ToString("d");
+        string maxHP = Player.HP.ToString();
+        string nowHP = Player.nowHP.ToString();
         hptext.text = nowHP + "/" + maxHP;
     }
 
@@ -69,7 +81,7 @@ public class CharactorGetItem : MonoBehaviour
     {
         GameObject _HPSlider = GameObject.Find("HPSlider");
         Slider HPSlider_S = _HPSlider.GetComponent<Slider>();
-        HPSlider_S.maxValue = Status.HP;
-        HPSlider_S.value = Status.nowHP;
+        HPSlider_S.maxValue = Player.HP;
+        HPSlider_S.value = Player.nowHP;
     }
 }

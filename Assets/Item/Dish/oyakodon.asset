@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: oyakodon
   _itemName: "\u3082\u3068\u3082\u3068\u89AA\u5B50\u4E3C"
   _itemType: 1
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: bb652d5559e284f1db4cf7ce605084fb, type: 3}
   _floor: 1
   foods:
   - _dishType: 3

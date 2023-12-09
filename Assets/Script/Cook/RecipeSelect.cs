@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 //レシピがセレクトされた時にボタンを押す処理
-public class RecipeSelect : MonoBehaviour
+public class RecipeSelect:MonoBehaviour
 {
     GameObject _selectedObject;
     Button button;
@@ -14,16 +14,17 @@ public class RecipeSelect : MonoBehaviour
 
     void Update()
     {
-        if (EventSystem.current.currentSelectedGameObject)
+        if(EventSystem.current.currentSelectedGameObject)
         {
-            _pushRecipeButton = GameObject.Find("PrefabRecipeButton").GetComponent<PushRecipeButton>();
+            _pushRecipeButton = GameObject.Find("ItemButton").GetComponent<PushRecipeButton>();
             _selectedObject = EventSystem.current.currentSelectedGameObject;
-            if (_selectedObject != null &&  button != null)
+
+            if(_selectedObject != null && button != null)
             {
                 button = _selectedObject.GetComponent<Button>();
                 _pushRecipeButton.RecipeButton(button);
-            }    
-            
+            }
+
         }
     }
 }

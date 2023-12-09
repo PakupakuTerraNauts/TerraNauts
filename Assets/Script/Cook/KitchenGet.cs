@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //調理台前での処理
-public class KittenGet : MonoBehaviour
+public class KittenGet:MonoBehaviour
 {
     public bool isKittenLoaded = false;
-    private bool trigger = false;
-    private Collider2D _collider;
-    private GameObject _cookInfoCanvas;
+    bool trigger = false;
+    Collider2D _collider;
+    GameObject _cookInfoCanvas;
 
     private void Start()
     {
@@ -22,11 +22,13 @@ public class KittenGet : MonoBehaviour
         trigger = true;
         _collider = collision;
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         trigger = true;
         _collider = collision;
     }
+
     //調理台から出た時
     private void OnTriggerExit2D()
     {
@@ -38,19 +40,19 @@ public class KittenGet : MonoBehaviour
     private void Update()
     {
 
-        if (isKittenLoaded && Input.GetKeyDown(KeyCode.Escape))
+        if(isKittenLoaded && Input.GetKeyDown(KeyCode.Escape))
         {
             Application.UnloadLevel("CookingScean");
             Resources.UnloadUnusedAssets();
             isKittenLoaded = false;
         }
 
-        
+
         //プレイヤーが調理台前で"E"を押した時
-        if (trigger && _collider.gameObject.tag == ("Player") && Input.GetKeyDown(KeyCode.E) )
+        if(trigger && _collider.gameObject.tag == ("Player") && Input.GetKeyDown(KeyCode.E))
         {
             isKittenLoaded = !isKittenLoaded;
-            if (isKittenLoaded)
+            if(isKittenLoaded)
             {
                 Application.LoadLevelAdditive("CookingScean");
             }
@@ -61,7 +63,7 @@ public class KittenGet : MonoBehaviour
             }
         }
 
-        if (trigger && _collider.gameObject.tag == ("Player"))
+        if(trigger && _collider.gameObject.tag == ("Player"))
         {
             _cookInfoCanvas.SetActive(true);
         }

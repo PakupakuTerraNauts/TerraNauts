@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: grass
   _itemName: "\u8349"
   _itemType: 0
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 859e98819e250461393c558bed396d22, type: 3}
   _floor: 0
   foods: []
   status: []

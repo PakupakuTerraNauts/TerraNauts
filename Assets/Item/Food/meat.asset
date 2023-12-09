@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: meat
   _itemName: "\u8089"
   _itemType: 0
-  _icon: {fileID: -2413806693520163455, guid: 887880b5e0c08412dbe4e1a305feb13b, type: 3}
+  _icon: {fileID: 21300000, guid: 01d1a751a0e114f8f9d13d9e14c1a9be, type: 3}
   _floor: 0
   foods: []
   status: []

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2879555459971201280}
   - component: {fileID: 8647535937243432935}
   - component: {fileID: 420341895002523061}
+  - component: {fileID: 4457948176857028963}
   m_Layer: 0
   m_Name: neko-default
   m_TagString: Player
@@ -38,7 +39,7 @@ Transform:
   - {fileID: 3130815580488880991}
   - {fileID: 3006529743241696003}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1388960905369306044
 SpriteRenderer:
@@ -128,7 +129,7 @@ MonoBehaviour:
   ground: {fileID: 7204314334660931385}
   head: {fileID: 422874987791530711}
   speed: 5
-  jumpHeight: 2
+  gravity: 5
 --- !u!70 &8647535937243432935
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -191,6 +192,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4457948176857028963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3136481711131276926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca82a0f172e04a48aadbfebeb0ebea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerFoodManager: {fileID: 0}
+  _playerRecipeManager: {fileID: 0}
+  meatObject: {fileID: 0}
+  waterObject: {fileID: 0}
+  grassObject: {fileID: 0}
+  HPObject: {fileID: 0}
 --- !u!1 &3815003573297691649
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +222,7 @@ GameObject:
   - component: {fileID: 4289165770068820764}
   m_Layer: 6
   m_Name: neko-default-ken
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,7 +371,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.2}
+  m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
 --- !u!114 &422874987791530711
 MonoBehaviour:
@@ -378,7 +397,7 @@ GameObject:
   - component: {fileID: 1350382802050880977}
   m_Layer: 6
   m_Name: sword_collider
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -405,7 +424,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3993216138434770087}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -531,7 +550,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.14376086}
+  m_Size: {x: 0.2, y: 0.14376086}
   m_EdgeRadius: 0
 --- !u!1 &8046798946625630923
 GameObject:
@@ -544,7 +563,6 @@ GameObject:
   - component: {fileID: 8105782171665955463}
   - component: {fileID: 7531280226514145607}
   - component: {fileID: 3531617172187382910}
-  - component: {fileID: 2157956632971966031}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -626,37 +644,3 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8046798946625630923}
   m_Enabled: 1
---- !u!114 &2157956632971966031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8046798946625630923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []

@@ -5,7 +5,7 @@ using UnityEngine;
 //アイテムをまとめて管理
 [SerializeField]
 [CreateAssetMenu(fileName = "ItemDataBase", menuName = "CreateItemDataBase")]
-public class ItemDataBase : ScriptableObject
+public class ItemDataBase:ScriptableObject
 {
     public List<FoodSourceData> foodSourceDatas = new List<FoodSourceData>();
 

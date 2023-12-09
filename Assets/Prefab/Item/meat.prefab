@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4253754636000489549}
   - component: {fileID: 7738002884190486842}
   - component: {fileID: 758331754695772041}
+  - component: {fileID: -6510379528331038872}
   m_Layer: 0
   m_Name: meat
   m_TagString: item
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2467968411915414626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -965.27, y: -525.9999, z: 0}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 07696b7d9a22f46c0b51931f69e5b441, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01d1a751a0e114f8f9d13d9e14c1a9be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,7 +150,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 30.000002, y: 30.000002}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -158,3 +159,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.925049, y: 20.311993}
   m_EdgeRadius: 0
+--- !u!114 &-6510379528331038872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2467968411915414626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c3a149067ac4e4c9573fce1e197a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objName: meat

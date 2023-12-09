@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //ステータス管理
-public class Status : MonoBehaviour
+public class Status:MonoBehaviour
 {
     public static int HP = 100;
     public static int ATK = 100;
@@ -25,7 +25,7 @@ public class Status : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
+        if(Input.GetKeyDown(KeyCode.Y))
         {
             LowHP();
         }
@@ -34,7 +34,7 @@ public class Status : MonoBehaviour
     void LowHP()
     {
         nowHP -= 10;
-        if (nowHP <= 0)
+        if(nowHP <= 0)
         {
             nowHP = HP;
         }
