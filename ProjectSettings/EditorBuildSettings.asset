@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/enemy's script check.unity
-    guid: 2c897d6178e619b41be1185c3a1241a5
+    path: Assets/Scenes/TitleScean.unity
+    guid: 85926218530714f42bb42eabc6326cd7
+  - enabled: 1
+    path: Assets/Scenes/stage1.unity
+    guid: c6f7902b4064cbe43a1261c1772ba95a
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: fd2265375ff72425b87990ae37f773ec
+  - enabled: 0
+    path: Assets/Scenes/enemy's script check.unity
+    guid: 2c897d6178e619b41be1185c3a1241a5
+  - enabled: 1
+    path: Assets/Scenes/MenuScean.unity
+    guid: e47b45ec587384e72bdf6b5efea917fb
   m_configObjects: {}

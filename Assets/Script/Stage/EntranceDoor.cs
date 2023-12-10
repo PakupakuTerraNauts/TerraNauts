@@ -6,6 +6,7 @@ public class EntranceDoor : MonoBehaviour
     [SerializeField]
     [Tooltip("自動ドアのアニメーター")]
     private Animator automaticDoorAnimator;
+    public bool isOpen = false;
 
     /// <summary>
     /// 自動ドア検知エリアに入った時
@@ -16,6 +17,7 @@ public class EntranceDoor : MonoBehaviour
         // アニメーションパラメータをtrueにする。(ドアが開く)
         Debug.Log("さわった!!");
         automaticDoorAnimator.SetBool("Open", true);
+        isOpen = true;
     }
 
     /// <summary>
@@ -32,5 +34,6 @@ public class EntranceDoor : MonoBehaviour
     private void CloseDoor() {
         Debug.Log("ドア閉まるよ");
         automaticDoorAnimator.SetBool("Open", false);
+        isOpen = false;
     }
 }
