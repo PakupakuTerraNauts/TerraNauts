@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public float speed;
     public float gravity;
     private float jumpSpeed = 6;
-    private float jumpHeight = 2;
+    private float jumpHeight = 4;
     private float jumpLimitTime = 3;
     public static float HP = 100;
     public static float nowHP = 100;
@@ -110,29 +110,8 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(0, -gravity);
         }
     }
-/*
-    #region//damage
-    private void OnCollisionEnter2D(Collision2D collision){
-           
-        if(collision.collider.tag == enemyTag && !isDamaged){
-            HP.UpdateHP(10.0f);         //contact damage
-            isDamaged = true;
-        }
-        
-    }
-// sabotenn toka ha contact damage ga takai kamo.
 
-    private void OnTriggerStay2D(Collider2D collision){
-        
-        if(collision.tag == sakebigoe && !isDamaged){
-            HP.UpdateHP(20.0f);         // daikonmandoragora's voice damage
-            isDamaged = true;
-        }
-
-    }
-
-    #endregion
-*/
+    
 ///<summary>
 /// player's normal attack
 ///</summary>
