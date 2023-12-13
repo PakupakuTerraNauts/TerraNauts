@@ -7,14 +7,13 @@ public class Player : MonoBehaviour
 {
     public groundCheck ground;
     public groundCheck head;
-    // public HPBar HP;
     public float speed;
     public float gravity;
-    private float jumpSpeed = 6;
-    private float jumpHeight = 4;
-    private float jumpLimitTime = 3;
-    public static float HP = 100;
-    public static float nowHP = 100;
+    private float jumpSpeed = 6.0f;
+    private float jumpHeight = 3.5f;
+    private float jumpLimitTime = 1.5f;
+    public static float HP = 100.0f;
+    public static float nowHP = 100.0f;
 
     public static float ATK = 100.0f;
     public static float DEF = 0.0f;
@@ -42,6 +41,8 @@ public class Player : MonoBehaviour
     private SpriteRenderer sr = null; 
     private string enemyTag = "Enemy";
     private string sakebigoe = "Sakebigoe";
+    private string tama = "tama";
+    private string DebidoraFire = "DebidoraFire";
 
     void Start()
     {
@@ -118,7 +119,6 @@ public class Player : MonoBehaviour
     private bool PlayerAttack(){
         if(Input.GetKeyDown("return") && !isAttack){
             return true;
-
         }
         return false;
     }
@@ -228,10 +228,25 @@ public class Player : MonoBehaviour
         if(collision.collider.tag == enemyTag){
             nowHP = nowHP - 10;
         }
-        if(collision.collider.tag == sakebigoe){
+        
+        if(nowHP <= 0){
+            anim.Play("neko_die");
+            isDown = true;
+            StartCoroutine(PlayerDie());
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.tag == sakebigoe){
             nowHP = nowHP - 20;
         }
-        
+        if(collision.tag == tama){
+            nowHP = nowHP - 10;
+        }
+        if(collision.tag == DebidoraFire){
+            nowHP = nowHP - 40;
+        }
+
         if(nowHP <= 0){
             anim.Play("neko_die");
             isDown = true;

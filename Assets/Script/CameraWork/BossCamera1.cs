@@ -4,36 +4,41 @@ using UnityEngine;
 
 public class BossCamera1 : MonoBehaviour
 {
-    public Transform player;  // Playerã®Transform
-    public Transform Entrance;  // ãƒœã‚¹éƒ¨å±‹ã®Transform
-    public Transform Exit;  // é–‹ãå£ã®Transform
+    public Transform player;  // Player‚ÌTransform
+    public Transform Entrance;  // ƒ{ƒX•”‰®‚ÌTransform
+    public Transform Exit;  // ŠJ‚­•Ç‚ÌTransform
     public EnteredBossRoom entranceBossRoom;
     public EntranceDoor entranceDoor;
 
-    public float hallwaySpeed = 5f;  // å»Šä¸‹ã®é€Ÿã•
-    public float bossRoomSpeed = 0.1f;  // ãƒœã‚¹éƒ¨å±‹ã§ã®é€Ÿã•
-    public float fixedCameraDistance = 10f;  // ãƒ•ã‚§ãƒ¼ã‚º2ã§ã®ã‚«ãƒ¡ãƒ©ã®å›ºå®šè·é›¢
+    public float hallwaySpeed = 5f;  // ˜L‰º‚Ì‘¬‚³
+    public float bossRoomSpeed = 0.1f;  // ƒ{ƒX•”‰®‚Å‚Ì‘¬‚³
+    public float fixedCameraDistance = 10f;  // ƒtƒF[ƒY2‚Å‚ÌƒJƒƒ‰‚ÌŒÅ’è‹——£
+    private Vector3 targetPosition = new Vector3(0.0f, 0.0f, 0.0f);
 
     private int phase = 1;
     private bool isEnter = false;
-    private bool isBoss = false;
+    private bool isBossRoom = false;
+
+    public Debidora debidora;
+
+    
 
     void Update()
     {
         switch (phase)
         {
             case 1:
-                // ãƒ•ã‚§ãƒ¼ã‚º1: å»Šä¸‹ã®è¿½å¾“
+                // ƒtƒF[ƒY1: ˜L‰º‚Ì’Ç]
                 FollowPlayerInHallway();
                 break;
 
             case 2:
-                // ãƒ•ã‚§ãƒ¼ã‚º2: ã‚«ãƒ¡ãƒ©ã®å›ºå®šã¨ãƒœã‚¹éƒ¨å±‹ã®è¿½å¾“
+                // ƒtƒF[ƒY2: ƒJƒƒ‰‚ÌŒÅ’è‚Æƒ{ƒX•”‰®‚Ì’Ç]
                 FixedCameraInBossRoom();
                 break;
 
             case 3:
-                // ãƒ•ã‚§ãƒ¼ã‚º3: ãƒœã‚¹ã‚’å€’ã—ãŸå¾Œã®è¿½å¾“
+                // ƒtƒF[ƒY3: ƒ{ƒX‚ğ“|‚µ‚½Œã‚Ì’Ç]
                 FollowPlayerAfterBossDefeated();
                 break;
         }
@@ -41,42 +46,43 @@ public class BossCamera1 : MonoBehaviour
 
     void FollowPlayerInHallway()
 {
-    // Playerã‚’è¿½å¾“
-    float targetX = Mathf.Min(player.position.x, Entrance.position.x - 8.5f);  // å³ç«¯ã®åˆ¶é™
+    // Player‚ğ’Ç]
+    float targetX = Mathf.Min(player.position.x, Entrance.position.x - 8.5f);  // ‰E’[‚Ì§ŒÀ
     transform.position = new Vector3(targetX, transform.position.y, player.position.z - 20f);
 
-    // ãƒœã‚¹éƒ¨å±‹ã«è¿‘ã¥ã„ãŸã‚‰ãƒ•ã‚§ãƒ¼ã‚º2ã«ç§»è¡Œ
+    // ƒ{ƒX•”‰®‚É‹ß‚Ã‚¢‚½‚çƒtƒF[ƒY2‚ÉˆÚs
     if (entranceBossRoom.isEnter)
     {
         phase = 2;
-        isBoss = true;
+        isBossRoom = true;
     }
 }
 
 
     void FixedCameraInBossRoom()
     {
-        if(isBoss){
-            // ã‚«ãƒ¡ãƒ©ã‚’éƒ¨å±‹ã®ä¸­å¤®ã«é…ç½®
+        if(isBossRoom){
+            // ƒJƒƒ‰‚ğ•”‰®‚Ì’†‰›‚É”z’u
             float targetX = Entrance.transform.position.x + (Exit.position.x - Entrance.transform.position.x) / 2;
-            Vector3 targetPosition = new Vector3(targetX, transform.position.y, transform.position.z);
-            isBoss = false;
-
-            // ãƒ‰ã‚¢ãŒé–‹ã„ã¦ã„ã‚‹å ´åˆã¯ã‚«ãƒ¡ãƒ©ã‚’ç§»å‹•ã—ã€é–‹ã„ã¦ã„ãªã„å ´åˆã¯ãƒ—ãƒ¬ãƒ¼ãƒ¤ãƒ¼ã«è¿½å¾“
-            if (entranceDoor.isOpen){
-                // Playerã‚’è¿½å¾“
-                transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
-                isBoss = true;
-            } else {
-                transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * bossRoomSpeed);
-                if(transform.position != targetPosition){
-                    isBoss = true;
-                }
-                Camera.main.orthographicSize = 9f;
-            }
+            targetPosition = new Vector3(targetX, Entrance.transform.position.y + 6.0f, transform.position.z);
+            isBossRoom = false;
         }
 
-        // å£ãŒé–‹ã„ãŸã‚‰ãƒ•ã‚§ãƒ¼ã‚º3ã«ç§»è¡Œ
+        // ƒhƒA‚ªŠJ‚¢‚Ä‚¢‚éê‡‚ÍƒvƒŒ[ƒ„[‚É’Ç]A•Â‚Ü‚Á‚½‚çŒÅ’è
+        if (entranceDoor.isOpen){
+            // Player‚ğ’Ç]
+            transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
+            isBossRoom = true;
+        } else {
+            transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * bossRoomSpeed);
+            if(transform.position != targetPosition){
+                isBossRoom = true;
+                debidora.BossHPCountUp();
+            }
+            Camera.main.orthographicSize = 9f;
+        }
+
+        // •Ç‚ªŠJ‚¢‚½‚çƒtƒF[ƒY3‚ÉˆÚs
         if (Vector3.Distance(transform.position, Exit.position) < 0.1f)
         {
             phase = 3;
@@ -86,14 +92,14 @@ public class BossCamera1 : MonoBehaviour
 
     void FollowPlayerAfterBossDefeated()
     {
-        // ãƒ—ãƒ¬ãƒ¼ãƒ¤ãƒ¼ã‚’è¿½å¾“
+        // ƒvƒŒ[ƒ„[‚ğ’Ç]
         transform.position = Vector3.Lerp(transform.position, new Vector3(player.position.x, transform.position.y, player.position.z), Time.deltaTime * hallwaySpeed);
     }
 
-    // ãƒœã‚¹ã‚’å€’ã—ãŸã¨ãã«å‘¼ã³å‡ºã™ãƒ¡ã‚½ãƒƒãƒ‰
+    // ƒ{ƒX‚ğ“|‚µ‚½‚Æ‚«‚ÉŒÄ‚Ño‚·ƒƒ\ƒbƒh
     public void BossDefeated()
     {
-        // ãƒ•ã‚§ãƒ¼ã‚º3ã«ç§»è¡Œ
+        // ƒtƒF[ƒY3‚ÉˆÚs
         phase = 3;
     }
 }

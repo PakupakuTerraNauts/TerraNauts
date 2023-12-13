@@ -9,6 +9,9 @@ TagManager:
   - item
   - recipe
   - Sword
+  - DebidoraFire
+  - tama
+  - Sakebigoe
   layers:
   - Default
   - TransparentFX

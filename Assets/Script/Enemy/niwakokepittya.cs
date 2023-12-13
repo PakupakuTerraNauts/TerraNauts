@@ -36,10 +36,8 @@ public class niwakokepittya : MonoBehaviour
     void Update(){
         if(sr.isVisible){
 
-            Vector3 toriPosition = this.transform.position;
-            Vector3 playerPosition = PlayerObject.transform.position;
-            toriPosition_x = toriPosition.x;
-            playerPosition_x = playerPosition.x;
+            toriPosition_x = transform.position.x;
+            playerPosition_x = PlayerObject.transform.position.x;
 
             if(!isDead){
                 rb.WakeUp();
@@ -67,6 +65,7 @@ public class niwakokepittya : MonoBehaviour
         }
     }
 
+    // animationのイベントから呼び出す
     public void DirectJudge(){
         if(playerPosition_x > toriPosition_x && isLeft){
                     transform.localScale = new Vector3(-1, 1, 1);
