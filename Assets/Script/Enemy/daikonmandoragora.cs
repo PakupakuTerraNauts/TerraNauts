@@ -18,8 +18,11 @@ public class daikonmandoragora : MonoBehaviour
     private Rigidbody2D rb = null;
     private Animator anim = null;
     private CapsuleCollider2D capcol = null;
+    private CircleCollider2D circol = null;
     private string playerTag = "Player";
+    private string enemyTag = "Enemy";
     private string swordTag = "Sword";
+    private string sakebigoeTag = "Sakebigoe";
 
     #endregion
 
@@ -29,6 +32,7 @@ public class daikonmandoragora : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         capcol = GetComponent<CapsuleCollider2D>();
+        circol = GetComponent<CircleCollider2D>();
         HP = GetComponent<HPBar>();
 
         ATK_player = Player.ATK;
@@ -78,7 +82,8 @@ public class daikonmandoragora : MonoBehaviour
     }
 
     private IEnumerator ChangeTag(){
-        yield return new WaitForSeconds(5.0f);
-        capcol.tag = "Enemy";
+        yield return new WaitForSeconds(10.0f);
+        capcol.tag = enemyTag;
+        circol.tag = sakebigoeTag;
     }
 }

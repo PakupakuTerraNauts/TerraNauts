@@ -9,44 +9,59 @@ public class Debidora : MonoBehaviour
     [SerializeField] private GameObject FramePrefab;
     [SerializeField] private GameObject LightPrefab;
     private Animator _animator;
-    public float hp = 50;
+    private float hp = 0.0f;
     public bool isStart = true;
     public bool isDead = false;
     public bool isDying = false;
+    private bool isNoHP = true;
     private Vector3 nowPosition;
+    
+    public EnteredBossRoom enteredBossRoom;
+    private HPBar HP;
+    private float ATK_player = 0.0f;
+    public Canvas HP_canvas;
+
+    private string swordTag = "Sword";
 
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
         _animator.SetBool("IsWaiting", true);
+
+        HP = GetComponent<HPBar>();
+        ATK_player = Player.ATK;
+        hp = HPBar.instance.currentHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(hp <= 0)
-        {
-            //if hp is 0, stop Battle Coroutine
-            hp = 0;
-            isDead = true;
-            _animator.SetTrigger("Dead");
-            StopCoroutine("Battle");
-            if(isDying == false)
+        if(enteredBossRoom.isEnter){
+            
+            if(hp <= 0)
             {
-                isDying = true;
-                StartCoroutine("Dead");
+                //if hp is 0, stop Battle Coroutine
+                hp = 0;
+                isDead = true;
+                _animator.SetTrigger("Dead");
+                StopCoroutine("Battle");
+                if(isDying == false)
+                {
+                    isDying = true;
+                    StartCoroutine("Dead");
+                }
             }
-        }
-        else if(isStart)
-        {
-            //Start Battle Coroutine
-            isStart = false;
-            StartCoroutine("Battle");
-        }
-        if(Input.GetKeyDown(KeyCode.Space) && isDead == false)
-        {
-            hp -= 10;
+            else if(isStart)
+            {
+                //Start Battle Coroutine
+                isStart = false;
+                StartCoroutine("Battle");
+            }
+            if(Input.GetKeyDown(KeyCode.Space) && isDead == false)
+            {
+                hp -= 10;
+            }
         }
     }
 
@@ -173,6 +188,28 @@ public class Debidora : MonoBehaviour
         }
         yield return new WaitForSeconds(0.05f);
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.tag == swordTag && !isDead){
+            HP.UpdateHP(ATK_player);
+            hp = hp - ATK_player;
+        }
+    }
+
+    // ボスの登場と同時にHPバーを表示する
+    // BossCamera1 でフェーズ2に入ったときに呼ぶ
+    public void BossHPCountUp(){
+        HP_canvas.gameObject.SetActive(true);
+        while(HP.currentHealth < HP.maxHealth){
+                HP.UpdateHP(-10.0f);
+                StartCoroutine(BossHPStart());
+        }
+        isNoHP = false; // フラグをオフ
+    }
+
+    private IEnumerator BossHPStart(){
+        yield return new WaitForSeconds(10.0f);
     }
 
 }

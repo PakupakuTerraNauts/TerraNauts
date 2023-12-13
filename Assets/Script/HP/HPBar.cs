@@ -6,13 +6,12 @@ using UnityEngine.UI;
 public class HPBar : MonoBehaviour
 {
     [SerializeField] private Image hpGauge;
-    [SerializeField] private float maxHealth;
+    [SerializeField] public float maxHealth;    // ボスのスクリプトから参照するためpublicに変更
 
     public float currentHealth;
     public static HPBar instance;
 
     public void Awake(){
-        currentHealth = maxHealth;
         if(instance == null){
             instance = this;
         }
@@ -20,6 +19,8 @@ public class HPBar : MonoBehaviour
     
     public void UpdateHP(float damage){
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
+        Debug.Log(currentHealth);
         hpGauge.fillAmount = currentHealth / maxHealth;
     }
+    
 }
