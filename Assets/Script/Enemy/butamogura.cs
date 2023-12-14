@@ -5,8 +5,8 @@ using UnityEngine;
 public class butamogura : MonoBehaviour
 {
     #region // variables
-    [Header ("重力")] public float gravity;
-    [Header ("速度")] public float speed;
+    [Header ("?d??")] public float gravity;
+    [Header ("???x")] public float speed;
 
     private bool isDead = false;
     private bool isEndAnim = true;
@@ -19,10 +19,10 @@ public class butamogura : MonoBehaviour
     private Rigidbody2D rb = null;
     private SpriteRenderer sr = null;
     private string swordTag = "Sword";
-    // playerオブジェクト取得　インスペクターで操作
-    [Header ("どこに向かって攻撃するか(プレイヤー)")] public GameObject player;
+    // player?I?u?W?F?N?g?擾?@?C???X?y?N?^?[?????
+    [Header ("攻撃先(プレイヤー)")] public GameObject player;
     [Header ("自分")] public GameObject Butamogura;
-    // ステートAIに使用
+    // 状態
     private enum State{
         inGround,
         Move,
@@ -39,7 +39,7 @@ public class butamogura : MonoBehaviour
         HP = GetComponent<HPBar>();
 
         ATK_player = Player.ATK;
-        hp = HPBar.instance.currentHealth;
+        hp = HP.maxHealth;
     }
 
     void Update(){
@@ -77,7 +77,7 @@ public class butamogura : MonoBehaviour
     }
 
     ///<summary>
-    /// 遷移するステートの設定
+    /// 状態遷移
     ///</summary>
     private void ChangeState(State next){
         nextState = next;
@@ -103,14 +103,11 @@ public class butamogura : MonoBehaviour
     private void MoveUpdate(){
         
         // 距離を詰める
-        Butamogura.transform.position = Vector3.MoveTowards(Butamogura.transform.position, player.transform.position, speed); // 自分の位置, ターゲットの位置, 速度
+        Butamogura.transform.position = Vector3.MoveTowards(Butamogura.transform.position, player.transform.position, speed); // 自分, ターゲット, スピード
         if(Vector3.Distance(Butamogura.transform.position, player.transform.position) < 4.0f){
             ChangeState(State.Attack);
             return;
         }
-        // スピード0.1でもコルーチンなしだと速すぎる
-        // クールタイムがないと上下にガクガクする
-        StartCoroutine("MoveCoolTime");
     }
     /// <summary>
     /// 攻撃→移動(待機)
@@ -127,10 +124,6 @@ public class butamogura : MonoBehaviour
             ChangeState(State.inGround);
             return;
         }
-    }
-
-    private IEnumerator MoveCoolTime(){
-        yield return new WaitForSeconds(10.0f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -36,7 +36,7 @@ public class daikonmandoragora : MonoBehaviour
         HP = GetComponent<HPBar>();
 
         ATK_player = Player.ATK;
-        hp = HPBar.instance.currentHealth;
+        hp = HP.maxHealth;
     }
 
 // Switching true/false of islooked

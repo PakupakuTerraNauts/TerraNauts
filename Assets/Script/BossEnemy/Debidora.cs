@@ -9,7 +9,8 @@ public class Debidora : MonoBehaviour
     [SerializeField] private GameObject FramePrefab;
     [SerializeField] private GameObject LightPrefab;
     private Animator _animator;
-    private float hp = 0.0f;
+    private float nowhp = 0.0f;
+    private float maxhp = 0.0f;
     public bool isStart = true;
     public bool isDead = false;
     public bool isDying = false;
@@ -17,7 +18,7 @@ public class Debidora : MonoBehaviour
     private Vector3 nowPosition;
     
     public EnteredBossRoom enteredBossRoom;
-    private HPBar HP;
+    public HPBar HP;
     private float ATK_player = 0.0f;
     public Canvas HP_canvas;
 
@@ -29,9 +30,10 @@ public class Debidora : MonoBehaviour
         _animator = GetComponent<Animator>();
         _animator.SetBool("IsWaiting", true);
 
-        HP = GetComponent<HPBar>();
+        //HP = GetComponent<HPBar>();
         ATK_player = Player.ATK;
-        hp = HPBar.instance.currentHealth;
+        maxhp = HP.maxHealth;
+        nowhp = maxhp;
     }
 
     // Update is called once per frame
@@ -39,10 +41,10 @@ public class Debidora : MonoBehaviour
     {
         if(enteredBossRoom.isEnter){
             
-            if(hp <= 0)
+            if(nowhp <= 0)
             {
-                //if hp is 0, stop Battle Coroutine
-                hp = 0;
+                //if nowhp is 0, stop Battle Coroutine
+                nowhp = 0;
                 isDead = true;
                 _animator.SetTrigger("Dead");
                 StopCoroutine("Battle");
@@ -60,7 +62,7 @@ public class Debidora : MonoBehaviour
             }
             if(Input.GetKeyDown(KeyCode.Space) && isDead == false)
             {
-                hp -= 10;
+                nowhp -= 10;
             }
         }
     }
@@ -193,7 +195,7 @@ public class Debidora : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == swordTag && !isDead){
             HP.UpdateHP(ATK_player);
-            hp = hp - ATK_player;
+            nowhp = nowhp - ATK_player;
         }
     }
 
@@ -201,15 +203,18 @@ public class Debidora : MonoBehaviour
     // BossCamera1 でフェーズ2に入ったときに呼ぶ
     public void BossHPCountUp(){
         HP_canvas.gameObject.SetActive(true);
-        while(HP.currentHealth < HP.maxHealth){
-                HP.UpdateHP(-10.0f);
-                StartCoroutine(BossHPStart());
-        }
-        isNoHP = false; // フラグをオフ
+        HP.UpdateHP(maxhp - 10.0f);
+        nowhp = nowhp - (maxhp - 10.0f);
+        Debug.Log("start countup : " + nowhp);
+        StartCoroutine(BossHPStart());
     }
 
     private IEnumerator BossHPStart(){
-        yield return new WaitForSeconds(10.0f);
+        while(nowhp < maxhp){   // nowhpはここで使うのでBossHPCountUpでも更新する
+            HP.UpdateHP(-10.0f);
+            nowhp = nowhp + 10.0f;
+            Debug.Log("in loop : " + nowhp);
+            yield return new WaitForSeconds(0.05f);
+        }
     }
-
 }

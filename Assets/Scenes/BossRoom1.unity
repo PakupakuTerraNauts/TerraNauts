@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587272, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1187,6 +1187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnter: 0
+  debidora: {fileID: 362808980}
 --- !u!61 &1214862529
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1385,10 +1386,62 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 549345119135628950, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 118631698}
+    - target: {fileID: 698450145574726204, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 934463703881848771, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 934463703881848771, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185850391973459721, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185850391973459721, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185850391973459721, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185850391973459721, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185850391973459721, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185850391973459721, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185850391973459721, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185850391973459721, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185850391973459721, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185850391973459721, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185850391973459721, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3151166107379172721, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1437,10 +1490,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Debidora
       objectReference: {fileID: 0}
+    - target: {fileID: 4894121828288766740, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5148395617855812467, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
       propertyPath: enteredBossRoom
       value: 
       objectReference: {fileID: 1214862528}
+    - target: {fileID: 5893539108592859972, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5893539108592859972, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5893539108592859972, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398319305896152816, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719132028614689552, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719132028614689552, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719132028614689552, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

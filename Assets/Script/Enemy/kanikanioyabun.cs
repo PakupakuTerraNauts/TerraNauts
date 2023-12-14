@@ -32,7 +32,7 @@ public class kanikanioyabun : MonoBehaviour
         HP = GetComponent<HPBar>();
 
         ATK_player = Player.ATK;
-        hp = HPBar.instance.currentHealth;
+        hp = HP.maxHealth;
     }
 
     void FixedUpdate(){

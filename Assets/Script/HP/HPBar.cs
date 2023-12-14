@@ -8,18 +8,16 @@ public class HPBar : MonoBehaviour
     [SerializeField] private Image hpGauge;
     [SerializeField] public float maxHealth;    // ボスのスクリプトから参照するためpublicに変更
 
-    public float currentHealth;
-    public static HPBar instance;
+    private float currentHealth;
 
     public void Awake(){
-        if(instance == null){
-            instance = this;
-        }
+        currentHealth = maxHealth;
+        Debug.Log(maxHealth);
     }
     
     public void UpdateHP(float damage){
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
-        Debug.Log(currentHealth);
+        Debug.Log("damage : " + damage + "currentHealth : " + currentHealth);
         hpGauge.fillAmount = currentHealth / maxHealth;
     }
     

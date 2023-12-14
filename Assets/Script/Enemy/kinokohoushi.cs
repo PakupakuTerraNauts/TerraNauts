@@ -5,7 +5,7 @@ using UnityEngine;
 public class kinokohoushi : MonoBehaviour
 {
     # region // variables
-    // 動かない　float重力のみ
+    // only gravity because unmove
     public float gravity;
     private float hp = 0.0f;
     private float ATK_player = 0.0f;
@@ -25,11 +25,11 @@ public class kinokohoushi : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
 
-        hp = HPBar.instance.currentHealth;
+        hp = HP.maxHealth;
         ATK_player = Player.ATK;
     }
 
-    // アニメーション流すだけなのでUpdate
+
     void Update(){
         if(sr.isVisible){
             if(!isDead){
@@ -50,7 +50,7 @@ public class kinokohoushi : MonoBehaviour
         if(hp <= 0){
             anim.Play("kinoko_die");
             isDead = true;
-            //Destroy(GameObject, 2f);
+            Destroy(gameObject, 2f);
         }
     }
 }
