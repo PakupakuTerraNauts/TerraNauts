@@ -30,7 +30,7 @@ public class niwakokepittya : MonoBehaviour
         HP = GetComponent<HPBar>();
 
         ATK_player = Player.ATK;
-        hp = HPBar.instance.currentHealth;
+        hp = HP.maxHealth;
     }
 
     void Update(){
@@ -65,7 +65,7 @@ public class niwakokepittya : MonoBehaviour
         }
     }
 
-    // animation‚ÌƒCƒxƒ“ƒg‚©‚çŒÄ‚Ño‚·
+    // animationï¿½ÌƒCï¿½xï¿½ï¿½ï¿½gï¿½ï¿½ï¿½ï¿½Ä‚Ñoï¿½ï¿½
     public void DirectJudge(){
         if(playerPosition_x > toriPosition_x && isLeft){
                     transform.localScale = new Vector3(-1, 1, 1);

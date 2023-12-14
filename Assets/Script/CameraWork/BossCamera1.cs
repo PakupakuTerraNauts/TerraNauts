@@ -77,7 +77,6 @@ public class BossCamera1 : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * bossRoomSpeed);
             if(transform.position != targetPosition){
                 isBossRoom = true;
-                debidora.BossHPCountUp();
             }
             Camera.main.orthographicSize = 9f;
         }
