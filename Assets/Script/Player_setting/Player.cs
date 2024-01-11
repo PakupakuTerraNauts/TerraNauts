@@ -58,14 +58,15 @@ public class Player : MonoBehaviour
             isAttack = PlayerAttack();
 
             if(isAttack){
-                if(isGround)
+                if(isGround)    // 着地していたらNormalAttack
                     anim.SetTrigger("nAttack_neko");
-                else if (!isGround)
+                else if (!isGround) // 空中ならAerialAttack
                     anim.SetTrigger("aAttack_neko");
                 
                 StartCoroutine("AttackCool");
             }
 
+            // ダメージを受けた直後は無敵時間
             if (isDamaged){
                 if(blinkTime > 0.2f){
                     sr.enabled = true;
@@ -114,7 +115,7 @@ public class Player : MonoBehaviour
 
     
 ///<summary>
-/// player's normal attack
+/// player's attack　both Normal Aerial
 ///</summary>
     private bool PlayerAttack(){
         if(Input.GetKeyDown("return") && !isAttack){
@@ -145,7 +146,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        // 2dan-jump koko
+        // 2段ジャンプ実装は以下
         else if(isJump){
             bool pushUpKey = false;
             if(verticalKey > 0 || wKey || upKey){
@@ -239,12 +240,15 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == sakebigoe){
             nowHP = nowHP - 20;
+            isDamaged = true;   // ダメージを喰らった時無敵時間にするためのフラグ
         }
         if(collision.tag == tama){
             nowHP = nowHP - 10;
+            isDamaged = true;
         }
         if(collision.tag == DebidoraFire){
             nowHP = nowHP - 40;
+            isDamaged = true;
         }
 
         if(nowHP <= 0){

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587272, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -523,6 +523,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: neko-default
       objectReference: {fileID: 0}
+    - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
+      propertyPath: HPObject
+      value: 
+      objectReference: {fileID: 655237151}
+    - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
+      propertyPath: meatObject
+      value: 
+      objectReference: {fileID: 563334946}
+    - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
+      propertyPath: grassObject
+      value: 
+      objectReference: {fileID: 1164941620}
+    - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
+      propertyPath: waterObject
+      value: 
+      objectReference: {fileID: 1948765645}
+    - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
+      propertyPath: _playerFoodManager
+      value: 
+      objectReference: {fileID: 709630727}
+    - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
+      propertyPath: _playerRecipeManager
+      value: 
+      objectReference: {fileID: 709630726}
     - target: {fileID: 7531280226514145607, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
       propertyPath: orthographic
       value: 0
@@ -575,39 +599,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8046798946625630923, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3136481711131276926, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 468196654}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
---- !u!1 &468196653 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3136481711131276926, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
-  m_PrefabInstance: {fileID: 468196652}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &468196654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468196653}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bca82a0f172e04a48aadbfebeb0ebea7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerFoodManager: {fileID: 0}
-  _playerRecipeManager: {fileID: 0}
-  meatObject: {fileID: 0}
-  waterObject: {fileID: 0}
-  grassObject: {fileID: 0}
-  HPObject: {fileID: 0}
 --- !u!4 &468196661 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7547936862573549243, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
@@ -674,6 +671,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ee25bab0ff9c42e280f36a6449caaf6, type: 3}
+--- !u!1 &563334946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1557894205654238532, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
+  m_PrefabInstance: {fileID: 655237150}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &655237150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -859,6 +861,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
+--- !u!1 &655237151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9161064975078403703, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
+  m_PrefabInstance: {fileID: 655237150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &709630726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 872485794245442266, guid: 186abd328bc5942a4a0b2e93c8cc1820, type: 3}
+  m_PrefabInstance: {fileID: 335746644}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcff19e6fed94acbbb82d24f2d980f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &709630727 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7557163237129372500, guid: 186abd328bc5942a4a0b2e93c8cc1820, type: 3}
+  m_PrefabInstance: {fileID: 335746644}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836ea3f268e31434ba398b23f6ac7c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &742206632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,6 +1185,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1164941620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6779161464757912228, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
+  m_PrefabInstance: {fileID: 655237150}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1214862527
 GameObject:
   m_ObjectHideFlags: 0
@@ -23095,6 +23129,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1948765645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 403395061905835465, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
+  m_PrefabInstance: {fileID: 655237150}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2020503903
 GameObject:
   m_ObjectHideFlags: 0
