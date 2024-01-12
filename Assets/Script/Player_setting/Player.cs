@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     private bool isHead = false;
     private bool isDown = false;
     private bool isAttack = false;
+    private bool isAttackCool = false;
     private bool isContinue = false;
     private bool isDamaged = false;
     private bool coolTime = false;
@@ -57,12 +58,8 @@ public class Player : MonoBehaviour
         if(!isDown){
             isAttack = PlayerAttack();
 
-            if(isAttack){
-                if(isGround)    // 着地していたらNormalAttack
-                    anim.SetTrigger("nAttack_neko");
-                else if (!isGround) // 空中ならAerialAttack
-                    anim.SetTrigger("aAttack_neko");
-                
+            // 攻撃アニメーション→コルーチンへ
+            if(isAttack && !isAttackCool){
                 StartCoroutine("AttackCool");
             }
 
@@ -269,8 +266,17 @@ public class Player : MonoBehaviour
     }
 
     private IEnumerator AttackCool(){
+        isAttackCool = true;
         isAttack = false;
-        yield return new WaitForSeconds(5.0f);
+
+        if(isGround)    // 着地していたらNormalAttack
+            anim.SetTrigger("nAttack_neko");
+        else if (!isGround) // 空中ならAerialAttack
+            anim.SetTrigger("aAttack_neko");
+        
+        yield return new WaitForSeconds(3.5f);
+        Debug.Log("stoped 3.5s");
+        isAttackCool = false;
     }
 
     IEnumerator PlayerDie()

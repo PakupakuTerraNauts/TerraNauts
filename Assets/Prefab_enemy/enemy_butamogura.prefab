@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 9
-  speed: 0.01
+  speed: 0.05
   player: {fileID: 0}
   Butamogura: {fileID: 7536202179305582385}
 --- !u!68 &2805846087967646894
@@ -406,7 +406,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -426,7 +426,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpGauge: {fileID: 1380938073760770169}
   maxHealth: 40
-  currentHealth: 40
 --- !u!1 &7626430200214643017
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ AnimationClip:
       value: {fileID: 21300000, guid: 14ac9d6bc0a38164ba2b8f52b4789c48, type: 3}
     - time: 1
       value: {fileID: 21300000, guid: f43d16d61a74f894baf46e9af7aa8463, type: 3}
-    - time: 1.5
+    - time: 3
       value: {fileID: 21300000, guid: a8a495f90bf31734a95c3414c972f1ac, type: 3}
     attribute: m_Sprite
     path: 
@@ -45,7 +45,7 @@ AnimationClip:
       value: {fileID: 21300000, guid: 71a55b98f15a90746b7c6f149e2d5802, type: 3}
     - time: 1
       value: {fileID: 21300000, guid: 49cd5752f3627f546aa41d26f2310217, type: 3}
-    - time: 1.5
+    - time: 3
       value: {fileID: 21300000, guid: 0a1c5d195df771148aa97385e8b6adfa, type: 3}
     attribute: m_Sprite
     path: neko-default-ken
@@ -93,7 +93,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.5166667
+    m_StopTime: 3.0166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
