@@ -5,8 +5,8 @@ using UnityEngine;
 public class butamogura : MonoBehaviour
 {
     #region // variables
-    [Header ("?d??")] public float gravity;
-    [Header ("???x")] public float speed;
+    [Header ("重力")] public float gravity;
+    [Header ("速さ")] public float speed;
 
     private bool isDead = false;
     private bool isEndAnim = true;
@@ -19,7 +19,7 @@ public class butamogura : MonoBehaviour
     private Rigidbody2D rb = null;
     private SpriteRenderer sr = null;
     private string swordTag = "Sword";
-    // player?I?u?W?F?N?g?擾?@?C???X?y?N?^?[?????
+    // playerと自分の距離を取得
     [Header ("攻撃先(プレイヤー)")] public GameObject player;
     [Header ("自分")] public GameObject Butamogura;
     // 状態
