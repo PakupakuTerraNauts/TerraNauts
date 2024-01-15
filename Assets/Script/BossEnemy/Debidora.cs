@@ -11,6 +11,7 @@ public class Debidora : MonoBehaviour
     private Animator _animator;
     private float nowhp = 0.0f;
     private float maxhp = 0.0f;
+    private float countStarthp = 0.0f;
     public bool isStart = true;
     public bool isDead = false;
     public bool isDying = false;
@@ -34,6 +35,7 @@ public class Debidora : MonoBehaviour
         ATK_player = Player.ATK;
         maxhp = HP.maxHealth;
         nowhp = maxhp;
+        countStarthp = maxhp / 10.0f;
     }
 
     // Update is called once per frame
@@ -203,16 +205,16 @@ public class Debidora : MonoBehaviour
     // BossCamera1 でフェーズ2に入ったときに呼ぶ
     public void BossHPCountUp(){
         HP_canvas.gameObject.SetActive(true);
-        HP.UpdateHP(maxhp - 1000.0f);           // 一度1000までhPを削る
-        nowhp = nowhp - (maxhp - 1000.0f);      // nowHPも更新する      ←ここら辺をmaxHealthに合わせて設定する
+        HP.UpdateHP(maxhp - countStarthp); 
+        nowhp = nowhp - (maxhp - countStarthp);
         Debug.Log("start countup : " + nowhp);
         StartCoroutine(BossHPStart());
     }
 
     private IEnumerator BossHPStart(){
         while(nowhp < maxhp){   // nowhpはここで使うのでBossHPCountUpでも更新する
-            HP.UpdateHP(-1000.0f);          // 1000ずつカウントアップ
-            nowhp = nowhp + 1000.0f;        // nwoHPも更新する
+            HP.UpdateHP(-countStarthp);        
+            nowhp = nowhp + countStarthp;
             Debug.Log("in loop : " + nowhp);
             yield return new WaitForSeconds(0.05f);     // 0.05秒ごとに
         }
