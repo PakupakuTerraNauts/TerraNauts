@@ -35,5 +35,6 @@ public class EntranceDoor : MonoBehaviour
         Debug.Log("ドア閉まるよ");
         automaticDoorAnimator.SetBool("Open", false);
         isOpen = false;
+        Destroy(gameObject, 1f);
     }
 }

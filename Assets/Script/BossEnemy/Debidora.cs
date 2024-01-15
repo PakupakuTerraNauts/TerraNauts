@@ -203,18 +203,18 @@ public class Debidora : MonoBehaviour
     // BossCamera1 でフェーズ2に入ったときに呼ぶ
     public void BossHPCountUp(){
         HP_canvas.gameObject.SetActive(true);
-        HP.UpdateHP(maxhp - 10.0f);
-        nowhp = nowhp - (maxhp - 10.0f);
+        HP.UpdateHP(maxhp - 1000.0f);           // 一度1000までhPを削る
+        nowhp = nowhp - (maxhp - 1000.0f);      // nowHPも更新する      ←ここら辺をmaxHealthに合わせて設定する
         Debug.Log("start countup : " + nowhp);
         StartCoroutine(BossHPStart());
     }
 
     private IEnumerator BossHPStart(){
         while(nowhp < maxhp){   // nowhpはここで使うのでBossHPCountUpでも更新する
-            HP.UpdateHP(-10.0f);
-            nowhp = nowhp + 10.0f;
+            HP.UpdateHP(-1000.0f);          // 1000ずつカウントアップ
+            nowhp = nowhp + 1000.0f;        // nwoHPも更新する
             Debug.Log("in loop : " + nowhp);
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.05f);     // 0.05秒ごとに
         }
     }
 }

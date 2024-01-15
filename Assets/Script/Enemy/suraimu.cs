@@ -55,6 +55,7 @@ public class suraimu : MonoBehaviour
         if(hp <= 0.0f){
             anim.Play("suraimu_die");
             isDead = true;
+            circol.tag = "DeadEnemy";
             circol.enabled = false;
             Destroy(gameObject, 3f);
         }

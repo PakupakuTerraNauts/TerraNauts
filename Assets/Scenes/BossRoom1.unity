@@ -530,15 +530,15 @@ PrefabInstance:
     - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
       propertyPath: meatObject
       value: 
-      objectReference: {fileID: 563334946}
+      objectReference: {fileID: 608226198}
     - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
       propertyPath: grassObject
       value: 
-      objectReference: {fileID: 1164941620}
+      objectReference: {fileID: 1670004028}
     - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
       propertyPath: waterObject
       value: 
-      objectReference: {fileID: 1948765645}
+      objectReference: {fileID: 654656633}
     - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
       propertyPath: _playerFoodManager
       value: 
@@ -671,9 +671,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ee25bab0ff9c42e280f36a6449caaf6, type: 3}
---- !u!1 &563334946 stripped
+--- !u!1 &608226198 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1557894205654238532, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1807153823154039362, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
+  m_PrefabInstance: {fileID: 655237150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &654656633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5809829206165753391, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
   m_PrefabInstance: {fileID: 655237150}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &655237150
@@ -1185,11 +1190,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1164941620 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6779161464757912228, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
-  m_PrefabInstance: {fileID: 655237150}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1214862527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,7 +1202,7 @@ GameObject:
   - component: {fileID: 1214862529}
   - component: {fileID: 1214862528}
   m_Layer: 0
-  m_Name: JudgeEnter
+  m_Name: JudgeEntered
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1523,6 +1523,10 @@ PrefabInstance:
     - target: {fileID: 3808649181237118791, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
       propertyPath: m_Name
       value: Debidora
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628922080793311980, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: maxHealth
+      value: 50000
       objectReference: {fileID: 0}
     - target: {fileID: 4894121828288766740, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -22852,6 +22856,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1670004028 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 125797611744116859, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
+  m_PrefabInstance: {fileID: 655237150}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1877065454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23129,11 +23138,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1948765645 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 403395061905835465, guid: f733dc9aff0ae450f8d084a4588ef1a1, type: 3}
-  m_PrefabInstance: {fileID: 655237150}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2020503903
 GameObject:
   m_ObjectHideFlags: 0

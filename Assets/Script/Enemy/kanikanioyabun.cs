@@ -20,6 +20,7 @@ public class kanikanioyabun : MonoBehaviour
     private Rigidbody2D rb = null;
     private SpriteRenderer sr = null;
     private Animator anim = null;
+    private BoxCollider2D boxcol = null;
     
     private string swordTag = "Sword";
     #endregion
@@ -29,6 +30,7 @@ public class kanikanioyabun : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        boxcol = GetComponent<BoxCollider2D>();
         HP = GetComponent<HPBar>();
 
         ATK_player = Player.ATK;
@@ -72,6 +74,7 @@ public class kanikanioyabun : MonoBehaviour
         if(hp <= 0){
             anim.Play("kani_die");
             isDead = true;
+            boxcol.tag = ("DeadEnemy");
             Destroy(gameObject, 3f);
         }
     }
