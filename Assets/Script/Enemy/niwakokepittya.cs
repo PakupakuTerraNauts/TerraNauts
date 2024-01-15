@@ -60,12 +60,13 @@ public class niwakokepittya : MonoBehaviour
         if(hp <= 0.0f){
             anim.Play("tori_die");
             isDead = true;
+            capcol.tag = "DeadEnemy";
             capcol.enabled = false;
             Destroy(gameObject, 3f);
         }
     }
 
-    // animationï¿½ÌƒCï¿½xï¿½ï¿½ï¿½gï¿½ï¿½ï¿½ï¿½Ä‚Ñoï¿½ï¿½
+    // animation‚ÌŒü‚«Œˆ’è player‚Æ‚Ì‹——£‚ðŒvŽZ
     public void DirectJudge(){
         if(playerPosition_x > toriPosition_x && isLeft){
                     transform.localScale = new Vector3(-1, 1, 1);

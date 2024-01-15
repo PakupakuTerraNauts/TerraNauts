@@ -76,6 +76,7 @@ public class daikonmandoragora : MonoBehaviour
         if(hp <= 0.0f){
             anim.Play("radissh_die");
             isDead = true;
+            capcol.tag = "DeadEnemy";
             capcol.enabled = false;
             Destroy(gameObject, 3f);
         }

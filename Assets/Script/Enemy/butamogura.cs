@@ -18,6 +18,7 @@ public class butamogura : MonoBehaviour
     private Animator anim = null;
     private Rigidbody2D rb = null;
     private SpriteRenderer sr = null;
+    private BoxCollider2D boxcol = null;
     private string swordTag = "Sword";
     // player‚Æ©•ª‚Ì‹——£‚ğæ“¾
     [Header ("UŒ‚æ(ƒvƒŒƒCƒ„[)")] public GameObject player;
@@ -36,6 +37,7 @@ public class butamogura : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        boxcol = GetComponent<BoxCollider2D>();
         HP = GetComponent<HPBar>();
 
         ATK_player = Player.ATK;
@@ -136,6 +138,7 @@ public class butamogura : MonoBehaviour
         if(hp <= 0.0f){
             anim.Play("buta_die");
             isDead = true;
+            boxcol.tag = "DeadEnemy";
             Destroy(gameObject, 3f);
         }
     }
