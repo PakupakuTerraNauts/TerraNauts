@@ -2,80 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class niwakokepittya : MonoBehaviour
+public class niwakokepittya : Enemy
 {
     #region //variables
-    public float gravity;
-    private HPBar HP;
     public GameObject PlayerObject;
 
-    private float ATK_player = 0.0f;
-    private float hp = 0.0f;
     private float toriPosition_x = 0.0f;
     private float playerPosition_x = 0.0f;
-    private bool isDead = false;
-    private bool isLeft = true;
-    private Animator anim = null;
+
+    private bool isLeft = true;     // 初期状態 右向き
     private CapsuleCollider2D capcol = null;
-    private Rigidbody2D rb = null;
-    private SpriteRenderer sr = null;
-    private string swordTag = "Sword";
     #endregion
 
-    void Start(){
-        anim = GetComponent<Animator>();
+    protected override void Initialize(){
         capcol = GetComponent<CapsuleCollider2D>();
-        rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
-        HP = GetComponent<HPBar>();
-
-        ATK_player = Player.ATK;
-        hp = HP.maxHealth;
+        PlayerObject = GameObject.Find("neko-default");
     }
 
-    void Update(){
-        if(sr.isVisible){
-
-            toriPosition_x = transform.position.x;
-            playerPosition_x = PlayerObject.transform.position.x;
-
-            if(!isDead){
-                rb.WakeUp();
-                anim.Play("tori_pitch");
-                rb.velocity = new Vector2(0, -gravity);
-            }
-        }
-        else{
-            rb.Sleep();
-        }
+    protected override void Moving(){
+        toriPosition_x = transform.position.x;
+        playerPosition_x = PlayerObject.transform.position.x;
+        anim.Play("tori_pitch");
+        rb.velocity = new Vector2(0, -gravity);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == swordTag && !isDead){
-            HP.UpdateHP(ATK_player);
-            hp = hp - ATK_player;
-        }
-        
-        if(hp <= 0.0f){
-            anim.Play("tori_die");
-            isDead = true;
-            capcol.tag = "DeadEnemy";
-            capcol.enabled = false;
-            Destroy(gameObject, 3f);
-        }
+        recievedDamage(collision);
     }
 
-    // animationの向き決定 playerとの距離を計算
+    protected override void dieAnimation(){
+        anim.Play("tori_die");
+        capcol.tag = "DeadEnemy";
+    }
+
+    // playerの方向を判定して、そっちを向く tori_pitch終了時に呼ぶ
     public void DirectJudge(){
         if(playerPosition_x > toriPosition_x && isLeft){
-                    transform.localScale = new Vector3(-1, 1, 1);
-                    isLeft = false;
-                }
-                else if(playerPosition_x < toriPosition_x && !isLeft){
-                    transform.localScale = new Vector3(1, 1, 1);
-                    isLeft = true;
-                }
+            transform.localScale = new Vector3(-1, 1, 1);
+            isLeft = false;
+        }
+        else if(playerPosition_x < toriPosition_x && !isLeft){
+            transform.localScale = new Vector3(1, 1, 1);
+            isLeft = true;
+        }
     }
 }
 

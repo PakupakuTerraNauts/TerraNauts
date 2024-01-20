@@ -2,24 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class butamogura : MonoBehaviour
+public class butamogura : Enemy
 {
     #region // variables
-    [Header ("重力")] public float gravity;
-    [Header ("速さ")] public float speed;
+    public float speed;
 
-    private bool isDead = false;
     private bool isEndAnim = true;
+    private bool isAttack = false;
 
-    private float hp = 0.0f;
-    private float ATK_player = 0.0f;
-
-    private HPBar HP;
-    private Animator anim = null;
-    private Rigidbody2D rb = null;
-    private SpriteRenderer sr = null;
-    private BoxCollider2D boxcol = null;
-    private string swordTag = "Sword";
+    private CircleCollider2D circol = null;
     // playerと自分の距離を取得
     [Header ("攻撃先(プレイヤー)")] public GameObject player;
     [Header ("自分")] public GameObject Butamogura;
@@ -33,49 +24,40 @@ public class butamogura : MonoBehaviour
     private State nextState = State.inGround;
     #endregion
 
-    void Start(){
-        anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
-        boxcol = GetComponent<BoxCollider2D>();
-        HP = GetComponent<HPBar>();
-
-        ATK_player = Player.ATK;
-        hp = HP.maxHealth;
+    protected override void Initialize(){
+        circol = GetComponent<CircleCollider2D>();
     }
 
-    void Update(){
-        
-        if(sr.isVisible){
-            if(!isDead){
-                rb.WakeUp();
-                switch(nowState)
-                {
-                    case State.inGround:
-                        inGroundUpdate();
-                        break;
-                    case State.Move:
-                        if(isEndAnim){
-                            MoveUpdate();
-                        }
-                        break;
-                    case State.Attack:
-                        AttackUpdate();
-                        break;
+    protected override void Moving(){
+        switch(nowState)
+        {
+            case State.inGround:
+                inGroundUpdate();
+                break;
+            case State.Move:
+                if(isEndAnim){
+                    MoveUpdate();
                 }
+                break;
+            case State.Attack:
+                AttackUpdate();
+                break;
+        }
 
-                nowState = nextState;
-                rb.velocity = new Vector2(0, -gravity);
-            }
-        }
-        else{
-            rb.Sleep();
-        }
+        nowState = nextState;
+        rb.velocity = new Vector2(0, -gravity);
     }
 
+    // buta_attack の終了時に呼ばれる
     private void endAnimation(){
         isEndAnim = true;
-        return;
+        //return;
+    }
+
+    // buta_attack の途中、ブタが地面に潜っったら呼ぶ
+    private void Dived(){
+        gameObject.tag = "ground";  // 地面に潜っているときのダメージ判定 to player を防ぐ (groundにしてみた)
+        isAttack = false;
     }
 
     ///<summary>
@@ -115,8 +97,10 @@ public class butamogura : MonoBehaviour
     /// 攻撃→移動(待機)
     /// </summary>
     private void AttackUpdate(){
+        gameObject.tag = "Enemy";       // ブタが地上に出ている時だけダメージ判定 to player
         anim.Play("buta_attack");
         isEndAnim = false;
+        isAttack = true;    // 地上に出ているときにのみダメージ from player を受けるため
 
         if(sr.isVisible){
             ChangeState(State.Move);
@@ -128,18 +112,14 @@ public class butamogura : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == swordTag && !isDead){
-            HP.UpdateHP(ATK_player);
-            hp = hp - ATK_player;
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(isAttack){   // trueのとき = ブタが地上に出ているとき
+            recievedDamage(collision);
         }
-        
-        if(hp <= 0.0f){
-            anim.Play("buta_die");
-            isDead = true;
-            boxcol.tag = "DeadEnemy";
-            Destroy(gameObject, 3f);
-        }
+    }
+
+    protected override void dieAnimation(){
+        anim.Play("buta_die");
+        circol.tag = "DeadEnemy";
     }
 }

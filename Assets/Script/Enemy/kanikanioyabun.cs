@@ -2,39 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class kanikanioyabun : MonoBehaviour
+public class kanikanioyabun : Enemy
 {
     #region // variables
-    public float gravity;
     public float speed;
 
     private float second;
-    private float hp = 0.0f;
 
-    private bool isDead = false;
     private bool isLeft = false;
-    private float ATK_player = 0.0f;
 
-    private HPBar HP;
-
-    private Rigidbody2D rb = null;
-    private SpriteRenderer sr = null;
-    private Animator anim = null;
     private BoxCollider2D boxcol = null;
-    
-    private string swordTag = "Sword";
     #endregion
 
 
-    void Start(){
-        rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
+    protected override void Initialize(){
         boxcol = GetComponent<BoxCollider2D>();
-        HP = GetComponent<HPBar>();
-
-        ATK_player = Player.ATK;
-        hp = HP.maxHealth;
     }
 
     void FixedUpdate(){
@@ -67,15 +49,11 @@ public class kanikanioyabun : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(collision.tag == swordTag && !isDead){
-            HP.UpdateHP(ATK_player);
-            hp = hp - ATK_player;
-        }
-        if(hp <= 0){
-            anim.Play("kani_die");
-            isDead = true;
-            boxcol.tag = ("DeadEnemy");
-            Destroy(gameObject, 3f);
-        }
+        recievedDamage(collision);
+    }
+
+    protected override void dieAnimation(){
+        anim.Play("kani_die");
+        boxcol.tag = ("DeadEnemy");
     }
 }
