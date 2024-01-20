@@ -261,7 +261,7 @@ Transform:
   - {fileID: 2448961188950974137}
   - {fileID: 8014816735860415709}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7864426173593029205
 SpriteRenderer:
@@ -426,7 +426,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpGauge: {fileID: 5691899434201602928}
   maxHealth: 20
-  currentHealth: 20
 --- !u!1 &5284691786789277703
 GameObject:
   m_ObjectHideFlags: 0

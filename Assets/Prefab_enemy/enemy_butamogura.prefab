@@ -192,10 +192,10 @@ GameObject:
   - component: {fileID: 2047767713601101422}
   - component: {fileID: 3875451764955120698}
   - component: {fileID: 6899274086483604594}
-  - component: {fileID: 2805846087967646894}
   - component: {fileID: 8205944814066754451}
   - component: {fileID: 5758628155921147195}
   - component: {fileID: 3125034159631397599}
+  - component: {fileID: 5730262270876509411}
   m_Layer: 0
   m_Name: enemy_butamogura
   m_TagString: Enemy
@@ -304,52 +304,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650f69cb9a53ce04ca39ca15e1419f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 9
+  gravity: 10
   speed: 0.05
   player: {fileID: 0}
   Butamogura: {fileID: 7536202179305582385}
---- !u!68 &2805846087967646894
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7536202179305582385}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -1.0271304, y: -1.2842008}
-  - {x: -0.077837944, y: -1.2336668}
-  - {x: 0.7969363, y: -1.2883029}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!50 &8205944814066754451
 Rigidbody2D:
   serializedVersion: 4
@@ -426,6 +384,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpGauge: {fileID: 1380938073760770169}
   maxHealth: 40
+--- !u!68 &5730262270876509411
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7536202179305582385}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1, y: -1.28}
+  - {x: -0.1, y: -1.2}
+  - {x: 0.8, y: -1.28}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &7626430200214643017
 GameObject:
   m_ObjectHideFlags: 0

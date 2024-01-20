@@ -2096,7 +2096,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223d62dba46699546bd80176b1cb0951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 5
 --- !u!1 &386047879
 GameObject:
   m_ObjectHideFlags: 0
@@ -68244,24 +68243,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 646ea9b1695b8214bb6f4e832f6a9bee, type: 3}
---- !u!1 &708821128 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4273213815457045693, guid: 646ea9b1695b8214bb6f4e832f6a9bee, type: 3}
-  m_PrefabInstance: {fileID: 1815997162}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &708821135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708821128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 223d62dba46699546bd80176b1cb0951, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: 5
 --- !u!1001 &715612787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74608,14 +74589,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_sraim
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1145450071608326838, guid: 646ea9b1695b8214bb6f4e832f6a9bee, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4273213815457045693, guid: 646ea9b1695b8214bb6f4e832f6a9bee, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 708821135}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 646ea9b1695b8214bb6f4e832f6a9bee, type: 3}
 --- !u!1001 &1816267258
 PrefabInstance:

@@ -2,89 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class daikonmandoragora : MonoBehaviour
+public class daikonmandoragora : Enemy
 {
     #region //variables
-    public float gravity;
-    private float hp = 0.0f;
     
-    private HPBar HP;
-    private float ATK_player = 0.0f;
-    
-    private bool isDead = false;
     private bool isSteppedOn = false;
-    private bool isLooked = false;
-    private SpriteRenderer sr = null;
-    private Rigidbody2D rb = null;
-    private Animator anim = null;
     private CapsuleCollider2D capcol = null;
     private CircleCollider2D circol = null;
-    private string playerTag = "Player";
-    private string enemyTag = "Enemy";
-    private string swordTag = "Sword";
-    private string sakebigoeTag = "Sakebigoe";
 
     #endregion
 
-    void Start()
+    protected override void Initialize()
     {
-        sr = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
         capcol = GetComponent<CapsuleCollider2D>();
         circol = GetComponent<CircleCollider2D>();
-        HP = GetComponent<HPBar>();
-
-        ATK_player = Player.ATK;
-        hp = HP.maxHealth;
     }
 
-// Switching true/false of islooked
-    void Update(){
-        if(sr.isVisible){
-            if(!isDead && !isLooked){
-                isLooked = true;
-                rb.WakeUp();
-                anim.Play("radissh_umari");
-                rb.velocity = new Vector2(0, -gravity);
-            }
-        }
-        else{
-            // STOP when isn't looked.
-            isLooked = false;
-            rb.Sleep();
-        }
+    protected override void Moving(){
+        rb.velocity = new Vector2(0, -gravity);
     }
 
+    protected override void Sleeping(){
+        if(!isDead){
+            anim.Play("radissh_umari");     // 一度地上に出ても、画面外に出たら再び埋まる
+            gameObject.tag = "Untagged";
+            isSteppedOn = false;
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.tag == playerTag && !isSteppedOn){
+        if(collision.collider.tag == "Player" && !isSteppedOn && !isDead){
             anim.Play("radissh_fumare");
             isSteppedOn = true;
             StartCoroutine("ChangeTag");
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == swordTag && !isDead){
-            HP.UpdateHP(ATK_player);
-            hp = hp - ATK_player;
-        }
+    private void OnTriggerEnter2D(Collider2D collision){
+        recievedDamage(collision);
+    }
 
-        if(hp <= 0.0f){
+    protected override void dieAnimation(){
+        if(!isDead){
             anim.Play("radissh_die");
-            isDead = true;
             capcol.tag = "DeadEnemy";
-            capcol.enabled = false;
-            Destroy(gameObject, 3f);
         }
     }
 
     private IEnumerator ChangeTag(){
-        yield return new WaitForSeconds(10.0f);
-        capcol.tag = enemyTag;
-        circol.tag = sakebigoeTag;
+        yield return new WaitForSeconds(4.0f);
+        capcol.tag = "Enemy";
     }
 }
