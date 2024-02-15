@@ -36,14 +36,11 @@ public class Player : MonoBehaviour
     private bool isContinue = false;
     private bool isDamaged = false;
     private bool coolTime = false;
+    private bool readytojump = false;
     private Animator anim = null;
     private Rigidbody2D rb = null;
     private CapsuleCollider2D capcol = null;
     private SpriteRenderer sr = null; 
-    private string enemyTag = "Enemy";
-    private string sakebigoe = "Sakebigoe";
-    private string tama = "tama";
-    private string DebidoraFire = "DebidoraFire";
 
     void Start()
     {
@@ -112,7 +109,7 @@ public class Player : MonoBehaviour
 
     
 ///<summary>
-/// player's attack　both Normal Aerial
+/// player's attack both Normal Aerial
 ///</summary>
     private bool PlayerAttack(){
         if(Input.GetKeyDown("return") && !isAttack){
@@ -133,10 +130,12 @@ public class Player : MonoBehaviour
 
         if(isGround){
             if(verticalKey > 0 || wKey || upKey){
-                ySpeed = jumpSpeed;
-                jumpPos = transform.position.y;
                 isJump = true;
-                jumpTime = 0.0f;
+                if(readytojump){
+                    ySpeed = jumpSpeed;
+                    jumpPos = transform.position.y;
+                    jumpTime = 0.0f;
+                }
             }
             else{
                 isJump = false;
@@ -223,7 +222,7 @@ public class Player : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision){
 
-        if(collision.collider.tag == enemyTag){
+        if(collision.collider.tag == "Enemy"){
             nowHP = nowHP - 10;
         }
         
@@ -235,16 +234,20 @@ public class Player : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(collision.tag == sakebigoe){
+        if(collision.tag == "Sakebigoe"){
             nowHP = nowHP - 20;
             isDamaged = true;   // ダメージを喰らった時無敵時間にするためのフラグ
         }
-        if(collision.tag == tama){
+        if(collision.tag == "tama"){
             nowHP = nowHP - 10;
             isDamaged = true;
         }
-        if(collision.tag == DebidoraFire){
+        if(collision.tag == "DebidoraFire"){
             nowHP = nowHP - 40;
+            isDamaged = true;
+        }
+        if(collision.tag == "Hoshi"){
+            nowHP = nowHP - 10;
             isDamaged = true;
         }
 
@@ -254,7 +257,6 @@ public class Player : MonoBehaviour
             StartCoroutine(PlayerDie());
         }
     }
-    
     
 ///<summary>
 /// animation
@@ -281,10 +283,17 @@ public class Player : MonoBehaviour
 
     IEnumerator PlayerDie()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("GameOver");
         nowHP = HP;
         yield break;
     }
 
+    // ジャンプのタメを作る
+    public void ReadytoJumpT(){
+        readytojump = true;
+    }
+    public void ReadytoJumpF(){
+        readytojump = false;
+    }
 }

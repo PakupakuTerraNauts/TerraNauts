@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: neko_jump_up
+  m_Name: neko_jump_up_start
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
+      value: {fileID: 21300000, guid: b14644d11eda74d49a8ea0a55418da8a, type: 3}
+    - time: 0.083333336
+      value: {fileID: 21300000, guid: 87c2d8a3b81d2a5428ebecc5a8d8333c, type: 3}
+    - time: 0.25
       value: {fileID: 21300000, guid: f43d16d61a74f894baf46e9af7aa8463, type: 3}
-    - time: 0.33333334
-      value: {fileID: 21300000, guid: 7b56c999534c8b14e9e862ad5b1e8101, type: 3}
-    - time: 1
-      value: {fileID: 21300000, guid: f43d16d61a74f894baf46e9af7aa8463, type: 3}
-    - time: 1.5
-      value: {fileID: 21300000, guid: 7b56c999534c8b14e9e862ad5b1e8101, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -36,9 +34,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 027040210738d90498f9cc8b80607392, type: 3}
-    - time: 1
-      value: {fileID: 21300000, guid: 027040210738d90498f9cc8b80607392, type: 3}
+      value: {fileID: 21300000, guid: 7f5fdd5879b884447969c2171c705b57, type: 3}
+    - time: 0.083333336
+      value: {fileID: 21300000, guid: 71a55b98f15a90746b7c6f149e2d5802, type: 3}
+    - time: 0.25
+      value: {fileID: 21300000, guid: 49cd5752f3627f546aa41d26f2310217, type: 3}
     attribute: m_Sprite
     path: neko-default-ken
     classID: 212
@@ -70,23 +70,23 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
+    - {fileID: 21300000, guid: b14644d11eda74d49a8ea0a55418da8a, type: 3}
+    - {fileID: 21300000, guid: 87c2d8a3b81d2a5428ebecc5a8d8333c, type: 3}
     - {fileID: 21300000, guid: f43d16d61a74f894baf46e9af7aa8463, type: 3}
-    - {fileID: 21300000, guid: 7b56c999534c8b14e9e862ad5b1e8101, type: 3}
-    - {fileID: 21300000, guid: f43d16d61a74f894baf46e9af7aa8463, type: 3}
-    - {fileID: 21300000, guid: 7b56c999534c8b14e9e862ad5b1e8101, type: 3}
-    - {fileID: 21300000, guid: 027040210738d90498f9cc8b80607392, type: 3}
-    - {fileID: 21300000, guid: 027040210738d90498f9cc8b80607392, type: 3}
+    - {fileID: 21300000, guid: 7f5fdd5879b884447969c2171c705b57, type: 3}
+    - {fileID: 21300000, guid: 71a55b98f15a90746b7c6f149e2d5802, type: 3}
+    - {fileID: 21300000, guid: 49cd5752f3627f546aa41d26f2310217, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.5166667
+    m_StopTime: 0.26666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
+    m_LoopTime: 1
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -100,4 +100,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.083333336
+    functionName: ReadytoJumpF
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.25
+    functionName: ReadytoJumpT
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
