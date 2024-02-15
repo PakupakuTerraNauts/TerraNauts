@@ -24,7 +24,7 @@ public class daikonmandoragora : Enemy
 
     protected override void Sleeping(){
         if(!isDead){
-            anim.Play("radissh_umari");     // 一度地上に出ても、画面外に出たら再び埋まる
+            anim.Play("radissh_umari");     // ��ʔ����ɏo����radissh_umari�ɖ߂�
             gameObject.tag = "Untagged";
             isSteppedOn = false;
         }

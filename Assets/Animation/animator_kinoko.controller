@@ -13,11 +13,11 @@ AnimatorStateMachine:
     m_State: {fileID: 2244378877759554701}
     m_Position: {x: 240, y: 110, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -888857699422334481}
-    m_Position: {x: 240, y: 180, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: -2252050015032878478}
-    m_Position: {x: 275, y: 245, z: 0}
+    m_Position: {x: 240, y: 260, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -1361618235627980530}
+    m_Position: {x: 240, y: 180, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -54,14 +54,14 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-888857699422334481
+--- !u!1102 &-1361618235627980530
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: kinoko_houshi
+  m_Name: kinoko_hoshi
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
