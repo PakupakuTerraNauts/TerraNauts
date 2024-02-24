@@ -19,32 +19,23 @@ public class kanikanioyabun : Enemy
         boxcol = GetComponent<BoxCollider2D>();
     }
 
-    void FixedUpdate(){
+    protected override void MovingF(){
         second += Time.deltaTime;
-        if(sr.isVisible){
-            rb.velocity = new Vector2(0, -gravity);
-            if(!isDead){
-                rb.WakeUp();
-                anim.Play("kani_default");
+        anim.Play("kani_default");
 
-                if(isLeft){
-                    rb.velocity = new Vector2(-speed, -gravity);
-                    if(second > 3.0f){
-                        isLeft = false;
-                        second = 0.0f;
-                    }
-                }
-                else{
-                    rb.velocity = new Vector2(speed, -gravity);
-                    if(second > 3.0f){
-                        isLeft = true;
-                        second = 0.0f;
-                    }
-                }
+        if(isLeft){
+            rb.velocity = new Vector2(-speed, -gravity);
+            if(second > 3.0f){
+                isLeft = false;
+                second = 0.0f;
             }
         }
         else{
-            rb.Sleep();
+            rb.velocity = new Vector2(speed, -gravity);
+            if(second > 3.0f){
+                isLeft = true;
+                second = 0.0f;
+            }
         }
     }
 

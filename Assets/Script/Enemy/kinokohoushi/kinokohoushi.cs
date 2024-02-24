@@ -10,6 +10,7 @@ public class kinokohoushi : Enemy
     public houshi hoshi1;
     public houshi hoshi2;
     public houshi hoshi3;
+    public houshi hoshi4;   // ç≈ëÂêî4
     public Random rand = new Random();
     
     protected override void Initialize(){
@@ -32,12 +33,25 @@ public class kinokohoushi : Enemy
 
     private void release(){
         hoshi1.Hoshi(rand);
-        hoshi2.Hoshi(rand);
-        hoshi3.Hoshi(rand);
+        // 1~4Ç≈ñEéqÇÃêîÇí≤êÆâ¬î\
+        try{
+            hoshi2.Hoshi(rand);
+            hoshi3.Hoshi(rand);
+            hoshi4.Hoshi(rand);
+        }
+        catch(Exception){
+            return;
+        }
     }
-    private void deletehoshi(){
+    private void deletehoshi(){    
         hoshi1.HoshiDelete();
-        hoshi2.HoshiDelete();
-        hoshi3.HoshiDelete();
+        try{
+            hoshi2.HoshiDelete();
+            hoshi3.HoshiDelete();
+            hoshi4.HoshiDelete();
+        }
+        catch(Exception){
+            return;
+        }
     }
 }

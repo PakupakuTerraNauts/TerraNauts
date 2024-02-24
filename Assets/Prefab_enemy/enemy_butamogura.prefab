@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 6169732605043582274}
   - component: {fileID: 3950119908295895231}
   - component: {fileID: 7909609866733670923}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HP_bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 5758628155921147195}
   - component: {fileID: 3125034159631397599}
   - component: {fileID: 5730262270876509411}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: enemy_butamogura
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ Transform:
   m_Children:
   - {fileID: 2655634945372219175}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2047767713601101422
 SpriteRenderer:
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 10
-  speed: 0.05
+  speed: 0.02
   player: {fileID: 0}
   Butamogura: {fileID: 7536202179305582385}
 --- !u!50 &8205944814066754451
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 411298963791848717}
   - component: {fileID: 2659718205599288032}
   - component: {fileID: 1380938073760770169}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HP_guage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
