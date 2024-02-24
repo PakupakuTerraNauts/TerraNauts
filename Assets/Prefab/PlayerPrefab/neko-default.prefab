@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 7547936862573549243}
   - component: {fileID: 1388960905369306044}
   - component: {fileID: 8970223539871552854}
-  - component: {fileID: 2879555459971201280}
   - component: {fileID: 8647535937243432935}
   - component: {fileID: 420341895002523061}
+  - component: {fileID: 2879555459971201280}
   - component: {fileID: 4457948176857028963}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: neko-default
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -114,22 +114,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2879555459971201280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3136481711131276926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b11e955a8620414cac3a3cba0d8160a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ground: {fileID: 7204314334660931385}
-  head: {fileID: 422874987791530711}
-  speed: 5
-  gravity: 5
 --- !u!70 &8647535937243432935
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -192,6 +176,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2879555459971201280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3136481711131276926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b11e955a8620414cac3a3cba0d8160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ground: {fileID: 7204314334660931385}
+  head: {fileID: 422874987791530711}
+  speed: 5
+  gravity: 5
 --- !u!114 &4457948176857028963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +220,8 @@ GameObject:
   m_Component:
   - component: {fileID: 468680530688886306}
   - component: {fileID: 4289165770068820764}
-  m_Layer: 6
+  - component: {fileID: 4807137368186630576}
+  m_Layer: 3
   m_Name: neko-default-ken
   m_TagString: Sword
   m_Icon: {fileID: 0}
@@ -295,6 +296,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &4807137368186630576
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3815003573297691649}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3892134154838543567
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +334,7 @@ GameObject:
   - component: {fileID: 3130815580488880991}
   - component: {fileID: 3235871753410616908}
   - component: {fileID: 422874987791530711}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: headChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3892134154838543567}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.109481744, y: -0.4816789, z: 0.08764505}
+  m_LocalPosition: {x: 0.109481744, y: -0.6, z: 0.08764505}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -395,7 +423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2343894175511783619}
   - component: {fileID: 1350382802050880977}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: sword_collider
   m_TagString: Sword
   m_Icon: {fileID: 0}
@@ -473,7 +501,7 @@ GameObject:
   - component: {fileID: 3006529743241696003}
   - component: {fileID: 7204314334660931385}
   - component: {fileID: 1440699103653740715}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: groundChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +516,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7416488816508398780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.109481744, y: -0.4816789, z: 0.08764505}
+  m_LocalPosition: {x: 0.109481744, y: -0.6, z: 0.08764505}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -564,7 +592,7 @@ GameObject:
   - component: {fileID: 7531280226514145607}
   - component: {fileID: 3531617172187382910}
   - component: {fileID: 488046337645190635}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}

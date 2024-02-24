@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 4929707748356919413}
   - component: {fileID: 177753629920873132}
   - component: {fileID: 2459725083706977635}
-  m_Layer: 0
+  - component: {fileID: 1957454184950911145}
+  - component: {fileID: 8749650898981032331}
+  m_Layer: 12
   m_Name: tori-tama1
   m_TagString: tama
   m_Icon: {fileID: 0}
@@ -129,14 +131,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104278075615036463}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -147,7 +149,42 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &1957454184950911145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104278075615036463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66996b863c4c2948aca0ebb2d2b2e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  tori: {fileID: 4132849772957616531}
+--- !u!95 &8749650898981032331
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104278075615036463}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 00e943531cdb2874296ef9e921f85917, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2384559155074381401
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +196,7 @@ GameObject:
   - component: {fileID: 6441190818167860283}
   - component: {fileID: 816261807554273543}
   - component: {fileID: 5691899434201602928}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HP_guage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +276,7 @@ GameObject:
   - component: {fileID: 1174305833296853537}
   - component: {fileID: 4132849772957616531}
   - component: {fileID: 2606537794512555276}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: enemy_niwakokepittya
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -261,7 +298,7 @@ Transform:
   - {fileID: 2448961188950974137}
   - {fileID: 8014816735860415709}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7864426173593029205
 SpriteRenderer:
@@ -412,6 +449,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: 9
   PlayerObject: {fileID: 3136481711131276926, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
+  Tama: {fileID: 1957454184950911145}
+  isLeft: 1
 --- !u!114 &2606537794512555276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,7 +476,7 @@ GameObject:
   - component: {fileID: 4113386835350898371}
   - component: {fileID: 435417023161400919}
   - component: {fileID: 6218591918210144690}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HP_bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

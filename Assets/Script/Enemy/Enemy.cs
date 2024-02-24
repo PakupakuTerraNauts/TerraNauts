@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     [SerializeField] protected float gravity;
     protected float hp = 0.0f;
     protected float ATK_player = 0.0f;
+    protected float ninzin_explosion = 10.0f;
 
     protected bool isDead = false;
 
@@ -39,6 +40,17 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         }
     }
 
+    protected void FixedUpdate(){
+        if(sr.isVisible && !isDead){
+            rb.WakeUp();
+            MovingF();
+        }
+        else{
+            rb.Sleep();
+            SleepingF();
+        }
+    }
+
     // TriggerEnterから呼ぶ
     protected void recievedDamage(Collider2D collision){
         if(collision.tag == "Sword" && !isDead){
@@ -46,10 +58,20 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
             hp = hp - ATK_player;
         }
 
+        // プレイヤーが跳ね返した攻撃が効くことがある
+        if(collision.tag == "FallingTree"){
+            HP.UpdateHP(hp);
+            hp -= hp;
+        }
+        if(collision.tag == "NinzinExp"){
+            HP.UpdateHP(ninzin_explosion);
+            hp = hp - ninzin_explosion;
+        }
+
         if(hp <= 0.0f){
             dieAnimation();
             isDead = true;
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, 3f);
         }
     }
 
@@ -61,10 +83,18 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         // モンスターが画面に映っていないときに処理があれば
     }
 
+    protected virtual void SleepingF(){
+        // FixedUpdate用
+    }
+
     protected virtual void Moving(){
         // 基本anim.Play("デフォルアニメーション")
         // 基本rb.velocity = new Vector2(x, y)
         // その他、固有の特殊処理
+    }
+
+    protected virtual void MovingF(){
+        // FixedUpdate用
     }
 
     protected virtual void dieAnimation(){

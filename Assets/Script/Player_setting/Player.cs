@@ -239,15 +239,38 @@ public class Player : MonoBehaviour
             isDamaged = true;   // ダメージを喰らった時無敵時間にするためのフラグ
         }
         if(collision.tag == "tama"){
-            nowHP = nowHP - 10;
+            nowHP = nowHP - 20;
             isDamaged = true;
         }
         if(collision.tag == "DebidoraFire"){
-            nowHP = nowHP - 40;
+            nowHP = nowHP - 80;
             isDamaged = true;
         }
         if(collision.tag == "Hoshi"){
-            nowHP = nowHP - 10;
+            nowHP = nowHP - 40;
+            isDamaged = true;
+        }
+        if(collision.tag == "Tyubi"){
+            nowHP = nowHP - 60;
+            isDamaged = true;
+        }
+        if(collision.tag == "Sumi"){
+            nowHP = nowHP - 50;
+            isDamaged = true;
+        }
+        if(collision.tag == "FallingTree"){
+            nowHP -= nowHP;
+        }
+        if(collision.tag == "Ninzin"){
+            nowHP = nowHP - 70;
+            isDamaged = true;
+        }
+        if(collision.tag == "NinzinExp"){
+            nowHP = nowHP - 90;
+            isDamaged = true;
+        }
+        if(collision.tag == "Turara"){
+            nowHP = nowHP - 130;
             isDamaged = true;
         }
 
@@ -277,7 +300,7 @@ public class Player : MonoBehaviour
             anim.SetTrigger("aAttack_neko");
         
         yield return new WaitForSeconds(3.5f);
-        Debug.Log("stoped 3.5s");
+        Debug.Log("cooltime 3.5s");
         isAttackCool = false;
     }
 

@@ -12,7 +12,6 @@ public class HPBar : MonoBehaviour
 
     public void Awake(){
         currentHealth = maxHealth;
-        Debug.Log(maxHealth);
     }
     
     public void UpdateHP(float damage){

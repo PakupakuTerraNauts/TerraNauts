@@ -18,8 +18,7 @@ public class suraimu : Enemy
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
+    private void OnTriggerEnter2D(Collider2D collision){
         recievedDamage(collision);
     }
 
