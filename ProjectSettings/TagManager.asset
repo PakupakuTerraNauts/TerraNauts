@@ -16,10 +16,10 @@ TagManager:
   - Hoshi
   - Tyubi
   - Sumi
-  - FallingTree
   - Ninzin
   - NinzinExp
   - Turara
+  - DeadZone
   layers:
   - Default
   - TransparentFX
@@ -29,10 +29,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Sword
   - HPbar
   - HPgauge
-  - 
+  - Item
   - EnemysAttack
   - Player
   - Enemy

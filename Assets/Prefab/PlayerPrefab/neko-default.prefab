@@ -192,6 +192,7 @@ MonoBehaviour:
   head: {fileID: 422874987791530711}
   speed: 5
   gravity: 5
+  jumpHeight: 5
 --- !u!114 &4457948176857028963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +222,7 @@ GameObject:
   - component: {fileID: 468680530688886306}
   - component: {fileID: 4289165770068820764}
   - component: {fileID: 4807137368186630576}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: neko-default-ken
   m_TagString: Sword
   m_Icon: {fileID: 0}

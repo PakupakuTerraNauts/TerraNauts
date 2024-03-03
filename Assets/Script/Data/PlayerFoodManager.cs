@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class ItemData
 {
-    public string id;   //ã‚¢ã‚¤ãƒ†ãƒ id
+    public string id;   //ƒAƒCƒeƒ€id
 
-    public int count;  //æ‰€æŒæ•°
+    public int count;  //Š”
 
-    //ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+    //ƒRƒ“ƒXƒgƒ‰ƒNƒ^
     public ItemData(string id, int count = 1)
     {
         this.id = id;
         this.count = count;
     }
 
-    //æ‰€æŒæ•°ã‚«ã‚¦ãƒ³ãƒˆã‚¢ãƒƒãƒ—
+    //Š”ƒJƒEƒ“ƒgƒAƒbƒv
     public void CountUp(int value = 1)
     {
         count += value;
     }
 
-    //æ‰€æŒæ•°ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
+    //Š”ƒJƒEƒ“ƒgƒ_ƒEƒ“
     public void CountDown(int value)
     {
         count -= value;
@@ -34,41 +34,41 @@ public class ItemData
 }
 
 
-//é£Ÿæã®å€‹æ•°ã‚’ç®¡ç†
+//HŞ‚ÌŒÂ”‚ğŠÇ—
 public class PlayerFoodManager:MonoBehaviour
 {
-    [SerializeField] static List<ItemData> _itemDataList = new List<ItemData>();   //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ‰€æŒã‚¢ã‚¤ãƒ†ãƒ 
+    [SerializeField] static List<ItemData> _itemDataList = new List<ItemData>();   //ƒvƒŒƒCƒ„[‚ÌŠƒAƒCƒeƒ€
 
-    //ã‚¢ã‚¤ãƒ†ãƒ ã‚’å–å¾—
+    //ƒAƒCƒeƒ€‚ğæ“¾
     public void CountItem(string itemId, int count)
     {
-        //Listå†…ã‚’æ¤œç´¢
+        //List“à‚ğŒŸõ
         for(int i = 0; i < _itemDataList.Count; i++)
         {
-            //IDãŒä¸€è‡´ã—ã¦ã„ãŸã‚‰ã‚«ã‚¦ãƒ³ãƒˆ
+            //ID‚ªˆê’v‚µ‚Ä‚¢‚½‚çƒJƒEƒ“ƒg
             if(_itemDataList[i].id == itemId)
             {
-                //ã‚¢ã‚¤ãƒ†ãƒ ã‚’ã‚«ã‚¦ãƒ³ãƒˆ
+                //ƒAƒCƒeƒ€‚ğƒJƒEƒ“ƒg
                 _itemDataList[i].CountUp(count);
                 return;
             }
         }
 
-        //IDãŒä¸€è‡´ã—ãªã‘ã‚Œã°ã‚¢ã‚¤ãƒ†ãƒ ã‚’è¿½åŠ 
+        //ID‚ªˆê’v‚µ‚È‚¯‚ê‚ÎƒAƒCƒeƒ€‚ğ’Ç‰Á
         ItemData itemData = new ItemData(itemId, count);
         _itemDataList.Add(itemData);
     }
 
-    //ã‚¢ã‚¤ãƒ†ãƒ ã‚’ä½¿ç”¨
+    //ƒAƒCƒeƒ€‚ğg—p
     public void UseItem(string itemId, int count)
     {
-        //Listå†…ã‚’æ¤œç´¢
+        //List“à‚ğŒŸõ
         for(int i = 0; i < _itemDataList.Count; i++)
         {
-            //IDãŒä¸€è‡´ã—ã¦ã„ãŸã‚‰ã‚«ã‚¦ãƒ³ãƒˆ
+            //ID‚ªˆê’v‚µ‚Ä‚¢‚½‚çƒJƒEƒ“ƒg
             if(_itemDataList[i].id == itemId)
             {
-                //ã‚¢ã‚¤ãƒ†ãƒ ã‚’ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
+                //ƒAƒCƒeƒ€‚ğƒJƒEƒ“ƒgƒ_ƒEƒ“
                 _itemDataList[i].CountDown(count);
                 if(_itemDataList[i].GetCount() == 0)
                 {
@@ -79,7 +79,7 @@ public class PlayerFoodManager:MonoBehaviour
         }
     }
 
-    //ã‚¢ã‚¤ãƒ†ãƒ ã®æŒã£ã¦ã‚‹å€‹æ•°ã‚’å–å¾—
+    //ƒAƒCƒeƒ€‚Ì‚Á‚Ä‚éŒÂ”‚ğæ“¾
     public int GetItemCount(string itemId)
     {
         for(int i = 0; i < _itemDataList.Count; i++)
@@ -92,7 +92,7 @@ public class PlayerFoodManager:MonoBehaviour
         return 0;
     }
 
-    //æŒã£ã¦ã„ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã‚’é…åˆ—ã§å–å¾—
+    //‚Á‚Ä‚¢‚éƒAƒCƒeƒ€‚ğ”z—ñ‚Åæ“¾
     public string[] GetItemId()
     {
         string[] tmp = new string[_itemDataList.Count];

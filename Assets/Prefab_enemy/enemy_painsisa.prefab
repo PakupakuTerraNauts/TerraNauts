@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 3263040948691874783}
   m_Layer: 0
   m_Name: DeadZone_FallingTree
-  m_TagString: FallingTree
+  m_TagString: DeadZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -823,6 +823,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 6
+  basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
+  uniqueObject: {fileID: 5468205516251691096, guid: 1a5d1aab2f80a374dac99f9135c84f2a, type: 3}
   isAttack: 0
 --- !u!114 &7387623914749822165
 MonoBehaviour:

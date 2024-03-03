@@ -10,16 +10,16 @@ public class Player : MonoBehaviour
     public float speed;
     public float gravity;
     private float jumpSpeed = 6.0f;
-    private float jumpHeight = 3.5f;
+    public float jumpHeight;
     private float jumpLimitTime = 1.5f;
-    public static float HP = 100.0f;
+    public static int HP = 100;
     public static float nowHP = 100.0f;
 
-    public static float ATK = 100.0f;
-    public static float DEF = 0.0f;
-    public static float SPD = 100.0f;
-    public static float CRITRATE = 50.0f;
-    public static float CRITDMG = 50.0f;
+    public static int ATK = 100;
+    public static int DEF = 0;
+    public static int SPD = 100;
+    public static int CRITRATE = 50;
+    public static int CRITDMG = 50;
 
     private float jumpPos = 0.0f;
     private float jumpTime = 0.0f;
@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
     {
         if(!isDown){
             isGround = ground.IsGround();
-            isHead = ground.IsGround();
+            isHead = head.IsGround();
 
             float xSpeed = GetXSpeed();
             float ySpeed = GetYSpeed();
@@ -258,7 +258,7 @@ public class Player : MonoBehaviour
             nowHP = nowHP - 50;
             isDamaged = true;
         }
-        if(collision.tag == "FallingTree"){
+        if(collision.tag == "DeadZone"){
             nowHP -= nowHP;
         }
         if(collision.tag == "Ninzin"){

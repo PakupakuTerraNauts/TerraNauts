@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//繧ｹ繝�繝ｼ繧ｿ繧ｹ陦ｨ遉ｺ
+//ステータス表示
 public class StatusManager:MonoBehaviour
 {
 
@@ -13,12 +13,6 @@ public class StatusManager:MonoBehaviour
     public GameObject SPDObject;
     public GameObject CRITRATEObject;
     public GameObject CRITDMGObject;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()

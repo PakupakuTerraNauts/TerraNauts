@@ -40,7 +40,8 @@ public class daikonmandoragora : Enemy
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        recievedDamage(collision);
+        if(!isDead)
+            recievedDamage(collision);
     }
 
     protected override void dieAnimation(){

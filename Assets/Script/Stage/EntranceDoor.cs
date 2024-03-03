@@ -2,37 +2,37 @@ using UnityEngine;
 
 public class EntranceDoor : MonoBehaviour
 {
-    //ã€€ãƒ‰ã‚¢ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚¿ãƒ¼
+    //ƒhƒA‚ÌƒAƒjƒ[ƒ^[
     [SerializeField]
-    [Tooltip("è‡ªå‹•ãƒ‰ã‚¢ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚¿ãƒ¼")]
+    [Tooltip("©“®ƒhƒA‚ÌƒAƒjƒ[ƒ^[")]
     private Animator automaticDoorAnimator;
     public bool isOpen = false;
 
     /// <summary>
-    /// è‡ªå‹•ãƒ‰ã‚¢æ¤œçŸ¥ã‚¨ãƒªã‚¢ã«å…¥ã£ãŸæ™‚
+    /// ©“®ƒhƒAŒŸ’mƒGƒŠƒA‚É“ü‚Á‚½
     /// </summary>
     /// <param name="other"></param>
 	private void OnTriggerEnter2D(Collider2D other)
     {
-        // ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’trueã«ã™ã‚‹ã€‚(ãƒ‰ã‚¢ãŒé–‹ã)
-        Debug.Log("ã•ã‚ã£ãŸ!!");
+        //  ƒAƒjƒ[ƒVƒ‡ƒ“ƒpƒ‰ƒ[ƒ^‚ğtrue‚É‚·‚éB(ƒhƒA‚ªŠJ‚­)
+        Debug.Log("‚³‚í‚Á‚½!!");
         automaticDoorAnimator.SetBool("Open", true);
         isOpen = true;
     }
 
     /// <summary>
-    /// è‡ªå‹•ãƒ‰ã‚¢æ¤œçŸ¥ã‚¨ãƒªã‚¢ã‚’å‡ºãŸæ™‚
+    /// ©“®ƒhƒAŒŸ’mƒGƒŠƒA‚ğo‚½
     /// </summary>
     /// <param name="other"></param>
 	private void OnTriggerExit2D(Collider2D other)
     {
-        // ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’falseã«ã™ã‚‹ã€‚(ãƒ‰ã‚¢ãŒé–‰ã¾ã‚‹)
-        Debug.Log("åˆ¤å®šã‹ã‚‰é›¢ã‚ŒãŸ!");
+        //  ƒAƒjƒ[ƒVƒ‡ƒ“ƒpƒ‰ƒ[ƒ^‚ğfalse‚É‚·‚éB(ƒhƒA‚ª•Â‚Ü‚é)
+        Debug.Log("”»’è‚©‚ç—£‚ê‚½!");
         Invoke("CloseDoor", 1.0f);
     }
 
     private void CloseDoor() {
-        Debug.Log("ãƒ‰ã‚¢é–‰ã¾ã‚‹ã‚ˆ");
+        Debug.Log("ƒhƒA•Â‚Ü‚é‚æ");
         automaticDoorAnimator.SetBool("Open", false);
         isOpen = false;
         Destroy(gameObject, 1f);
