@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1894973913626191489}
   - component: {fileID: 2739053578019329717}
   - component: {fileID: 4512533830460722126}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egg
   m_TagString: item
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7516383159460887220
 SpriteRenderer:
@@ -116,10 +116,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.010740906, y: -0.021481276}
+  m_Offset: {x: 0.010740876, y: -0.43958437}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -130,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9666595, y: 2.5466552}
+  m_Size: {x: 1.9666595, y: 1.710449}
   m_EdgeRadius: 0
 --- !u!50 &2739053578019329717
 Rigidbody2D:
@@ -147,7 +147,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

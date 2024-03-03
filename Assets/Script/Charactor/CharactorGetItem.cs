@@ -38,10 +38,10 @@ public class CharactorGetItem:MonoBehaviour
     }
 
     //アイテムと衝突
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         //タグが "item" のアイテム
-        if(collision.gameObject.tag == "item")
+        if(collision.tag == "item")
         {
             int count = 1;
             //アイテム追加
@@ -49,7 +49,7 @@ public class CharactorGetItem:MonoBehaviour
 
         }
         //タグが "recipe" のアイテム
-        else if(collision.gameObject.tag == "recipe")
+        else if(collision.tag == "recipe")
         {
             int count = 1;
             //アイテム追加

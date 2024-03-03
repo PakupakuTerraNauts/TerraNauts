@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//ãƒ¡ãƒ‹ãƒ¥ãƒ¼ç”»é¢ã®åˆ¶å¾¡
+//ƒƒjƒ…[‰æ–Ê‚Ì§Œä
 public class Menu:MonoBehaviour
 {
     GameObject _status;
@@ -151,10 +151,10 @@ public class Menu:MonoBehaviour
     public void PushExit()
     {
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;//ã‚²ãƒ¼ãƒ ãƒ—ãƒ¬ã‚¤çµ‚äº†
+        UnityEditor.EditorApplication.isPlaying = false;//ƒQ[ƒ€ƒvƒŒƒCI—¹
 #else
             Application.Quit();
-            //ã‚²ãƒ¼ãƒ ãƒ—ãƒ¬ã‚¤çµ‚äº†
+            //ƒQ[ƒ€ƒvƒŒƒCI—¹
 #endif
     }
 
@@ -184,7 +184,7 @@ public class Menu:MonoBehaviour
             Image _cloneImage = _cloneObject.transform.GetChild(0).GetComponent<Image>();
             Text _cloneText = _cloneObject.transform.GetChild(1).GetComponent<Text>();
             _cloneImage.sprite = _foodSourceData.icon;
-            _cloneText.text = "âœ–ï¸" + _count.ToString("d");
+            _cloneText.text = "??" + _count.ToString("d");
             _cloneObject.name = _id[i];
 
         }

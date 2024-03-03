@@ -8,8 +8,9 @@ public class changeToBoss : MonoBehaviour
  
     void OnTriggerStay2D(Collider2D other)
     {
-        if (Input.GetKey(KeyCode.UpArrow)){
-            SceneManager.LoadScene("Shrine");
+        bool wkey = Input.GetKey("w");
+        if (Input.GetKey(KeyCode.UpArrow) || wkey){
+            SceneManager.LoadScene("BossRoom1");
         }
     }
 }

@@ -298,7 +298,7 @@ Transform:
   - {fileID: 2448961188950974137}
   - {fileID: 8014816735860415709}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7864426173593029205
 SpriteRenderer:
@@ -448,6 +448,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 9
+  basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
+  uniqueObject: {fileID: 421306667867481507, guid: 38de61380ca614d3db46f61dfb964942, type: 3}
   PlayerObject: {fileID: 3136481711131276926, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
   Tama: {fileID: 1957454184950911145}
   isLeft: 1

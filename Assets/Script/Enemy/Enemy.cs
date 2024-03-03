@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 {
@@ -9,8 +10,12 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     protected float hp = 0.0f;
     protected float ATK_player = 0.0f;
     protected float ninzin_explosion = 10.0f;
+    private float rand = 0.0f;
 
     protected bool isDead = false;
+
+    [SerializeField] protected GameObject basicObject;
+    [SerializeField] protected GameObject uniqueObject;
 
     protected HPBar HP;
     protected Animator anim = null;
@@ -26,6 +31,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 
         ATK_player = Player.ATK;
         hp = HP.maxHealth;
+        rand = Random.Range(0.0f, 1.0f);
         Initialize();
     }
 
@@ -53,25 +59,32 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 
     // TriggerEnterから呼ぶ
     protected void recievedDamage(Collider2D collision){
-        if(collision.tag == "Sword" && !isDead){
-            HP.UpdateHP(ATK_player);
-            hp = hp - ATK_player;
-        }
+        if(!isDead){
+            if(collision.tag == "Sword"){
+                HP.UpdateHP(ATK_player);
+                hp = hp - ATK_player;
+            }
 
-        // プレイヤーが跳ね返した攻撃が効くことがある
-        if(collision.tag == "FallingTree"){
-            HP.UpdateHP(hp);
-            hp -= hp;
-        }
-        if(collision.tag == "NinzinExp"){
-            HP.UpdateHP(ninzin_explosion);
-            hp = hp - ninzin_explosion;
-        }
+            // プレイヤーが跳ね返した攻撃が効くことがある
+            if(collision.tag == "DeadZone"){
+                HP.UpdateHP(hp);
+                hp -= hp;
+            }
+            if(collision.tag == "NinzinExp"){
+                HP.UpdateHP(ninzin_explosion);
+                hp = hp - ninzin_explosion;
+            }
 
-        if(hp <= 0.0f){
-            dieAnimation();
-            isDead = true;
-            Destroy(gameObject, 3f);
+            if(hp <= 0.0f){
+                dieAnimation();
+                isDead = true;
+                Destroy(gameObject, 3f);
+                Instantiate<GameObject>(basicObject, transform.position, Quaternion.identity); // Quater...は回転で今回は無回転
+                // 固有の食材ドロップは3割
+                if(rand < 0.3f){
+                    Instantiate<GameObject>(uniqueObject, transform.position + Vector3.up, Quaternion.identity);
+                }
+            }
         }
     }
 
@@ -100,6 +113,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     protected virtual void dieAnimation(){
         // anim.Play("それぞれのdieアニメーション")
         // プレイヤーにダメージが入るのを防ぐためtagをDeadEnemyに変更
+
     }
 
 }

@@ -6,8 +6,6 @@ using System;
 public class houshi : MonoBehaviour // クラス名はローマ字
 {
     #region // variables
-    //private Random direction = new Random();
-    //private Random distance = new Random();
 
     private float maxDistance = 0.0f;
     private float speed = 0.0f;
@@ -29,6 +27,7 @@ public class houshi : MonoBehaviour // クラス名はローマ字
         hoshiInitialPosX = transform.position.x;
     }
 
+    // houshiで乱数生成するとシードが同じになってしまうので、kinokohosushiから引数で受け取る 
     public void Hoshi(System.Random rand){
         distanceCovered = 0.0f;
         maxDistance = rand.Next(3, 9);

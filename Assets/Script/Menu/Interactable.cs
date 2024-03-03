@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-//ã€€æœ€åˆã«ãƒ•ã‚©ãƒ¼ã‚«ã‚¹ã™ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¨­å®š,ã‚»ãƒ¬ã‚¯ãƒˆã§ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚Œã‚‹
+//Å‰‚ÉƒtƒH[ƒJƒX‚·‚éƒQ[ƒ€‚ğƒIƒuƒWƒFƒNƒg‚ğİ’èAƒZƒŒƒNƒg‚Åƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚é
 public class Interactable:MonoBehaviour
 {
     [SerializeField]

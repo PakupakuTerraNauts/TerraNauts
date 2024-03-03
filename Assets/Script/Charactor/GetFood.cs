@@ -3,23 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//ã‚¢ã‚¤ãƒ†ãƒ ã‚’ã‚²ãƒƒãƒˆã—ãŸæ™‚ã«æ¶ˆã™
+//ƒAƒCƒeƒ€‚ğƒQƒbƒg‚µ‚½‚ÉÁ‚·
 public class GetFood:MonoBehaviour
 {
+    private float gravity = 1.0f;
     public string _objName;
+    private Rigidbody2D rb = null;
 
     //Start
     void Start()
     {
         this.gameObject.name = _objName;
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    void Update()
     {
-        //ã‚¿ã‚°ãŒ "item" ã®ã‚¢ã‚¤ãƒ†ãƒ 
-        if(collision.gameObject.tag == "Player")
+        // ƒŒƒVƒs‚Ívelocity–³Œø
+        if(this.gameObject.tag == "item"){
+            rb.velocity = new Vector2(0.0f, -gravity);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //ƒ^ƒO‚ª "item" ‚ÌƒAƒCƒeƒ€
+        if(collision.tag == "Player" || collision.tag == "DeadZone")
         {
             Destroy(this.gameObject);
+        }
+        if(collision.tag == "ground")
+        {
+            gravity = 0.0f;
         }
     }
 }

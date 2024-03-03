@@ -305,6 +305,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 10
+  basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
+  uniqueObject: {fileID: 8369336574802605525, guid: 106d5ba9235e04e0dab86669a4b26f60, type: 3}
   speed: 0.02
   player: {fileID: 0}
   Butamogura: {fileID: 7536202179305582385}
