@@ -601,6 +601,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 5
+  basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
+  uniqueObject: {fileID: 463701104692280964, guid: 8c007f76ab617034da88ec007a551695, type: 3}
   speed: 3
 --- !u!114 &4180409494552041667
 MonoBehaviour:
