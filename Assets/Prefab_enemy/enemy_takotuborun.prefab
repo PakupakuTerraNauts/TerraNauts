@@ -491,6 +491,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 9
+  basicObject: {fileID: 4534490885142806426, guid: f5ee8281215e0493e920d2293c12a575, type: 3}
+  uniqueObject: {fileID: 1470460448811446201, guid: a379436c741690e4599158fdd588ee3f, type: 3}
   isLeft: 0
 --- !u!114 &4142703128141199774
 MonoBehaviour:
