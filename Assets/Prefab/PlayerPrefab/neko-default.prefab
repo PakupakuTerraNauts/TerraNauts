@@ -190,8 +190,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground: {fileID: 7204314334660931385}
   head: {fileID: 422874987791530711}
-  speed: 5
-  gravity: 5
+  speed: 6
+  gravity: 4
   jumpHeight: 5
 --- !u!114 &4457948176857028963
 MonoBehaviour:

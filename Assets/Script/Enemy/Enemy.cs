@@ -8,9 +8,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     #region // variables
     [SerializeField] protected float gravity;
     protected float hp = 0.0f;
-    protected float ATK_player = 0.0f;
     protected float ninzin_explosion = 10.0f;
-    private float rand = 0.0f;
 
     protected bool isDead = false;
 
@@ -29,9 +27,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         sr = GetComponent<SpriteRenderer>();
         HP = GetComponent<HPBar>();
 
-        ATK_player = Player.ATK;
         hp = HP.maxHealth;
-        rand = Random.Range(0.0f, 1.0f);
         Initialize();
     }
 
@@ -61,11 +57,15 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     protected void recievedDamage(Collider2D collision){
         if(!isDead){
             if(collision.tag == "Sword"){
-                HP.UpdateHP(ATK_player);
-                hp = hp - ATK_player;
+                float atk = Player.ATK;
+                if(rand.Random(Player.CRITRATE / 5.0f)){
+                    atk += Player.CRITDMG * 2.0f;
+                }
+                HP.UpdateHP(atk);
+                hp = hp - atk;
             }
 
-            // プレイヤーが跳ね返した攻撃が効くことがある
+            // 以下 プレイヤーが跳ね返した攻撃が効くことがある
             if(collision.tag == "DeadZone"){
                 HP.UpdateHP(hp);
                 hp -= hp;
@@ -81,7 +81,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
                 Destroy(gameObject, 3f);
                 Instantiate<GameObject>(basicObject, transform.position, Quaternion.identity); // Quater...は回転で今回は無回転
                 // 固有の食材ドロップは3割
-                if(rand < 0.3f){
+                if(rand.Random(30.0f)){
                     Instantiate<GameObject>(uniqueObject, transform.position + Vector3.up, Quaternion.identity);
                 }
             }
