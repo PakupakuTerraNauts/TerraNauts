@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
 {
     public groundCheck ground;
     public groundCheck head;
-    public float speed;
     public float gravity;
     private float jumpSpeed = 6.0f;
     public float jumpHeight;
@@ -18,6 +17,7 @@ public class Player : MonoBehaviour
     public static int ATK = 100;
     public static int DEF = 0;
     public static int SPD = 100;
+    // Å´ Enemy.csì‡Ç≈égópÇµÇƒÇ¢ÇÈ
     public static int CRITRATE = 50;
     public static int CRITDMG = 50;
 
@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
     private Animator anim = null;
     private Rigidbody2D rb = null;
     private CapsuleCollider2D capcol = null;
-    private SpriteRenderer sr = null; 
+    private SpriteRenderer sr = null;
 
     void Start()
     {
@@ -171,6 +171,7 @@ public class Player : MonoBehaviour
     private float GetXSpeed(){
         float horizontalKey = Input.GetAxis("Horizontal");
         float xSpeed = 0.0f;
+        float speed = 5.0f + (float)(SPD / 50);
         bool dKey = Input.GetKey("d");
         bool rightKey = Input.GetKey("right");
         bool aKey = Input.GetKey("a");
@@ -318,5 +319,35 @@ public class Player : MonoBehaviour
     }
     public void ReadytoJumpF(){
         readytojump = false;
+    }
+
+
+///<summary>
+/// status level up
+/// </summary>
+    public static void HPincrease(int HPplus){
+        HP += HPplus;
+        nowHP += HPplus;
+        Debug.Log("HP level up!! + " + HPplus);
+    }
+    public static void ATKincrease(int ATKplus){
+        ATK += ATKplus;
+        Debug.Log("Attack level up!! + " + ATKplus);
+    }
+    public static void DEFincrease(int DEFplus){
+        DEF += DEFplus;
+        Debug.Log("Defence level up!! + " + DEFplus);
+    }
+    public static void SPDincrease(int SPDplus){
+        SPD += SPDplus;
+        Debug.Log("Speed level up!! + " + SPDplus);
+    }
+    public static void CRITRATEincrease(int CRplus){
+        CRITRATE += CRplus;
+        Debug.Log("CriticalRate level up!! + " + CRplus);
+    }
+    public static void CRITDMGincrease(int CDplus){
+        CRITDMG += CDplus;
+        Debug.Log("CriticalDamage level up!! + " + CDplus);
     }
 }

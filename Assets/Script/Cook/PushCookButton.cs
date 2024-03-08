@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//èª¿ç†ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸæ™‚ã®å‡¦ç†
+//’²—ƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Ìˆ—
 public class PushCookButton:MonoBehaviour
 {
     //Script
@@ -75,7 +75,7 @@ public class PushCookButton:MonoBehaviour
 
     void Update()
     {
-        //èª¿ç†ãƒœã‚¿ãƒ³(Cã‚­ãƒ¼)ãŒæŠ¼ã•ã‚ŒãŸæ™‚
+        //’²—ƒ{ƒ^ƒ“(CƒL[)‚ª‰Ÿ‚³‚ê‚½
         if(Input.GetKeyDown(KeyCode.C))
         {
             _foodSourceData = _itemDataBase.ItemSearch(PushDishButton.nowPushDish);
@@ -90,7 +90,7 @@ public class PushCookButton:MonoBehaviour
 
             cookOK = false;
 
-            //é£ŸæãŒè¶³ã‚Šã‚‹ã‹åˆ¤å®š
+            //HŞ‚ª‘«‚è‚é‚©”»’è
             for(int i = 0; i < foodTypes.Length; i++)
             {
                 if(_playerFoodManager.GetItemCount(foodTypes[i]) < _foodSourceData.GetFoodValue(foodTypes[i]))
@@ -104,17 +104,17 @@ public class PushCookButton:MonoBehaviour
                 }
             }
 
-            //é£ŸæãŒè¶³ã‚ŠãŸå ´åˆã€é£Ÿæã‚’æ¸›ã‚‰ã—ã€ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’ä¸Šæ˜‡
+            //HŞ‚ª‘«‚è‚½ê‡AHŞ‚ğŒ¸‚ç‚µAƒXƒe[ƒ^ƒX‚ğã¸
             if(cookOK)
             {
-                //é£Ÿæã‚’æ¸›ã‚‰ã™
+                //HŞ‚ğŒ¸‚ç‚·
                 for(int i = 0; i < foodTypes.Length; i++)
                 {
                     foodCount = _foodSourceData.GetFoodValue(foodTypes[i]);
                     _playerFoodManager.UseItem(foodTypes[i], foodCount);
                 }
 
-                //ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ä¸Šæ˜‡
+                //ƒXƒe[ƒ^ƒXã¸
                 for(int i = 0; i < statusTypes.Length; i++)
                 {
                     statusCount = _foodSourceData.GetStatusValue(statusTypes[i]);
@@ -122,26 +122,32 @@ public class PushCookButton:MonoBehaviour
                     {
                         case "HP":
                             Status.HP += statusCount;
+                            Player.HPincrease(statusCount);
                             break;
                         case "ATK":
                             Status.ATK += statusCount;
+                            Player.ATKincrease(statusCount);
                             break;
                         case "DEF":
                             Status.DEF += statusCount;
+                            Player.DEFincrease(statusCount);
                             break;
                         case "SPD":
                             Status.SPD += statusCount;
+                            Player.SPDincrease(statusCount);
                             break;
                         case "CRITRATE":
                             Status.CRITRATE += statusCount;
+                            Player.CRITRATEincrease(statusCount);
                             break;
                         case "CRITDMG":
                             Status.CRITDMG += statusCount;
+                            Player.CRITDMGincrease(statusCount);
                             break;
                     }
                 }
 
-                Debug.Log("æ–™ç†å®Œäº†");
+                Debug.Log("—¿—Š®—¹");
             }
 
             ChangeText();
@@ -149,7 +155,7 @@ public class PushCookButton:MonoBehaviour
     }
 
 
-    //é£Ÿæã¨ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã®ãƒ†ã‚­ã‚¹ãƒˆã‚’æ›´æ–°
+    //HŞ‚ÆƒXƒe[ƒ^ƒX‚ÌƒeƒLƒXƒg‚ğXV
     public void ChangeText()
     {
         TextDelete(_viewFoodText);
@@ -204,7 +210,7 @@ public class PushCookButton:MonoBehaviour
         }
     }
 
-    //ãƒ†ã‚­ã‚¹ãƒˆå‰Šé™¤
+    //ƒeƒLƒXƒgíœ
     public void TextDelete(GameObject _objectText)
     {
         foreach(Transform child in _objectText.transform)
