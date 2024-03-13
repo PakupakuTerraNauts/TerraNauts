@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    #region // variables
     public groundCheck ground;
     public groundCheck head;
     public float gravity;
@@ -41,6 +42,9 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb = null;
     private CapsuleCollider2D capcol = null;
     private SpriteRenderer sr = null;
+
+    public AnimationCurve jumpCurve;
+    #endregion
 
     void Start()
     {
@@ -154,6 +158,7 @@ public class Player : MonoBehaviour
             if(pushUpKey && canHeight && canTime && !isHead){
                 ySpeed = jumpSpeed;
                 jumpTime += Time.deltaTime;
+                ySpeed += jumpCurve.Evaluate(jumpTime);
             }
             else{
                 isJump = false;
