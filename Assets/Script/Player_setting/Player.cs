@@ -43,11 +43,7 @@ public class Player : MonoBehaviour
     private CapsuleCollider2D capcol = null;
     private SpriteRenderer sr = null;
 
-<<<<<<< HEAD
-    public AnimationCurve jumpCurve;
-=======
     public AnimationCurve JumpCurve;
->>>>>>> main
     #endregion
 
     void Start()
@@ -162,11 +158,7 @@ public class Player : MonoBehaviour
             if(pushUpKey && canHeight && canTime && !isHead){
                 ySpeed = jumpSpeed;
                 jumpTime += Time.deltaTime;
-<<<<<<< HEAD
-                ySpeed += jumpCurve.Evaluate(jumpTime);
-=======
                 ySpeed *= JumpCurve.Evaluate(jumpTime);
->>>>>>> main
             }
             else{
                 isJump = false;
