@@ -15,6 +15,7 @@ public class kinokohoushi : Enemy
     
     protected override void Initialize(){
         capcol = GetComponent<CapsuleCollider2D>();
+        capcol.enabled = true;
     }
 
     protected override void Moving(){
@@ -28,7 +29,6 @@ public class kinokohoushi : Enemy
 
     protected override void dieAnimation(){
         anim.Play("kinoko_die");
-        capcol.tag = "DeadEnemy";
     }
 
     private void release(){

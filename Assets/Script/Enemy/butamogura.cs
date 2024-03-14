@@ -26,6 +26,7 @@ public class butamogura : Enemy
 
     protected override void Initialize(){
         circol = GetComponent<CircleCollider2D>();
+        circol.enabled = true;
     }
 
     protected override void Moving(){
@@ -120,6 +121,5 @@ public class butamogura : Enemy
 
     protected override void dieAnimation(){
         anim.Play("buta_die");
-        circol.tag = "DeadEnemy";
     }
 }

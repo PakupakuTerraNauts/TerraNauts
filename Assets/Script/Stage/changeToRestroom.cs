@@ -18,6 +18,7 @@ public class changeToRestroom : MonoBehaviour
         bool wkey = Input.GetKey("w");
         if (Input.GetKey(KeyCode.UpArrow) || wkey){
             PlayerLocation = Player.transform.position;
+            SingletonStage1.instance.SaveDeadEnemy();
             SceneManager.LoadScene("restroom");
         }
     }

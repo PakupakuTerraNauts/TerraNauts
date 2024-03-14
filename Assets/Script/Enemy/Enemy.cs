@@ -22,6 +22,11 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     #endregion
 
     void Start(){
+        Spawn();
+    }
+
+    // 初期化 最初とゲームオーバーの後に呼ぶ
+    public void Spawn(){
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
@@ -29,6 +34,11 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 
         hp = HP.maxHealth;
         Initialize();
+        if(!gameObject.activeSelf){     // gameObjectがfalseなら一度倒されている
+            this.gameObject.SetActive(true);
+            isDead = false;
+            HP.UpdateHP(-HP.maxHealth);
+        }
     }
 
     protected void Update(){
@@ -78,14 +88,20 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
             if(hp <= 0.0f){
                 dieAnimation();
                 isDead = true;
-                Destroy(gameObject, 3f);
-                Instantiate<GameObject>(basicObject, transform.position, Quaternion.identity); // Quater...は回転で今回は無回転
-                // 固有の食材ドロップは3割
-                if(rand.Random(30.0f)){
-                    Instantiate<GameObject>(uniqueObject, transform.position + Vector3.up, Quaternion.identity);
-                }
+                StartCoroutine("Death");
             }
         }
+    }
+
+    // 倒れた時に非表示にする処理
+    private IEnumerator Death(){
+        Instantiate<GameObject>(basicObject, transform.position, Quaternion.identity); // Quater...は回転で今回は無回転
+        // 固有の食材ドロップは3割
+        if(rand.Random(30.0f)){
+            Instantiate<GameObject>(uniqueObject, transform.position + Vector3.up, Quaternion.identity);
+        }
+        yield return new WaitForSeconds(3.0f);
+        this.gameObject.SetActive(false);
     }
 
     protected virtual void Initialize(){
@@ -116,4 +132,12 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 
     }
 
+
+    public bool DeleteDead(){
+        if(isDead){
+            Destroy(this.gameObject);
+            return true;
+        }
+        return false;
+    }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class niwakokepittya : Enemy
 {
     #region //variables
-    public GameObject PlayerObject;
     public tama Tama;
 
     private float toriPosition_x = 0.0f;
@@ -17,10 +16,11 @@ public class niwakokepittya : Enemy
 
     protected override void Initialize(){
         capcol = GetComponent<CapsuleCollider2D>();
-        PlayerObject = GameObject.Find("neko-default");
+        capcol.enabled = true;
     }
 
     protected override void Moving(){
+        GameObject PlayerObject = GameObject.FindGameObjectWithTag("Player");
         toriPosition_x = transform.position.x;
         playerPosition_x = PlayerObject.transform.position.x;
         anim.Play("tori_pitch");
@@ -34,7 +34,6 @@ public class niwakokepittya : Enemy
 
     protected override void dieAnimation(){
         anim.Play("tori_die");
-        capcol.tag = "DeadEnemy";
     }
 
     // player‚Ì•ûŒü‚ğ”»’è‚µ‚ÄA‚»‚Á‚¿‚ğŒü‚­ tori_pitchI—¹‚ÉŒÄ‚Ô

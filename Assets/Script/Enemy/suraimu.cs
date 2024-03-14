@@ -10,6 +10,7 @@ public class suraimu : Enemy
 
     protected override void Initialize(){
         circol = GetComponent<CircleCollider2D>();
+        circol.enabled = true;
     }
 
     protected override void Moving(){
@@ -24,7 +25,5 @@ public class suraimu : Enemy
 
     protected override void dieAnimation(){
         anim.Play("suraimu_die");
-        circol.tag = "DeadEnemy";
     }
-
 }
