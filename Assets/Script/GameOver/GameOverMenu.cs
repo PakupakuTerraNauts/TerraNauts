@@ -62,13 +62,13 @@ public class GameOverMenu:MonoBehaviour
         {
             case 0:
                 SceneManager.LoadScene("stage1");
+                SingletonStage1.instance.RespawnDeadEnemy();
                 break;
             case 1:
                 #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;//繧ｲ繝ｼ繝繝励Ξ繧､邨ゆｺ�
-                #else
+                UnityEditor.EditorApplication.isPlaying = false;//ゲームプレイ終了
                 Application.Quit();
-                //繧ｲ繝ｼ繝繝励Ξ繧､邨ゆｺ�
+                //ゲームプレイ終了
                 #endif
                 break;
         }

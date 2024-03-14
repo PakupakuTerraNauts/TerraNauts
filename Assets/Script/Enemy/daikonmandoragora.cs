@@ -15,6 +15,7 @@ public class daikonmandoragora : Enemy
     protected override void Initialize()
     {
         capcol = GetComponent<CapsuleCollider2D>();
+        capcol.enabled = true;
         circol = GetComponent<CircleCollider2D>();
     }
 
@@ -47,7 +48,6 @@ public class daikonmandoragora : Enemy
     protected override void dieAnimation(){
         if(!isDead){
             anim.Play("radissh_die");
-            capcol.tag = "DeadEnemy";
         }
     }
 

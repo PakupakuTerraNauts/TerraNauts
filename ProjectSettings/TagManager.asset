@@ -20,6 +20,7 @@ TagManager:
   - NinzinExp
   - Turara
   - DeadZone
+  - EnemySleep
   layers:
   - Default
   - TransparentFX

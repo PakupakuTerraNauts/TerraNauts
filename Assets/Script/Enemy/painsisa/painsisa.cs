@@ -13,6 +13,7 @@ public class painsisa : Enemy
 
     protected override void Initialize(){
         circol = GetComponent<CircleCollider2D>();
+        circol.enabled = true;
     }
 
     protected override void Moving(){
@@ -39,7 +40,6 @@ public class painsisa : Enemy
         else{
             anim.Play("pinesisa_defdie");
         }
-        circol.tag = "DeadEnemy";
     }
 
     private void endAnimation(){

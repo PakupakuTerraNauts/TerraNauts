@@ -17,6 +17,7 @@ public class kanikanioyabun : Enemy
 
     protected override void Initialize(){
         boxcol = GetComponent<BoxCollider2D>();
+        boxcol.enabled = true;
     }
 
     protected override void MovingF(){
@@ -45,6 +46,5 @@ public class kanikanioyabun : Enemy
 
     protected override void dieAnimation(){
         anim.Play("kani_die");
-        boxcol.tag = ("DeadEnemy");
     }
 }

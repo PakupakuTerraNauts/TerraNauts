@@ -13,6 +13,7 @@ public class takotuborun : Enemy
 
     protected override void Initialize(){
         capcol = GetComponent<CapsuleCollider2D>();
+        capcol.enabled = true;
         if(!isLeft){
             transform.localScale = new Vector3(-1, 1, 1);
         }
@@ -29,6 +30,5 @@ public class takotuborun : Enemy
 
     protected override void dieAnimation(){
         anim.Play("tako_die");
-        capcol.tag = "DeadEnemy";
     }
 }

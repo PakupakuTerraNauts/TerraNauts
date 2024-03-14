@@ -16,6 +16,7 @@ public class neibysuraimu : Enemy
 
     protected override void Initialize(){
         boxcol = GetComponent<BoxCollider2D>();
+        boxcol.enabled = true;
     }
 
     protected override void Moving(){
@@ -34,7 +35,6 @@ public class neibysuraimu : Enemy
 
     protected override void dieAnimation(){
         anim.Play("neiby_die");
-        boxcol.tag = "DeadEnemy";
     }
 
     private void whistle(){
