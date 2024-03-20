@@ -9,9 +9,6 @@ public class tama : MonoBehaviour
     private float distanceCovered = 0.0f;
     private float maxDistance = 10.0f;
 
-    private bool isLeft = false;
-
-    public niwakokepittya tori;
     private Animator anim = null;
     private Rigidbody2D rb = null;
     private Vector3 InitialPosition;

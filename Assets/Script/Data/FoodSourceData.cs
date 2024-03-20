@@ -43,12 +43,12 @@ public enum StatusType
 }
 
 
-//é£Ÿæã€ãƒ¬ã‚·ãƒ”ã®ãƒ‡ãƒ¼ã‚¿ã‚’ç™»éŒ²ã™ã‚‹ã‚¢ã‚»ãƒƒãƒˆã‚’ç”Ÿæˆã§ãã‚‹
+//HŞAƒŒƒVƒs‚Ìƒf[ƒ^‚ğ“o˜^‚·‚éƒAƒZƒbƒg‚ğ¶¬‚Å‚«‚é
 [Serializable]
 [CreateAssetMenu(menuName = "ItemSourceData")]
 public class FoodSourceData:ScriptableObject
 {
-    //å›ºæœ‰ID
+    //ŒÅ—LID
     [SerializeField]
     private string _id;
 
@@ -58,7 +58,7 @@ public class FoodSourceData:ScriptableObject
     }
 
 
-    //ã‚¢ã‚¤ãƒ†ãƒ ã®åå‰
+    //ƒAƒCƒeƒ€‚Ì–¼‘O
     [SerializeField]
     private string _itemName;
 
@@ -68,7 +68,7 @@ public class FoodSourceData:ScriptableObject
     }
 
 
-    //ã‚¢ã‚¤ãƒ†ãƒ ã®ç¨®é¡
+    //ƒAƒCƒeƒ€‚Ìí—Ş
     [SerializeField]
     private ItemType _itemType;
 
@@ -83,7 +83,7 @@ public class FoodSourceData:ScriptableObject
     }
 
 
-    //ã‚¢ã‚¤ã‚³ãƒ³
+    //ƒAƒCƒRƒ“
     [SerializeField]
     private Sprite _icon;
 
@@ -93,7 +93,7 @@ public class FoodSourceData:ScriptableObject
     }
 
 
-    //æ‰‹ã«å…¥ã‚‹éšå±¤
+    //è‚É“ü‚éŠK‘w
     [SerializeField]
     private int _floor;
 
@@ -103,7 +103,7 @@ public class FoodSourceData:ScriptableObject
     }
 
 
-    //é£Ÿæã®ç¨®é¡ã¨æ•°
+    //HŞ‚Ìí—Ş‚Æ”
     [Serializable]
     class DishData
     {
@@ -141,7 +141,7 @@ public class FoodSourceData:ScriptableObject
 
 
 
-    //ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã®ç¨®é¡ã¨æ•°
+    //ƒXƒe[ƒ^ƒX‚Ìí—Ş‚Æ”
     [Serializable]
     class StatusData
     {

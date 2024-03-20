@@ -21,6 +21,8 @@ TagManager:
   - Turara
   - DeadZone
   - EnemySleep
+  - Kabotya
+  - Saboten
   layers:
   - Default
   - TransparentFX
@@ -29,7 +31,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - togeball_sabochan
   - Sword
   - HPbar
   - HPgauge

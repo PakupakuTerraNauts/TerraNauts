@@ -16,7 +16,6 @@ public class BossCamera1 : MonoBehaviour
     private Vector3 targetPosition = new Vector3(0.0f, 0.0f, 0.0f);
 
     private int phase = 1;
-    private bool isEnter = false;
     private bool isBossRoom = false;
 
     public Debidora debidora;

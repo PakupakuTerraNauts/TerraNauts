@@ -36,7 +36,6 @@ public class Player : MonoBehaviour
     private bool isAttackCool = false;
     private bool isContinue = false;
     private bool isDamaged = false;
-    private bool coolTime = false;
     private bool readytojump = false;
     private Animator anim = null;
     private Rigidbody2D rb = null;
@@ -230,9 +229,15 @@ public class Player : MonoBehaviour
 
         if(collision.collider.tag == "Enemy"){
             nowHP = nowHP - 10;
+            isDamaged = true;
+        }
+        if(collision.collider.tag == "Saboten"){
+            nowHP = nowHP - 80;
+            isDamaged = true;
         }
         
         if(nowHP <= 0){
+            nowHP = 0;
             anim.Play("neko_die");
             isDown = true;
             StartCoroutine(PlayerDie());
@@ -240,6 +245,10 @@ public class Player : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.tag == "Enemy"){
+            nowHP = nowHP - 10;
+            isDamaged = true;
+        }
         if(collision.tag == "Sakebigoe"){
             nowHP = nowHP - 20;
             isDamaged = true;   // ダメージを喰らった時無敵時間にするためのフラグ
@@ -279,8 +288,13 @@ public class Player : MonoBehaviour
             nowHP = nowHP - 130;
             isDamaged = true;
         }
+        if(collision.tag == "Kabotya"){
+            nowHP = nowHP - 60;
+            isDamaged = true;
+        }
 
         if(nowHP <= 0){
+            nowHP = 0;
             anim.Play("neko_die");
             isDown = true;
             StartCoroutine(PlayerDie());

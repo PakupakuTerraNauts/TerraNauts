@@ -9,19 +9,23 @@ public class GetFood:MonoBehaviour
     private float gravity = 1.0f;
     public string _objName;
     private Rigidbody2D rb = null;
+    private SpriteRenderer sr = null;
 
     //Start
     void Start()
     {
         this.gameObject.name = _objName;
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        // レシピはvelocity無効
-        if(this.gameObject.tag == "item"){
-            rb.velocity = new Vector2(0.0f, -gravity);
+        if(sr.isVisible){
+            // レシピはvelocity無効
+            if(this.gameObject.tag == "item"){
+                rb.velocity = new Vector2(0.0f, -gravity);
+            }
         }
     }
 
