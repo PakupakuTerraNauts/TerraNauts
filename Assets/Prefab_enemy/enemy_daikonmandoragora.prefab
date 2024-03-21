@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 286397172198059380}
   - component: {fileID: 4518528997996607840}
   - component: {fileID: 8012396348402572593}
-  - component: {fileID: 8756069660013540039}
+  - component: {fileID: 805774730499158351}
   m_Layer: 14
   m_Name: enemy_daikonmandoragora
   m_TagString: EnemySleep
@@ -125,8 +125,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -2.55}
-  m_Size: {x: 0.02, y: 0.02}
+  m_Offset: {x: 0, y: -1.9}
+  m_Size: {x: 0.8, y: 1.2}
   m_Direction: 0
 --- !u!95 &8697527383142275788
 Animator:
@@ -220,7 +220,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &4518528997996607840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpGauge: {fileID: 1986660541870316533}
   maxHealth: 10
---- !u!68 &8756069660013540039
+--- !u!68 &805774730499158351
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

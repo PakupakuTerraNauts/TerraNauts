@@ -7,16 +7,16 @@ public class daikonmandoragora : Enemy
     #region //variables
     
     private bool isSteppedOn = false;
-    private CapsuleCollider2D capcol = null;
-    private CircleCollider2D circol = null;
-
+    private BoxCollider2D boxcol = null;
+    private EdgeCollider2D edgcol = null;
     #endregion
 
     protected override void Initialize()
     {
-        capcol = GetComponent<CapsuleCollider2D>();
-        capcol.enabled = true;
-        circol = GetComponent<CircleCollider2D>();
+        boxcol = GetComponent<BoxCollider2D>();
+        edgcol = GetComponent<EdgeCollider2D>();
+        boxcol.enabled = true;
+        edgcol.enabled = true;
     }
 
     protected override void Moving(){
@@ -26,7 +26,7 @@ public class daikonmandoragora : Enemy
     protected override void Sleeping(){
         if(!isDead){
             anim.Play("radissh_umari");     // âÊñ îÉÇ¢Ç…èoÇΩÇÁradissh_umariÇ…ñﬂÇÈ
-            gameObject.tag = "Untagged";
+            gameObject.tag = "EnemySleep";
             isSteppedOn = false;
         }
     }
@@ -53,6 +53,7 @@ public class daikonmandoragora : Enemy
 
     private IEnumerator ChangeTag(){
         yield return new WaitForSeconds(4.0f);
-        capcol.tag = "Enemy";
+        gameObject.tag = "Enemy";
     }
+    
 }
