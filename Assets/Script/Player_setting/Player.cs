@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     private float jumpSpeed = 6.0f;
     public float jumpHeight;
     private float jumpLimitTime = 1.5f;
+    private int jumpCount = 2;
+    private int jumpCounter = 0;
     public static int HP = 100;
     public static float nowHP = 100.0f;
 
@@ -23,12 +25,14 @@ public class Player : MonoBehaviour
     public static int CRITDMG = 50;
 
     private float jumpPos = 0.0f;
+    private float jumpPos2 = 0.0f;
     private float jumpTime = 0.0f;
     private float continueTime = 0.0f;
     private float blinkTime = 0.0f;
     private float invincibleTime = 0.0f;
     private bool isGround = false;
     private bool isJump = false;
+    private bool isJump2 = false;
     private bool isWalk = false;
     private bool isHead = false;
     private bool isDown = false;
@@ -131,9 +135,15 @@ public class Player : MonoBehaviour
         bool upKey = Input.GetKey("up");
         float ySpeed = -gravity;
 
-        if(isGround){
+        if(isJump2)
+            isJump2 = false;
+
+        if(isGround){   // 地面にいるとき
+        jumpCounter = 0;
+
             if(verticalKey > 0 || wKey || upKey){
                 isJump = true;
+                jumpCounter++;
                 if(readytojump){
                     ySpeed = jumpSpeed;
                     jumpPos = transform.position.y;
@@ -144,16 +154,19 @@ public class Player : MonoBehaviour
                 isJump = false;
             }
         }
-
-        // 2段ジャンプ実装は以下
+        // ジャンプ中
         else if(isJump){
             bool pushUpKey = false;
             if(verticalKey > 0 || wKey || upKey){
                 pushUpKey = true;
             }
+
             bool canHeight = jumpPos + jumpHeight > transform.position.y;
             bool canTime = jumpLimitTime > jumpTime;
-
+            if(jumpCounter == 2){
+                canHeight = jumpPos2 + jumpHeight > transform.position.y;
+            }
+            
             if(pushUpKey && canHeight && canTime && !isHead){
                 ySpeed = jumpSpeed;
                 jumpTime += Time.deltaTime;
@@ -165,6 +178,16 @@ public class Player : MonoBehaviour
             }
         }
 
+        // 2段ジャンプの押下を取得
+        if(!isGround){
+            if((Input.GetKeyDown("up") || Input.GetKeyDown("w")) && jumpCount > jumpCounter){
+                isJump = true;
+                isJump2 = true;
+                jumpCounter++;
+                jumpPos2 = transform.position.y;
+                jumpTime = 0.0f;
+            }
+        }
         return ySpeed;
     }
 
@@ -306,6 +329,7 @@ public class Player : MonoBehaviour
 ///</summary>
     private void SetAnimation(){
         anim.SetBool("jump_neko", isJump);
+        anim.SetBool("jump2_neko", isJump2);
         anim.SetBool("ground_neko", isGround);
         anim.SetBool("walk_neko", isWalk);
     }
