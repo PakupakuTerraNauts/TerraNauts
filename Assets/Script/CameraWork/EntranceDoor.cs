@@ -19,7 +19,7 @@ public class EntranceDoor : MonoBehaviour
         automaticDoorAnimator.SetBool("Open", true);
         isOpen = true;
     }
-
+/*
     /// <summary>
     /// 自動ドア検知エリアを出た時
     /// </summary>
@@ -30,11 +30,15 @@ public class EntranceDoor : MonoBehaviour
         Debug.Log("判定から離れた!");
         Invoke("CloseDoor", 1.0f);
     }
-
-    private void CloseDoor() {
+*/
+    public void CloseDoor() {
         Debug.Log("ドア閉まるよ");
         automaticDoorAnimator.SetBool("Open", false);
         isOpen = false;
-        Destroy(gameObject, 1f);
+    }
+
+    public void JudgeDestory(){
+        // プレイヤーが部屋に入った後、剣でドアを開けるのを防ぐ
+        Destroy(gameObject);
     }
 }

@@ -6,15 +6,21 @@ public class EnteredBossRoom : MonoBehaviour
 {
     public bool isEnter = false;
     public Debidora debidora;
+    public EntranceDoor entrance;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.tag == "Player"){
-            // BossCamera1ã®ãƒ•ã‚§ãƒ¼ã‚º2ã®ãƒ•ãƒ©ã‚°
-            isEnter = true;
-            // ï¼‘å±¤ãƒœã‚¹ã®HPãƒãƒ¼æ“ä½œ
-            debidora.BossHPCountUp();
-            Destroy(gameObject, 3f);
+        if(!isEnter){
+            if(collision.tag == "Player"){
+                Debug.Log("“ü‚Á‚½");
+                // BossCamera1‚ÌƒtƒF[ƒY‚Q‚Ìƒtƒ‰ƒO
+                isEnter = true;
+                entrance.CloseDoor();
+                // ‚P‘wƒ{ƒX‚ÌHPƒo[‘€ì
+                debidora.BossHPCountUp();
+                entrance.JudgeDestory();
+                Destroy(gameObject, 3f);
+            }
         }
     }
 }

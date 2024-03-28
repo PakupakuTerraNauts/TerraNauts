@@ -9,6 +9,7 @@ public class BossCamera1 : MonoBehaviour
     public Transform Exit;  // 開く壁のTransform
     public EnteredBossRoom entranceBossRoom;
     public EntranceDoor entranceDoor;
+    public ExitDoor exitDoor;
 
     public float hallwaySpeed = 5f;  // 廊下の速さ
     public float bossRoomSpeed = 0.1f;  // ボス部屋での速さ
@@ -19,6 +20,14 @@ public class BossCamera1 : MonoBehaviour
     private bool isBossRoom = false;
 
     public Debidora debidora;
+
+    private float y;
+    private float z;
+
+    void Start(){
+        y = transform.position.y;
+        z = transform.position.z;
+    }
 
     
 
@@ -46,8 +55,8 @@ public class BossCamera1 : MonoBehaviour
     void FollowPlayerInHallway()
 {
     // Playerを追従
-    float targetX = Mathf.Min(player.position.x, Entrance.position.x - 8.5f);  // 右端の制限
-    transform.position = new Vector3(targetX, transform.position.y, player.position.z - 20f);
+    float targetX = Mathf.Min(player.position.x, Entrance.position.x - 8.5f);  // 右端の制限 廊下からボス部屋を覗けない
+    transform.position = new Vector3(targetX, y, player.position.z - 20f);
 
     // ボス部屋に近づいたらフェーズ2に移行
     if (entranceBossRoom.isEnter)
@@ -70,7 +79,7 @@ public class BossCamera1 : MonoBehaviour
         // ドアが開いている場合はプレーヤーに追従、閉まったら固定
         if (entranceDoor.isOpen){
             // Playerを追従
-            transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
+            transform.position = new Vector3(player.position.x, y, z);
             isBossRoom = true;
         } else {
             transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * bossRoomSpeed);
@@ -81,7 +90,7 @@ public class BossCamera1 : MonoBehaviour
         }
 
         // 壁が開いたらフェーズ3に移行
-        if (Vector3.Distance(transform.position, Exit.position) < 0.1f)
+        if (exitDoor.isOpen)
         {
             phase = 3;
             Camera.main.orthographicSize = 5f;
@@ -91,13 +100,7 @@ public class BossCamera1 : MonoBehaviour
     void FollowPlayerAfterBossDefeated()
     {
         // プレーヤーを追従
-        transform.position = Vector3.Lerp(transform.position, new Vector3(player.position.x, transform.position.y, player.position.z), Time.deltaTime * hallwaySpeed);
-    }
-
-    // ボスを倒したときに呼び出すメソッド
-    public void BossDefeated()
-    {
-        // フェーズ3に移行
-        phase = 3;
+        float targetX = Mathf.Max(player.position.x, Entrance.position.x - 8.5f);  // 右端の制限
+        transform.position = new Vector3(targetX, y, player.position.z - 20f);
     }
 }

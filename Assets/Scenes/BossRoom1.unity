@@ -317,6 +317,7 @@ MonoBehaviour:
   Exit: {fileID: 1380237527}
   entranceBossRoom: {fileID: 1214862528}
   entranceDoor: {fileID: 391771899}
+  exitDoor: {fileID: 1380237529}
   hallwaySpeed: 5
   bossRoomSpeed: 2
   fixedCameraDistance: 10
@@ -436,7 +437,7 @@ Animator:
   m_GameObject: {fileID: 391771898}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3dfb66cfd16b96f49995890edd365a4a, type: 2}
+  m_Controller: {fileID: 9100000, guid: cbe3523b4fef4564a8d1d1660757ea0c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1222,6 +1223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEnter: 0
   debidora: {fileID: 362808980}
+  entrance: {fileID: 391771899}
 --- !u!61 &1214862529
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1275,7 +1277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214862527}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14, y: 0, z: -10.436512}
+  m_LocalPosition: {x: -13, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1293,6 +1295,8 @@ GameObject:
   - component: {fileID: 1380237527}
   - component: {fileID: 1380237526}
   - component: {fileID: 1380237528}
+  - component: {fileID: 1380237530}
+  - component: {fileID: 1380237529}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -1412,6 +1416,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1380237529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380237525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163e414482b3cff4b8f7ca17407b906a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+--- !u!95 &1380237530
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380237525}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfc07734389c87745bced351f3942ef9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1401369468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1524,6 +1562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Debidora
       objectReference: {fileID: 0}
+    - target: {fileID: 3808649181237118791, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 4628922080793311980, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
       propertyPath: maxHealth
       value: 5000
@@ -1532,6 +1574,10 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5148395617855812467, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: exitDoor
+      value: 
+      objectReference: {fileID: 1380237529}
     - target: {fileID: 5148395617855812467, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
       propertyPath: enteredBossRoom
       value: 

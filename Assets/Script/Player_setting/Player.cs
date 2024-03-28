@@ -47,6 +47,8 @@ public class Player : MonoBehaviour
     private SpriteRenderer sr = null;
 
     public AnimationCurve JumpCurve;
+
+    public PlayerFoodManager _playerFoodManager;
     #endregion
 
     void Start()
@@ -250,77 +252,82 @@ public class Player : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision){
 
-        if(collision.collider.tag == "Enemy"){
-            nowHP = nowHP - 10;
-            isDamaged = true;
-        }
-        if(collision.collider.tag == "Saboten"){
-            nowHP = nowHP - 80;
-            isDamaged = true;
-        }
-        
-        if(nowHP <= 0){
-            nowHP = 0;
-            anim.Play("neko_die");
-            isDown = true;
-            StartCoroutine(PlayerDie());
+        if(!isDamaged){
+            if(collision.collider.tag == "Enemy"){
+                nowHP = nowHP - 10;
+                isDamaged = true;
+            }
+            if(collision.collider.tag == "Saboten"){
+                nowHP = nowHP - 80;
+                isDamaged = true;
+            }
+            
+            if(nowHP <= 0){
+                nowHP = 0;
+                anim.Play("neko_die");
+                isDown = true;
+                StartCoroutine(PlayerDie());
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(collision.tag == "Enemy"){
-            nowHP = nowHP - 10;
-            isDamaged = true;
-        }
-        if(collision.tag == "Sakebigoe"){
-            nowHP = nowHP - 20;
-            isDamaged = true;   // ダメージを喰らった時無敵時間にするためのフラグ
-        }
-        if(collision.tag == "tama"){
-            nowHP = nowHP - 20;
-            isDamaged = true;
-        }
-        if(collision.tag == "DebidoraFire"){
-            nowHP = nowHP - 80;
-            isDamaged = true;
-        }
-        if(collision.tag == "Hoshi"){
-            nowHP = nowHP - 40;
-            isDamaged = true;
-        }
-        if(collision.tag == "Tyubi"){
-            nowHP = nowHP - 60;
-            isDamaged = true;
-        }
-        if(collision.tag == "Sumi"){
-            nowHP = nowHP - 50;
-            isDamaged = true;
-        }
-        if(collision.tag == "DeadZone"){
-            nowHP -= nowHP;
-        }
-        if(collision.tag == "Ninzin"){
-            nowHP = nowHP - 70;
-            isDamaged = true;
-        }
-        if(collision.tag == "NinzinExp"){
-            nowHP = nowHP - 90;
-            isDamaged = true;
-        }
-        if(collision.tag == "Turara"){
-            nowHP = nowHP - 130;
-            isDamaged = true;
-        }
-        if(collision.tag == "Kabotya"){
-            nowHP = nowHP - 60;
-            isDamaged = true;
-        }
+        if(!isDamaged){
+            if(collision.tag == "Enemy"){
+                nowHP = nowHP - 10;
+                isDamaged = true;
+            }
+            if(collision.tag == "Sakebigoe"){
+                nowHP = nowHP - 20;
+                isDamaged = true;   // ダメージを喰らった時無敵時間にするためのフラグ
+            }
+            if(collision.tag == "tama"){
+                nowHP = nowHP - 20;
+                isDamaged = true;
+            }
+            if(collision.tag == "DebidoraFire"){
+                nowHP = nowHP - 80;
+                isDamaged = true;
+            }
+            if(collision.tag == "Hoshi"){
+                nowHP = nowHP - 40;
+                isDamaged = true;
+            }
+            if(collision.tag == "Tyubi"){
+                nowHP = nowHP - 60;
+                isDamaged = true;
+            }
+            if(collision.tag == "Sumi"){
+                nowHP = nowHP - 50;
+                isDamaged = true;
+            }
+            if(collision.tag == "DeadZone"){
+                nowHP -= nowHP;
+            }
+            if(collision.tag == "Ninzin"){
+                nowHP = nowHP - 70;
+                isDamaged = true;
+            }
+            if(collision.tag == "NinzinExp"){
+                nowHP = nowHP - 90;
+                isDamaged = true;
+            }
+            if(collision.tag == "Turara"){
+                nowHP = nowHP - 130;
+                isDamaged = true;
+            }
+            if(collision.tag == "Kabotya"){
+                nowHP = nowHP - 60;
+                isDamaged = true;
+            }
 
-        if(nowHP <= 0){
-            nowHP = 0;
-            anim.Play("neko_die");
-            isDown = true;
-            StartCoroutine(PlayerDie());
+            // 無敵時間の間は死んでも動けるかも.
+            if(nowHP <= 0){
+                nowHP = 0;
+                anim.Play("neko_die");
+                isDown = true;
+                StartCoroutine(PlayerDie());
+            }
         }
     }
     
@@ -350,6 +357,7 @@ public class Player : MonoBehaviour
 
     IEnumerator PlayerDie()
     {
+        _playerFoodManager.ApplySavedItemList();
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("GameOver");
         nowHP = HP;
