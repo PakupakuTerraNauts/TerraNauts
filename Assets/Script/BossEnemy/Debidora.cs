@@ -13,11 +13,12 @@ public class Debidora : MonoBehaviour
     private float maxhp = 0.0f;
     private float countStarthp = 0.0f;
     public bool isStart = true;
-    public bool isDead = false;
-    public bool isDying = false;
+    [HideInInspector] public bool isDead = false;
+    [HideInInspector] public bool isDying = false;
     private bool isNoHP = true;
     private Vector3 nowPosition;
     
+    public ExitDoor exitDoor;
     public EnteredBossRoom enteredBossRoom;
     public HPBar HP;
     private float ATK_player = 0.0f;
@@ -189,9 +190,13 @@ public class Debidora : MonoBehaviour
         {
             GameObject newFrame = Instantiate(FramePrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), new Quaternion(0f, 0f, 0f, 0f));
             GameObject newLight = Instantiate(LightPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), new Quaternion(0f, 0f, 0f, 0f));
+            newFrame.name = "FrameDebidora";
+            newLight.name = "FrameLight";
         }
         yield return new WaitForSeconds(0.05f);
         Destroy(gameObject);
+
+        exitDoor.OpenDoor();
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
@@ -216,7 +221,7 @@ public class Debidora : MonoBehaviour
             HP.UpdateHP(-countStarthp);        
             nowhp = nowhp + countStarthp;
             Debug.Log("in loop : " + nowhp);
-            yield return new WaitForSeconds(0.05f);     // 0.05•b‚²‚Æ‚É
+            yield return new WaitForSeconds(0.1f);     // 0.05•b‚²‚Æ‚É
         }
     }
 }

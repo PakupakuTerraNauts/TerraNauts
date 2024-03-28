@@ -1720,6 +1720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1370699117}
+  _playerFoodManager: {fileID: 1876327029}
 --- !u!1001 &277652219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73261,6 +73262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1370699117}
+  _playerFoodManager: {fileID: 1876327029}
 --- !u!4 &1518809308 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3498729174465377212, guid: 7e35c8a2d940ff04796aabbcb804bcd6, type: 3}
@@ -74202,6 +74204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1370699117}
+  _playerFoodManager: {fileID: 1876327029}
 --- !u!61 &1727383319
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -77590,6 +77593,10 @@ PrefabInstance:
       propertyPath: gravity
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2879555459971201280, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
+      propertyPath: _playerFoodManager
+      value: 
+      objectReference: {fileID: 1876327029}
     - target: {fileID: 3136481711131276926, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
       propertyPath: m_Name
       value: neko-default

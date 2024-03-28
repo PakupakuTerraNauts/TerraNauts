@@ -31,6 +31,12 @@ public class ItemData
     {
         return count;
     }
+
+    //所持数全消去
+    public void Delete()
+    {
+        count = 0;
+    }
 }
 
 
@@ -38,6 +44,23 @@ public class ItemData
 public class PlayerFoodManager:MonoBehaviour
 {
     [SerializeField] static List<ItemData> _itemDataList = new List<ItemData>();   //プレイヤーの所持アイテム
+    [SerializeField] static List<ItemData> _savedItemList = new List<ItemData>();
+
+    //セーブでアイテム数を更新
+    public void UpdateSavedItemList(){
+        _savedItemList.Clear();
+        foreach(var item in _itemDataList){
+            _savedItemList.Add(new ItemData(item.id, item.count));
+        }
+    }
+
+    //デスでセーブ時のアイテム数を適用
+    public void ApplySavedItemList(){
+        _itemDataList.Clear();
+        foreach(var item in _savedItemList){
+            _itemDataList.Add(new ItemData(item.id, item.count));
+        }
+    }
 
     //アイテムを取得
     public void CountItem(string itemId, int count)
