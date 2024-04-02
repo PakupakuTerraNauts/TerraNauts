@@ -61,8 +61,9 @@ public class GameOverMenu:MonoBehaviour
         switch(i)
         {
             case 0:
-                SceneManager.LoadScene("stage1");
+                PlayerStatusReset();
                 SingletonStage1.instance.RespawnDeadEnemy();
+                SceneManager.LoadScene("stage1");
                 break;
             case 1:
                 #if UNITY_EDITOR
@@ -72,5 +73,14 @@ public class GameOverMenu:MonoBehaviour
                 #endif
                 break;
         }
+    }
+
+    private void PlayerStatusReset(){
+        Player.HPincrement = 0;
+        Player.ATKincrement = 0;
+        Player.DEFincrement = 0;
+        Player.SPDincrement = 0;
+        Player.CRITRATEincrement = 0;
+        Player.CRITDMGincrement = 0;
     }
 }

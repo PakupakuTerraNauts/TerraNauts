@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Escape繝懊ち繝ｳ縺ｧ繝｡繝九Η繝ｼ逕ｻ髱｢陦ｨ遉ｺ
+//Escapeボタンでメニュー画面表示
 public class MenuChange:MonoBehaviour
 {
     private bool isLoaded = false;

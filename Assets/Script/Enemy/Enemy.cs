@@ -67,9 +67,9 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     protected void recievedDamage(Collider2D collision){
         if(!isDead){
             if(collision.tag == "Sword"){
-                float atk = Player.ATK;
-                if(rand.Random(Player.CRITRATE / 5.0f)){
-                    atk += Player.CRITDMG * 2.0f;
+                float atk = Player.ATK + Player.ATKincrement;
+                if(rand.Random((Player.CRITRATE + Player.CRITRATEincrement) / 5.0f)){
+                    atk += (Player.CRITDMG + Player.CRITDMGincrement) * 2.0f;
                 }
                 HP.UpdateHP(atk);
                 hp = hp - atk;
