@@ -12,10 +12,10 @@ public class Player : MonoBehaviour
     private float jumpSpeed = 6.0f;
     public float jumpHeight;
     private float jumpLimitTime = 1.5f;
-    private int jumpCount = 2;
-    private int jumpCounter = 0;
     public static int HP = 100;
     public static float nowHP = 100.0f;
+    public int maxJumpCount;    // 増やせば何段でも可
+    private int jumpCounter = 0;
 
     public static int ATK = 100;
     public static int DEF = 0;
@@ -32,7 +32,6 @@ public class Player : MonoBehaviour
     private float invincibleTime = 0.0f;
     private bool isGround = false;
     private bool isJump = false;
-    private bool isJump2 = false;
     private bool isWalk = false;
     private bool isHead = false;
     private bool isDown = false;
@@ -46,7 +45,7 @@ public class Player : MonoBehaviour
     private CapsuleCollider2D capcol = null;
     private SpriteRenderer sr = null;
 
-    public AnimationCurve JumpCurve;
+    public AnimationCurve JumpupCurve;
 
     public PlayerFoodManager _playerFoodManager;
     #endregion
@@ -62,6 +61,7 @@ public class Player : MonoBehaviour
 
     private void Update(){
         if(!isDown){
+            GetInputTwoJump();
             isAttack = PlayerAttack();
 
             // 攻撃アニメーション→コルーチンへ
@@ -137,15 +137,15 @@ public class Player : MonoBehaviour
         bool upKey = Input.GetKey("up");
         float ySpeed = -gravity;
 
-        if(isJump2)
-            isJump2 = false;
-
         if(isGround){   // 地面にいるとき
-        jumpCounter = 0;
+            jumpCounter = 0;
 
+        // 着地したらズームイン
+        //if(Camera.main.orthographicSize != 5f && StageCamera.Instance != null){
+          //  StageCamera.JumpZoomIn(0.3f);
+        //}あると酔うかも
             if(verticalKey > 0 || wKey || upKey){
                 isJump = true;
-                jumpCounter++;
                 if(readytojump){
                     ySpeed = jumpSpeed;
                     jumpPos = transform.position.y;
@@ -158,39 +158,53 @@ public class Player : MonoBehaviour
         }
         // ジャンプ中
         else if(isJump){
+
             bool pushUpKey = false;
             if(verticalKey > 0 || wKey || upKey){
                 pushUpKey = true;
+                if(jumpCounter < 1)
+                    jumpCounter++;
             }
 
             bool canHeight = jumpPos + jumpHeight > transform.position.y;
             bool canTime = jumpLimitTime > jumpTime;
-            if(jumpCounter == 2){
+            if(jumpCounter > 1){
                 canHeight = jumpPos2 + jumpHeight > transform.position.y;
             }
             
             if(pushUpKey && canHeight && canTime && !isHead){
+                // ジャンプでズームアウト
+                if(Camera.main.orthographicSize != 8f && StageCamera.Instance != null){
+                    StageCamera.JumpZoomOut(0.5f);
+                }
                 ySpeed = jumpSpeed;
                 jumpTime += Time.deltaTime;
-                ySpeed *= JumpCurve.Evaluate(jumpTime);
+                ySpeed *= JumpupCurve.Evaluate(jumpTime);
             }
             else{
                 isJump = false;
                 jumpTime = 0.0f;
+                // 落下でズームイン
+                if(Camera.main.orthographicSize != 5f && StageCamera.Instance != null){
+                    StageCamera.JumpZoomIn(0.3f);
+                }
             }
         }
 
+        return ySpeed;
+    }
+
+    private void GetInputTwoJump(){
         // 2段ジャンプの押下を取得
         if(!isGround){
-            if((Input.GetKeyDown("up") || Input.GetKeyDown("w")) && jumpCount > jumpCounter){
-                isJump = true;
-                isJump2 = true;
+            if((Input.GetKeyDown("up") || Input.GetKeyDown("w")) && jumpCounter < maxJumpCount){   // カウンターが現在のジャンプ回数
+                anim.Play("neko_jump_2dan");
                 jumpCounter++;
+                isJump = true;
                 jumpPos2 = transform.position.y;
                 jumpTime = 0.0f;
             }
         }
-        return ySpeed;
     }
 
 
@@ -273,6 +287,9 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(!isDamaged){
+            if(collision.tag == "TutorialDamage"){
+                isDamaged = true;
+            }
             if(collision.tag == "Enemy"){
                 nowHP = nowHP - 10;
                 isDamaged = true;
@@ -336,7 +353,6 @@ public class Player : MonoBehaviour
 ///</summary>
     private void SetAnimation(){
         anim.SetBool("jump_neko", isJump);
-        anim.SetBool("jump2_neko", isJump2);
         anim.SetBool("ground_neko", isGround);
         anim.SetBool("walk_neko", isWalk);
     }

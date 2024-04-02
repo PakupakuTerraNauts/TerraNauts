@@ -23,6 +23,7 @@ TagManager:
   - EnemySleep
   - Kabotya
   - Saboten
+  - TutorialDamage
   layers:
   - Default
   - TransparentFX
