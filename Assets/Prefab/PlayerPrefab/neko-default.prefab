@@ -192,30 +192,32 @@ MonoBehaviour:
   head: {fileID: 422874987791530711}
   gravity: 4
   jumpHeight: 5
-  JumpCurve:
+  maxJumpCount: 2
+  JumpupCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: -0.002627629
-      outSlope: -0.002627629
+      time: -0.00000025518239
+      value: 1.0000125
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.7263218
+      outWeight: 0
     - serializedVersion: 3
-      time: 1.0000191
-      value: 0.20049724
-      inSlope: -1.9868609
-      outSlope: -1.9868609
+      time: 0.9999789
+      value: 0.1499434
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.078358404
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _playerFoodManager: {fileID: 0}
 --- !u!114 &4457948176857028963
 MonoBehaviour:
   m_ObjectHideFlags: 0

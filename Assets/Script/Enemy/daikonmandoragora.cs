@@ -47,6 +47,7 @@ public class daikonmandoragora : Enemy
 
     protected override void dieAnimation(){
         if(!isDead){
+            gameObject.tag = "EnemySleep";
             anim.Play("radissh_die");
         }
     }

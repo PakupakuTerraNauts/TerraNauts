@@ -80,11 +80,14 @@ public class TitleMenu:MonoBehaviour
                 break;
             case 1:
 #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;//繧ｲ繝ｼ繝繝励Ξ繧､邨ゆｺ�
+                UnityEditor.EditorApplication.isPlaying = false;//ゲームプレイ終了
 #else
                     Application.Quit();
-                    //繧ｲ繝ｼ繝繝励Ξ繧､邨ゆｺ�
+                    //ゲームプレイ終了
 #endif
+                break;
+            case 2:
+                SceneManager.LoadScene("tutorial");
                 break;
         }
     }
