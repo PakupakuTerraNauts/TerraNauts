@@ -71,8 +71,7 @@ public class CharactorGetItem:MonoBehaviour
     public void SetHPText()
     {
         Text hptext = HPObject.GetComponent<Text>();
-        int HP = Player.HP + Player.HPincrement;
-        string maxHP = HP.ToString();
+        string maxHP = Player.HP.ToString();
         string nowHP = Player.nowHP.ToString();
         hptext.text = nowHP + "/" + maxHP;
     }

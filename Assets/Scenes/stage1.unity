@@ -1719,7 +1719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a07eada72378d4bbf5478a7ad4c42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1370699117}
+  Player: {fileID: 1370699117}
   _playerFoodManager: {fileID: 1876327029}
 --- !u!1001 &277652219
 PrefabInstance:
@@ -73238,7 +73238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a07eada72378d4bbf5478a7ad4c42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1370699117}
+  Player: {fileID: 1370699117}
   _playerFoodManager: {fileID: 1876327029}
 --- !u!4 &1518809308 stripped
 Transform:
@@ -74180,7 +74180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a07eada72378d4bbf5478a7ad4c42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1370699117}
+  Player: {fileID: 1370699117}
   _playerFoodManager: {fileID: 1876327029}
 --- !u!61 &1727383319
 BoxCollider2D:
