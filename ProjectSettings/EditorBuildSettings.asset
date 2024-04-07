@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BossRoom1.unity
     guid: eed2dfd0a72fa8a41ab5826de518541d
+  - enabled: 1
+    path: Assets/Scenes/Stage2.unity
+    guid: eef06932d252b4446bf7c8c1e854976b
   m_configObjects: {}

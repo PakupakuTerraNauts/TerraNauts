@@ -54,6 +54,7 @@ public class Debidora : MonoBehaviour
                 if(isDying == false)
                 {
                     isDying = true;
+                    gameObject.tag = "DeadEnemy";
                     StartCoroutine("Dead");
                 }
             }

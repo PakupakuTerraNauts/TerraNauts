@@ -125,4 +125,13 @@ public class PlayerFoodManager:MonoBehaviour
         }
         return tmp;
     }
+
+    //‚Á‚Ä‚¢‚éƒAƒCƒeƒ€‚ğ‚·‚×‚ÄÁ‹
+    public void ItemReset()
+    {
+        for(int i = 0; i < _itemDataList.Count; i++)
+        {
+            _itemDataList[i].Delete();
+        }
+    }
 }
