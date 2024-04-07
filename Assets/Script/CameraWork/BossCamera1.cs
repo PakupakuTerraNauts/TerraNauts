@@ -21,6 +21,9 @@ public class BossCamera1 : MonoBehaviour
 
     public Debidora debidora;
 
+    public BossBGM bgm;
+    private bool isPlayed = false;
+
     private float y;
     private float z;
 
@@ -87,6 +90,10 @@ public class BossCamera1 : MonoBehaviour
                 isBossRoom = true;
             }
             Camera.main.orthographicSize = 9f;
+            if(!isPlayed){
+                bgm.BossFightBGMStart();
+                isPlayed = true;
+            }
         }
 
         // 壁が開いたらフェーズ3に移行
@@ -94,13 +101,14 @@ public class BossCamera1 : MonoBehaviour
         {
             phase = 3;
             Camera.main.orthographicSize = 5f;
+            bgm.BossFightBGMStop();
         }
     }
 
     void FollowPlayerAfterBossDefeated()
     {
         // プレーヤーを追従
-        float targetX = Mathf.Max(player.position.x, Entrance.position.x - 8.5f);  // 右端の制限
+        float targetX = Mathf.Min(player.position.x, 60f);  // 右端の制限
         transform.position = new Vector3(targetX, y, player.position.z - 20f);
     }
 }

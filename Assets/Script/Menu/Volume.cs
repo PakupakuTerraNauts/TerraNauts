@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class Volume:MonoBehaviour
 {
-    public static float nowVolume = 1;
+    public static float nowVolume = 0.5f;
     private AudioSource audioSource;
     private Slider audioSlider;
 
@@ -23,6 +23,7 @@ public class Volume:MonoBehaviour
     {
         audioSource.volume = audioSlider.value;
         nowVolume = audioSlider.value;
+        Debug.Log("nowVolume : " + nowVolume);
     }
 
 }
