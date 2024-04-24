@@ -40,7 +40,6 @@ public class tree : MonoBehaviour
             HP.UpdateHP(ATK_player);
             hp = hp - ATK_player;
         }
-
         if(hp <= 0.0f){
             anim.Play("pinesisa_tree_falling");
         }

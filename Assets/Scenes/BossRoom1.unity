@@ -1714,13 +1714,25 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 3808649181237118791, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_TagString
+      value: Debidora
+      objectReference: {fileID: 0}
     - target: {fileID: 4628922080793311980, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
       propertyPath: maxHealth
       value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 4894121828288766740, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_ScaleFactor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894121828288766740, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894121828288766740, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_ReferencePixelsPerUnit
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5148395617855812467, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
       propertyPath: exitDoor

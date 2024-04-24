@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-//ãƒœã‚¿ãƒ³ã‚»ãƒ¬ã‚¯ãƒˆã¨ãƒ—ãƒƒã‚·ãƒ¥
+//ƒ{ƒ^ƒ“ƒZƒŒƒNƒg‚ÆƒvƒbƒVƒ…
 public class SelectScript:MonoBehaviour
 {
 
@@ -19,7 +19,7 @@ public class SelectScript:MonoBehaviour
 
     void Start()
     {
-        //ä¸€ç•ªä¸Šã®ãƒœã‚¿ãƒ³ã‚’ã‚»ãƒ¬ã‚¯ãƒˆ
+        //ˆê”Ôã‚Ìƒ{ƒ^ƒ“‚ğƒZƒŒƒNƒg
         if(_gameObject.transform.GetChild(1).gameObject != null)
         {
             _firstObj = _gameObject.transform.GetChild(1).gameObject;

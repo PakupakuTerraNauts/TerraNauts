@@ -12,9 +12,4 @@ public class BGMReset : MonoBehaviour
         _audio.volume = Volume.nowVolume;  // script\Menu\Volume.cs\nowVolume
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

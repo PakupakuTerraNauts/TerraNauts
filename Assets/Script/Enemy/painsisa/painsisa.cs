@@ -6,7 +6,8 @@ public class painsisa : Enemy
 {
     #region // variables
     private bool instantDeath = false;
-    public bool isAttack = false;
+    [HideInInspector] public bool isAttack = false;
+    [Header("チェックで向き反転")] public bool isLeft = true;
 
     private CircleCollider2D circol = null;
     #endregion
@@ -14,6 +15,9 @@ public class painsisa : Enemy
     protected override void Initialize(){
         circol = GetComponent<CircleCollider2D>();
         circol.enabled = true;
+        if(!isLeft){
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
     protected override void Moving(){

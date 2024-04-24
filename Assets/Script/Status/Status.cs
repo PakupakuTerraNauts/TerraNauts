@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//繧ｹ繝�繝ｼ繧ｿ繧ｹ邂｡逅�
+//ステータス管理
 public class Status:MonoBehaviour
 {
     public static int HP = 100;

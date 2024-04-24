@@ -59,6 +59,7 @@ public class BossCamera1 : MonoBehaviour
 {
     // Playerを追従
     float targetX = Mathf.Min(player.position.x, Entrance.position.x - 8.5f);  // 右端の制限 廊下からボス部屋を覗けない
+    targetX = Mathf.Max(targetX, -63f);
     transform.position = new Vector3(targetX, y, player.position.z - 20f);
 
     // ボス部屋に近づいたらフェーズ2に移行
