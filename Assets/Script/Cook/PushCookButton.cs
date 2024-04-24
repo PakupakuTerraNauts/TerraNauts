@@ -148,6 +148,7 @@ public class PushCookButton:MonoBehaviour
                 }
 
                 Debug.Log("—¿—Š®—¹");
+                Player.nowHP = Player.HP + Player.HPincrement;
             }
 
             ChangeText();

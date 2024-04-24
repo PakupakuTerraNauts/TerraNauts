@@ -61,7 +61,10 @@ public class GameOverMenu:MonoBehaviour
         switch(i)
         {
             case 0:
+                // セーブしていないステータス上昇分はリセット
+                PlayerStatusReset();
                 SceneManager.LoadScene("stage1");
+                // 倒された状態をセーブされていない敵は復活する
                 SingletonStage1.instance.RespawnDeadEnemy();
                 break;
             case 1:
@@ -72,5 +75,20 @@ public class GameOverMenu:MonoBehaviour
                 #endif
                 break;
         }
+    }
+
+    private void PlayerStatusReset(){
+        Status.HP -= Player.HPincrement;
+        Status.ATK -= Player.ATKincrement;
+        Status.DEF -= Player.DEFincrement;
+        Status.SPD -= Player.SPDincrement;
+        Status.CRITRATE -= Player.CRITRATEincrement;
+        Status.CRITDMG -= Player.CRITDMGincrement;
+        Player.HPincrement = 0;
+        Player.ATKincrement = 0;
+        Player.DEFincrement = 0;
+        Player.SPDincrement = 0;
+        Player.CRITRATEincrement = 0;
+        Player.CRITDMGincrement = 0;
     }
 }

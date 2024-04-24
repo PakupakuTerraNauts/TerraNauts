@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//èª¿ç†å°å‰ã§ã®å‡¦ç†
+//’²—‘ä‘O‚Å‚Ìˆ—
 public class KittenGet:MonoBehaviour
 {
     public bool isKittenLoaded = false;
@@ -16,7 +16,7 @@ public class KittenGet:MonoBehaviour
         _cookInfoCanvas.SetActive(false);
     }
 
-    //èª¿ç†å°ã«è§¦ã‚Œã¦ã„ã‚‹æ™‚
+    //’²—‘ä‚ÉG‚ê‚Ä‚¢‚é
     private void OnTriggerStay2D(Collider2D collision)
     {
         trigger = true;
@@ -29,7 +29,7 @@ public class KittenGet:MonoBehaviour
         _collider = collision;
     }
 
-    //èª¿ç†å°ã‹ã‚‰å‡ºãŸæ™‚
+    //’²—‘ä‚©‚ço‚½
     private void OnTriggerExit2D()
     {
         trigger = false;
@@ -48,8 +48,8 @@ public class KittenGet:MonoBehaviour
         }
 
 
-        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒèª¿ç†å°å‰ã§"E"ã‚’æŠ¼ã—ãŸæ™‚
-        if(trigger && _collider.gameObject.tag == ("Player") && Input.GetKeyDown(KeyCode.E))
+        //ƒvƒŒƒCƒ„[‚ª’²—‘ä‘O‚Å"E"‚ğ‰Ÿ‚µ‚½
+        if(trigger && _collider.gameObject.tag == ("Player") && Input.GetKeyDown(KeyCode.E) && !MenuChange.isMenuOpen)
         {
             isKittenLoaded = !isKittenLoaded;
             if(isKittenLoaded)
@@ -63,7 +63,7 @@ public class KittenGet:MonoBehaviour
             }
         }
 
-        if(trigger && _collider.gameObject.tag == ("Player"))
+        if(trigger && _collider.gameObject.tag == ("Player") && !MenuChange.isMenuOpen)
         {
             _cookInfoCanvas.SetActive(true);
         }

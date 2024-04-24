@@ -30,7 +30,6 @@ public class TitleMenu:MonoBehaviour
             button.Select();
             selectObj = firstSelect;
         }
-        Debug.Log(selectObj);
         Text = selectObj.transform.GetChild(0).GetComponent<Text>();
 
         switch(selectObj.name)

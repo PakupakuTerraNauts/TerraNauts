@@ -222,7 +222,7 @@ public class Debidora : MonoBehaviour
             HP.UpdateHP(-countStarthp);        
             nowhp = nowhp + countStarthp;
             Debug.Log("in loop : " + nowhp);
-            yield return new WaitForSeconds(0.1f);     // 0.05•b‚²‚Æ‚É
+            yield return new WaitForSeconds(0.15f);     // 0.15•b‚²‚Æ‚É
         }
     }
 }

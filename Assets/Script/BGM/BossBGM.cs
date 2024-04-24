@@ -9,6 +9,7 @@ public class BossBGM : MonoBehaviour
     void Start()
     {
         _audio = GetComponent<AudioSource>();
+        _audio.volume = Volume.nowVolume;
     }
 
     public void BossFightBGMStart(){

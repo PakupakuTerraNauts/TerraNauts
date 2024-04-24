@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//Cookingãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«ãƒ¬ã‚·ãƒ”ã‚’è¡¨ç¤º
+//Cookingƒƒjƒ…[‚ÉƒŒƒVƒs‚ğ•\¦
 public class CookingMenu:MonoBehaviour
 {
     //Script
@@ -29,16 +29,16 @@ public class CookingMenu:MonoBehaviour
         _main = GameObject.Find("Main");
         _playerRecipeManager = _main.GetComponent<PlayerRecipeManager>();
 
-        //ãƒ¬ã‚·ãƒ”è¡¨ç¤º
+        //ƒŒƒVƒs•\¦
         TextDelete(_viewRecipeText);
         SetRecipeText();
 
-        //AnimationCanvasã®éè¡¨ç¤º
+        //AnimationCanvas‚Ì”ñ•\¦
         AnimationOFF();
 
     }
 
-    //ãƒ†ã‚­ã‚¹ãƒˆã‚’å‰Šé™¤
+    //ƒeƒLƒXƒg‚ğíœ
     public void TextDelete(GameObject _objectText)
     {
         foreach(Transform child in _objectText.transform)
@@ -47,7 +47,7 @@ public class CookingMenu:MonoBehaviour
         }
     }
 
-    //ãƒ¬ã‚·ãƒ”ã®ãƒ†ã‚­ã‚¹ãƒˆç”Ÿæˆ
+    //ƒŒƒVƒs‚ÌƒeƒLƒXƒgì¬
     public void SetRecipeText()
     {
         Debug.Log("SetRecipeText");
@@ -78,7 +78,7 @@ public class CookingMenu:MonoBehaviour
         }
     }
 
-    //AnimaitonCanvasã‚’éè¡¨ç¤ºã«ã™ã‚‹
+    //AnimaitonCanvas‚ğ”ñ•\¦‚É‚·‚é
     public void AnimationOFF()
     {
         _animationCanvas.SetActive(false);

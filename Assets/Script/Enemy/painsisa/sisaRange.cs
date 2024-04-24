@@ -20,4 +20,10 @@ public class sisaRange : MonoBehaviour
             sisa.isAttack = true;
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision){
+        if(collision.tag == "Player"){
+            sisa.isAttack = true;
+        }
+    }
 }

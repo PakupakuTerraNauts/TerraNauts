@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MenuChange:MonoBehaviour
 {
     private static bool isLoaded = false;
+    public static bool isMenuOpen = false;
     //public KittenGet _kittenGet;
 
     // Update is called once per frame
@@ -29,11 +30,13 @@ public class MenuChange:MonoBehaviour
         if(isLoaded)
         {
             Application.LoadLevelAdditive("MenuScean");
+            isMenuOpen = true;
         }
         else
         {
             Application.UnloadLevel("MenuScean");
             Resources.UnloadUnusedAssets();
+            isMenuOpen = false;
         }
     }
 
