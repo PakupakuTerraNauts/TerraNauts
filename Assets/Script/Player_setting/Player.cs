@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public static int HPincrement = 0;
     public int maxJumpCount;    // 増やせば何段でも可
     private int jumpCounter = 0;
+    public static float playerPosX = 0f;    // プレイヤーの方を向く敵が使用
 
     public static int ATK = 100;
     public static int ATKincrement = 0;
@@ -30,12 +31,13 @@ public class Player : MonoBehaviour
     public static int CRITDMG = 50;
     public static int CRITDMGincrement = 0;
 
+    public float attackCooltime;
     private float jumpPos = 0.0f;
     private float jumpPos2 = 0.0f;
     private float jumpTime = 0.0f;
     private float continueTime = 0.0f;
     private float blinkTime = 0.0f;
-    private float invincibleTime = 0.0f;
+    //private float invincibleTime = 0.0f;
     private bool isGround = false;
     private bool isJump = false;
     private bool isWalk = false;
@@ -43,7 +45,7 @@ public class Player : MonoBehaviour
     private bool isDown = false;
     private bool isAttack = false;
     private bool isAttackCool = false;
-    private bool isContinue = false;
+    //private bool isContinue = false;
     private bool isDamaged = false;
     private bool readytojump = false;
     private Animator anim = null;
@@ -69,6 +71,8 @@ public class Player : MonoBehaviour
 
     private void Update(){
         if(!isDown){
+            playerPosX = transform.position.x;
+            
             GetInputTwoJump();
             isAttack = PlayerAttack();
 
@@ -269,7 +273,7 @@ public class Player : MonoBehaviour
         anim.Play("neko_die");
         isJump = false;
         isWalk = false;
-        isContinue = true;
+        //isContinue = true;
     }
     
     private void OnCollisionEnter2D(Collision2D collision){
@@ -391,8 +395,8 @@ public class Player : MonoBehaviour
         else if (!isGround) // 空中ならAerialAttack
             anim.SetTrigger("aAttack_neko");
         
-        yield return new WaitForSeconds(3.0f);
-        Debug.Log("cooltime 3s");
+        yield return new WaitForSeconds(attackCooltime);  //クールタイム
+        Debug.Log("cooltime " + attackCooltime + "s");
         cooltimemaker.SetActive(true);
         isAttackCool = false;
     }

@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66996b863c4c2948aca0ebb2d2b2e61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
 --- !u!95 &8749650898981032331
 Animator:
   serializedVersion: 5
@@ -451,6 +451,7 @@ MonoBehaviour:
   basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
   uniqueObject: {fileID: 421306667867481507, guid: 38de61380ca614d3db46f61dfb964942, type: 3}
   Tama: {fileID: 1957454184950911145}
+  PlayerObject: {fileID: 0}
   isLeft: 1
 --- !u!114 &2606537794512555276
 MonoBehaviour:

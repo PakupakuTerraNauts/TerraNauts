@@ -15,6 +15,7 @@ public class changeToBoss : MonoBehaviour
             SceneManager.LoadScene("BossRoom1");
             if(singleton != null){
                 Destroy(singleton.gameObject);
+                singleton = null;
             }
         }
     }
