@@ -42,6 +42,7 @@ public class SingletonStage1 : MonoBehaviour
             if(enemy != null){
                 bool deleted = enemy.DeleteDead();
                 if(deleted){
+                    t = null;
                     enemies.RemoveAt(i);
                 }
             }

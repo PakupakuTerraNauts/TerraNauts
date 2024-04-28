@@ -278,6 +278,7 @@ MonoBehaviour:
   gravity: 4
   jumpHeight: 5
   maxJumpCount: 2
+  attackCooltime: 1.5
   JumpupCurve:
     serializedVersion: 2
     m_Curve:

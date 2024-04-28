@@ -246,6 +246,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (4)
@@ -388,6 +392,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (5)
@@ -454,6 +462,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (19)
@@ -520,6 +532,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (7)
@@ -581,6 +597,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (10)
@@ -886,6 +906,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (27)
@@ -957,6 +981,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (22)
@@ -1254,6 +1282,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (38)
@@ -1449,6 +1481,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (39)
@@ -1567,6 +1603,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (11)
@@ -2333,6 +2373,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (14)
@@ -66841,6 +66885,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2603556953384481534, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
   m_PrefabInstance: {fileID: 1705835850}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &489411766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 489411767}
+  m_Layer: 0
+  m_Name: BGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &489411767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489411766}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1067238610}
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &499282128 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2603556953384481534, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
@@ -67057,6 +67133,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (2)
@@ -67322,6 +67402,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (20)
@@ -67558,6 +67642,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (18)
@@ -67619,6 +67707,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (21)
@@ -67814,6 +67906,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (28)
@@ -67880,6 +67976,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (8)
@@ -68436,6 +68536,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (41)
@@ -69338,6 +69442,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (24)
@@ -69786,6 +69894,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (35)
@@ -69847,6 +69959,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (9)
@@ -69982,6 +70098,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (36)
@@ -70008,7 +70128,7 @@ GameObject:
   - component: {fileID: 1067238609}
   - component: {fileID: 1067238611}
   m_Layer: 0
-  m_Name: BGM
+  m_Name: StageBGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70117,13 +70237,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067238608}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 489411767}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1067238611
 MonoBehaviour:
@@ -70369,6 +70489,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (12)
@@ -70708,6 +70832,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (33)
@@ -71188,6 +71316,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (29)
@@ -71634,6 +71766,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (31)
@@ -72024,6 +72160,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (3)
@@ -72506,6 +72646,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (40)
@@ -72567,6 +72711,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (17)
@@ -72974,6 +73122,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (37)
@@ -73515,6 +73667,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (15)
@@ -73693,6 +73849,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (30)
@@ -73978,6 +74138,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (26)
@@ -74259,6 +74423,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (1)
@@ -74519,6 +74687,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (6)
@@ -74753,6 +74925,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (16)
@@ -74972,6 +75148,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (42)
@@ -75270,6 +75450,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (32)
@@ -75665,6 +75849,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (25)
@@ -75862,6 +76050,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya (23)
@@ -77519,6 +77711,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132849772957616531, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 1370699117}
     - target: {fileID: 4143304229097219757, guid: e5372a0197c0f40479d91cb4706d805e, type: 3}
       propertyPath: m_Name
       value: enemy_niwakokepittya
