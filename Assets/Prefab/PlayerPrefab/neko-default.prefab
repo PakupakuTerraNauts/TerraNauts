@@ -146,7 +146,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1, y: -0.7}
+  m_Offset: {x: 0.1, y: 0}
   m_Size: {x: 0.8, y: 1.2}
   m_Direction: 0
 --- !u!50 &420341895002523061
@@ -193,6 +193,7 @@ MonoBehaviour:
   gravity: 4
   jumpHeight: 5
   maxJumpCount: 2
+  attackCooltime: 1.5
   JumpupCurve:
     serializedVersion: 2
     m_Curve:
@@ -246,7 +247,6 @@ GameObject:
   m_Component:
   - component: {fileID: 468680530688886306}
   - component: {fileID: 4289165770068820764}
-  - component: {fileID: 4807137368186630576}
   m_Layer: 8
   m_Name: neko-default-ken
   m_TagString: Sword
@@ -322,33 +322,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &4807137368186630576
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3815003573297691649}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &3892134154838543567
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +333,7 @@ GameObject:
   - component: {fileID: 3130815580488880991}
   - component: {fileID: 3235871753410616908}
   - component: {fileID: 422874987791530711}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: headChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +387,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.7}
+  m_Offset: {x: 0, y: 1.3}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -449,7 +422,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2343894175511783619}
   - component: {fileID: 1350382802050880977}
-  m_Layer: 3
+  - component: {fileID: 606254055941811515}
+  m_Layer: 8
   m_Name: sword_collider
   m_TagString: Sword
   m_Icon: {fileID: 0}
@@ -516,6 +490,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9, y: 0.09}
   m_EdgeRadius: 0.05
+--- !u!50 &606254055941811515
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3993216138434770087}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7416488816508398780
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +528,7 @@ GameObject:
   - component: {fileID: 3006529743241696003}
   - component: {fileID: 7204314334660931385}
   - component: {fileID: 1440699103653740715}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: groundChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +594,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.8}
+  m_Offset: {x: 0, y: -0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -604,7 +605,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.14376086}
+  m_Size: {x: 0.4, y: 0.14376086}
   m_EdgeRadius: 0
 --- !u!1 &8046798946625630923
 GameObject:
