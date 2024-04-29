@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     [SerializeField] protected GameObject basicObject;
     [SerializeField] protected GameObject uniqueObject;
 
+    protected GameObject criticalEffect;
+
     protected HPBar HP;
     protected Animator anim = null;
     protected Rigidbody2D rb = null;
@@ -23,6 +25,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 
     void Start(){
         Spawn();
+        criticalEffect = transform.GetChild(0).gameObject;
     }
 
     // 初期化 最初とゲームオーバーの後に呼ぶ
@@ -67,15 +70,16 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     protected void recievedDamage(Collider2D collision){
         if(!isDead){
             if(collision.tag == "Sword"){
-                float atk = Player.ATK;
-                if(rand.Random(Player.CRITRATE / 5.0f)){
-                    atk += Player.CRITDMG * 2.0f;
+                float atk = Player.ATK + Player.ATKincrement;
+                if(rand.Random((Player.CRITRATE + Player.CRITRATEincrement) / 5.0f)){
+                    atk += (Player.CRITDMG + Player.CRITDMGincrement) * 2.0f;
+                    StartCoroutine("CriticalHit");
                 }
                 HP.UpdateHP(atk);
                 hp = hp - atk;
             }
 
-            // 以下 プレイヤーが跳ね返した攻撃が効くことがある
+            // 以下 プレイヤーが跳ね返した敵の攻撃が効くことがある
             if(collision.tag == "DeadZone"){
                 HP.UpdateHP(hp);
                 hp -= hp;
@@ -91,6 +95,12 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
                 StartCoroutine("Death");
             }
         }
+    }
+
+    private IEnumerator CriticalHit(){
+        criticalEffect.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        criticalEffect.SetActive(false);
     }
 
     // 倒れた時に非表示にする処理
@@ -128,11 +138,9 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 
     protected virtual void dieAnimation(){
         // anim.Play("それぞれのdieアニメーション")
-        // プレイヤーにダメージが入るのを防ぐためtagをDeadEnemyに変更
-
     }
 
-
+    // 倒された状態でセーブされたとき、シングルトンから削除する
     public bool DeleteDead(){
         if(isDead){
             Destroy(this.gameObject);

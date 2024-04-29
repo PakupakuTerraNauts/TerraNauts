@@ -20,6 +20,14 @@ public class BossCamera1 : MonoBehaviour
     private bool isBossRoom = false;
 
     public Debidora debidora;
+    public BGMReset_BOSS BGM_BOSS;
+
+    [SerializeField, Header("廊下からボス部屋を覗けないようにする")] private float entranceDoorLimit;
+    [SerializeField, Header("ボス部屋でのカメラの中心点")] private float yHeightInBossRoom;
+    [SerializeField, Header("ステージ左側の限界点")] private float startPosLeftLimit;
+    [SerializeField, Header("ステージ右側の限界点")] private float endPosRightLimit;
+
+    private bool isPlayed = false;
 
     private float y;
     private float z;
@@ -55,7 +63,8 @@ public class BossCamera1 : MonoBehaviour
     void FollowPlayerInHallway()
 {
     // Playerを追従
-    float targetX = Mathf.Min(player.position.x, Entrance.position.x - 8.5f);  // 右端の制限 廊下からボス部屋を覗けない
+    float targetX = Mathf.Min(player.position.x, Entrance.position.x - entranceDoorLimit);  // 右端の制限 廊下からボス部屋を覗けない
+    targetX = Mathf.Max(targetX, startPosLeftLimit);
     transform.position = new Vector3(targetX, y, player.position.z - 20f);
 
     // ボス部屋に近づいたらフェーズ2に移行
@@ -63,6 +72,8 @@ public class BossCamera1 : MonoBehaviour
     {
         phase = 2;
         isBossRoom = true;
+
+        BGM_BOSS.BossFightBGM_Start();
     }
 }
 
@@ -72,7 +83,7 @@ public class BossCamera1 : MonoBehaviour
         if(isBossRoom){
             // カメラを部屋の中央に配置
             float targetX = Entrance.transform.position.x + (Exit.position.x - Entrance.transform.position.x) / 2;
-            targetPosition = new Vector3(targetX, Entrance.transform.position.y + 6.0f, transform.position.z);
+            targetPosition = new Vector3(targetX, Entrance.transform.position.y + yHeightInBossRoom, transform.position.z);
             isBossRoom = false;
         }
 
@@ -87,6 +98,9 @@ public class BossCamera1 : MonoBehaviour
                 isBossRoom = true;
             }
             Camera.main.orthographicSize = 9f;
+            if(!isPlayed){
+                isPlayed = true;
+            }
         }
 
         // 壁が開いたらフェーズ3に移行
@@ -94,13 +108,15 @@ public class BossCamera1 : MonoBehaviour
         {
             phase = 3;
             Camera.main.orthographicSize = 5f;
+
+            BGM_BOSS.BossFightBGM_Stop();
         }
     }
 
     void FollowPlayerAfterBossDefeated()
     {
         // プレーヤーを追従
-        float targetX = Mathf.Max(player.position.x, Entrance.position.x - 8.5f);  // 右端の制限
+        float targetX = Mathf.Min(player.position.x, endPosRightLimit);  // 右端の制限
         transform.position = new Vector3(targetX, y, player.position.z - 20f);
     }
 }

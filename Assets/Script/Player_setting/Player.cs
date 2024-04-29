@@ -13,16 +13,23 @@ public class Player : MonoBehaviour
     public float jumpHeight;
     private float jumpLimitTime = 1.5f;
     public static int HP = 100;
-    public static float nowHP = 100.0f;
+    public static int nowHP = 100;
+    public static int HPincrement = 0;
     public int maxJumpCount;    // 増やせば何段でも可
     private int jumpCounter = 0;
+    public static float playerPosX = 0f;    // プレイヤーの方を向く敵が使用
 
     public static int ATK = 100;
+    public static int ATKincrement = 0;
     public static int DEF = 0;
+    public static int DEFincrement = 0;
     public static int SPD = 100;
+    public static int SPDincrement = 0;
     // ↓ Enemy.cs内で使用している
     public static int CRITRATE = 50;
+    public static int CRITRATEincrement = 0;
     public static int CRITDMG = 50;
+    public static int CRITDMGincrement = 0;
 
     public float attackCooltime;
     private float jumpPos = 0.0f;
@@ -30,7 +37,7 @@ public class Player : MonoBehaviour
     private float jumpTime = 0.0f;
     private float continueTime = 0.0f;
     private float blinkTime = 0.0f;
-    private float invincibleTime = 0.0f;
+    //private float invincibleTime = 0.0f;
     private bool isGround = false;
     private bool isJump = false;
     private bool isWalk = false;
@@ -38,13 +45,14 @@ public class Player : MonoBehaviour
     private bool isDown = false;
     private bool isAttack = false;
     private bool isAttackCool = false;
-    private bool isContinue = false;
+    //private bool isContinue = false;
     private bool isDamaged = false;
     private bool readytojump = false;
     private Animator anim = null;
     private Rigidbody2D rb = null;
     private CapsuleCollider2D capcol = null;
     private SpriteRenderer sr = null;
+    private GameObject cooltimemaker;
 
     public AnimationCurve JumpupCurve;
 
@@ -57,11 +65,14 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         capcol = GetComponent<CapsuleCollider2D>();
         sr = GetComponent<SpriteRenderer>();
+        cooltimemaker = transform.Find("cooltime").gameObject;
     }
 
 
     private void Update(){
         if(!isDown){
+            playerPosX = transform.position.x;
+            
             GetInputTwoJump();
             isAttack = PlayerAttack();
 
@@ -215,7 +226,7 @@ public class Player : MonoBehaviour
     private float GetXSpeed(){
         float horizontalKey = Input.GetAxis("Horizontal");
         float xSpeed = 0.0f;
-        float speed = 5.0f + (float)(SPD / 50);
+        float speed = 5.0f + (float)((SPD + SPDincrement) / 50);
         bool dKey = Input.GetKey("d");
         bool rightKey = Input.GetKey("right");
         bool aKey = Input.GetKey("a");
@@ -262,19 +273,20 @@ public class Player : MonoBehaviour
         anim.Play("neko_die");
         isJump = false;
         isWalk = false;
-        isContinue = true;
+        //isContinue = true;
     }
     
     private void OnCollisionEnter2D(Collision2D collision){
 
         if(!isDamaged){
-            if(collision.collider.tag == "Enemy"){
-                nowHP = nowHP - 10;
+            if(collision.collider.tag == "TutorialDamage"){
                 isDamaged = true;
             }
+            if(collision.collider.tag == "Enemy"){
+                DecrementHP(10);
+            }
             if(collision.collider.tag == "Saboten"){
-                nowHP = nowHP - 80;
-                isDamaged = true;
+                DecrementHP(80);
             }
             
             if(nowHP <= 0){
@@ -292,51 +304,34 @@ public class Player : MonoBehaviour
                 isDamaged = true;
             }
             if(collision.tag == "Enemy"){
-                nowHP = nowHP - 10;
-                isDamaged = true;
+                DecrementHP(10);
             }
-            if(collision.tag == "Sakebigoe"){
-                nowHP = nowHP - 20;
-                isDamaged = true;   // ダメージを喰らった時無敵時間にするためのフラグ
-            }
-            if(collision.tag == "tama"){
-                nowHP = nowHP - 20;
-                isDamaged = true;
-            }
-            if(collision.tag == "DebidoraFire"){
-                nowHP = nowHP - 80;
-                isDamaged = true;
+            if(collision.tag == "Sakebigoe" || collision.tag == "tama"){
+                DecrementHP(20);   // ダメージを喰らった時無敵時間にするためのフラグ
             }
             if(collision.tag == "Hoshi"){
-                nowHP = nowHP - 40;
-                isDamaged = true;
-            }
-            if(collision.tag == "Tyubi"){
-                nowHP = nowHP - 60;
-                isDamaged = true;
+                DecrementHP(40);
             }
             if(collision.tag == "Sumi"){
-                nowHP = nowHP - 50;
-                isDamaged = true;
+                DecrementHP(50);
             }
-            if(collision.tag == "DeadZone"){
-                nowHP -= nowHP;
+            if(collision.tag == "Tyubi" || collision.tag == "Kabotya"){
+                DecrementHP(60);
             }
             if(collision.tag == "Ninzin"){
-                nowHP = nowHP - 70;
-                isDamaged = true;
+                DecrementHP(70);
             }
             if(collision.tag == "NinzinExp"){
-                nowHP = nowHP - 90;
-                isDamaged = true;
+                DecrementHP(90);
             }
-            if(collision.tag == "Turara"){
-                nowHP = nowHP - 130;
-                isDamaged = true;
+            if(collision.tag == "Turara" || collision.tag == "Debidora"){
+                DecrementHP(130);
             }
-            if(collision.tag == "Kabotya"){
-                nowHP = nowHP - 60;
-                isDamaged = true;
+            if(collision.tag == "DebidoraFire"){
+                DecrementHP(180);
+            }
+            if(collision.tag == "DeadZone"){
+                DecrementHP(nowHP);
             }
 
             // 無敵時間の間は死んでも動けるかも.
@@ -347,6 +342,38 @@ public class Player : MonoBehaviour
                 StartCoroutine(PlayerDie());
             }
         }
+    }
+
+    // 当たっている間 継続してダメージを受ける攻撃
+    private void OnTriggerStay2D(Collider2D collision){
+        if(!isDamaged){
+            if(collision.tag == "Sakebigoe"){
+                DecrementHP(20);
+            }
+            if(collision.tag == "Tyubi"){
+                DecrementHP(60);
+            }
+            if(collision.tag == "DebidoraFire"){
+                DecrementHP(80);
+            }
+            
+            if(nowHP <= 0){
+                nowHP = 0;
+                anim.Play("neko_die");
+                isDown = true;
+                StartCoroutine(PlayerDie());
+            }
+        }
+    }
+
+    private void DecrementHP(int damage){
+        if(damage - (DEF + DEFincrement) < 0){
+            nowHP--;        // 敵の攻撃力 < 防御力 のとき1ダメージ
+        }
+        else{
+            nowHP = nowHP - (damage - (DEF + DEFincrement));
+        }
+        isDamaged = true;
     }
     
 ///<summary>
@@ -359,6 +386,7 @@ public class Player : MonoBehaviour
     }
 
     private IEnumerator AttackCool(){
+        cooltimemaker.SetActive(false);
         isAttackCool = true;
         isAttack = false;
 
@@ -367,8 +395,9 @@ public class Player : MonoBehaviour
         else if (!isGround) // 空中ならAerialAttack
             anim.SetTrigger("aAttack_neko");
         
-        yield return new WaitForSeconds(attackCooltime);    // クールタイム
-        Debug.Log("cooltime" + attackCooltime + "s");
+        yield return new WaitForSeconds(attackCooltime);  //クールタイム
+        Debug.Log("cooltime " + attackCooltime + "s");
+        cooltimemaker.SetActive(true);
         isAttackCool = false;
     }
 
@@ -394,28 +423,27 @@ public class Player : MonoBehaviour
 /// status level up
 /// </summary>
     public static void HPincrease(int HPplus){
-        HP += HPplus;
-        nowHP += HPplus;
+        HPincrement += HPplus;
         Debug.Log("HP level up!! + " + HPplus);
     }
     public static void ATKincrease(int ATKplus){
-        ATK += ATKplus;
+        ATKincrement += ATKplus;
         Debug.Log("Attack level up!! + " + ATKplus);
     }
     public static void DEFincrease(int DEFplus){
-        DEF += DEFplus;
+        DEFincrement += DEFplus;
         Debug.Log("Defence level up!! + " + DEFplus);
     }
     public static void SPDincrease(int SPDplus){
-        SPD += SPDplus;
+        SPDincrement += SPDplus;
         Debug.Log("Speed level up!! + " + SPDplus);
     }
     public static void CRITRATEincrease(int CRplus){
-        CRITRATE += CRplus;
+        CRITRATEincrement += CRplus;
         Debug.Log("CriticalRate level up!! + " + CRplus);
     }
     public static void CRITDMGincrease(int CDplus){
-        CRITDMG += CDplus;
+        CRITDMGincrement += CDplus;
         Debug.Log("CriticalDamage level up!! + " + CDplus);
     }
 }

@@ -71,7 +71,8 @@ public class CharactorGetItem:MonoBehaviour
     public void SetHPText()
     {
         Text hptext = HPObject.GetComponent<Text>();
-        string maxHP = Player.HP.ToString();
+        int HP = Player.HP + Player.HPincrement;
+        string maxHP = HP.ToString();
         string nowHP = Player.nowHP.ToString();
         hptext.text = nowHP + "/" + maxHP;
     }
@@ -81,7 +82,8 @@ public class CharactorGetItem:MonoBehaviour
     {
         GameObject _HPSlider = GameObject.Find("HPSlider");
         Slider HPSlider_S = _HPSlider.GetComponent<Slider>();
-        HPSlider_S.maxValue = Player.HP;
+        int HP = Player.HP + Player.HPincrement;
+        HPSlider_S.maxValue = HP;
         HPSlider_S.value = Player.nowHP;
     }
 }

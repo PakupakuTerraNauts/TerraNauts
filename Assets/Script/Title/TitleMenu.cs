@@ -26,8 +26,11 @@ public class TitleMenu:MonoBehaviour
     void Update()
     {
         selectObj = EventSystem.current.currentSelectedGameObject;
+        if(selectObj == null){
+            button.Select();
+            selectObj = firstSelect;
+        }
         Text = selectObj.transform.GetChild(0).GetComponent<Text>();
-
 
         switch(selectObj.name)
         {
@@ -44,6 +47,10 @@ public class TitleMenu:MonoBehaviour
                 Text.color = Color.white;
                 break;
             case "EndButton":
+                SetTextColor();
+                Text.color = Color.white;
+                break;
+            case "TutorialButton":
                 SetTextColor();
                 Text.color = Color.white;
                 break;
@@ -68,6 +75,9 @@ public class TitleMenu:MonoBehaviour
         GameObject EndButton = GameObject.Find("EndButton");
         Text1 = EndButton.transform.GetChild(0).GetComponent<Text>();
         Text1.color = Color.black;
+        GameObject TutorialButton = GameObject.Find("TutorialButton");
+        Text1 = TutorialButton.transform.GetChild(0).GetComponent<Text>();
+        Text1.color = Color.black;
 
     }
 
@@ -88,6 +98,9 @@ public class TitleMenu:MonoBehaviour
                 break;
             case 2:
                 SceneManager.LoadScene("tutorial");
+                break;
+            case 3:
+                MenuChange.LoadMenuScean();
                 break;
         }
     }

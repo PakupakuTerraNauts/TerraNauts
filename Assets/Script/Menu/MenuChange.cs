@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-//Escape繝懊ち繝ｳ縺ｧ繝｡繝九Η繝ｼ逕ｻ髱｢陦ｨ遉ｺ
+//Escapeボタンでメニュー画面表示
 public class MenuChange:MonoBehaviour
 {
-    private bool isLoaded = false;
+    private static bool isLoaded = false;
+    public static bool isMenuOpen = false;
     //public KittenGet _kittenGet;
 
     // Update is called once per frame
@@ -16,22 +18,26 @@ public class MenuChange:MonoBehaviour
         {
             //if (!_kittenGet.isKittenLoaded)
             //{
-            isLoaded = !isLoaded;
-            if(isLoaded)
-            {
-                Application.LoadLevelAdditive("MenuScean");
-            }
-            else
-            {
-                Application.UnloadLevel("MenuScean");
-                Resources.UnloadUnusedAssets();
-            }
+                LoadMenuScean();
             //}
 
         }
 
     }
 
-
+    public static void LoadMenuScean(){
+        isLoaded = !isLoaded;
+        if(isLoaded)
+        {
+            Application.LoadLevelAdditive("MenuScean");
+            isMenuOpen = true;
+        }
+        else
+        {
+            Application.UnloadLevel("MenuScean");
+            Resources.UnloadUnusedAssets();
+            isMenuOpen = false;
+        }
+    }
 
 }

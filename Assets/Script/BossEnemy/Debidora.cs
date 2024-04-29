@@ -15,7 +15,7 @@ public class Debidora : MonoBehaviour
     public bool isStart = true;
     [HideInInspector] public bool isDead = false;
     [HideInInspector] public bool isDying = false;
-    private bool isNoHP = true;
+    //private bool isNoHP = true;
     private Vector3 nowPosition;
     
     public ExitDoor exitDoor;
@@ -24,7 +24,8 @@ public class Debidora : MonoBehaviour
     private float ATK_player = 0.0f;
     public Canvas HP_canvas;
 
-    private string swordTag = "Sword";
+    public BGMReset BGM;
+    public AudioSource BossBGM;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +55,7 @@ public class Debidora : MonoBehaviour
                 if(isDying == false)
                 {
                     isDying = true;
+                    gameObject.tag = "DeadEnemy";
                     StartCoroutine("Dead");
                 }
             }
@@ -63,10 +65,10 @@ public class Debidora : MonoBehaviour
                 isStart = false;
                 StartCoroutine("Battle");
             }
-            if(Input.GetKeyDown(KeyCode.Space) && isDead == false)
-            {
-                nowhp -= 10;
-            }
+            // if(Input.GetKeyDown(KeyCode.Space) && isDead == false)
+            // {
+            //     nowhp -= 10;
+            // }
         }
     }
 
@@ -200,7 +202,7 @@ public class Debidora : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(collision.tag == swordTag && !isDead){
+        if(collision.tag == "Sword" && !isDead){
             HP.UpdateHP(ATK_player);
             nowhp = nowhp - ATK_player;
         }
@@ -220,8 +222,7 @@ public class Debidora : MonoBehaviour
         while(nowhp < maxhp){   // nowhp‚Í‚±‚±‚ÅŽg‚¤‚Ì‚ÅBossHPCountUp‚Å‚àXV‚·‚é
             HP.UpdateHP(-countStarthp);        
             nowhp = nowhp + countStarthp;
-            Debug.Log("in loop : " + nowhp);
-            yield return new WaitForSeconds(0.1f);     // 0.05•b‚²‚Æ‚É
+            yield return new WaitForSeconds(0.2f);
         }
     }
 }

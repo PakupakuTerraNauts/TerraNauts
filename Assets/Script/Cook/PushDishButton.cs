@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//レシピのテキストを押した時の処理
+//���V�s�̃e�L�X�g�����������̏���
 public class PushDishButton:MonoBehaviour
 {
     private string _objectName;
@@ -80,7 +80,7 @@ public class PushDishButton:MonoBehaviour
 
     }
 
-    //レシピのボタンが押された時
+    //���V�s�{�^���������ꂽ�Ƃ�
     public void PushButton(Button onButton)
     {
         _main = GameObject.Find("Main");
@@ -99,7 +99,7 @@ public class PushDishButton:MonoBehaviour
         string[] statusTypes = _foodSourceData.GetStatusType();
         int statusCount;
 
-        //食材のテキスト更新
+        //�H�ރe�L�X�g�̍X�V
         for(int i = 0; i < foodTypes.Length; i++)
         {
             _textPrefab = (GameObject)Instantiate(_prefabObject, transform.position, Quaternion.identity);
@@ -117,7 +117,7 @@ public class PushDishButton:MonoBehaviour
 
         StatusRe();
 
-        //ステータスのテキスト更新
+        //�X�e�[�^�X�̃e�L�X�g�X�V
         for(int i = 0; i < statusTypes.Length; i++)
         {
 
@@ -146,7 +146,7 @@ public class PushDishButton:MonoBehaviour
         }
     }
 
-    //テキスト削除
+    //�e�L�X�g�폜
     public void TextDelete(GameObject _objectText)
     {
         foreach(Transform child in _objectText.transform)
