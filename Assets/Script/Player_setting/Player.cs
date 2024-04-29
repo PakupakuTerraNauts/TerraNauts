@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public static int CRITRATE = 50;
     public static int CRITDMG = 50;
 
+    public float attackCooltime;
     private float jumpPos = 0.0f;
     private float jumpPos2 = 0.0f;
     private float jumpTime = 0.0f;
@@ -366,8 +367,8 @@ public class Player : MonoBehaviour
         else if (!isGround) // 空中ならAerialAttack
             anim.SetTrigger("aAttack_neko");
         
-        yield return new WaitForSeconds(3.5f);
-        Debug.Log("cooltime 3.5s");
+        yield return new WaitForSeconds(attackCooltime);    // クールタイム
+        Debug.Log("cooltime" + attackCooltime + "s");
         isAttackCool = false;
     }
 
