@@ -143,11 +143,11 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< HEAD
   controlID: 129
+=======
+  controlID: 132
 --- !u!114 &7
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -168,7 +168,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
+<<<<<<< HEAD
   controlID: 46
+=======
+  controlID: 49
+>>>>>>> origin/Aiga_Player
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -193,7 +197,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 47
+  controlID: 50
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -235,6 +239,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 405.6
     y: 0
     width: 697.6
@@ -242,6 +247,15 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 18}
+=======
+    x: 406.4
+    y: 0
+    width: 696.7999
+    height: 424
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 17}
+>>>>>>> origin/Aiga_Player
   m_Panes:
   - {fileID: 18}
   - {fileID: 16}
@@ -272,7 +286,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
+<<<<<<< HEAD
   controlID: 97
+=======
+  controlID: 100
+>>>>>>> origin/Aiga_Player
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -321,13 +339,17 @@ MonoBehaviour:
     height: 303.59998
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 21}
+  m_ActualView: {fileID: 15}
   m_Panes:
+  - {fileID: 15}
   - {fileID: 21}
   - {fileID: 22}
+<<<<<<< HEAD
   - {fileID: 23}
+=======
+>>>>>>> origin/Aiga_Player
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -346,10 +368,17 @@ MonoBehaviour:
     x: 1103.2
     y: 0
     width: 432.80005
+<<<<<<< HEAD
     height: 722.8
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 24}
+=======
+    height: 730.8
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 23}
+>>>>>>> origin/Aiga_Player
   m_Panes:
   - {fileID: 24}
   m_Selected: 0
@@ -363,12 +392,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 08983ce286d9beb48a03071ad05a5c78, type: 3}
+=======
+  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> origin/Aiga_Player
   m_Name: 
   m_EditorClassIdentifier: 
   m_MinSize: {x: 500, y: 500}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
+<<<<<<< HEAD
     m_Text: Memory Profiler
     m_Image: {fileID: 2800000, guid: fc383c3633a96004b8984f07fdd982ae, type: 3}
     m_Tooltip: 
@@ -378,6 +412,17 @@ MonoBehaviour:
     y: 73.6
     width: 695.6
     height: 398.2
+=======
+    m_Text: Animation
+    m_Image: {fileID: -3237396543322336831, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 456
+    y: 497.6
+    width: 645.19995
+    height: 285.8
+>>>>>>> origin/Aiga_Player
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -388,6 +433,12 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
+<<<<<<< HEAD
+=======
+  m_LockTracker:
+    m_IsLocked: 0
+  m_LastSelectedObjectID: -15348
+>>>>>>> origin/Aiga_Player
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -525,9 +576,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 36f9fffff8faffff
+=======
+      m_SelectedIDs: 0cc4ffff
+      m_LastClickedID: -15348
+      m_ExpandedIDs: 0cc4ffff6cceffff20d7ffff3edbfffff8faffffc4660000a06e0000a4930000
+>>>>>>> origin/Aiga_Player
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -542,6 +599,7 @@ MonoBehaviour:
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 11
+<<<<<<< HEAD
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -1428,6 +1486,8 @@ MonoBehaviour:
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 11
+=======
+>>>>>>> origin/Aiga_Player
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -1832,9 +1892,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 465.92465, y: 271.74512, z: -0.8349824}
     speed: 2
     m_Value: {x: 465.92465, y: 271.74512, z: -0.8349824}
+=======
+    m_Target: {x: 0, y: 2, z: 0}
+    speed: 2
+    m_Value: {x: 0, y: 2, z: 0}
+>>>>>>> origin/Aiga_Player
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1884,9 +1950,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 299.91464
     speed: 2
     m_Value: 299.91464
+=======
+    m_Target: 7.243535
+    speed: 2
+    m_Value: 7.243535
+>>>>>>> origin/Aiga_Player
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1920,6 +1992,107 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< HEAD
+=======
+  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Game
+    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 406.4
+    y: 73.6
+    width: 694.7999
+    height: 403
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_SerializedViewNames: []
+  m_SerializedViewValues: []
+  m_PlayModeViewName: GameView
+  m_ShowGizmos: 0
+  m_TargetDisplay: 0
+  m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+  m_TargetSize: {x: 960, y: 540}
+  m_TextureFilterMode: 0
+  m_TextureHideFlags: 61
+  m_RenderIMGUI: 1
+  m_EnterPlayModeBehavior: 0
+  m_UseMipMap: 0
+  m_VSyncEnabled: 0
+  m_Gizmos: 0
+  m_Stats: 0
+  m_SelectedSizes: 07000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_ZoomArea:
+    m_HRangeLocked: 0
+    m_VRangeLocked: 0
+    hZoomLockedByDefault: 0
+    vZoomLockedByDefault: 0
+    m_HBaseRangeMin: -384
+    m_HBaseRangeMax: 384
+    m_VBaseRangeMin: -216
+    m_VBaseRangeMax: 216
+    m_HAllowExceedBaseRangeMin: 1
+    m_HAllowExceedBaseRangeMax: 1
+    m_VAllowExceedBaseRangeMin: 1
+    m_VAllowExceedBaseRangeMax: 1
+    m_ScaleWithWindow: 0
+    m_HSlider: 0
+    m_VSlider: 0
+    m_IgnoreScrollWheelUntilClicked: 0
+    m_EnableMouseInput: 0
+    m_EnableSliderZoomHorizontal: 0
+    m_EnableSliderZoomVertical: 0
+    m_UniformScale: 1
+    m_UpDirection: 1
+    m_DrawArea:
+      serializedVersion: 2
+      x: 0
+      y: 21
+      width: 694.7999
+      height: 382
+    m_Scale: {x: 0.8842593, y: 0.8842593}
+    m_Translation: {x: 347.39996, y: 191}
+    m_MarginLeft: 0
+    m_MarginRight: 0
+    m_MarginTop: 0
+    m_MarginBottom: 0
+    m_LastShownAreaInsideMargins:
+      serializedVersion: 2
+      x: -392.87115
+      y: -216
+      width: 785.7423
+      height: 432
+    m_MinimalGUI: 1
+  m_defaultScale: 0.8842593
+  m_LastWindowPixelSize: {x: 868.4999, y: 503.75}
+  m_ClearInEditMode: 1
+  m_NoCameraWarning: 1
+  m_LowResolutionForAspectRatios: 01000000000000000000
+  m_XRRenderMode: 0
+  m_RenderTexture: {fileID: 0}
+--- !u!114 &19
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+>>>>>>> origin/Aiga_Player
   m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1956,7 +2129,11 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Item/Dish
+=======
+    - Assets/Scenes
+>>>>>>> origin/Aiga_Player
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1964,16 +2141,27 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
+<<<<<<< HEAD
   - Assets/Item/Dish
+=======
+  - Assets/Scenes
+>>>>>>> origin/Aiga_Player
   m_LastFoldersGridSize: 16
   m_LastProjectPath: /Users/ishiiissei/Documents/GitHub/TerraNauts
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: dc3f0100
     m_LastClickedID: 81884
     m_ExpandedIDs: 00000000607800009078000094780000a078000000ca9a3b
+=======
+    scrollPos: {x: 0, y: 164.50043}
+    m_SelectedIDs: 166e0000
+    m_LastClickedID: 28182
+    m_ExpandedIDs: 00000000506d000000ca9a3bffffff7f
+>>>>>>> origin/Aiga_Player
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2001,7 +2189,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 000000006078000000ca9a3b
+=======
+    m_ExpandedIDs: 00000000506d0000
+>>>>>>> origin/Aiga_Player
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2032,18 +2224,27 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
+<<<<<<< HEAD
       m_Name: Item
       m_OriginalName: Item
+=======
+      m_Name: 
+      m_OriginalName: 
+>>>>>>> origin/Aiga_Player
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
+<<<<<<< HEAD
       m_UserData: 81804
+=======
+      m_UserData: 0
+>>>>>>> origin/Aiga_Player
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 12}
     m_CreateAssetUtility:
@@ -2053,7 +2254,11 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
+<<<<<<< HEAD
     m_ScrollPosition: {x: 0, y: 107}
+=======
+    m_ScrollPosition: {x: 0, y: 49.200012}
+>>>>>>> origin/Aiga_Player
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 139.8
@@ -2100,14 +2305,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
+  m_Script: {fileID: 11500000, guid: 3f683d99f24875748a6656966ca9cea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
+  m_MinSize: {x: 240, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
+<<<<<<< HEAD
     m_Text: Animation
     m_Image: {fileID: -8166618308981325432, guid: 0000000000000000d000000000000000, type: 0}
+=======
+    m_Text: Tile Palette
+    m_Image: {fileID: 0}
+>>>>>>> origin/Aiga_Player
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
@@ -2125,10 +2335,14 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
+<<<<<<< HEAD
   m_LockTracker:
     m_IsLocked: 0
   m_LastSelectedObjectID: 25860
 --- !u!114 &21
+=======
+--- !u!114 &22
+>>>>>>> origin/Aiga_Player
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2137,21 +2351,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f683d99f24875748a6656966ca9cea0, type: 3}
+  m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 240, y: 200}
+  m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: Tile Palette
-    m_Image: {fileID: 0}
+    m_Text: Animator
+    m_Image: {fileID: 1711060831702674872, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 460.80002
-    y: 500.80002
-    width: 640.39996
-    height: 274.59998
+    x: 456
+    y: 497.6
+    width: 645.19995
+    height: 285.8
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2162,6 +2376,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
+<<<<<<< HEAD
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -2196,6 +2411,8 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
+=======
+>>>>>>> origin/Aiga_Player
   m_ViewTransforms:
     m_KeySerializationHelper:
     - {fileID: -1685425824245585347, guid: 472bdfab22d363445a6b844f73f92d65, type: 2}
@@ -2222,7 +2439,10 @@ MonoBehaviour:
     - {fileID: 4407853536459890630, guid: c72bebc142dfd49838ea7640a9868db6, type: 2}
     - {fileID: 2166575538606279147, guid: 1aa8a08d97dca47c9af1f5a795bb50bc, type: 2}
     - {fileID: -6373412863403411124, guid: 4b1639d92d292429a835b8c1e8c7ab42, type: 2}
+<<<<<<< HEAD
     - {fileID: 1292424302790049860, guid: 297313db7f58b5c4599071c6b112ead5, type: 2}
+=======
+>>>>>>> origin/Aiga_Player
     m_ValueSerializationHelper:
     - e00: 0.39615384
       e01: 0
@@ -2240,6 +2460,7 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+<<<<<<< HEAD
     - e00: 0.23571429
       e01: 0
       e02: 0
@@ -2248,6 +2469,16 @@ MonoBehaviour:
       e11: 0.23571429
       e12: 0
       e13: 64.25
+=======
+    - e00: 0.4421788
+      e01: 0
+      e02: 0
+      e03: -29.383743
+      e10: 0
+      e11: 0.4421788
+      e12: 0
+      e13: -5.268158
+>>>>>>> origin/Aiga_Player
       e20: 0
       e21: 0
       e22: 1
@@ -2256,6 +2487,7 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+<<<<<<< HEAD
     - e00: 0.4074074
       e01: 0
       e02: 0
@@ -2264,6 +2496,16 @@ MonoBehaviour:
       e11: 0.4074074
       e12: 0
       e13: 48.666664
+=======
+    - e00: 0.41728392
+      e01: 0
+      e02: 0
+      e03: 2.4814758
+      e10: 0
+      e11: 0.41728392
+      e12: 0
+      e13: 42.888893
+>>>>>>> origin/Aiga_Player
       e20: 0
       e21: 0
       e22: 1
@@ -2288,6 +2530,7 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+<<<<<<< HEAD
     - e00: 0.34736842
       e01: 0
       e02: 0
@@ -2296,6 +2539,16 @@ MonoBehaviour:
       e11: 0.34736842
       e12: 0
       e13: 71.63158
+=======
+    - e00: 0.19073683
+      e01: 0
+      e02: 0
+      e03: 5.4631577
+      e10: 0
+      e11: 0.19073683
+      e12: 0
+      e13: 63.14316
+>>>>>>> origin/Aiga_Player
       e20: 0
       e21: 0
       e22: 1
@@ -2336,6 +2589,7 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+<<<<<<< HEAD
     - e00: 0.34736842
       e01: 0
       e02: 0
@@ -2344,6 +2598,16 @@ MonoBehaviour:
       e11: 0.34736842
       e12: 0
       e13: 76.8421
+=======
+    - e00: 0.35578945
+      e01: 0
+      e02: 0
+      e03: -2.7894745
+      e10: 0
+      e11: 0.35578945
+      e12: 0
+      e13: 71.747375
+>>>>>>> origin/Aiga_Player
       e20: 0
       e21: 0
       e22: 1
@@ -2464,6 +2728,7 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+<<<<<<< HEAD
     - e00: 0.34736842
       e01: 0
       e02: 0
@@ -2472,6 +2737,16 @@ MonoBehaviour:
       e11: 0.34736842
       e12: 0
       e13: 75.10526
+=======
+    - e00: 0.19073683
+      e01: 0
+      e02: 0
+      e03: 5.4631577
+      e10: 0
+      e11: 0.19073683
+      e12: 0
+      e13: 65.05053
+>>>>>>> origin/Aiga_Player
       e20: 0
       e21: 0
       e22: 1
@@ -2512,6 +2787,7 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+<<<<<<< HEAD
     - e00: 0.34736842
       e01: 0
       e02: 0
@@ -2520,6 +2796,16 @@ MonoBehaviour:
       e11: 0.34736842
       e12: 0
       e13: 79.44737
+=======
+    - e00: 0.19073683
+      e01: 0
+      e02: 0
+      e03: 5.4631577
+      e10: 0
+      e11: 0.19073683
+      e12: 0
+      e13: 67.43474
+>>>>>>> origin/Aiga_Player
       e20: 0
       e21: 0
       e22: 1
@@ -2608,6 +2894,7 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+<<<<<<< HEAD
     - e00: 0.34736842
       e01: 0
       e02: 0
@@ -2624,6 +2911,8 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+=======
+>>>>>>> origin/Aiga_Player
   m_PreviewAnimator: {fileID: 0}
   m_AnimatorController: {fileID: 9100000, guid: 5f1358da78ea97247aefbf5aa2cbfc76, type: 2}
   m_BreadCrumbs:
@@ -2640,7 +2929,11 @@ MonoBehaviour:
   m_CurrentEditor: 1
   m_LayerEditor:
     m_SelectedLayerIndex: 0
+<<<<<<< HEAD
 --- !u!114 &24
+=======
+--- !u!114 &23
+>>>>>>> origin/Aiga_Player
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
