@@ -17,11 +17,10 @@ public class obakekabotya : Enemy
     public void ThrowKabotya(){
         anim.Play("kabotya_attack");
         
-        GameObject Player = GameObject.FindGameObjectWithTag("Player");
         float kaboPosition_x = transform.position.x;
-        float playerPosition_x = Player.transform.position.x;
+        float playerPosition_x = Player.playerPos.position.x;
 
-        if(playerPosition_x > kaboPosition_x && isLeft){
+        if(playerPosition_x > kaboPosition_x && isLeft){   // PlayerPos‚ğC³
             transform.localScale = new Vector3(-1, 1, 1);
             isLeft = false;
         }

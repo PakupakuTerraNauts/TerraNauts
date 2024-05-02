@@ -37,11 +37,11 @@ public class niwakokepittya : Enemy
     // playerの方向を判定して、そっちを向く tori_pitch終了時に呼ぶ
     // (animatorから同時に呼びたいのでdeletetamaを内蔵する) → 振り向いたときに球の当たり判定が残っていることがあるので非アクティブにする
     public void DirectJudge(){
-        if(Player.playerPosX > toriPosition_x && isLeft){
+        if(Player.playerPos.position.x > toriPosition_x && isLeft){
             transform.localScale = new Vector3(-1, 1, 1);
             isLeft = false;
         }
-        else if(Player.playerPosX < toriPosition_x && !isLeft){
+        else if(Player.playerPos.position.x < toriPosition_x && !isLeft){
             transform.localScale = new Vector3(1, 1, 1);
             isLeft = true;
         }

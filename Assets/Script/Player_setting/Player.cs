@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public static int HPincrement = 0;
     public int maxJumpCount;    // 増やせば何段でも可
     private int jumpCounter = 0;
-    public static float playerPosX = 0f;    // プレイヤーの方を向く敵が使用
+    public static Transform playerPos;
 
     public static int ATK = 100;
     public static int ATKincrement = 0;
@@ -70,8 +70,9 @@ public class Player : MonoBehaviour
 
 
     private void Update(){
+
+        playerPos = gameObject.transform;
         if(!isDown){
-            playerPosX = transform.position.x;
             
             GetInputTwoJump();
             isAttack = PlayerAttack();
