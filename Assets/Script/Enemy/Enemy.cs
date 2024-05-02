@@ -108,7 +108,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         Instantiate<GameObject>(basicObject, transform.position, Quaternion.identity); // Quater...は回転で今回は無回転
         // 固有の食材ドロップは3割
         if(rand.Random(30.0f)){
-            Instantiate<GameObject>(uniqueObject, transform.position + Vector3.up, Quaternion.identity);
+            Instantiate<GameObject>(uniqueObject, transform.position, Quaternion.identity);
         }
         yield return new WaitForSeconds(3.0f);
         this.gameObject.SetActive(false);
