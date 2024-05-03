@@ -61,7 +61,7 @@ public class kabotya : MonoBehaviour
     /// 待機
     ///</summary>
     private void Stay(){
-        StartCoroutine("inStay");
+        StartCoroutine(inStay());
     }
 
     private IEnumerator inStay(){
@@ -77,13 +77,13 @@ public class kabotya : MonoBehaviour
     /// 追随
     ///</summary>
     private void Go(){
-        StartCoroutine("inGo");
+        StartCoroutine(inGo());
     }
 
     private IEnumerator inGo(){
         obake.ThrowKabotya();
 
-        yield return new WaitForSeconds(1.0f);  // おばけのアニメーションが入ってからかぼちゃを動かすため.
+        yield return new WaitForSeconds(0.5f);  // おばけのアニメーションが入ってからかぼちゃを動かすため.
 
         transform.position = Vector3.MoveTowards(transform.position, Player.playerPos.position, speed); // Player.playerPosX --- static Playerの位置
         if(Vector3.Distance(transform.position, Player.playerPos.position) < 2.0f || !sr.isVisible){
@@ -94,8 +94,13 @@ public class kabotya : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == "Player" || collision.tag == "Sword"){
-            ChangeState(State.Stay);
+            StartCoroutine(toStay());
         }
+    }
+
+    private IEnumerator toStay(){
+        yield return null;      // 1フレーム待つ. go→stay の遷移を完了する.
+        ChangeState(State.Stay);
     }
 
     private void Invalid(){

@@ -41,7 +41,6 @@ public class sabochan : Enemy
     }
 
     private void release(){
-        Debug.Log("togeball ga release saremasita!!!");
         Togeboru.gameObject.SetActive(true);
         isAttack = Togeboru.ThrowBall();
     }

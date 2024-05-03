@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
 
             // 攻撃アニメーション→コルーチンへ
             if(isAttack && !isAttackCool){
-                StartCoroutine("AttackCool");
+                StartCoroutine(AttackCool());
             }
 
             // ダメージを受けた直後は無敵時間
