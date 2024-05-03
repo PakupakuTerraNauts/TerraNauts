@@ -37,13 +37,13 @@ public class turara : MonoBehaviour
     public void Turara(){
         transform.position = StartPos;
         this.gameObject.SetActive(true);
-        StartCoroutine("GenerateTurara");
+        StartCoroutine(GenerateTurara());
         rb.WakeUp();
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(collision.tag == "ground" || collision.tag == "Player"){
-            StartCoroutine("BreakTurara");
+        if(collision.tag == "ground" || collision.tag == "Player" || collision.tag == "Sword"){
+            StartCoroutine(BreakTurara());
         }
     }
 

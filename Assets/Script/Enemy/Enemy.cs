@@ -73,7 +73,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
                 float atk = Player.ATK + Player.ATKincrement;
                 if(rand.Random((Player.CRITRATE + Player.CRITRATEincrement) / 5.0f)){
                     atk += (Player.CRITDMG + Player.CRITDMGincrement) * 2.0f;
-                    StartCoroutine("CriticalHit");
+                    StartCoroutine(CriticalHit());
                 }
                 HP.UpdateHP(atk);
                 hp = hp - atk;
@@ -92,7 +92,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
             if(hp <= 0.0f){
                 dieAnimation();
                 isDead = true;
-                StartCoroutine("Death");
+                StartCoroutine(Death());
             }
         }
     }

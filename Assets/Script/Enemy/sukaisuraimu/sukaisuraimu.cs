@@ -11,7 +11,6 @@ public class sukaisuraimu : Enemy
     private bool isFall = false;
 
     [Header ("にんじん")] public ninzin Ninzin;
-    [Header ("プレイヤー")] public GameObject Player;
     [Header ("自分")] public GameObject Sukaisuraimu;
     private enum State{
         Wait,
@@ -67,7 +66,7 @@ public class sukaisuraimu : Enemy
     /// </summary>
     private void MoveUpdate(){
         Ninzin.Reload(Sukaisuraimu.transform.position);
-        if(Player.transform.position.x < transform.position.x){
+        if(Player.playerPos.position.x < transform.position.x){
             transform.localScale = new Vector3(1, 1, 1);
             // 人参にもrigidbodyがついているのでrb.velocityで移動できない
             // new 人参をリロードしてから移動させたいので人参に位置を渡して追従させるようにした. それに伴いvelocity移動できるようになった
@@ -77,7 +76,7 @@ public class sukaisuraimu : Enemy
             transform.localScale = new Vector3(-1, 1, 1);
             rb.velocity = new Vector2(speed, 0.0f);
         }
-        if(Mathf.Abs(Sukaisuraimu.transform.position.x - Player.transform.position.x) < 3.0f){
+        if(Mathf.Abs(Sukaisuraimu.transform.position.x - Player.playerPos.position.x) < 3.0f){
             ChangeState(State.Attack);
             return;
         }

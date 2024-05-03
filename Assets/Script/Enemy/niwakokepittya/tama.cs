@@ -38,7 +38,7 @@ public class tama : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(collision.tag == "Sword"){
+        if(collision.tag == "Sword" || collision.tag == "ground"){
             this.gameObject.SetActive(false);
         }
     }

@@ -36,7 +36,7 @@ public class daikonmandoragora : Enemy
         if(collision.collider.tag == "Player" && !isSteppedOn && !isDead){
             anim.Play("radissh_fumare");
             isSteppedOn = true;
-            StartCoroutine("ChangeTag");
+            StartCoroutine(ChangeTag());
         }
     }
 
