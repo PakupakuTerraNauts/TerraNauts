@@ -374,6 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 6
+  Name: "\u304D\u306E\u3053\u307B\u3046\u3057"
   basicObject: {fileID: 3185009451249992532, guid: 7770417310d664a2e8f7dcccb0914241, type: 3}
   uniqueObject: {fileID: 3375448987904999868, guid: 47c23e111addc4de98029bcfacf75f38, type: 3}
   hoshi1: {fileID: 2531892781061909941}
@@ -393,7 +394,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpGauge: {fileID: 1102714110618338344}
-  maxHealth: 120
 --- !u!1 &1383063074974581027
 GameObject:
   m_ObjectHideFlags: 0

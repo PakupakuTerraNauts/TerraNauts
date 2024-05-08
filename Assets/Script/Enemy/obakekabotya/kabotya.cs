@@ -8,7 +8,9 @@ public class kabotya : MonoBehaviour
     public float speed;
     public float waitingTime;
 
-    private CircleCollider2D circol = null;
+    [HideInInspector] public bool Ready = true;
+
+    //private CircleCollider2D circol = null;
     private SpriteRenderer sr = null;
     private Rigidbody2D rb = null;
 
@@ -23,13 +25,12 @@ public class kabotya : MonoBehaviour
     #endregion
 
     void Start(){
-        circol = GetComponent<CircleCollider2D>();
+        //circol = GetComponent<CircleCollider2D>();
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update(){
-
         nowState = nextState;
 
         switch(nowState){
@@ -47,7 +48,6 @@ public class kabotya : MonoBehaviour
                 Stay();
                 break;
         }
-
     }
 
     ///<summary>
@@ -65,50 +65,51 @@ public class kabotya : MonoBehaviour
     }
 
     private IEnumerator inStay(){
-        transform.localPosition = Vector3.zero;
-        yield return new WaitForSeconds(waitingTime);   // かぼちゃの待機時間
-        if(sr.isVisible)
-            ChangeState(State.Go);
-        else
-            ChangeState(State.Invalid);
+        yield return new WaitForSeconds(waitingTime);
+        ChangeState(State.Go);
     }
 
     ///<summary>
     /// 追随
     ///</summary>
     private void Go(){
+        if(!sr.isVisible){
+            ChangeState(State.Invalid);
+            return;
+        }
+
         StartCoroutine(inGo());
     }
 
     private IEnumerator inGo(){
+        Ready = false;
         obake.ThrowKabotya();
 
         yield return new WaitForSeconds(0.5f);  // おばけのアニメーションが入ってからかぼちゃを動かすため.
 
         transform.position = Vector3.MoveTowards(transform.position, Player.playerPos.position, speed); // Player.playerPosX --- static Playerの位置
-        if(Vector3.Distance(transform.position, Player.playerPos.position) < 2.0f || !sr.isVisible){
-            ChangeState(State.Stay);
+        if(Vector3.Distance(transform.position, Player.playerPos.position) < 2.0f){
+            ChangeState(State.Invalid);
         }
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == "Player" || collision.tag == "Sword"){
-            StartCoroutine(toStay());
+            ChangeState(State.Invalid);
         }
-    }
-
-    private IEnumerator toStay(){
-        yield return null;      // 1フレーム待つ. go→stay の遷移を完了する.
-        ChangeState(State.Stay);
     }
 
     private void Invalid(){
         if(sr.isVisible){
             rb.WakeUp();
-            ChangeState(State.Go);
-            return;
+            transform.localPosition = Vector3.zero;
+            Ready = true;
+            ChangeState(State.Stay);
+            gameObject.SetActive(false);
         }
-        ChangeState(State.Invalid);
+        else{
+            rb.Sleep();
+        }
     }
 }

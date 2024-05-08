@@ -8,11 +8,11 @@ public class neibysuraimu : Enemy
     private bool isFall = false;
 
     private BoxCollider2D boxcol = null;
-    public turara turara1;
-    public turara turara2;
-    public turara turara3;
-    public turara turara4;
-    public turara turara5;  // �ő吔5
+    [SerializeField] private turara turara1;
+    [SerializeField] private turara turara2;
+    [SerializeField] private turara turara3;
+    [SerializeField] private turara turara4;
+    [SerializeField] private turara turara5;  // �ő吔5
 
     protected override void Initialize(){
         boxcol = GetComponent<BoxCollider2D>();

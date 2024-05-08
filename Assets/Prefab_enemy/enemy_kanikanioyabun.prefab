@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 9
+  Name: "\u304B\u306B\u304B\u306B\u89AA\u5206"
   basicObject: {fileID: 4534490885142806426, guid: f5ee8281215e0493e920d2293c12a575, type: 3}
   uniqueObject: {fileID: 7042046898915360999, guid: 892a41b5540d7a34cb8548b8d37e3f3c, type: 3}
   speed: 4
@@ -393,7 +394,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpGauge: {fileID: 8075848563560682991}
-  maxHealth: 50
 --- !u!1 &9032004512559609584
 GameObject:
   m_ObjectHideFlags: 0

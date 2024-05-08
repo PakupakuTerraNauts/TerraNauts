@@ -7,10 +7,10 @@ using Random = System.Random;
 public class kinokohoushi : Enemy
 {
     private CapsuleCollider2D capcol = null;
-    public houshi hoshi1;
-    public houshi hoshi2;
-    public houshi hoshi3;
-    public houshi hoshi4;   // �ő吔4
+    [SerializeField] private houshi hoshi1;
+    [SerializeField] private houshi hoshi2;
+    [SerializeField] private houshi hoshi3;
+    [SerializeField] private houshi hoshi4;   // �ő吔4
     public Random rand = new Random();
     
     protected override void Initialize(){

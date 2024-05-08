@@ -9,11 +9,12 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     [SerializeField] protected float gravity;
     protected float hp = 0.0f;
     protected float ninzin_explosion = 10.0f;
+    [SerializeField] protected string Name;
 
     protected bool isDead = false;
 
-    [SerializeField] protected GameObject basicObject;
-    [SerializeField] protected GameObject uniqueObject;
+    protected GameObject basicObject;
+    protected GameObject uniqueObject;
 
     protected GameObject criticalEffect;
 
@@ -21,7 +22,18 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     protected Animator anim = null;
     protected Rigidbody2D rb = null;
     protected SpriteRenderer sr = null;
+
+    private enemyData Data;
     #endregion
+
+    void Awake(){
+        var enemyData = Resources.Load<EnemyData>("EnemyData");
+        foreach(var data in enemyData.EnemyDataList){
+            if(data.Name == Name){
+                Data = data;
+            }
+        }
+    }
 
     void Start(){
         Spawn();
@@ -35,12 +47,15 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         sr = GetComponent<SpriteRenderer>();
         HP = GetComponent<HPBar>();
 
-        hp = HP.maxHealth;
+        basicObject = Data.basicObject;
+        uniqueObject = Data.uniqueObject;
+
+        hp = Data.maxHP;
         Initialize();
         if(!gameObject.activeSelf){     // gameObjectがfalseなら一度倒されている
             this.gameObject.SetActive(true);
             isDead = false;
-            HP.UpdateHP(-HP.maxHealth);
+            HP.UpdateHP(-hp);
         }
     }
 

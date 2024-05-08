@@ -453,7 +453,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpGauge: {fileID: 3572143525163536817}
-  maxHealth: 90
 --- !u!114 &8073656169074753406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,9 +465,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f594d8f92a1b81e48829178ecddcf272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 0
+  gravity: 0.3
+  Name: "\u304A\u3070\u3051\u304B\u307C\u3061\u3083"
   basicObject: {fileID: 3185009451249992532, guid: 7770417310d664a2e8f7dcccb0914241, type: 3}
   uniqueObject: {fileID: 1044133366195201680, guid: d9b6dd93164b0c4479d59894f072c28f, type: 3}
+  kabo:
+  - {fileID: 8894858542366915443}
+  - {fileID: 6171754913840129791}
 --- !u!1 &7395149838641765023
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +563,7 @@ GameObject:
   - component: {fileID: 1035263216591846829}
   - component: {fileID: 8894858542366915443}
   m_Layer: 12
-  m_Name: kabotya-tama-left
+  m_Name: kabotya1
   m_TagString: Kabotya
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -728,8 +731,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e91c92e3ea21d9f47b5f77327f5991b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.005
-  waitingTime: 10
+  speed: 0.025
+  waitingTime: 4
+  Ready: 1
   obake: {fileID: 8073656169074753406}
 --- !u!1 &8162107897382482325
 GameObject:
@@ -746,7 +750,7 @@ GameObject:
   - component: {fileID: 5483012158026023699}
   - component: {fileID: 6171754913840129791}
   m_Layer: 12
-  m_Name: kabotya-tama-right
+  m_Name: kabotya2
   m_TagString: Kabotya
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -914,6 +918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e91c92e3ea21d9f47b5f77327f5991b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.005
-  waitingTime: 10
+  speed: 0.025
+  waitingTime: 4
+  Ready: 1
   obake: {fileID: 8073656169074753406}

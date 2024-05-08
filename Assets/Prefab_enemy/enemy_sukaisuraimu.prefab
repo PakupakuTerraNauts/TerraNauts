@@ -351,11 +351,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 0
+  Name: "\u30B9\u30AB\u30A4\u30B9\u30E9\u30A4\u30E0"
   basicObject: {fileID: 4534490885142806426, guid: f5ee8281215e0493e920d2293c12a575, type: 3}
   uniqueObject: {fileID: 2181079066158464371, guid: 20a8b8c45c2964874bdb6cf04c7a92b1, type: 3}
   speed: 2
   Ninzin: {fileID: 1129944969117898727}
-  Player: {fileID: 0}
   Sukaisuraimu: {fileID: 3209573373014703631}
 --- !u!114 &4126250054484642419
 MonoBehaviour:
@@ -370,7 +370,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpGauge: {fileID: 4748160951667576030}
-  maxHealth: 320
 --- !u!1 &3214250448448301839
 GameObject:
   m_ObjectHideFlags: 0
