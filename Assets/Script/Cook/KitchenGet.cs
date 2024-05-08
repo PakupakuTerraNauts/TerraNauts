@@ -60,8 +60,8 @@ public class KittenGet:MonoBehaviour
             else
             {
                 Application.UnloadLevel("CookingScean");
-                Resources.UnloadUnusedAssets();
                 Time.timeScale = 1;
+                Resources.UnloadUnusedAssets();
             }
         }
 

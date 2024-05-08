@@ -37,7 +37,7 @@ public class cookingAnimation : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.C) && PushCookButton.cookOK && animation)
         {
-            Debug.Log("„Ç¢„Éã„É°„Éº„Ç∑„Éß„É≥„Çπ„Çø„Éº„Éà");
+            Debug.Log("ÉAÉjÉÅÅ[ÉVÉáÉìÉXÉ^Å[Ég");
             _AnimationCanvas.SetActive(true);
             _animationChara.SetActive(true);
             _CompleteText.SetActive(false);
@@ -45,7 +45,7 @@ public class cookingAnimation : MonoBehaviour
             _dishBack.SetActive(false);
             _dishIcon.SetActive(false);
 
-            StartCoroutine("Stop");
+            StartCoroutine(Stop());
             
         }
 
@@ -54,18 +54,18 @@ public class cookingAnimation : MonoBehaviour
             if(animation)
             {
                 animation = false;
-                animationText.text = "„Ç¢„Éã„É°„Éº„Ç∑„Éß„É≥„Ç™„Éï";
+                animationText.text = "ÉAÉjÉÅÅ[ÉVÉáÉìÉIÉt";
             }else
             {
                 animation = true;
-                animationText.text = "„Ç¢„Éã„É°„Éº„Ç∑„Éß„É≥„Ç™„É≥";
+                animationText.text = "ÉAÉjÉÅÅ[ÉVÉáÉìÉIÉì";
             }
         }
     }
 
     IEnumerator Stop()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSecondsRealtime(2);
 
         _foodSourceData = _itemDataBase.ItemSearch(PushDishButton.nowPushDish);
         dishImage.sprite = _foodSourceData.icon;
@@ -77,12 +77,12 @@ public class cookingAnimation : MonoBehaviour
         _dishBack.SetActive(true);
         _dishIcon.SetActive(true);
 
-        StartCoroutine("EndAnimation");
+        StartCoroutine(EndAnimation());
     }
 
     IEnumerator EndAnimation()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSecondsRealtime(2);
         _AnimationCanvas.SetActive(false);
     }
 }
