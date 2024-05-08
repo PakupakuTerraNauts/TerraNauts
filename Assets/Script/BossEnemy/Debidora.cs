@@ -10,7 +10,7 @@ public class Debidora : MonoBehaviour
     [SerializeField] private GameObject LightPrefab;
     private Animator _animator;
     private float nowhp = 0.0f;
-    private float maxhp = 0.0f;
+    [SerializeField] private float maxhp;
     private float countStarthp = 0.0f;
     public bool isStart = true;
     [HideInInspector] public bool isDead = false;
@@ -35,7 +35,6 @@ public class Debidora : MonoBehaviour
 
         //HP = GetComponent<HPBar>();
         ATK_player = Player.ATK;
-        maxhp = HP.maxHealth;
         nowhp = maxhp;
         countStarthp = maxhp / 10.0f;
     }

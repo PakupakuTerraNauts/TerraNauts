@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3657831410014357600}
   - component: {fileID: 5568345423517083526}
-  - component: {fileID: 2584763812062404495}
+  - component: {fileID: 3105990586844518626}
   - component: {fileID: 6990649744836398029}
   - component: {fileID: 6382918092834097034}
   m_Layer: 11
@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3657831410014357600
 Transform:
   m_ObjectHideFlags: 0
@@ -28,12 +28,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463701104692280964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.826767, y: -15.677361, z: -0.00014543533}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5568345423517083526
 SpriteRenderer:
@@ -87,8 +87,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2584763812062404495
-BoxCollider2D:
+--- !u!68 &3105990586844518626
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,19 +119,20 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.016950607, y: -0.6241355}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 3}
-    newSize: {x: 11.43, y: 10.99}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.5982094, y: 1.5765314}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: 0, y: 1.2}
+  - {x: -0.8, y: 0.7}
+  - {x: -1.2, y: -0.7}
+  - {x: 0, y: -1.3}
+  - {x: 1.2, y: -0.7}
+  - {x: 0.8, y: 0.7}
+  - {x: 0, y: 1.2}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!50 &6990649744836398029
 Rigidbody2D:
   serializedVersion: 4

@@ -319,6 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 4
+  Name: "\u3060\u3044\u3053\u3093\u30DE\u30F3\u30C9\u30E9\u30B4\u30E9"
   basicObject: {fileID: 3185009451249992532, guid: 7770417310d664a2e8f7dcccb0914241, type: 3}
   uniqueObject: {fileID: 7959641358264713398, guid: 2951c47719ac04ef7ac22f57020fd683, type: 3}
 --- !u!114 &8012396348402572593
@@ -334,7 +335,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpGauge: {fileID: 1986660541870316533}
-  maxHealth: 10
 --- !u!68 &805774730499158351
 EdgeCollider2D:
   m_ObjectHideFlags: 0

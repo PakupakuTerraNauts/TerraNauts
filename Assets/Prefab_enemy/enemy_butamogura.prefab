@@ -410,11 +410,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 10
+  Name: "\u3076\u305F\u3082\u3050\u3089"
   basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
   uniqueObject: {fileID: 8369336574802605525, guid: 106d5ba9235e04e0dab86669a4b26f60, type: 3}
-  speed: 0.5
-  player: {fileID: 0}
-  Butamogura: {fileID: 7536202179305582385}
+  speed: 0.05
 --- !u!114 &3125034159631397599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,7 +427,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpGauge: {fileID: 1380938073760770169}
-  maxHealth: 40
 --- !u!1 &7541785631444699234
 GameObject:
   m_ObjectHideFlags: 0

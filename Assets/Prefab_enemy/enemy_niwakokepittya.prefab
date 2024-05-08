@@ -448,10 +448,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 9
+  Name: "\u306B\u308F\u3053\u3051\u30D4\u30C3\u30C1\u30E3\u30FC"
   basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
   uniqueObject: {fileID: 421306667867481507, guid: 38de61380ca614d3db46f61dfb964942, type: 3}
   Tama: {fileID: 1957454184950911145}
-  PlayerObject: {fileID: 0}
   isLeft: 1
 --- !u!114 &2606537794512555276
 MonoBehaviour:
@@ -466,7 +466,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpGauge: {fileID: 5691899434201602928}
-  maxHealth: 20
 --- !u!1 &5284691786789277703
 GameObject:
   m_ObjectHideFlags: 0

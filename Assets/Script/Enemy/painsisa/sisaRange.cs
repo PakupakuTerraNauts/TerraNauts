@@ -5,8 +5,6 @@ using UnityEngine;
 public class sisaRange : MonoBehaviour
 {
     #region // variables
-    [HideInInspector] public bool inPlayer = false;
-
     public painsisa sisa;
     private BoxCollider2D boxcol = null;
     #endregion

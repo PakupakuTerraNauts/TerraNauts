@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class HPBar : MonoBehaviour
 {
     [SerializeField] private Image hpGauge;
-    [SerializeField] public float maxHealth;    // ボスのスクリプトから参照するためpublicに変更
 
+    private float maxHealth;
     private float currentHealth;
 
-    public void Awake(){
+    public void SetHP(float maxHP){
+        maxHealth = maxHP;
         currentHealth = maxHealth;
     }
     
