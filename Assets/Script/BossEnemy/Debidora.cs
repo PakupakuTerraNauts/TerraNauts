@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Debidora : MonoBehaviour
 {
+    [SerializeField] private string Name;
     [SerializeField] private GameObject FirePrefab;
     [SerializeField] private GameObject PainPrefab;
     [SerializeField] private GameObject FramePrefab;
     [SerializeField] private GameObject LightPrefab;
     private Animator _animator;
     private float nowhp = 0.0f;
-    [SerializeField] private float maxhp;
-    private float countStarthp = 0.0f;
+    private float maxhp = 0.0f;
     public bool isStart = true;
     [HideInInspector] public bool isDead = false;
     [HideInInspector] public bool isDying = false;
@@ -24,10 +24,16 @@ public class Debidora : MonoBehaviour
     private float ATK_player = 0.0f;
     public Canvas HP_canvas;
 
-    public BGMReset BGM;
-    public AudioSource BossBGM;
+    private bossData Data;
 
-    // Start is called before the first frame update
+    void Awake(){
+        var bossData = Resources.Load<BossData>("BossData");
+        foreach(var data in bossData.BossDataList){
+            if(data.Name == Name)
+                Data = data;
+        }
+    }
+
     void Start()
     {
         _animator = GetComponent<Animator>();
@@ -35,8 +41,8 @@ public class Debidora : MonoBehaviour
 
         //HP = GetComponent<HPBar>();
         ATK_player = Player.ATK;
-        nowhp = maxhp;
-        countStarthp = maxhp / 10.0f;
+        maxhp = Data.maxHP;
+        nowhp = Data.maxHP / 10.0f; // 登場時にカウントアップするため
     }
 
     // Update is called once per frame
@@ -210,18 +216,20 @@ public class Debidora : MonoBehaviour
     // ボスの登場と同時にHPバーを表示する
     // BossCamera1 でフェーズ2に入ったときに呼ぶ
     public void BossHPCountUp(){
+        Time.timeScale = 0;
         HP_canvas.gameObject.SetActive(true);
-        HP.UpdateHP(maxhp - countStarthp); 
-        nowhp = nowhp - (maxhp - countStarthp);
-        Debug.Log("start countup : " + nowhp);
+        HP.UpdateHP(maxhp - nowhp);
         StartCoroutine(BossHPStart());
+        Time.timeScale = 1;
     }
 
     private IEnumerator BossHPStart(){
+        float countUpHP = nowhp;
+
         while(nowhp < maxhp){   // nowhpはここで使うのでBossHPCountUpでも更新する
-            HP.UpdateHP(-countStarthp);        
-            nowhp = nowhp + countStarthp;
-            yield return new WaitForSeconds(0.2f);
+            HP.UpdateHP(-countUpHP);        
+            nowhp = nowhp + countUpHP;
+            yield return new WaitForSecondsRealtime(0.2f);
         }
     }
 }

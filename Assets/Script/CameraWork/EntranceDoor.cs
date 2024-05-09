@@ -6,7 +6,12 @@ public class EntranceDoor : MonoBehaviour
     [SerializeField]
     [Tooltip("自動ドアのアニメーター")]
     private Animator automaticDoorAnimator;
+    private BoxCollider2D boxcol;
     public bool isOpen = false;
+
+    void Start(){
+        boxcol = GetComponent<BoxCollider2D>();
+    }
 
     /// <summary>
     /// 自動ドア検知エリアに入った時
@@ -39,6 +44,6 @@ public class EntranceDoor : MonoBehaviour
 
     public void JudgeDestory(){
         // プレイヤーが部屋に入った後、剣でドアを開けるのを防ぐ
-        Destroy(gameObject);
+        boxcol.enabled = false;
     }
 }

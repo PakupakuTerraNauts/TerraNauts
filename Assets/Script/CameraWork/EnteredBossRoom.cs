@@ -8,6 +8,12 @@ public class EnteredBossRoom : MonoBehaviour
     public Debidora debidora;
     public EntranceDoor entrance;
 
+    private BoxCollider2D boxcol;
+
+    void Start(){
+        boxcol = GetComponent<BoxCollider2D>();
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(!isEnter){
@@ -19,7 +25,7 @@ public class EnteredBossRoom : MonoBehaviour
                 // １層ボスのHPバー操作
                 debidora.BossHPCountUp();
                 entrance.JudgeDestory();
-                Destroy(gameObject, 3f);
+                boxcol.enabled = false;
             }
         }
     }
