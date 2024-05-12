@@ -10,6 +10,7 @@ public class obakekabotya : Enemy
 
     private bool isUp = true;
     private bool isLeft = true;  // ‰Šúó‘Ô ‰EŒü‚«
+    
     private CapsuleCollider2D capcol = null;
 
     [SerializeField] private kabotya[] kabo = new kabotya[5];
@@ -19,7 +20,7 @@ public class obakekabotya : Enemy
         capcol = GetComponent<CapsuleCollider2D>();
         capcol.enabled = true;
     }
-
+    
     protected override void Moving(){
         foreach(var k in kabo){
             if(k != null){

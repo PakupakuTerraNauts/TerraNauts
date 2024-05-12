@@ -14,6 +14,7 @@ public class kabotya : MonoBehaviour
     private SpriteRenderer sr = null;
     private Rigidbody2D rb = null;
 
+    private Vector3 defaultPos;
     [Header ("–{‘Ì")] public obakekabotya obake;
     private enum State{
         Stay,
@@ -23,6 +24,10 @@ public class kabotya : MonoBehaviour
     private State nowState = State.Invalid;
     private State nextState = State.Invalid;
     #endregion
+
+    void Awake(){
+        defaultPos = transform.position;
+    }
 
     void Start(){
         //circol = GetComponent<CircleCollider2D>();
@@ -103,7 +108,7 @@ public class kabotya : MonoBehaviour
     private void Invalid(){
         if(sr.isVisible){
             rb.WakeUp();
-            transform.localPosition = Vector3.zero;
+            transform.position = defaultPos;
             Ready = true;
             ChangeState(State.Stay);
             gameObject.SetActive(false);

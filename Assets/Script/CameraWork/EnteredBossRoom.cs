@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnteredBossRoom : MonoBehaviour
 {
-    public bool isEnter = false;
     public Debidora debidora;
     public EntranceDoor entrance;
 
@@ -16,11 +15,11 @@ public class EnteredBossRoom : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(!isEnter){
+        if(!debidora.isEntered){
             if(collision.tag == "Player"){
                 Debug.Log("入った");
                 // BossCamera1のフェーズ２のフラグ
-                isEnter = true;
+                debidora.isEntered = true;
                 entrance.CloseDoor();
                 // １層ボスのHPバー操作
                 debidora.BossHPCountUp();

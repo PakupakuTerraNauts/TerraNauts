@@ -18,11 +18,12 @@ public class Debidora : MonoBehaviour
     //private bool isNoHP = true;
     private Vector3 nowPosition;
     
-    public ExitDoor exitDoor;
-    public EnteredBossRoom enteredBossRoom;
-    public HPBar HP;
     private float ATK_player = 0.0f;
-    public Canvas HP_canvas;
+    public bool isEntered = false;
+    [SerializeField] private ExitDoor exitDoor;
+    [SerializeField] public HPBar HP;
+    [SerializeField] public Canvas HP_canvas;
+    [SerializeField] private BGMReset_BOSS BossBGM;
 
     private bossData Data;
 
@@ -42,18 +43,20 @@ public class Debidora : MonoBehaviour
         //HP = GetComponent<HPBar>();
         ATK_player = Player.ATK;
         maxhp = Data.maxHP;
-        nowhp = Data.maxHP / 10.0f; // 登場時にカウントアップするため
+        nowhp = maxhp / 10.0f; // 登場時にカウントアップするため
+        HP.SetHP(maxhp);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(enteredBossRoom.isEnter){
+        if(isEntered){
             
             if(nowhp <= 0)
             {
                 //if nowhp is 0, stop Battle Coroutine
                 nowhp = 0;
+                BossBGM.BossFightBGM_Stop();
                 isDead = true;
                 _animator.SetTrigger("Dead");
                 StopCoroutine("Battle");
@@ -201,8 +204,9 @@ public class Debidora : MonoBehaviour
             newLight.name = "FrameLight";
         }
         yield return new WaitForSeconds(0.05f);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
 
+        BossBGM.BossFightBGM_Stop();
         exitDoor.OpenDoor();
     }
 
@@ -216,20 +220,23 @@ public class Debidora : MonoBehaviour
     // ボスの登場と同時にHPバーを表示する
     // BossCamera1 でフェーズ2に入ったときに呼ぶ
     public void BossHPCountUp(){
-        Time.timeScale = 0;
+        BossBGM.StageBGM_Stop();
+        
         HP_canvas.gameObject.SetActive(true);
         HP.UpdateHP(maxhp - nowhp);
         StartCoroutine(BossHPStart());
-        Time.timeScale = 1;
     }
 
     private IEnumerator BossHPStart(){
         float countUpHP = nowhp;
+        Player.RestrainedByEvent();
 
         while(nowhp < maxhp){   // nowhpはここで使うのでBossHPCountUpでも更新する
             HP.UpdateHP(-countUpHP);        
             nowhp = nowhp + countUpHP;
-            yield return new WaitForSecondsRealtime(0.2f);
+            yield return new WaitForSeconds(0.5f);
         }
+        Player.UnRestrainedByEvent();
+        BossBGM.BossFightBGM_Start();
     }
 }
