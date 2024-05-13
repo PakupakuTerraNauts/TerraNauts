@@ -23159,7 +23159,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1716784242}
   - component: {fileID: 1716784243}
-  - component: {fileID: 1716784244}
   m_Layer: 0
   m_Name: StageBGM
   m_TagString: Untagged
@@ -23278,18 +23277,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1716784244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1716784241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6602d70916a4d58bcd526afc4f20db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1877065454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23709,7 +23696,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2033014653}
   - component: {fileID: 2033014654}
-  - component: {fileID: 2033014655}
   m_Layer: 0
   m_Name: BossBGM
   m_TagString: Untagged
@@ -23828,15 +23814,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2033014655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2033014652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6602d70916a4d58bcd526afc4f20db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
