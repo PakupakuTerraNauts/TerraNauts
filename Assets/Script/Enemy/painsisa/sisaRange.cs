@@ -5,23 +5,29 @@ using UnityEngine;
 public class sisaRange : MonoBehaviour
 {
     #region // variables
-    public painsisa sisa;
     private BoxCollider2D boxcol = null;
+
+    public delegate void sisaAttack();
+    private sisaAttack sisaAttackCallBack;
     #endregion
 
     void Start(){
         boxcol = GetComponent<BoxCollider2D>();
     }
 
+    public void InitializeCallBack(sisaAttack onSisaAttack){
+        sisaAttackCallBack = onSisaAttack;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == "Player"){
-            sisa.isAttack = true;
+            sisaAttackCallBack();
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision){
         if(collision.tag == "Player"){
-            sisa.isAttack = true;
+            sisaAttackCallBack();
         }
     }
 }

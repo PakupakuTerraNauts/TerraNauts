@@ -8,6 +8,7 @@ public class painsisa : Enemy
     private bool instantDeath = false;
     [HideInInspector] public bool isAttack = false;
     [Header("チェックで向き反転")] public bool isLeft = true;
+    [SerializeField] private sisaRange range;
 
     private CircleCollider2D circol = null;
     #endregion
@@ -20,6 +21,12 @@ public class painsisa : Enemy
         }
     }
 
+    private void onSisaAttack(){
+        if(anim.GetCurrentAnimatorStateInfo(0).IsName("pinesisa_stand")){
+            anim.Play("pinesisa_attack");
+        }
+    }
+/*
     protected override void Moving(){
         rb.velocity = new Vector2(0, -gravity);
         if(isAttack){
@@ -28,7 +35,7 @@ public class painsisa : Enemy
         else{
             anim.Play("pinesisa_stand");
         }
-    }
+    }*/
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == "FallingTree"){
