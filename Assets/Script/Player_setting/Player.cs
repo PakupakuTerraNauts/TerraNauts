@@ -69,6 +69,8 @@ public class Player : MonoBehaviour
     }
 
 
+
+
     private void Update(){
         if(!isDown){
             playerPosX = transform.position.x;
