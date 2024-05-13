@@ -112,7 +112,6 @@ public class Player : MonoBehaviour
         }   
     }
 
-
     void FixedUpdate()
     {
         if(!isDown && !isRestrained){
@@ -190,7 +189,7 @@ public class Player : MonoBehaviour
             if(jumpCounter > 1){
                 canHeight = jumpPos2 + jumpHeight > transform.position.y;
             }
-            
+
             if(pushUpKey && canHeight && canTime && !isHead){
                 // ジャンプでズームアウト
                 if(Camera.main.orthographicSize != 8f && StageCamera.Instance != null){
