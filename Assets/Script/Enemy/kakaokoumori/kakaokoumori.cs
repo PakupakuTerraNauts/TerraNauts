@@ -5,12 +5,22 @@ using UnityEngine;
 public class kakaokoumori : Enemy
 {
     #region // variables
+    private bool isAttack = false;
+
     private BoxCollider2D boxcol = null;
+
+    [SerializeField] private kakaoRange range;
+    [SerializeField] private groundCheck ground;
     #endregion
 
     protected override void Initialize(){
+        range.InitializeCallBack(onKakaoAttack);
         boxcol = GetComponent<BoxCollider2D>();
         boxcol.enabled = true;
+    }
+
+    private void onKakaoAttack(){
+        
     }
 
     protected override void Moving(){

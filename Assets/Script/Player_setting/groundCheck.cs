@@ -13,7 +13,6 @@ public class groundCheck : MonoBehaviour
             isGround = true;
         }
         else if (isGroundExit){
-            Debug.Log("is head false");
             isGround = false;
         }
 

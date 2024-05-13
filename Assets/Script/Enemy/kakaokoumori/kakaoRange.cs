@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class kakaoRange : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    #region // variables
+    private BoxCollider2D boxcol = null;
+
+    public delegate void kakaoAttack();
+    private kakaoAttack kakaoAttackCallBack;
+    #endregion
+
+    void Start(){
+        boxcol = GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void InitializeCallBack(kakaoAttack onKakaoAttack){
+        kakaoAttackCallBack = onKakaoAttack;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.tag == "Player"){
+            kakaoAttackCallBack();
+        }
     }
 }

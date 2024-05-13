@@ -14,6 +14,7 @@ public class painsisa : Enemy
     #endregion
 
     protected override void Initialize(){
+        range.InitializeCallBack(onSisaAttack);
         circol = GetComponent<CircleCollider2D>();
         circol.enabled = true;
         if(!isLeft){

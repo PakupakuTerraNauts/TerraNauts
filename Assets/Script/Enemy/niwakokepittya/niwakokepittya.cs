@@ -31,6 +31,7 @@ public class niwakokepittya : Enemy
     }
 
     protected override void dieAnimation(){
+        Tama.gameObject.SetActive(false);
         anim.Play("tori_die");
     }
 
