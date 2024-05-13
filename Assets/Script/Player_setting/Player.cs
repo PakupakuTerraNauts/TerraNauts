@@ -112,7 +112,6 @@ public class Player : MonoBehaviour
         }   
     }
 
-
     void FixedUpdate()
     {
         if(!isDown && !isRestrained){
