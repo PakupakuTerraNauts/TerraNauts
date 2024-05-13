@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: ice
   _itemName: "\u3075\u3093\u308F\u308A\u6C37"
   _itemType: 0
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 8a8368102df3246b1acc7bc471fe4cbf, type: 3}
   _floor: 5
   foods: []
   status: []

@@ -3,53 +3,53 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//ãƒ¬ã‚·ãƒ”ã®å€‹æ•°ã‚’ç®¡ç†
-public class PlayerRecipeManager : MonoBehaviour
+//ƒvƒŒƒCƒ„[‚ÌŠƒAƒCƒeƒ€
+public class PlayerRecipeManager:MonoBehaviour
 {
-    [SerializeField] private List<ItemData> _itemDataList = new List<ItemData>();   //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ‰€æŒã‚¢ã‚¤ãƒ†ãƒ 
+    [SerializeField] static List<ItemData> _itemDataList = new List<ItemData>();   //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ‰€æŒã‚¢ã‚¤ãƒ?ãƒ?
 
-    //ã‚¢ã‚¤ãƒ†ãƒ ã‚’å–å¾—
+    //ƒAƒCƒeƒ€‚ğæ“¾
     public void CountItem(string itemId, int count)
     {
-        //Listå†…ã‚’æ¤œç´¢
-        for (int i = 0; i < _itemDataList.Count; i++)
+        //List“à‚ğŒŸõ
+        for(int i = 0; i < _itemDataList.Count; i++)
         {
-            //IDãŒä¸€è‡´ã—ã¦ã„ãŸã‚‰ã‚«ã‚¦ãƒ³ãƒˆ
-            if (_itemDataList[i].id == itemId)
+            //ID‚ªˆê’v‚µ‚Ä‚¢‚½‚çƒJƒEƒ“ƒg
+            if(_itemDataList[i].id == itemId)
             {
-                //ã‚¢ã‚¤ãƒ†ãƒ ã‚’ã‚«ã‚¦ãƒ³ãƒˆ
+                //ƒAƒCƒeƒ€‚ğƒJƒEƒ“ƒg
                 _itemDataList[i].CountUp(count);
                 return;
             }
         }
 
-        //IDãŒä¸€è‡´ã—ãªã‘ã‚Œã°ã‚¢ã‚¤ãƒ†ãƒ ã‚’è¿½åŠ 
+        //ID‚ªˆê’v‚µ‚È‚¯‚ê‚ÎƒAƒCƒeƒ€‚ğ’Ç‰Á
         ItemData itemData = new ItemData(itemId, count);
         _itemDataList.Add(itemData);
     }
 
-    //ã‚¢ã‚¤ãƒ†ãƒ ã‚’ä½¿ç”¨
+    //ƒAƒCƒeƒ€‚ğg—p
     public void UseItem(string itemId, int count)
     {
-        //Listå†…ã‚’æ¤œç´¢
-        for (int i = 0; i < _itemDataList.Count; i++)
+        //List“à‚ğŒŸõ
+        for(int i = 0; i < _itemDataList.Count; i++)
         {
-            //IDãŒä¸€è‡´ã—ã¦ã„ãŸã‚‰ã‚«ã‚¦ãƒ³ãƒˆ
-            if (_itemDataList[i].id == itemId)
+            //ID‚ªˆê’v‚µ‚Ä‚¢‚½‚çƒJƒEƒ“ƒg
+            if(_itemDataList[i].id == itemId)
             {
-                //ã‚¢ã‚¤ãƒ†ãƒ ã‚’ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
+                //ƒAƒCƒeƒ€‚ğƒJƒEƒ“ƒgƒ_ƒEƒ“
                 _itemDataList[i].CountDown(count);
                 break;
             }
         }
     }
 
-    //ã‚¢ã‚¤ãƒ†ãƒ ã®æŒã£ã¦ã‚‹å€‹æ•°ã‚’å–å¾—
+    //ƒAƒCƒeƒ€‚Ì‚Á‚Ä‚éŒÂ”‚ğæ“¾
     public int GetItemCount(string itemId)
     {
-        for (int i = 0; i < _itemDataList.Count; i++)
+        for(int i = 0; i < _itemDataList.Count; i++)
         {
-            if (_itemDataList[i].id == itemId)
+            if(_itemDataList[i].id == itemId)
             {
                 return _itemDataList[i].GetCount();
             }
@@ -57,11 +57,11 @@ public class PlayerRecipeManager : MonoBehaviour
         return 0;
     }
 
-    //æŒã£ã¦ã„ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã‚’é…åˆ—ã§å–å¾—
+    //‚Á‚Ä‚¢‚éƒAƒCƒeƒ€‚ğ”z—ñ‚Åæ“¾
     public string[] GetItemId()
     {
         string[] tmp = new string[_itemDataList.Count];
-        for (int i = 0; i < _itemDataList.Count; i++)
+        for(int i = 0; i < _itemDataList.Count; i++)
         {
             tmp[i] = _itemDataList[i].id;
         }

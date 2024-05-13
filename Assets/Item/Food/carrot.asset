@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: carrot
   _itemName: "\u7518\u3081\u306B\u3093\u3058\u3093"
   _itemType: 0
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: fd15cacf46df047f4a6c4ef96d9c7f8d, type: 3}
   _floor: 4
   foods: []
   status: []

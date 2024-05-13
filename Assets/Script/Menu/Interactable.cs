@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-//ã€€æœ€åˆã«ãƒ•ã‚©ãƒ¼ã‚«ã‚¹ã™ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¨­å®š,ã‚»ãƒ¬ã‚¯ãƒˆã§ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚Œã‚‹
-public class Interactable : MonoBehaviour
+//Å‰‚ÉƒtƒH[ƒJƒX‚·‚éƒQ[ƒ€‚ğƒIƒuƒWƒFƒNƒg‚ğİ’èAƒZƒŒƒNƒg‚Åƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚é
+public class Interactable:MonoBehaviour
 {
-	[SerializeField]
-	private GameObject firstSelect;
+    [SerializeField]
+    private GameObject firstSelect;
     Button button;
 
     GameObject selectObj;
@@ -25,8 +25,7 @@ public class Interactable : MonoBehaviour
     {
         selectObj = EventSystem.current.currentSelectedGameObject;
 
-        
-        switch (selectObj.name)
+        switch(selectObj.name)
         {
             case "StatusButton":
                 _menu.PushButton(0);

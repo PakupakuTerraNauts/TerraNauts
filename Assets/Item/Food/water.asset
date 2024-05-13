@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: water
   _itemName: "\u6C34"
   _itemType: 0
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: a5b70b86b601248f3ba3a0fb1ce1b62b, type: 3}
   _floor: 0
   foods: []
   status: []

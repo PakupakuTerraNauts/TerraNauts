@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e459fa8ff2b1444c9ed4ee2043a4084, type: 3}
+  m_Name: suraimu
+  m_EditorClassIdentifier: 
+  _id: 1
+  _enemyName: suraimu
+  _floor: 1
+  _hp: 10
+  _gravity: 5
+  _basicObject: {fileID: 4534490885142806426, guid: f5ee8281215e0493e920d2293c12a575, type: 3}
+  _uniqueObject: {fileID: 8744671341141900407, guid: e657b5041d0e54718bff5a7861fdcddf, type: 3}

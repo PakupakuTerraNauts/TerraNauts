@@ -43,12 +43,12 @@ public enum StatusType
 }
 
 
-//é£Ÿæã€ãƒ¬ã‚·ãƒ”ã®ãƒ‡ãƒ¼ã‚¿ã‚’ç™»éŒ²ã™ã‚‹ã‚¢ã‚»ãƒƒãƒˆã‚’ç”Ÿæˆã§ãã‚‹
+//HŞAƒŒƒVƒs‚Ìƒf[ƒ^‚ğ“o˜^‚·‚éƒAƒZƒbƒg‚ğ¶¬‚Å‚«‚é
 [Serializable]
 [CreateAssetMenu(menuName = "ItemSourceData")]
-public class FoodSourceData : ScriptableObject
+public class FoodSourceData:ScriptableObject
 {
-    //å›ºæœ‰ID
+    //ŒÅ—LID
     [SerializeField]
     private string _id;
 
@@ -58,7 +58,7 @@ public class FoodSourceData : ScriptableObject
     }
 
 
-    //ã‚¢ã‚¤ãƒ†ãƒ ã®åå‰
+    //ƒAƒCƒeƒ€‚Ì–¼‘O
     [SerializeField]
     private string _itemName;
 
@@ -68,7 +68,7 @@ public class FoodSourceData : ScriptableObject
     }
 
 
-    //ã‚¢ã‚¤ãƒ†ãƒ ã®ç¨®é¡
+    //ƒAƒCƒeƒ€‚Ìí—Ş
     [SerializeField]
     private ItemType _itemType;
 
@@ -77,8 +77,13 @@ public class FoodSourceData : ScriptableObject
         get { return _itemType; }
     }
 
+    public ItemType GetItemType()
+    {
+        return _itemType;
+    }
 
-    //ã‚¢ã‚¤ã‚³ãƒ³
+
+    //ƒAƒCƒRƒ“
     [SerializeField]
     private Sprite _icon;
 
@@ -88,7 +93,7 @@ public class FoodSourceData : ScriptableObject
     }
 
 
-    //æ‰‹ã«å…¥ã‚‹éšå±¤
+    //è‚É“ü‚éŠK‘w
     [SerializeField]
     private int _floor;
 
@@ -98,7 +103,7 @@ public class FoodSourceData : ScriptableObject
     }
 
 
-    //é£Ÿæã®ç¨®é¡ã¨æ•°
+    //HŞ‚Ìí—Ş‚Æ”
     [Serializable]
     class DishData
     {
@@ -110,22 +115,22 @@ public class FoodSourceData : ScriptableObject
 
     public string[] GetFoodType()
     {
-         string[] foodString = new string[foods.Length];
-         DishType[] foodType = new DishType[foods.Length];
-         for (int i = 0; i < foods.Length; i++)
-         {
-             foodType[i] = foods[i]._dishType;
-             foodString[i] = foodType[i].ToString();
+        string[] foodString = new string[foods.Length];
+        DishType[] foodType = new DishType[foods.Length];
+        for(int i = 0; i < foods.Length; i++)
+        {
+            foodType[i] = foods[i]._dishType;
+            foodString[i] = foodType[i].ToString();
         }
-         return foodString;
+        return foodString;
     }
 
     public int GetFoodValue(string _foodType)
     {
-        for (int i = 0; i < foods.Length; i++)
+        for(int i = 0; i < foods.Length; i++)
         {
             string dishTypeString = foods[i]._dishType.ToString();
-            if (dishTypeString == _foodType)
+            if(dishTypeString == _foodType)
             {
                 return foods[i]._dishValue;
             }
@@ -133,10 +138,10 @@ public class FoodSourceData : ScriptableObject
         return 0;
     }
 
-    
 
 
-    //ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã®ç¨®é¡ã¨æ•°
+
+    //ƒXƒe[ƒ^ƒX‚Ìí—Ş‚Æ”
     [Serializable]
     class StatusData
     {
@@ -160,10 +165,10 @@ public class FoodSourceData : ScriptableObject
 
     public int GetStatusValue(string _statusType)
     {
-        for (int i = 0; i < status.Length; i++)
+        for(int i = 0; i < status.Length; i++)
         {
             string statusTypeString = status[i]._statusType.ToString();
-            if (statusTypeString == _statusType)
+            if(statusTypeString == _statusType)
             {
                 return status[i]._statusValue;
             }

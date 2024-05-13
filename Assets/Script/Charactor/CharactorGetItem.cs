@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ãŒã‚¢ã‚¤ãƒ†ãƒ ã‚’ã‚²ãƒƒãƒˆã—ãŸæ™‚ã®å‡¦ç†
-public class CharactorGetItem : MonoBehaviour
+//ƒLƒƒƒ‰ƒNƒ^[‚ªƒAƒCƒeƒ€‚ğƒQƒbƒg‚µ‚½‚Ìˆ—
+public class CharactorGetItem:MonoBehaviour
 {
-    //Script
+    //Manager
     public PlayerFoodManager _playerFoodManager;
     public PlayerRecipeManager _playerRecipeManager;
     //
@@ -14,6 +14,18 @@ public class CharactorGetItem : MonoBehaviour
     public GameObject waterObject;
     public GameObject grassObject;
     public GameObject HPObject;
+
+    private void Start()
+    {
+        int count = 1;
+        if(_playerRecipeManager.GetItemCount("meatBun") != 1)
+        {
+            _playerRecipeManager.CountItem("meatBun", count);
+            _playerRecipeManager.CountItem("hamburger", count);
+            _playerRecipeManager.CountItem("tapiocaMilkTea", count);
+        }
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -25,28 +37,28 @@ public class CharactorGetItem : MonoBehaviour
         SetHpBar();
     }
 
-    //ã‚¢ã‚¤ãƒ†ãƒ ã¨è¡çª
-    public void OnCollisionEnter2D(Collision2D collision)
+    //ƒAƒCƒeƒ€‚ÆÕ“Ë
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        //ã‚¿ã‚°ãŒ "item" ã®ã‚¢ã‚¤ãƒ†ãƒ 
-        if (collision.gameObject.tag == "item")
+        //ƒ^ƒO‚ª "item" ‚ÌƒAƒCƒeƒ€
+        if(collision.tag == "item")
         {
             int count = 1;
-            //ã‚¢ã‚¤ãƒ†ãƒ è¿½åŠ 
+            //ƒAƒCƒeƒ€’Ç‰Á
             _playerFoodManager.CountItem(collision.gameObject.name, count);
 
         }
-        //ã‚¿ã‚°ãŒ "recipe" ã®ã‚¢ã‚¤ãƒ†ãƒ 
-        else if (collision.gameObject.tag == "recipe")
+        //ƒ^ƒO‚ª "recipe" ‚ÌƒAƒCƒeƒ€
+        else if(collision.tag == "recipe")
         {
             int count = 1;
-            //ã‚¢ã‚¤ãƒ†ãƒ è¿½åŠ 
+            //ƒAƒCƒeƒ€’Ç‰Á
             _playerRecipeManager.CountItem(collision.gameObject.name, count);
         }
 
     }
 
-    //è‚‰ã€æ°´ã€è‰ã®æ‰€æŒæ•°ã‚’ã‚²ãƒ¼ãƒ ç”»é¢ã«è¡¨ç¤º
+    //“÷A…A‘‚ÌŠ”‚ğƒQ[ƒ€‰æ–Ê‚É•\¦
     public void SetText(string foodS, GameObject foodObject)
     {
         Text _text = foodObject.GetComponent<Text>();
@@ -55,21 +67,23 @@ public class CharactorGetItem : MonoBehaviour
         _text.text = _textS;
     }
 
-    //HPãƒ†ã‚­ã‚¹ãƒˆã‚’è¡¨ç¤º
+    //HPƒeƒLƒXƒg‚ğ•\¦
     public void SetHPText()
     {
         Text hptext = HPObject.GetComponent<Text>();
-        string maxHP = Status.HP.ToString("d");
-        string nowHP = Status.nowHP.ToString("d");
+        int HP = Player.HP + Player.HPincrement;
+        string maxHP = HP.ToString();
+        string nowHP = Player.nowHP.ToString();
         hptext.text = nowHP + "/" + maxHP;
     }
 
-    //HPãƒãƒ¼ã‚’è¡¨ç¤º
+    //HPƒo[‚ğ•\¦
     public void SetHpBar()
     {
         GameObject _HPSlider = GameObject.Find("HPSlider");
         Slider HPSlider_S = _HPSlider.GetComponent<Slider>();
-        HPSlider_S.maxValue = Status.HP;
-        HPSlider_S.value = Status.nowHP;
+        int HP = Player.HP + Player.HPincrement;
+        HPSlider_S.maxValue = HP;
+        HPSlider_S.value = Player.nowHP;
     }
 }

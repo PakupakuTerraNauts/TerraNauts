@@ -3,23 +3,45 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ground
+  - Enemy
+  - item
+  - recipe
+  - Sword
+  - DebidoraFire
+  - tama
+  - Sakebigoe
+  - DeadEnemy
+  - Hoshi
+  - Tyubi
+  - Sumi
+  - Ninzin
+  - NinzinExp
+  - Turara
+  - DeadZone
+  - EnemySleep
+  - Kabotya
+  - Saboten
+  - TutorialDamage
+  - Debidora
+  - Ivy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - togeball_sabochan
+  - Sword
+  - HPbar
+  - HPgauge
+  - Item
+  - EnemysAttack
+  - Player
+  - Enemy
   - 
   - 
   - 

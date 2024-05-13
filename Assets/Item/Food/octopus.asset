@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: octopus
   _itemName: "\u3061\u3073\u305F\u3053"
   _itemType: 0
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 24003c6ea588b4b4399734fe46e99b0a, type: 3}
   _floor: 3
   foods: []
   status: []

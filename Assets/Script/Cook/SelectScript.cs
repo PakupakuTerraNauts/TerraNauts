@@ -4,43 +4,45 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-//„Éú„Çø„É≥„Çª„É¨„ÇØ„Éà„Å®„Éó„ÉÉ„Ç∑„É•
-public class SelectScript : MonoBehaviour
+//É{É^ÉìÉZÉåÉNÉgÇ∆ÉvÉbÉVÉÖ
+public class SelectScript:MonoBehaviour
 {
 
-    GameObject _gameObject;
+    public GameObject _gameObject;
     GameObject _firstObj;
     Button _firstButton;
-    GameObject _selectedObject;
-    Button button;
 
-    PushDishButton _pushDishButton;
+    public PushDishButton _pushDishButton;
+    GameObject selectObj;
+
+    GameObject beforObj;
 
     void Start()
     {
-        //‰∏ÄÁï™‰∏ä„ÅÆ„Éú„Çø„É≥„Çí„Çª„É¨„ÇØ„Éà
-        _gameObject = GameObject.Find("RecipeContent_C");
-        _firstObj = _gameObject.transform.GetChild(0).gameObject;
-        _firstButton = _firstObj.GetComponent<Button>();
-        _firstButton.Select();
+        //àÍî‘è„ÇÃÉ{É^ÉìÇÉZÉåÉNÉg
+        if(_gameObject.transform.GetChild(1).gameObject != null)
+        {
+            _firstObj = _gameObject.transform.GetChild(1).gameObject;
+            _firstButton = _firstObj.GetComponent<Button>();
+            _firstButton.Select();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (EventSystem.current.currentSelectedGameObject)
+
+        if(EventSystem.current.currentSelectedGameObject && EventSystem.current.currentSelectedGameObject.tag == "item")
         {
-            _pushDishButton = GameObject.Find("PrefabCookButton").GetComponent<PushDishButton>();
-            _selectedObject = EventSystem.current.currentSelectedGameObject;
-            if(_selectedObject != null)
-            {
-                button = _selectedObject.GetComponent<Button>();
-                if(_selectedObject.name != "CookButton")
-                {
-                    _pushDishButton.PushButton(button);
-                }
-            }
+            selectObj = EventSystem.current.currentSelectedGameObject;
+            _pushDishButton.PushButton(selectObj.GetComponent<Button>());
         }
-        
+        else if(EventSystem.current.currentSelectedGameObject && EventSystem.current.currentSelectedGameObject.tag != "item")
+        {
+            beforObj.GetComponent<Button>().Select();
+            _pushDishButton.PushButton(beforObj.GetComponent<Button>());
+        }
+
+        beforObj = selectObj;
     }
 }

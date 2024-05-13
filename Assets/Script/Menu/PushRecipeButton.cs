@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //レシピテキスト選択で食材、ステータスが表示
-public class PushRecipeButton : MonoBehaviour
+public class PushRecipeButton:MonoBehaviour
 {
     //Script
     GameObject _main;
@@ -47,7 +47,7 @@ public class PushRecipeButton : MonoBehaviour
         string[] statusTypes = _foodSourceData.GetStatusType();
         int statusCount;
 
-        for (int i = 0; i < foodTypes.Length; i++)
+        for(int i = 0; i < foodTypes.Length; i++)
         {
             _textRecipePrefab = (GameObject)Instantiate(_prefabObject, transform.position, Quaternion.identity);
             _textRecipePrefab.transform.SetParent(_viewFoodText.transform, false);
@@ -61,7 +61,7 @@ public class PushRecipeButton : MonoBehaviour
             _cloneObject.name = foodTypes[i];
         }
 
-        for (int i = 0; i < statusTypes.Length; i++)
+        for(int i = 0; i < statusTypes.Length; i++)
         {
             _textRecipePrefab = (GameObject)Instantiate(_prefabObject2, transform.position, Quaternion.identity);
             _textRecipePrefab.transform.SetParent(_viewStatusText.transform, false);
@@ -72,7 +72,7 @@ public class PushRecipeButton : MonoBehaviour
             Text _cloneText3 = _cloneObject.transform.GetChild(1).GetComponent<Text>();
             _cloneText.text = statusTypes[i];
             statusCount = _foodSourceData.GetStatusValue(statusTypes[i]);
-            switch (statusTypes[i])
+            switch(statusTypes[i])
             {
                 case "HP":
                     _cloneText2.text = Status.HP.ToString("d");
@@ -105,7 +105,7 @@ public class PushRecipeButton : MonoBehaviour
 
     public void TextDelete(GameObject _objectText)
     {
-        foreach (Transform child in _objectText.transform)
+        foreach(Transform child in _objectText.transform)
         {
             GameObject.Destroy(child.gameObject);
         }

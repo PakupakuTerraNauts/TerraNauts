@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: juice
   _itemName: "\u30B8\u30E5\u30FC\u30B9\u306E\u3082\u3068"
   _itemType: 0
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 7e5d164fccbe64938b9d236dea71c7e1, type: 3}
   _floor: 4
   foods: []
   status: []

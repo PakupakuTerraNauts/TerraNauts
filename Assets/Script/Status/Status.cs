@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//繧ｹ繝�繝ｼ繧ｿ繧ｹ邂｡逅�
-public class Status : MonoBehaviour
+//ステータス管理
+public class Status:MonoBehaviour
 {
     public static int HP = 100;
     public static int ATK = 100;
@@ -25,7 +25,7 @@ public class Status : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
+        if(Input.GetKeyDown(KeyCode.Y))
         {
             LowHP();
         }
@@ -34,7 +34,7 @@ public class Status : MonoBehaviour
     void LowHP()
     {
         nowHP -= 10;
-        if (nowHP <= 0)
+        if(nowHP <= 0)
         {
             nowHP = HP;
         }

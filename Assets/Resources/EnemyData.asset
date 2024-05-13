@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28746ab04b0ce2c41b6f166d95baf45c, type: 3}
+  m_Name: EnemyData
+  m_EditorClassIdentifier: 
+  EnemyDataList:
+  - Name: "\u30B9\u30E9\u30A4\u30E0"
+    flor: 1
+    maxHP: 10
+    gravity: 5
+    basicObject: {fileID: 4534490885142806426, guid: f5ee8281215e0493e920d2293c12a575, type: 3}
+    uniqueObject: {fileID: 8744671341141900407, guid: e657b5041d0e54718bff5a7861fdcddf, type: 3}
+  - Name: "\u306B\u308F\u3053\u3051\u30D4\u30C3\u30C1\u30E3\u30FC"
+    flor: 1
+    maxHP: 10
+    gravity: 5
+    basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
+    uniqueObject: {fileID: 421306667867481507, guid: 38de61380ca614d3db46f61dfb964942, type: 3}
+  - Name: "\u3060\u3044\u3053\u3093\u30DE\u30F3\u30C9\u30E9\u30B4\u30E9"
+    flor: 1
+    maxHP: 10
+    gravity: 5
+    basicObject: {fileID: 3185009451249992532, guid: 7770417310d664a2e8f7dcccb0914241, type: 3}
+    uniqueObject: {fileID: 7959641358264713398, guid: 2951c47719ac04ef7ac22f57020fd683, type: 3}
+  - Name: "\u304B\u306B\u304B\u306B\u89AA\u5206"
+    flor: 2
+    maxHP: 10
+    gravity: 5
+    basicObject: {fileID: 4534490885142806426, guid: f5ee8281215e0493e920d2293c12a575, type: 3}
+    uniqueObject: {fileID: 7042046898915360999, guid: 892a41b5540d7a34cb8548b8d37e3f3c, type: 3}
+  - Name: "\u3076\u305F\u3082\u3050\u3089"
+    flor: 2
+    maxHP: 10
+    gravity: 5
+    basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
+    uniqueObject: {fileID: 8369336574802605525, guid: 106d5ba9235e04e0dab86669a4b26f60, type: 3}
+  - Name: "\u304D\u306E\u3053\u307B\u3046\u3057"
+    flor: 2
+    maxHP: 10
+    gravity: 5
+    basicObject: {fileID: 3185009451249992532, guid: 7770417310d664a2e8f7dcccb0914241, type: 3}
+    uniqueObject: {fileID: 3375448987904999868, guid: 47c23e111addc4de98029bcfacf75f38, type: 3}
+  - Name: "\u305F\u3053\u3064\u307C\u308B\u3093"
+    flor: 3
+    maxHP: 10
+    gravity: 5
+    basicObject: {fileID: 4534490885142806426, guid: f5ee8281215e0493e920d2293c12a575, type: 3}
+    uniqueObject: {fileID: 1470460448811446201, guid: a379436c741690e4599158fdd588ee3f, type: 3}
+  - Name: "\u4E2D\u706B\u30C9\u30E9\u30B4\u30F3"
+    flor: 3
+    maxHP: 10
+    gravity: 5
+    basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
+    uniqueObject: {fileID: 463701104692280964, guid: 8c007f76ab617034da88ec007a551695, type: 3}
+  - Name: "\u304A\u3070\u3051\u304B\u307C\u3061\u3083"
+    flor: 3
+    maxHP: 10
+    gravity: 0
+    basicObject: {fileID: 3185009451249992532, guid: 7770417310d664a2e8f7dcccb0914241, type: 3}
+    uniqueObject: {fileID: 1044133366195201680, guid: d9b6dd93164b0c4479d59894f072c28f, type: 3}
+  - Name: "\u30B9\u30AB\u30A4\u30B9\u30E9\u30A4\u30E0"
+    flor: 4
+    maxHP: 10
+    gravity: 0
+    basicObject: {fileID: 4534490885142806426, guid: f5ee8281215e0493e920d2293c12a575, type: 3}
+    uniqueObject: {fileID: 2181079066158464371, guid: 20a8b8c45c2964874bdb6cf04c7a92b1, type: 3}
+  - Name: "\u30D1\u30A4\u30F3\u30B7\u30FC\u30B5\u30FC"
+    flor: 4
+    maxHP: 10
+    gravity: 5
+    basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
+    uniqueObject: {fileID: 5468205516251691096, guid: 1a5d1aab2f80a374dac99f9135c84f2a, type: 3}
+  - Name: "\u30B5\u30DC\u3061\u3083\u3093"
+    flor: 4
+    maxHP: 10
+    gravity: 5
+    basicObject: {fileID: 3185009451249992532, guid: 7770417310d664a2e8f7dcccb0914241, type: 3}
+    uniqueObject: {fileID: 368306628924614230, guid: cedda7041791d468db23ceeb3c4f8b4f, type: 3}
+  - Name: "\u30CD\u30A4\u30D3\u30FC\u30B9\u30E9\u30A4\u30E0"
+    flor: 5
+    maxHP: 10
+    gravity: 5
+    basicObject: {fileID: 4534490885142806426, guid: f5ee8281215e0493e920d2293c12a575, type: 3}
+    uniqueObject: {fileID: 8899822427537777611, guid: 8e41d544bc963e7488156adf763eb460, type: 3}
+  - Name: "\u30AB\u30AB\u30AA\u3053\u3046\u3082\u308A"
+    flor: 5
+    maxHP: 10
+    gravity: 0
+    basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
+    uniqueObject: {fileID: 4981268596931732217, guid: 7ac51ada99ed79c4db498c60a03b7fc7, type: 3}
+  - Name: "\u306A\u304B\u3070\u3084\u3057\u3055\u3093"
+    flor: 5
+    maxHP: 10
+    gravity: 5
+    basicObject: {fileID: 3185009451249992532, guid: 7770417310d664a2e8f7dcccb0914241, type: 3}
+    uniqueObject: {fileID: 5306908130786295150, guid: ea777d6c17568994e95a197dc52bf56e, type: 3}
