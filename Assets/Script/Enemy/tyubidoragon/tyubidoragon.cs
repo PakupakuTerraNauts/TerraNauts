@@ -24,7 +24,6 @@ public class tyubidoragon : Enemy
     }
 
     protected override void MovingF(){
-        Debug.Log(isAttack);
         if(!isAttack){
             if(isLeft){
                 rb.velocity = new Vector2(-speed, -gravity);

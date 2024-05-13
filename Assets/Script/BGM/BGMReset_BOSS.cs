@@ -11,15 +11,18 @@ public class BGMReset_BOSS : MonoBehaviour
         stageAudio.volume = Volume.nowVolume;
     }
 
-    public void BossFightBGM_Start(){
+    public void StageBGM_Stop(){
         stageAudio.Pause();
-        
+    }
+
+    public void BossFightBGM_Start(){
         bossAudio.volume = Volume.nowVolume;
         bossAudio.Play();
     }
 
     public void BossFightBGM_Stop(){
         bossAudio.Stop();
+        stageAudio.volume = Volume.nowVolume;
         stageAudio.UnPause();
     }
 }

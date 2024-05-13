@@ -20,7 +20,6 @@ public class BossCamera1 : MonoBehaviour
     private bool isBossRoom = false;
 
     public Debidora debidora;
-    public BGMReset_BOSS BGM_BOSS;
 
     [SerializeField, Header("廊下からボス部屋を覗けないようにする")] private float entranceDoorLimit;
     [SerializeField, Header("ボス部屋でのカメラの中心点")] private float yHeightInBossRoom;
@@ -68,12 +67,10 @@ public class BossCamera1 : MonoBehaviour
     transform.position = new Vector3(targetX, y, player.position.z - 20f);
 
     // ボス部屋に近づいたらフェーズ2に移行
-    if (entranceBossRoom.isEnter)
+    if (debidora.isEntered)
     {
         phase = 2;
         isBossRoom = true;
-
-        BGM_BOSS.BossFightBGM_Start();
     }
 }
 
@@ -108,8 +105,6 @@ public class BossCamera1 : MonoBehaviour
         {
             phase = 3;
             Camera.main.orthographicSize = 5f;
-
-            BGM_BOSS.BossFightBGM_Stop();
         }
     }
 

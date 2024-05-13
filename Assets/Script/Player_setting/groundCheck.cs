@@ -5,15 +5,14 @@ using UnityEngine;
 public class groundCheck : MonoBehaviour
 {
 
-    private string groundTag = "ground";
     private bool isGround = false;
     private bool isGroundEnter, isGroundStay, isGroundExit;
 
-    public bool IsGround()    {    
-        if (isGroundEnter || isGroundStay)        {
+    public bool IsGround(){    
+        if (isGroundEnter || isGroundStay){
             isGround = true;
         }
-        else if (isGroundExit)        {
+        else if (isGroundExit){
             isGround = false;
         }
 
@@ -24,19 +23,19 @@ public class groundCheck : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if (collision.tag == groundTag){
+        if (collision.tag == "ground"){
             isGroundEnter = true;
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision){
-        if (collision.tag == groundTag){
+        if (collision.tag == "ground"){
             isGroundStay = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision){
-        if (collision.tag == groundTag){
+        if (collision.tag == "ground"){
             isGroundExit = true;
         }
     }

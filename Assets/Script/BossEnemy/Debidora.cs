@@ -4,30 +4,37 @@ using UnityEngine;
 
 public class Debidora : MonoBehaviour
 {
+    [SerializeField] private string Name;
     [SerializeField] private GameObject FirePrefab;
     [SerializeField] private GameObject PainPrefab;
     [SerializeField] private GameObject FramePrefab;
     [SerializeField] private GameObject LightPrefab;
     private Animator _animator;
     private float nowhp = 0.0f;
-    [SerializeField] private float maxhp;
-    private float countStarthp = 0.0f;
+    private float maxhp = 0.0f;
     public bool isStart = true;
     [HideInInspector] public bool isDead = false;
     [HideInInspector] public bool isDying = false;
     //private bool isNoHP = true;
     private Vector3 nowPosition;
     
-    public ExitDoor exitDoor;
-    public EnteredBossRoom enteredBossRoom;
-    public HPBar HP;
     private float ATK_player = 0.0f;
-    public Canvas HP_canvas;
+    public bool isEntered = false;
+    [SerializeField] private ExitDoor exitDoor;
+    [SerializeField] public HPBar HP;
+    [SerializeField] public Canvas HP_canvas;
+    [SerializeField] private BGMReset_BOSS BossBGM;
 
-    public BGMReset BGM;
-    public AudioSource BossBGM;
+    private bossData Data;
 
-    // Start is called before the first frame update
+    void Awake(){
+        var bossData = Resources.Load<BossData>("BossData");
+        foreach(var data in bossData.BossDataList){
+            if(data.Name == Name)
+                Data = data;
+        }
+    }
+
     void Start()
     {
         _animator = GetComponent<Animator>();
@@ -35,19 +42,21 @@ public class Debidora : MonoBehaviour
 
         //HP = GetComponent<HPBar>();
         ATK_player = Player.ATK;
-        nowhp = maxhp;
-        countStarthp = maxhp / 10.0f;
+        maxhp = Data.maxHP;
+        nowhp = maxhp / 10.0f; // 登場時にカウントアップするため
+        HP.SetHP(maxhp);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(enteredBossRoom.isEnter){
+        if(isEntered){
             
             if(nowhp <= 0)
             {
                 //if nowhp is 0, stop Battle Coroutine
                 nowhp = 0;
+                BossBGM.BossFightBGM_Stop();
                 isDead = true;
                 _animator.SetTrigger("Dead");
                 StopCoroutine("Battle");
@@ -195,8 +204,9 @@ public class Debidora : MonoBehaviour
             newLight.name = "FrameLight";
         }
         yield return new WaitForSeconds(0.05f);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
 
+        BossBGM.BossFightBGM_Stop();
         exitDoor.OpenDoor();
     }
 
@@ -210,18 +220,23 @@ public class Debidora : MonoBehaviour
     // ボスの登場と同時にHPバーを表示する
     // BossCamera1 でフェーズ2に入ったときに呼ぶ
     public void BossHPCountUp(){
+        BossBGM.StageBGM_Stop();
+        
         HP_canvas.gameObject.SetActive(true);
-        HP.UpdateHP(maxhp - countStarthp); 
-        nowhp = nowhp - (maxhp - countStarthp);
-        Debug.Log("start countup : " + nowhp);
+        HP.UpdateHP(maxhp - nowhp);
         StartCoroutine(BossHPStart());
     }
 
     private IEnumerator BossHPStart(){
+        float countUpHP = nowhp;
+        Player.RestrainedByEvent();
+
         while(nowhp < maxhp){   // nowhpはここで使うのでBossHPCountUpでも更新する
-            HP.UpdateHP(-countStarthp);        
-            nowhp = nowhp + countStarthp;
-            yield return new WaitForSeconds(0.2f);
+            HP.UpdateHP(-countUpHP);        
+            nowhp = nowhp + countUpHP;
+            yield return new WaitForSeconds(0.5f);
         }
+        Player.UnRestrainedByEvent();
+        BossBGM.BossFightBGM_Start();
     }
 }

@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class EnteredBossRoom : MonoBehaviour
 {
-    public bool isEnter = false;
     public Debidora debidora;
     public EntranceDoor entrance;
 
+    private BoxCollider2D boxcol;
+
+    void Start(){
+        boxcol = GetComponent<BoxCollider2D>();
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(!isEnter){
+        if(!debidora.isEntered){
             if(collision.tag == "Player"){
                 Debug.Log("入った");
                 // BossCamera1のフェーズ２のフラグ
-                isEnter = true;
+                debidora.isEntered = true;
                 entrance.CloseDoor();
                 // １層ボスのHPバー操作
                 debidora.BossHPCountUp();
                 entrance.JudgeDestory();
-                Destroy(gameObject, 3f);
+                boxcol.enabled = false;
             }
         }
     }

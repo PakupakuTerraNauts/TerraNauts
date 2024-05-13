@@ -12,8 +12,9 @@ public class EnemyData : ScriptableObject
 public class enemyData
 {
     public string Name;
-
+    public int flor;
     public float maxHP;
+    public float gravity;
     
     public GameObject basicObject;
     public GameObject uniqueObject;
