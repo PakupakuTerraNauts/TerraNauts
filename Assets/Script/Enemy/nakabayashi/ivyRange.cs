@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ivyRange : MonoBehaviour
 {
+    #region // variables
     private BoxCollider2D boxcol = null;
 
     public delegate void ivyAttack();
     private ivyAttack ivyAttackCallBack;
+    #endregion
 
     void Awake(){
         boxcol = GetComponent<BoxCollider2D>(); //ivy.Start ‚©‚ç InitializeRange ‚ðŒÄ‚Ô‚½‚ß Awake

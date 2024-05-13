@@ -51,11 +51,12 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         uniqueObject = Data.uniqueObject;
 
         hp = Data.maxHP;
+        HP.SetHP(hp);
         Initialize();
         if(!gameObject.activeSelf){     // gameObjectがfalseなら一度倒されている
             this.gameObject.SetActive(true);
             isDead = false;
-            HP.UpdateHP(-hp);
+            HP.UpdateHP(-hp);   // HPが0なので設定し直し
         }
     }
 
