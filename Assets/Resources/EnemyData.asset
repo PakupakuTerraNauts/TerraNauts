@@ -94,7 +94,7 @@ MonoBehaviour:
   - Name: "\u30AB\u30AB\u30AA\u3053\u3046\u3082\u308A"
     flor: 5
     maxHP: 10
-    gravity: 0
+    gravity: 4
     basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
     uniqueObject: {fileID: 4981268596931732217, guid: 7ac51ada99ed79c4db498c60a03b7fc7, type: 3}
   - Name: "\u306A\u304B\u3070\u3084\u3057\u3055\u3093"

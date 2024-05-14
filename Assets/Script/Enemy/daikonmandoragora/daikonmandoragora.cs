@@ -9,10 +9,13 @@ public class daikonmandoragora : Enemy
     private bool isSteppedOn = false;
     private BoxCollider2D boxcol = null;
     private EdgeCollider2D edgcol = null;
+
+    [SerializeField] private radisshRange range;
     #endregion
 
     protected override void Initialize()
     {
+        range.InitializeCallBack(onRadisshStapped);
         boxcol = GetComponent<BoxCollider2D>();
         edgcol = GetComponent<EdgeCollider2D>();
         boxcol.enabled = true;
@@ -25,15 +28,15 @@ public class daikonmandoragora : Enemy
 
     protected override void Sleeping(){
         if(!isDead){
-            anim.Play("radissh_umari");     // âÊñ îÉÇ¢Ç…èoÇΩÇÁradissh_umariÇ…ñﬂÇÈ
+            anim.Play("radissh_umari");     // âÊñ äOÇ…èoÇΩÇÁradissh_umariÇ…ñﬂÇÈ
             gameObject.tag = "EnemySleep";
             isSteppedOn = false;
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void onRadisshStapped()
     {
-        if(collision.collider.tag == "Player" && !isSteppedOn && !isDead){
+        if(!isSteppedOn && !isDead){
             anim.Play("radissh_fumare");
             isSteppedOn = true;
             StartCoroutine(ChangeTag());

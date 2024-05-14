@@ -198,8 +198,9 @@ GameObject:
   - component: {fileID: 548115242771006445}
   - component: {fileID: 272104648685482418}
   - component: {fileID: 2537973576289179300}
+  - component: {fileID: 4529346741403418062}
   m_Layer: 0
-  m_Name: kakaoRange
+  m_Name: kakaoRange_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,7 +214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3142854218623979064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.2989197, y: -3.0319061, z: 0.022888714}
+  m_LocalPosition: {x: -5, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -292,6 +293,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &4529346741403418062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3142854218623979064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c881224293df249a9aa5c57fcbc5e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6492596461427316000
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +485,8 @@ GameObject:
   - component: {fileID: 4564110515886744080}
   - component: {fileID: 6150731865856064587}
   - component: {fileID: 5255093192796739296}
+  - component: {fileID: 7783829746210519778}
+  - component: {fileID: 8321456336644612671}
   m_Layer: 14
   m_Name: enemy_kakaokoumori
   m_TagString: Enemy
@@ -644,6 +659,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7783829746210519778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924168861689635441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107af94d09f3d714e8df1158f55e92ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: 0
+  Name: "\u30AB\u30AB\u30AA\u3053\u3046\u3082\u308A"
+  rangeLeft: {fileID: 4529346741403418062}
+  rangeRight: {fileID: 880825162138004403}
+  ground: {fileID: 7877869445713675446}
+--- !u!114 &8321456336644612671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924168861689635441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b178d018cc2fbee42ad7ff7602943811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpGauge: {fileID: 2182398823836870300}
 --- !u!1 &8298756488529774730
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,8 +776,9 @@ GameObject:
   - component: {fileID: 3349016862864614677}
   - component: {fileID: 4912298445965001580}
   - component: {fileID: 53637565868960795}
+  - component: {fileID: 880825162138004403}
   m_Layer: 0
-  m_Name: kakaoRange2
+  m_Name: kakaoRange_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -746,7 +792,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8502516778701628804}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.2989197, y: -3.0319061, z: 0.022888714}
+  m_LocalPosition: {x: 8, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -825,3 +871,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &880825162138004403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8502516778701628804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c881224293df249a9aa5c57fcbc5e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
