@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     protected Rigidbody2D rb = null;
     protected SpriteRenderer sr = null;
 
-    private enemyData Data;
+    protected enemyData Data;
     #endregion
 
     void Awake(){

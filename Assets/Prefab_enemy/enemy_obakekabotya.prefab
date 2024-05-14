@@ -656,7 +656,7 @@ MonoBehaviour:
   Name: "\u304A\u3070\u3051\u304B\u307C\u3061\u3083"
   kabo:
   - {fileID: 8894858542366915443}
-  - {fileID: 0}
+  - {fileID: 7508800235860510649}
 --- !u!1 &7395149838641765023
 GameObject:
   m_ObjectHideFlags: 0
