@@ -1300,14 +1300,14 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2549324675572919583}
+  - {fileID: 4978026601329783456}
   - {fileID: 4339337419097014612}
   - {fileID: 6872580522670776540}
   - {fileID: 4487258060690292367}
   - {fileID: 7011517361716075155}
   - {fileID: 7304865908200657749}
-  - {fileID: 4978026601329783456}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1903045599376025219
 SpriteRenderer:
@@ -1466,10 +1466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b57b2c10acda1e4da6e696af555267a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 5
   Name: "\u30CD\u30A4\u30D3\u30FC\u30B9\u30E9\u30A4\u30E0"
-  basicObject: {fileID: 4534490885142806426, guid: f5ee8281215e0493e920d2293c12a575, type: 3}
-  uniqueObject: {fileID: 8899822427537777611, guid: 8e41d544bc963e7488156adf763eb460, type: 3}
   turara1: {fileID: 1465104519136824350}
   turara2: {fileID: 49061745471212219}
   turara3: {fileID: 0}

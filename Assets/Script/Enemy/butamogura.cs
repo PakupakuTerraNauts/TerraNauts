@@ -43,7 +43,7 @@ public class butamogura : Enemy
         }
 
         nowState = nextState;
-        rb.velocity = new Vector2(0, -gravity);
+        rb.velocity = new Vector2(0, -Data.gravity);
     }
 
     // buta_attack ‚ÌI—¹‚ÉŒÄ‚Î‚ê‚é

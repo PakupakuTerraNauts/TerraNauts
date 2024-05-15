@@ -23,7 +23,7 @@ public class daikonmandoragora : Enemy
     }
 
     protected override void Moving(){
-        rb.velocity = new Vector2(0, -gravity);
+        rb.velocity = new Vector2(0, -Data.gravity);
     }
 
     protected override void Sleeping(){

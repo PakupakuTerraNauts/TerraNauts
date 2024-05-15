@@ -26,7 +26,7 @@ public class tyubidoragon : Enemy
     protected override void MovingF(){
         if(!isAttack){
             if(isLeft){
-                rb.velocity = new Vector2(-speed, -gravity);
+                rb.velocity = new Vector2(-speed, -Data.gravity);
 
                 if(transform.position.x < leftlim){
                     transform.localScale = new Vector3(-1, 1, 1);
@@ -34,7 +34,7 @@ public class tyubidoragon : Enemy
                 }
             }
             else{   // âEå¸Ç´
-                rb.velocity = new Vector2(speed, -gravity);
+                rb.velocity = new Vector2(speed, -Data.gravity);
 
                 if(transform.position.x > rightlim){
                     transform.localScale = new Vector3(1, 1, 1);
@@ -43,7 +43,7 @@ public class tyubidoragon : Enemy
             }
         }
         else{   // çUåÇÉtÉâÉO ON
-            rb.velocity = new Vector2(0, -gravity);
+            rb.velocity = new Vector2(0, -Data.gravity);
             anim.Play("tyuubi_fire");
         }
     }

@@ -25,7 +25,7 @@ public class neibysuraimu : Enemy
         }else{
             anim.Play("neiby_default");
         }
-        rb.velocity = new Vector2(0.0f, -gravity);
+        rb.velocity = new Vector2(0.0f, -Data.gravity);
         isFall = turara1.FallTF();
     }
 

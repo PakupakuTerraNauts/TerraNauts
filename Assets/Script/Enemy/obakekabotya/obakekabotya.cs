@@ -35,14 +35,14 @@ public class obakekabotya : Enemy
         second += Time.deltaTime;
 
         if(isUp){
-            rb.velocity = new Vector2(0.0f, gravity);
+            rb.velocity = new Vector2(0.0f, Data.gravity);
             if(second > 1.0f){
                 isUp = false;
                 second = 0.0f;
             }
         }
         else{
-            rb.velocity = new Vector2(0.0f, -gravity);
+            rb.velocity = new Vector2(0.0f, -Data.gravity);
             if(second > 1.0f){
                 isUp = true;
                 second = 0.0f;

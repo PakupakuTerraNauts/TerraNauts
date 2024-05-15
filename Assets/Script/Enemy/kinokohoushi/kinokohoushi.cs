@@ -20,7 +20,7 @@ public class kinokohoushi : Enemy
 
     protected override void Moving(){
         anim.Play("kinoko_hoshi");
-        rb.velocity = new Vector2(0, -gravity);
+        rb.velocity = new Vector2(0, -Data.gravity);
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
