@@ -14,7 +14,7 @@ public class suraimu : Enemy
     }
 
     protected override void Moving(){
-        rb.velocity = new Vector2(0, -gravity);
+        rb.velocity = new Vector2(0, -Data.gravity);
     }
 
 

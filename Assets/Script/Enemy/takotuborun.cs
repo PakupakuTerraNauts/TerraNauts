@@ -21,7 +21,7 @@ public class takotuborun : Enemy
 
     protected override void Moving(){
         anim.Play("tako_default");
-        rb.velocity = new Vector2(0, -gravity);
+        rb.velocity = new Vector2(0, -Data.gravity);
     }
 
     private void OnTriggerEnter2D(Collider2D collision){

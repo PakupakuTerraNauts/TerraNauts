@@ -25,14 +25,14 @@ public class kanikanioyabun : Enemy
         anim.Play("kani_default");
 
         if(isLeft){
-            rb.velocity = new Vector2(-speed, -gravity);
+            rb.velocity = new Vector2(-speed, -Data.gravity);
             if(second > 3.0f){
                 isLeft = false;
                 second = 0.0f;
             }
         }
         else{
-            rb.velocity = new Vector2(speed, -gravity);
+            rb.velocity = new Vector2(speed, -Data.gravity);
             if(second > 3.0f){
                 isLeft = true;
                 second = 0.0f;
