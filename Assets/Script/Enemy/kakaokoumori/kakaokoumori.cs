@@ -32,6 +32,8 @@ public class kakaokoumori : Enemy
         if(!isSwoop){
             isSwoop = true;
             anim.Play("kakao_swoop");
+            rangeLeft.InvalidColliderAfterAttack();
+            rangeRight.InvalidColliderAfterAttack();
         }
         if(isLeft)
             leftRange = isLeft;

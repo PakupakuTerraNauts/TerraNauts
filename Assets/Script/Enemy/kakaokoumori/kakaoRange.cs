@@ -16,6 +16,10 @@ public class kakaoRange : MonoBehaviour
         boxcol = GetComponent<BoxCollider2D>();
     }
 
+    public void InvalidColliderAfterAttack(){
+        boxcol.enabled = false;
+    }
+
     public void InitializeCallBack(kakaoAttack onKakaoAttack, bool isLeft){
         kakaoAttackCallBack = onKakaoAttack;
         if(isLeft)      // ç∂âEÇ«ÇøÇÁÇ…îÚÇ◊ÇŒÇÊÇ¢Ç© TF Ç≈ï‘Ç∑
