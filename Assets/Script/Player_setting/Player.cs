@@ -46,9 +46,9 @@ public class Player : MonoBehaviour
     private bool isDown = false;
     private bool isAttack = false;
     private bool isAttackCool = false;
+    private bool viewLock = false;
     //private bool isContinue = false;
     private bool isDamaged = false;
-    private bool readytojump = false;
     private Animator anim = null;
     private Rigidbody2D rb = null;
     private CapsuleCollider2D capcol = null;
@@ -84,6 +84,10 @@ public class Player : MonoBehaviour
             if(isAttack && !isAttackCool){
                 StartCoroutine(AttackCool());
             }
+
+            bool vKey = Input.GetKeyDown("v");
+            if(vKey)
+                SwitchViewLock();
 
             // ダメージを受けた直後は無敵時間
             if (isDamaged){
@@ -134,6 +138,10 @@ public class Player : MonoBehaviour
         SetAnimation();
     }
 
+    private void SwitchViewLock(){
+        viewLock = !viewLock;   // 視界を固定するかどうか
+    }
+
     
 ///<summary>
 /// player's attack both Normal Aerial
@@ -164,11 +172,9 @@ public class Player : MonoBehaviour
         //}あると酔うかも
             if(verticalKey > 0 || wKey || upKey){
                 isJump = true;
-                if(readytojump){
-                    ySpeed = jumpSpeed;
-                    jumpPos = transform.position.y;
-                    jumpTime = 0.0f;
-                }
+                ySpeed = jumpSpeed;
+                jumpPos = transform.position.y;
+                jumpTime = 0.0f;
             }
             else{
                 isJump = false;
@@ -192,7 +198,7 @@ public class Player : MonoBehaviour
 
             if(pushUpKey && canHeight && canTime && !isHead){
                 // ジャンプでズームアウト
-                if(Camera.main.orthographicSize != 8f && StageCamera.Instance != null){
+                if(Camera.main.orthographicSize != 8f && StageCamera.Instance != null && !viewLock){
                     StageCamera.JumpZoomOut(0.5f);
                 }
                 ySpeed = jumpSpeed;
@@ -203,7 +209,7 @@ public class Player : MonoBehaviour
                 isJump = false;
                 jumpTime = 0.0f;
                 // 落下でズームイン
-                if(Camera.main.orthographicSize != 5f && StageCamera.Instance != null){
+                if(Camera.main.orthographicSize != 5f && StageCamera.Instance != null && !viewLock){
                     StageCamera.JumpZoomIn(0.3f);
                 }
             }
@@ -211,6 +217,7 @@ public class Player : MonoBehaviour
 
         return ySpeed;
     }
+
 
     private void GetInputTwoJump(){
         // 2段ジャンプの押下を取得
@@ -421,14 +428,6 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene("GameOver");
         nowHP = HP;
         yield break;
-    }
-
-    // ジャンプのタメを作る
-    public void ReadytoJumpT(){
-        readytojump = true;
-    }
-    public void ReadytoJumpF(){
-        readytojump = false;
     }
 
     // ボスのHPカウントアップ等 イベント時に移動を制限したいときに呼ぶ

@@ -77732,22 +77732,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1388960905369306044, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b14644d11eda74d49a8ea0a55418da8a, type: 3}
-    - target: {fileID: 1388960905369306044, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2879555459971201280, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
       propertyPath: _playerFoodManager
       value: 
       objectReference: {fileID: 1876327029}
-    - target: {fileID: 2934399140042434175, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3136481711131276926, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
       propertyPath: m_Name
       value: neko-default
@@ -77826,10 +77814,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7547936862573549243, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8647535937243432935, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
-      propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
