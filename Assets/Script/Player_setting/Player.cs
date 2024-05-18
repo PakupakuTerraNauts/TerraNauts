@@ -17,7 +17,8 @@ public class Player : MonoBehaviour
     public static int HPincrement = 0;
     public int maxJumpCount;    // 増やせば何段でも可
     private int jumpCounter = 0;
-    public static float playerPosX = 0f;    // プレイヤーの方を向く敵が使用
+    public static bool isRestrained = false;
+    public static Transform playerPos;
 
     public static int ATK = 100;
     public static int ATKincrement = 0;
@@ -72,15 +73,18 @@ public class Player : MonoBehaviour
 
 
     private void Update(){
+
         if(!isDown){
-            playerPosX = transform.position.x;
             
+            // プレイヤーの方向を向く敵 等が参照する
+            playerPos = gameObject.transform;
+
             GetInputTwoJump();
             isAttack = PlayerAttack();
 
             // 攻撃アニメーション→コルーチンへ
             if(isAttack && !isAttackCool){
-                StartCoroutine("AttackCool");
+                StartCoroutine(AttackCool());
             }
 
             // ダメージを受けた直後は無敵時間
@@ -107,27 +111,29 @@ public class Player : MonoBehaviour
                     continueTime += Time.deltaTime;
                 }
             }
-        }
-        
+        }   
     }
-
 
     void FixedUpdate()
     {
-        if(!isDown){
+        if(!isDown && !isRestrained){
             isGround = ground.IsGround();
             isHead = head.IsGround();
 
             float xSpeed = GetXSpeed();
             float ySpeed = GetYSpeed();
-
-            SetAnimation();
             
             rb.velocity = new Vector2(xSpeed, ySpeed);
         }
         else{
             rb.velocity = new Vector2(0, -gravity);
         }
+
+        if(isRestrained){
+            ResetDefaultAnimation();
+        }
+ 
+        SetAnimation();
     }
 
     
@@ -185,7 +191,7 @@ public class Player : MonoBehaviour
             if(jumpCounter > 1){
                 canHeight = jumpPos2 + jumpHeight > transform.position.y;
             }
-            
+
             if(pushUpKey && canHeight && canTime && !isHead){
                 // ジャンプでズームアウト
                 if(Camera.main.orthographicSize != 8f && StageCamera.Instance != null){
@@ -273,9 +279,13 @@ public class Player : MonoBehaviour
     public void ContinuePlayer(){
         isDown = false;
         anim.Play("neko_die");
+        ResetDefaultAnimation();
+        //isContinue = true;
+    }
+
+    public void ResetDefaultAnimation(){
         isJump = false;
         isWalk = false;
-        //isContinue = true;
     }
     
     private void OnCollisionEnter2D(Collision2D collision){
@@ -327,7 +337,10 @@ public class Player : MonoBehaviour
                 DecrementHP(90);
             }
             if(collision.tag == "Turara" || collision.tag == "Debidora"){
-                DecrementHP(130);
+               DecrementHP(130);
+            }
+            if(collision.tag == "Ivy"){
+                DecrementHP(150);
             }
             if(collision.tag == "DebidoraFire"){
                 DecrementHP(180);
@@ -420,6 +433,13 @@ public class Player : MonoBehaviour
         readytojump = false;
     }
 
+    // ボスのHPカウントアップ等 イベント時に移動を制限したいときに呼ぶ
+    public static void RestrainedByEvent(){
+        isRestrained = true;
+    }
+    public static void UnRestrainedByEvent(){
+        isRestrained = false;
+    }
 
 ///<summary>
 /// status level up

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7182463846968511130}
   - component: {fileID: 7516383159460887220}
-  - component: {fileID: 1894973913626191489}
+  - component: {fileID: 5281490777821381263}
   - component: {fileID: 2739053578019329717}
   - component: {fileID: 4512533830460722126}
   m_Layer: 11
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421306667867481507}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -963.43, y: -529.1799, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87,8 +87,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1894973913626191489
-BoxCollider2D:
+--- !u!68 &5281490777821381263
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,19 +119,20 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.010740876, y: -0.43958437}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 3}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.9666595, y: 1.710449}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: 0, y: 1.2}
+  - {x: -0.8, y: 0.7}
+  - {x: -0.8, y: -0.8}
+  - {x: 0, y: -1.2}
+  - {x: 0.8, y: -0.8}
+  - {x: 0.8, y: 0.7}
+  - {x: 0, y: 1.2}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!50 &2739053578019329717
 Rigidbody2D:
   serializedVersion: 4

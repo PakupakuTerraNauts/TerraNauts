@@ -25,6 +25,7 @@ TagManager:
   - Saboten
   - TutorialDamage
   - Debidora
+  - Ivy
   layers:
   - Default
   - TransparentFX

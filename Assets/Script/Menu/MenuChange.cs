@@ -29,6 +29,7 @@ public class MenuChange:MonoBehaviour
         isLoaded = !isLoaded;
         if(isLoaded)
         {
+            Time.timeScale = 0;
             Application.LoadLevelAdditive("MenuScean");
             isMenuOpen = true;
         }
@@ -37,6 +38,7 @@ public class MenuChange:MonoBehaviour
             Application.UnloadLevel("MenuScean");
             Resources.UnloadUnusedAssets();
             isMenuOpen = false;
+            Time.timeScale = 1;
         }
     }
 

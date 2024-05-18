@@ -5,7 +5,7 @@ using UnityEngine;
 public class tree : MonoBehaviour
 {
     #region // variables
-    private float hp = 0.0f;
+    [SerializeField] private float hp;
     private float ATK_player = 0.0f;
     public float gravity;
 
@@ -22,7 +22,7 @@ public class tree : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
 
         ATK_player = Player.ATK;
-        hp = HP.maxHealth;
+        //hp = HP.maxHealth;
     }
 
     void Update(){

@@ -6,26 +6,38 @@ public class kabotya : MonoBehaviour
 {
     #region // variables
     public float speed;
+    public float waitingTime;
 
-    private CircleCollider2D circol = null;
+    [HideInInspector] public bool Ready = true;
+
+    //private CircleCollider2D circol = null;
     private SpriteRenderer sr = null;
+    private Rigidbody2D rb = null;
 
+    private Vector3 defaultPos;
     [Header ("本体")] public obakekabotya obake;
-    [Header ("攻撃先")] public GameObject Player;
     private enum State{
         Stay,
-        Go
+        Go,
+        Invalid
     }
-    private State nowState = State.Stay;
-    private State nextState = State.Stay;
+    private State nowState = State.Invalid;
+    private State nextState = State.Invalid;
     #endregion
 
+    void Awake(){
+        defaultPos = transform.position;
+    }
+
     void Start(){
-        circol = GetComponent<CircleCollider2D>();
+        //circol = GetComponent<CircleCollider2D>();
         sr = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update(){
+        nowState = nextState;
+
         switch(nowState){
             case State.Stay:
                 Stay();
@@ -33,9 +45,14 @@ public class kabotya : MonoBehaviour
             case State.Go:
                 Go();
                 break;
-        }
+            case State.Invalid:
+                Invalid();
+                break;
 
-        nowState = nextState;
+            default:
+                Stay();
+                break;
+        }
     }
 
     ///<summary>
@@ -49,12 +66,11 @@ public class kabotya : MonoBehaviour
     /// 待機
     ///</summary>
     private void Stay(){
-        StartCoroutine("inStay");
+        StartCoroutine(inStay());
     }
 
     private IEnumerator inStay(){
-        //gameObject.SetActive(false);
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(waitingTime);
         ChangeState(State.Go);
     }
 
@@ -62,25 +78,43 @@ public class kabotya : MonoBehaviour
     /// 追随
     ///</summary>
     private void Go(){
-        if(sr.isVisible){
-            //gameObject.SetActive(true);
-            obake.ThrowKabotya();
-            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, speed);
-            if(Vector3.Distance(transform.position, Player.transform.position) < 2.0f){
-                ToStay();
-                return;
-            }
+        if(!sr.isVisible){
+            ChangeState(State.Invalid);
+            return;
+        }
+
+        StartCoroutine(inGo());
+    }
+
+    private IEnumerator inGo(){
+        Ready = false;
+        obake.ThrowKabotya();
+
+        yield return new WaitForSeconds(0.5f);  // おばけのアニメーションが入ってからかぼちゃを動かすため.
+
+        transform.position = Vector3.MoveTowards(transform.position, Player.playerPos.position, speed); // Player.playerPosX --- static Playerの位置
+        if(Vector3.Distance(transform.position, Player.playerPos.position) < 2.0f){
+            ChangeState(State.Invalid);
         }
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == "Player" || collision.tag == "Sword"){
-            ToStay();
+            ChangeState(State.Invalid);
         }
     }
 
-    private void ToStay(){
-        ChangeState(State.Stay);
-        transform.localPosition = Vector3.zero;
+    private void Invalid(){
+        if(sr.isVisible){
+            rb.WakeUp();
+            transform.position = defaultPos;
+            Ready = true;
+            ChangeState(State.Stay);
+            gameObject.SetActive(false);
+        }
+        else{
+            rb.Sleep();
+        }
     }
 }

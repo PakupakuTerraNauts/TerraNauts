@@ -54,11 +54,13 @@ public class KittenGet:MonoBehaviour
             isKittenLoaded = !isKittenLoaded;
             if(isKittenLoaded)
             {
+                Time.timeScale = 0;
                 Application.LoadLevelAdditive("CookingScean");
             }
             else
             {
                 Application.UnloadLevel("CookingScean");
+                Time.timeScale = 1;
                 Resources.UnloadUnusedAssets();
             }
         }

@@ -7,7 +7,7 @@ public class kanikanioyabun : Enemy
     #region // variables
     public float speed;
 
-    private float second;
+    private float second = 0.0f;
 
     private bool isLeft = false;
 

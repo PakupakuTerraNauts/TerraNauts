@@ -184,7 +184,7 @@ public class Menu:MonoBehaviour
             Image _cloneImage = _cloneObject.transform.GetChild(0).GetComponent<Image>();
             Text _cloneText = _cloneObject.transform.GetChild(1).GetComponent<Text>();
             _cloneImage.sprite = _foodSourceData.icon;
-            _cloneText.text = "00" + _count.ToString("d");  // Ç»ÇÒÇ≈"??"? ñﬂÇµÇƒÇ‡ÇÁÇ¡ÇƒÇ‡ëÂè‰ïvÇ≈Ç∑
+            _cloneText.text = "00" + _count.ToString("d");
             _cloneObject.name = _id[i];
 
         }

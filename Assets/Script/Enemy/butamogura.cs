@@ -11,9 +11,6 @@ public class butamogura : Enemy
     private bool isAttack = false;
 
     private CircleCollider2D circol = null;
-    // playerと自分の距離を取得
-    [Header ("攻撃先(プレイヤー)")] public GameObject player;
-    [Header ("自分")] public GameObject Butamogura;
     // 状態
     private enum State{
         inGround,
@@ -55,9 +52,9 @@ public class butamogura : Enemy
         //return;
     }
 
-    // buta_attack の途中、ブタが地面に潜っったら呼ぶ
+    // buta_attack の途中、ブタが地面に潜ったら呼ぶ
     private void Dived(){
-        gameObject.tag = "ground";  // 地面に潜っているときのダメージ判定 to player を防ぐ (groundにしてみた)
+        gameObject.tag = "ground";  // 地面に潜っているときのダメージ判定を防ぐ to player (groundにしてみた)
         isAttack = false;
     }
 
@@ -74,22 +71,28 @@ public class butamogura : Enemy
     /// </summary>
     private void inGroundUpdate(){
         if(sr.isVisible){
-            rb.WakeUp();
             ChangeState(State.Move);
             return;
-        }
-        else{
-            rb.Sleep();
         }
     }
     /// <summary>
     /// 移動→攻撃
     /// </summary>
     private void MoveUpdate(){
+        Vector2 butamoguraPosition = new Vector2(transform.position.x, transform.position.y);
+        Vector2 targetPosition = new Vector2(Player.playerPos.position.x, this.transform.position.y);    // 移動をx軸方向だけにする.
         
-        // 距離を詰める
-        Butamogura.transform.position = Vector3.MoveTowards(Butamogura.transform.position, player.transform.position, speed); // 自分, ターゲット, スピード
-        if(Vector3.Distance(Butamogura.transform.position, player.transform.position) < 4.0f){
+        RaycastHit2D hit = Physics2D.Raycast(butamoguraPosition, targetPosition - butamoguraPosition, Mathf.Abs(butamoguraPosition.x - targetPosition.x), LayerMask.GetMask("Ground"));
+        if(hit.collider != null){  // ぶたもぐらとプレイヤーの間に障害物があったら 貫通しないように
+            if(butamoguraPosition.x < targetPosition.x)
+                targetPosition.x = hit.point.x - 2.0f;
+            else
+                targetPosition.x = hit.point.x + 2.0f;
+        }
+
+        // 距離を詰める        
+        transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, speed); // 自分, ターゲット, スピード
+        if(Vector3.Distance(this.transform.position, Player.playerPos.position) < 4.0f){
             ChangeState(State.Attack);
             return;
         }
@@ -101,16 +104,9 @@ public class butamogura : Enemy
         gameObject.tag = "Enemy";       // ブタが地上に出ている時だけダメージ判定 to player
         anim.Play("buta_attack");
         isEndAnim = false;
-        isAttack = true;    // 地上に出ているときにのみダメージ from player を受けるため
+        isAttack = true;    // 地上に出ているときにのみダメージ from player を受けるため.
 
-        if(sr.isVisible){
-            ChangeState(State.Move);
-            return;
-        }
-        else{
-            ChangeState(State.inGround);
-            return;
-        }
+        ChangeState(State.inGround);
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
@@ -120,6 +116,7 @@ public class butamogura : Enemy
     }
 
     protected override void dieAnimation(){
+        gameObject.tag = "ground";
         anim.Play("buta_die");
     }
 }

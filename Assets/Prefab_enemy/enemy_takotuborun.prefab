@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6964458913170300455}
   - component: {fileID: 1019048857441519516}
   - component: {fileID: 2696110928546709142}
-  - component: {fileID: 7545204691308776897}
+  - component: {fileID: 5568880018281660075}
   m_Layer: 12
   m_Name: tako-sumi2
   m_TagString: Sumi
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: -0.1, y: 0.3}
   serializedVersion: 2
   m_Radius: 0.75
---- !u!50 &7545204691308776897
+--- !u!50 &5568880018281660075
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -520,6 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 9
+  Name: "\u305F\u3053\u3064\u307C\u308B\u3093"
   basicObject: {fileID: 4534490885142806426, guid: f5ee8281215e0493e920d2293c12a575, type: 3}
   uniqueObject: {fileID: 1470460448811446201, guid: a379436c741690e4599158fdd588ee3f, type: 3}
   isLeft: 0
@@ -536,7 +537,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpGauge: {fileID: 8625065217900415503}
-  maxHealth: 210
 --- !u!1 &4978208198429154094
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 9004054034594887521}
   - component: {fileID: 7840689322413690067}
   - component: {fileID: 1452973388842236799}
-  - component: {fileID: 2781078863332458797}
+  - component: {fileID: 6640422595159315367}
   m_Layer: 12
   m_Name: tako-sumi1
   m_TagString: Sumi
@@ -658,7 +658,7 @@ CircleCollider2D:
   m_Offset: {x: -0.1, y: 0.9}
   serializedVersion: 2
   m_Radius: 0.3
---- !u!50 &2781078863332458797
+--- !u!50 &6640422595159315367
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0

@@ -322,7 +322,6 @@ MonoBehaviour:
   bossRoomSpeed: 2
   fixedCameraDistance: 10
   debidora: {fileID: 362808980}
-  BGM_BOSS: {fileID: 1961241708}
   entranceDoorLimit: 8.5
   yHeightInBossRoom: 6
   startPosLeftLimit: -63
@@ -1373,7 +1372,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8e7a7a888995e40ad79b08246d720d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnter: 0
   debidora: {fileID: 362808980}
   entrance: {fileID: 391771899}
 --- !u!61 &1214862529
@@ -1610,6 +1608,74 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[1].x
+      value: -3.0150206
+      objectReference: {fileID: 0}
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[1].y
+      value: -2.8044863
+      objectReference: {fileID: 0}
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[2].x
+      value: -1.6179603
+      objectReference: {fileID: 0}
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[2].y
+      value: -4.279431
+      objectReference: {fileID: 0}
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[3].y
+      value: -4.2536564
+      objectReference: {fileID: 0}
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[4].x
+      value: 1.5722685
+      objectReference: {fileID: 0}
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[4].y
+      value: -5.487451
+      objectReference: {fileID: 0}
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[7].x
+      value: 5.4374986
+      objectReference: {fileID: 0}
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[7].y
+      value: -0.6453525
+      objectReference: {fileID: 0}
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[8].x
+      value: 2.3576646
+      objectReference: {fileID: 0}
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[8].y
+      value: -0.16018125
+      objectReference: {fileID: 0}
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[9].x
+      value: 2.7916794
+      objectReference: {fileID: 0}
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[9].y
+      value: 1.768078
+      objectReference: {fileID: 0}
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[10].x
+      value: -0.023508638
+      objectReference: {fileID: 0}
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[10].y
+      value: 3.4856956
+      objectReference: {fileID: 0}
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[11].x
+      value: -3.4754758
+      objectReference: {fileID: 0}
+    - target: {fileID: 684031269364665705, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: m_Points.Array.data[11].y
+      value: 1.8818737
+      objectReference: {fileID: 0}
     - target: {fileID: 698450145574726204, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
       propertyPath: m_RenderMode
       value: 0
@@ -1743,9 +1809,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5148395617855812467, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: Name
+      value: "\u30C7\u30D3\u30C9\u30E9"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148395617855812467, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
       propertyPath: BossBGM
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1961241708}
     - target: {fileID: 5148395617855812467, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
       propertyPath: exitDoor
       value: 
@@ -23089,7 +23159,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1716784242}
   - component: {fileID: 1716784243}
-  - component: {fileID: 1716784244}
   m_Layer: 0
   m_Name: StageBGM
   m_TagString: Untagged
@@ -23208,18 +23277,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1716784244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1716784241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6602d70916a4d58bcd526afc4f20db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1877065454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23639,7 +23696,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2033014653}
   - component: {fileID: 2033014654}
-  - component: {fileID: 2033014655}
   m_Layer: 0
   m_Name: BossBGM
   m_TagString: Untagged
@@ -23758,15 +23814,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2033014655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2033014652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6602d70916a4d58bcd526afc4f20db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

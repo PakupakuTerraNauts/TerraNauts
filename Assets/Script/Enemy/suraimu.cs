@@ -14,7 +14,6 @@ public class suraimu : Enemy
     }
 
     protected override void Moving(){
-        anim.Play("suraimu_furueru");
         rb.velocity = new Vector2(0, -gravity);
     }
 
