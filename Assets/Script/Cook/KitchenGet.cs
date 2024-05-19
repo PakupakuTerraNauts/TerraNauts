@@ -64,7 +64,7 @@ public class KittenGet:MonoBehaviour
             }
         }
 
-        if(trigger && _collider.gameObject.tag == "Player" && !MenuChange.isMenuOpen)
+        if(trigger && _collider.gameObject.tag == "Player" && !MenuChange.isMenuOpen)   // groundCheck‚Ì”»’è‚ğ‹z‚Á‚Ätag‚ªUntagged‚Åã‘‚«‚³‚ê‚½‚±‚Æ‚ª‚ ‚Á‚½‚Ì‚Å’ˆÓ
         {
             _cookInfoCanvas.SetActive(true);
         }

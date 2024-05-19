@@ -23397,11 +23397,44 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8622740869355668637, guid: 49d570c5cc1d3404da4255b3777c1a67, type: 3}
+      propertyPath: viewLockCanvas
+      value: 
+      objectReference: {fileID: 1877065455}
+    - target: {fileID: 8708868825656112279, guid: 49d570c5cc1d3404da4255b3777c1a67, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708868825656112279, guid: 49d570c5cc1d3404da4255b3777c1a67, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708868825656112279, guid: 49d570c5cc1d3404da4255b3777c1a67, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708868825656112279, guid: 49d570c5cc1d3404da4255b3777c1a67, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708868825656112279, guid: 49d570c5cc1d3404da4255b3777c1a67, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708868825656112279, guid: 49d570c5cc1d3404da4255b3777c1a67, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49d570c5cc1d3404da4255b3777c1a67, type: 3}
+--- !u!223 &1877065455 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8755923190444954281, guid: 49d570c5cc1d3404da4255b3777c1a67, type: 3}
+  m_PrefabInstance: {fileID: 1877065454}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1907043567
 GameObject:
   m_ObjectHideFlags: 0

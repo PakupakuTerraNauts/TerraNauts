@@ -12,13 +12,13 @@ public class Player : MonoBehaviour
     private float jumpSpeed = 6.0f;
     public float jumpHeight;
     private float jumpLimitTime = 1.5f;
+    public static bool isRestrained = false;
+    public static Transform playerPos;
+    
+    #region // status
     public static int HP = 100;
     public static int nowHP = 100;
     public static int HPincrement = 0;
-    public int maxJumpCount;    // 増やせば何段でも可
-    private int jumpCounter = 0;
-    public static bool isRestrained = false;
-    public static Transform playerPos;
 
     public static int ATK = 100;
     public static int ATKincrement = 0;
@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     public static int CRITRATEincrement = 0;
     public static int CRITDMG = 50;
     public static int CRITDMGincrement = 0;
+    #endregion
 
     public float attackCooltime;
     private float jumpPos = 0.0f;
@@ -46,9 +47,9 @@ public class Player : MonoBehaviour
     private bool isDown = false;
     private bool isAttack = false;
     private bool isAttackCool = false;
-    private bool viewLock = false;
     //private bool isContinue = false;
     private bool isDamaged = false;
+    public static bool viewLock = false;
     private Animator anim = null;
     private Rigidbody2D rb = null;
     private CapsuleCollider2D capcol = null;
@@ -58,6 +59,15 @@ public class Player : MonoBehaviour
     public AnimationCurve JumpupCurve;
 
     public PlayerFoodManager _playerFoodManager;
+
+    #region // skills
+    // ジャンプ回数
+    public int maxJumpCount;    // 増やせば何段でも可
+    private int jumpCounter = 0;
+    // 視野
+    public float maxVision;
+    [SerializeField] private StageCamera vision;
+    #endregion
     #endregion
 
     void Start()
@@ -67,6 +77,11 @@ public class Player : MonoBehaviour
         capcol = GetComponent<CapsuleCollider2D>();
         sr = GetComponent<SpriteRenderer>();
         cooltimemaker = transform.Find("cooltime").gameObject;
+
+        if(viewLock){
+            if(Camera.main.orthographicSize != maxVision && vision != null)
+                vision.JumpZoomOut(0.5f, maxVision);
+        }
     }
 
 
@@ -166,10 +181,6 @@ public class Player : MonoBehaviour
         if(isGround){   // 地面にいるとき
             jumpCounter = 0;
 
-        // 着地したらズームイン
-        //if(Camera.main.orthographicSize != 5f && StageCamera.Instance != null){
-          //  StageCamera.JumpZoomIn(0.3f);
-        //}あると酔うかも
             if(verticalKey > 0 || wKey || upKey){
                 isJump = true;
                 ySpeed = jumpSpeed;
@@ -198,8 +209,8 @@ public class Player : MonoBehaviour
 
             if(pushUpKey && canHeight && canTime && !isHead){
                 // ジャンプでズームアウト
-                if(Camera.main.orthographicSize != 8f && StageCamera.Instance != null && !viewLock){
-                    StageCamera.JumpZoomOut(0.5f);
+                if(Camera.main.orthographicSize != maxVision && !viewLock && vision != null){
+                    vision.JumpZoomOut(0.5f, maxVision);    // ズームのスピード, 視野の大きさ
                 }
                 ySpeed = jumpSpeed;
                 jumpTime += Time.deltaTime;
@@ -209,8 +220,8 @@ public class Player : MonoBehaviour
                 isJump = false;
                 jumpTime = 0.0f;
                 // 落下でズームイン
-                if(Camera.main.orthographicSize != 5f && StageCamera.Instance != null && !viewLock){
-                    StageCamera.JumpZoomIn(0.3f);
+                if(Camera.main.orthographicSize != 5f && !viewLock && vision != null){
+                    vision.JumpZoomIn(0.3f);    // ズームインは少し速い
                 }
             }
         }
