@@ -46746,6 +46746,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1377990054105519211, guid: 69e965857035594438b3d04145a5d2f0, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377990054105519211, guid: 69e965857035594438b3d04145a5d2f0, type: 3}
+      propertyPath: m_TagString
+      value: Ivy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725238956107534380, guid: 69e965857035594438b3d04145a5d2f0, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4331490705083327167, guid: 69e965857035594438b3d04145a5d2f0, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -46793,6 +46805,14 @@ PrefabInstance:
     - target: {fileID: 4708094705165566395, guid: 69e965857035594438b3d04145a5d2f0, type: 3}
       propertyPath: m_Name
       value: enemy_nakabayashi
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637938798085186323, guid: 69e965857035594438b3d04145a5d2f0, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637938798085186323, guid: 69e965857035594438b3d04145a5d2f0, type: 3}
+      propertyPath: m_TagString
+      value: Ivy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
