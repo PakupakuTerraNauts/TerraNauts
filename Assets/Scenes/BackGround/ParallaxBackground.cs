@@ -93,6 +93,7 @@ public class ParallaxBackground : MonoBehaviour
 	Coroutine scroll;
 
 //前にスクロールが呼ばれた時のプレイヤーの位置。
+//休憩所⇔ステージ の移動で値を保持しておくためにstatic
 	static Vector3 previousPlayerPosition = Vector3.zero;
 
 //一時的に使用。
