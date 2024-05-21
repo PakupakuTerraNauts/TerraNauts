@@ -2,19 +2,18 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class ParallaxBackground : MonoBehaviour
 {
 	[HideInInspector]
 	[SerializeField]
 	bool isInitialized = false;
 
-	//あらかじめ各画像を紐付けしておく。
+//あらかじめ各画像を紐付けしておく。
 	[Header("背景画像 (0が最奥、順に手前)")]
 	[SerializeField]
 	Sprite[] backgroundSprites = new Sprite[3];
 
-	//左右スクロール対応の場合は、各X値を-1920(1画像幅分)に設定してください。
+//左右スクロール対応の場合は、各X値を-1920(1画像幅分)に設定してください。
 	[Header("背景画像のオフセット (ズラす値)(左右スクロール対応の場合は1画像分、左にズラす)")]
 	[SerializeField]
 	Vector2[] backgroundOffsets = new Vector2[] {
@@ -23,7 +22,7 @@ public class ParallaxBackground : MonoBehaviour
 		new Vector2(0, -350),
 	};
 
-	//サンプルで使用した、[Ansimuz] GothicVania Cemeteryの場合の画像サイズなので、自分の使用アセットに応じて調整してください。
+//サンプルで使用した、[Ansimuz] GothicVania Cemeteryの場合の画像サイズなので、自分の使用アセットに応じて調整してください。
 	[Header("背景画像のサイズ")]
 	[SerializeField]
 	Vector2[] backgroundSpriteSizes = new Vector2[] {
@@ -40,7 +39,7 @@ public class ParallaxBackground : MonoBehaviour
 		5.0f,
 	};
 
-	//3Dオブジェクト(キャラクター等)より奥になるように調整。カメラの位置や3Dオブジェクトのサイズによるが30～設定すれば良い。
+//3Dオブジェクト(キャラクター等)より奥になるように調整。カメラの位置や3Dオブジェクトのサイズによるが30～設定すれば良い。
 	[Header("カメラからUIへの距離 (カメラの位置や3Dオブジェクトのサイズによるが30～指定)")]
 	[Range(30.0f, 100.0f)]
 	[SerializeField]
@@ -55,33 +54,29 @@ public class ParallaxBackground : MonoBehaviour
 	[Range(0.1f, 3.0f)]
 	[SerializeField]
 	float scrollDuration = 1.0f;
-
 	float smoothTime;
-
 
 	[Header("スクロール速度の上限 (多分deltaTimeが掛かるので大きめに指定)")]
 	[Range(500.0f, 10000.0f)]
 	[SerializeField]
 	float scrollSpeedMax = 1000.0f;
 
-
-
-	//各背景画像のRectTransform。
+//各背景画像のRectTransform。
 	[HideInInspector]
 	[SerializeField]
 	RectTransform[] backgroundsRt;
 
-	//背景画像数。
+//背景画像数。
 	[HideInInspector]
 	[SerializeField]
 	int backgroundMax;
 
-	//各背景画像がスクロールした量。
+//各背景画像がスクロールした量。
 	[HideInInspector]
 	[SerializeField]
 	float[] backgroundScrollValues;
 
-	//RectMask2Dを有効にした状態で実行すると、スクロールしても画面外に設置した画像が非表示になる仕様っぽいので、実行時に有効化している。
+//RectMask2Dを有効にした状態で実行すると、スクロールしても画面外に設置した画像が非表示になる仕様っぽいので、実行時に有効化している。
 	[HideInInspector]
 	[SerializeField]
 	RectMask2D parallaxBackgroundRectMask2D;
@@ -94,15 +89,13 @@ public class ParallaxBackground : MonoBehaviour
 	[SerializeField]
 	Vector2[] scrollVelocities;
 
-	//コルーチンの管理に使用。
+//コルーチンの管理に使用。
 	Coroutine scroll;
 
-	//前にスクロールが呼ばれた時のプレイヤーの位置。
-	Vector3 previousPlayerPosition = Vector3.zero;
+//前にスクロールが呼ばれた時のプレイヤーの位置。
+	static Vector3 previousPlayerPosition = Vector3.zero;
 
-
-
-	//一時的に使用。
+//一時的に使用。
 	Canvas parallaxBackgroundCanvas;
 	GameObject parallaxBackgroundGo;
 	RectTransform parallaxBackgroundRt;
@@ -113,8 +106,6 @@ public class ParallaxBackground : MonoBehaviour
 	Vector2 tempBackgroundPosition;
 	Vector2 tempBackgroundsPosition;
 
-
-
 	void Awake()
 	{
 		if (!isInitialized)
@@ -122,183 +113,144 @@ public class ParallaxBackground : MonoBehaviour
 
 		parallaxBackgroundRectMask2D.enabled = true;
 
-		//SmoothDampのsmoothTimeと、スクロールの長さが厳密には違うので、一回り小さく計算しておく。
+//SmoothDampのsmoothTimeと、スクロールの長さが厳密には違うので、一回り小さく計算しておく。
 		smoothTime = scrollDuration * 0.85f;
 	}
 
-
-	//背景画像をスクロールしたい場合にコレを呼ぶ。引数にはプレイヤーの位置を渡す(位置差でなく)。
+//背景画像をスクロールしたい場合にコレを呼ぶ。引数にはプレイヤーの位置を渡す(位置差でなく)。
 	public void StartScroll(Vector3 playerPosition)
 	{
-		//「右スクロールのみに対応」モードの時、プレイヤーが左に進んだ場合は無視する。
+//「右スクロールのみに対応」モードの時、プレイヤーが左に進んだ場合は無視する。
 		if (imageMax == 2 && playerPosition.x - previousPlayerPosition.x < 0)
 			return;
+//1画像分進んだ時、スクロールが繋がるように良い感じに戻している。
+		for (int i = 0; i < backgroundMax; i++) {
 
-		//1画像分進んだ時、スクロールが繋がるように良い感じに戻している。
-		for (int i = 0; i < backgroundMax; i++)
-		{
 			backgroundScrollValues[i] -= (playerPosition.x - previousPlayerPosition.x) * scrollRates[i];
-
-			if (backgroundSpriteSizes[i].x < backgroundsRt[i].anchoredPosition.x)
-			{
+			if (backgroundSpriteSizes[i].x < backgroundsRt[i].anchoredPosition.x) {
 				backgroundScrollValues[i] -= backgroundSpriteSizes[i].x;
 				tempBackgroundsPosition.Set(backgroundSpriteSizes[i].x, 0);
 				backgroundsRt[i].anchoredPosition -= tempBackgroundsPosition;
-			}
-			else if (backgroundsRt[i].anchoredPosition.x < -backgroundSpriteSizes[i].x)
-			{
+			} else if (backgroundsRt[i].anchoredPosition.x < -backgroundSpriteSizes[i].x) {
 				backgroundScrollValues[i] += backgroundSpriteSizes[i].x;
 				tempBackgroundsPosition.Set(backgroundSpriteSizes[i].x, 0);
 				backgroundsRt[i].anchoredPosition += tempBackgroundsPosition;
 			}
 		}
 
-
-		//多重実行防止。
-		if (scroll != null)
-		{
+//多重実行防止。
+		if (scroll != null) {
 			StopCoroutine(scroll);
 		}
 
 		scroll = StartCoroutine(Scroll());
-
-
 		previousPlayerPosition = playerPosition;
 	}
-
 
 	IEnumerator Scroll()
 	{
 		scrollElapsedTime = 0;
-		while (true)
-		{
+
+		while (true) {
 			scrollElapsedTime += Time.deltaTime;
 
-
-			for (int i = 0; i < backgroundMax; i++)
-			{
+			for (int i = 0; i < backgroundMax; i++) {
 				tempBackgroundsPosition.Set(backgroundScrollValues[i], backgroundOffsets[i].y);
 				backgroundsRt[i].anchoredPosition = Vector2.SmoothDamp(backgroundsRt[i].anchoredPosition, tempBackgroundsPosition, ref scrollVelocities[i], smoothTime, scrollSpeedMax);
 			}
 
-
-			if (scrollDuration <= scrollElapsedTime)
-			{
-				//SmoothDampはVelocityの値を参考にして現在の速度を出す為、初期化しておかないと次回実行時に動きが残る。
-				for (int i = 0; i < backgroundMax; i++)
-				{
+			if (scrollDuration <= scrollElapsedTime) {
+//SmoothDampはVelocityの値を参考にして現在の速度を出す為、初期化しておかないと次回実行時に動きが残る。
+				for (int i = 0; i < backgroundMax; i++) {
 					scrollVelocities[i] = Vector2.zero;
 				}
-
 				scroll = null;
 				yield break;
 			}
-
 			yield return null;
 		}
 	}
 
-
-	//ステージクリア等で画像位置を強制的にリセットする時用。
+//ステージクリア等で画像位置を強制的にリセットする時用。
 	public void Reset()
 	{
-		for (int i = 0; i < backgroundMax; i++)
-		{
+		for (int i = 0; i < backgroundMax; i++) {
 			backgroundScrollValues[i] = 0;
-
 			tempBackgroundsPosition.Set(backgroundScrollValues[i], backgroundOffsets[i].y);
 			backgroundsRt[i].anchoredPosition = tempBackgroundsPosition;
 		}
 
-		for (int i = 0; i < backgroundMax; i++)
-		{
+		for (int i = 0; i < backgroundMax; i++) {
 			scrollVelocities[i] = Vector2.zero;
 		}
 
 		previousPlayerPosition = Vector3.zero;
 
-		if (scroll != null)
-		{
+		if (scroll != null) {
 			StopCoroutine(scroll);
 			scroll = null;
 		}
 	}
 
-
-	//各種コンポーネントをアタッチし、背景画像等を生成。
+//各種コンポーネントをアタッチし、背景画像等を生成。
 	public void CreateParallaxBackground()
 	{
 		if (backgroundSprites == null || backgroundSprites.Length == 0)
 			return;
 
 		backgroundMax = backgroundSprites.Length;
-
-
 		parallaxBackgroundCanvas = GetComponent<Canvas>();
-
 		if (parallaxBackgroundCanvas == null)
 			return;
-
-
+		
 		backgroundsRt = new RectTransform[backgroundMax];
 		scrollVelocities = new Vector2[backgroundMax];
+
 		backgroundScrollValues = new float[backgroundMax];
-
-
 		parallaxBackgroundCanvas.renderMode = RenderMode.ScreenSpaceCamera;
 		parallaxBackgroundCanvas.worldCamera = Camera.main;
 		parallaxBackgroundCanvas.planeDistance = planeDistance;
 
-		//ボタンを設置しないので、このCanvasへのタッチ判定を無効化しておく(インスペクターから削除しても良い)。
+//ボタンを設置しないので、このCanvasへのタッチ判定を無効化しておく(インスペクターから削除しても良い)。
 		GetComponent<GraphicRaycaster>().enabled = false;
-
-
 		parallaxBackgroundGo = new GameObject("ParallaxBackground");
 		parallaxBackgroundRt = parallaxBackgroundGo.AddComponent<RectTransform>();
 		parallaxBackgroundRectMask2D = parallaxBackgroundGo.AddComponent<RectMask2D>();
+
 		parallaxBackgroundRectMask2D.enabled = false;
 		parallaxBackgroundRt.SetParent(transform);
-
 		parallaxBackgroundRt.localScale = Vector3.one;
 		parallaxBackgroundRt.localPosition = Vector3.zero;
+
 		parallaxBackgroundRt.sizeDelta = gameObject.GetComponent<RectTransform>().sizeDelta;
 
-
-		for (int i = 0; i < backgroundMax; i++)
-		{
+		for (int i = 0; i < backgroundMax; i++) {
 			backgroundsRt[i] = new GameObject(System.String.Format("Backgrounds{0}", i + 1)).AddComponent<RectTransform>();
-			backgroundsRt[i].SetParent(parallaxBackgroundRt);
 
+			backgroundsRt[i].SetParent(parallaxBackgroundRt);
 			backgroundsRt[i].localScale = Vector3.one;
 			backgroundsRt[i].localPosition = Vector3.zero;
-
 			tempBackgroundPosition.Set(0, backgroundOffsets[i].y);
 			backgroundsRt[i].anchoredPosition = tempBackgroundPosition;
 
-
-			for (int j = 0; j < imageMax; j++)
-			{
+			for (int j = 0; j < imageMax; j++) {
 				tempBackgroundGo = new GameObject(System.String.Format("Background{0}", i + 1));
 				tempBackgroundRt = tempBackgroundGo.AddComponent<RectTransform>();
 				tempBackgroundImg = tempBackgroundGo.AddComponent<Image>();
+
 				tempBackgroundImg.sprite = backgroundSprites[i];
 				tempBackgroundImg.raycastTarget = false;
-
 				tempBackgroundRt.SetParent(backgroundsRt[i]);
 				tempBackgroundRt.localScale = Vector3.one;
 				tempBackgroundRt.localPosition = Vector3.zero;
-
 				tempBackgroundRt.sizeDelta = backgroundSpriteSizes[i];
 				tempBackgroundPosition.Set(backgroundOffsets[i].x + backgroundSpriteSizes[i].x * j, 0);
 				tempBackgroundRt.anchoredPosition = tempBackgroundPosition;
 			}
 		}
 
-
-		//カメラと平行に設置したい場合には、localRotationをリセットしておく。
+//カメラと平行に設置したい場合には、localRotationをリセットしておく。
 		parallaxBackgroundRt.localRotation = Quaternion.identity;
-
-
 		isInitialized = true;
 	}
 }
