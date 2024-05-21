@@ -59,6 +59,7 @@ public class Player : MonoBehaviour
     public AnimationCurve JumpupCurve;
 
     public PlayerFoodManager _playerFoodManager;
+    public ParallaxBackground backGround;
 
     #region // skills
     // ジャンプ回数
@@ -260,11 +261,17 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector3(2, 2, 2);
             isWalk = true;
             xSpeed = speed;
+            if(backGround != null){  // backGroundがあるのはStageのみ
+                backGround.StartScroll(transform.position); // 背景のスクロール
+            }
         }
         else if(horizontalKey < 0 || leftKey || aKey){
             transform.localScale = new Vector3(-2, 2, 2);
             isWalk = true;
             xSpeed = -speed;
+            if(backGround != null){
+                backGround.StartScroll(transform.position);
+            }
         }
         else{
             isWalk = false;
