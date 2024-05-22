@@ -125,7 +125,7 @@ Transform:
   - {fileID: 3896754739672082893}
   - {fileID: 7443417344780879555}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &269727774310172092
 SpriteRenderer:
@@ -319,7 +319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f9d017d1d7256438a020157b286903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 4
   Name: "\u3060\u3044\u3053\u3093\u30DE\u30F3\u30C9\u30E9\u30B4\u30E9"
   range: {fileID: 8740843159503499445}
 --- !u!114 &8012396348402572593
@@ -514,7 +513,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &370443501394380277
 MonoBehaviour:

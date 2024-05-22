@@ -61,7 +61,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &3626401133879879340
 MonoBehaviour:
@@ -218,7 +218,7 @@ Transform:
   - {fileID: 749874286390010518}
   - {fileID: 2655634945372219175}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2047767713601101422
 SpriteRenderer:
@@ -409,10 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34eb7f332a256b34bbfc83c65186f905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 10
   Name: "\u3076\u305F\u3082\u3050\u3089"
-  basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
-  uniqueObject: {fileID: 8369336574802605525, guid: 106d5ba9235e04e0dab86669a4b26f60, type: 3}
   speed: 0.05
 --- !u!114 &3125034159631397599
 MonoBehaviour:

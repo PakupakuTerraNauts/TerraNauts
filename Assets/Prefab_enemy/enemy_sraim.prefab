@@ -262,10 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223d62dba46699546bd80176b1cb0951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 5
   Name: "\u30B9\u30E9\u30A4\u30E0"
-  basicObject: {fileID: 4534490885142806426, guid: f5ee8281215e0493e920d2293c12a575, type: 3}
-  uniqueObject: {fileID: 8744671341141900407, guid: e657b5041d0e54718bff5a7861fdcddf, type: 3}
 --- !u!114 &1771418497214528090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,7 +337,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &1743827850220380348
 MonoBehaviour:
