@@ -144,7 +144,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1633381093
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &7409688057163252962
@@ -512,7 +512,7 @@ Transform:
   - {fileID: 3349016862864614677}
   - {fileID: 8921254314477743697}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7598222894125888720
 SpriteRenderer:
@@ -552,8 +552,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 476255115
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b67b7dac78656da45bf5950bd3c12c87, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -671,8 +671,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107af94d09f3d714e8df1158f55e92ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 0
   Name: "\u30AB\u30AB\u30AA\u3053\u3046\u3082\u308A"
+  speed: 0
   rangeLeft: {fileID: 4529346741403418062}
   rangeRight: {fileID: 880825162138004403}
   ground: {fileID: 7877869445713675446}
