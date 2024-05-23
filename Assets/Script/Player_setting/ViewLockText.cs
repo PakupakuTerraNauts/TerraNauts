@@ -17,7 +17,7 @@ public class ViewLockText : MonoBehaviour
         viewLockText = viewLockObj.GetComponent<Text>();
 
         string SceneName = SceneManager.GetActiveScene().name;
-        if(!Regex.IsMatch(SceneName, @"^Stage\d+$")){   // StageX シーンでのみスイッチを表示
+        if(!Regex.IsMatch(SceneName, @"^Stage\d+$", RegexOptions.IgnoreCase)){   // StageX シーンでのみスイッチを表示
             viewLockCanvas.SetActive(false);
         }
 

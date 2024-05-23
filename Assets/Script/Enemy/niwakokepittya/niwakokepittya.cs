@@ -9,12 +9,13 @@ public class niwakokepittya : Enemy
 
     private float toriPosition_x = 0.0f;
 
-    public bool isLeft = true;     // ‰Šúó‘Ô ‰EŒü‚«
+    public bool isLeft = true;     // ‰Šúó‘Ô ¶Œü‚«
     private CapsuleCollider2D capcol = null;
     #endregion
 
     protected override void Initialize(){
-        transform.localScale = new Vector3(1, 1, 1);
+        if(!isLeft)
+            transform.localScale = new Vector3(-1, 1, 1);
         capcol = GetComponent<CapsuleCollider2D>();
         capcol.enabled = true;
     }
