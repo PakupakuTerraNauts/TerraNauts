@@ -70,8 +70,8 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         else{
             rb.Sleep();
             Sleeping();
-            if(HPObject.activeSelf)
-                HPObject.SetActive(false);
+            if(HPObject.activeSelf && !isDead)  //画面外に出たら非表示にしたい
+                HPObject.SetActive(false);      // でも死んだときには少し表示しておきたい
         }
     }
 
@@ -83,7 +83,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         else{
             rb.Sleep();
             SleepingF();
-            if(HPObject.activeSelf)
+            if(HPObject.activeSelf && !isDead)
                 HPObject.SetActive(false);
         }
     }
@@ -140,6 +140,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         }
         yield return new WaitForSeconds(3.0f);
         this.gameObject.SetActive(false);
+        HPObject.SetActive(false);
     }
 
     protected virtual void Initialize(){
