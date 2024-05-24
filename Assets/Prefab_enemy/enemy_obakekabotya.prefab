@@ -486,11 +486,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3424205237887546362}
+  - {fileID: 8242375256498106653}
   - {fileID: 2203602517660000035}
   - {fileID: 8761548423052029339}
-  - {fileID: 8242375256498106653}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4190763725626265109
 SpriteRenderer:
@@ -652,11 +652,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f594d8f92a1b81e48829178ecddcf272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 0.3
   Name: "\u304A\u3070\u3051\u304B\u307C\u3061\u3083"
   kabo:
   - {fileID: 8894858542366915443}
-  - {fileID: 0}
+  - {fileID: 7508800235860510649}
 --- !u!1 &7395149838641765023
 GameObject:
   m_ObjectHideFlags: 0

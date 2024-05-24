@@ -15,6 +15,10 @@ public class groundCheck : MonoBehaviour
         else if (isGroundExit){
             isGround = false;
         }
+        else{   // デバッグ アニメーションの関係でどうしてもexitが入らないことがある
+                // 空中にいるのにisGround=trueとなるのが致命的なのでデフォルトでfalseにする
+            isGround = false;
+        }
 
         isGroundEnter = false;
         isGroundStay = false;

@@ -46,10 +46,9 @@ public class KittenGet:MonoBehaviour
             Resources.UnloadUnusedAssets();
             isKittenLoaded = false;
         }
-
-
+        
         //プレイヤーが調理台前で"E"を押した時
-        if(trigger && _collider.gameObject.tag == ("Player") && Input.GetKeyDown(KeyCode.E) && !MenuChange.isMenuOpen)
+        if(trigger && _collider.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E) && !MenuChange.isMenuOpen)
         {
             isKittenLoaded = !isKittenLoaded;
             if(isKittenLoaded)
@@ -65,7 +64,7 @@ public class KittenGet:MonoBehaviour
             }
         }
 
-        if(trigger && _collider.gameObject.tag == ("Player") && !MenuChange.isMenuOpen)
+        if(trigger && _collider.gameObject.tag == "Player" && !MenuChange.isMenuOpen)   // groundCheckの判定を吸ってtagがUntaggedで上書きされたことがあったので注意
         {
             _cookInfoCanvas.SetActive(true);
         }

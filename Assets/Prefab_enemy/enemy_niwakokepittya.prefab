@@ -295,10 +295,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6323795074778429807}
-  - {fileID: 2448961188950974137}
   - {fileID: 8014816735860415709}
+  - {fileID: 2448961188950974137}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7864426173593029205
 SpriteRenderer:
@@ -447,10 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d821677fa424bf4394b19d95339b993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 9
   Name: "\u306B\u308F\u3053\u3051\u30D4\u30C3\u30C1\u30E3\u30FC"
-  basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
-  uniqueObject: {fileID: 421306667867481507, guid: 38de61380ca614d3db46f61dfb964942, type: 3}
   Tama: {fileID: 1957454184950911145}
   isLeft: 1
 --- !u!114 &2606537794512555276

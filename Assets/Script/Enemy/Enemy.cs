@@ -6,7 +6,6 @@ using Random = UnityEngine.Random;
 public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 {
     #region // variables
-    [SerializeField] protected float gravity;
     protected float hp = 0.0f;
     protected float ninzin_explosion = 10.0f;
     [SerializeField] protected string Name;
@@ -15,15 +14,15 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 
     protected GameObject basicObject;
     protected GameObject uniqueObject;
-
-    protected GameObject criticalEffect;
+    protected GameObject HPObject;
 
     protected HPBar HP;
     protected Animator anim = null;
     protected Rigidbody2D rb = null;
     protected SpriteRenderer sr = null;
+    protected SpriteRenderer criticalSr = null;
 
-    private enemyData Data;
+    protected enemyData Data;
     #endregion
 
     void Awake(){
@@ -36,8 +35,10 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     }
 
     void Start(){
+        HPObject = transform.GetChild(1).gameObject;
         Spawn();
-        criticalEffect = transform.GetChild(0).gameObject;
+        GameObject criticalEffect = transform.GetChild(0).gameObject;
+        criticalSr = criticalEffect.GetComponent<SpriteRenderer>();
     }
 
     // 初期化 最初とゲームオーバーの後に呼ぶ
@@ -58,6 +59,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
             isDead = false;
             HP.UpdateHP(-hp);   // HPが0なので設定し直し
         }
+        HPObject.SetActive(false);
     }
 
     protected void Update(){
@@ -68,6 +70,8 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         else{
             rb.Sleep();
             Sleeping();
+            if(HPObject.activeSelf)
+                HPObject.SetActive(false);
         }
     }
 
@@ -79,6 +83,8 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         else{
             rb.Sleep();
             SleepingF();
+            if(HPObject.activeSelf)
+                HPObject.SetActive(false);
         }
     }
 
@@ -91,17 +97,17 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
                     atk += (Player.CRITDMG + Player.CRITDMGincrement) * 2.0f;
                     StartCoroutine(CriticalHit());
                 }
-                HP.UpdateHP(atk);
+                DecrementHP(atk);
                 hp = hp - atk;
             }
 
             // 以下 プレイヤーが跳ね返した敵の攻撃が効くことがある
             if(collision.tag == "DeadZone"){
-                HP.UpdateHP(hp);
+                DecrementHP(hp);
                 hp -= hp;
             }
             if(collision.tag == "NinzinExp"){
-                HP.UpdateHP(ninzin_explosion);
+                DecrementHP(ninzin_explosion);
                 hp = hp - ninzin_explosion;
             }
 
@@ -113,10 +119,16 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         }
     }
 
+    private void DecrementHP(float damage){
+        HPObject.SetActive(true);
+        Debug.Log("set active true");
+        HP.UpdateHP(damage);
+    }
+
     private IEnumerator CriticalHit(){
-        criticalEffect.SetActive(true);
+        criticalSr.enabled = true;
         yield return new WaitForSeconds(1.0f);
-        criticalEffect.SetActive(false);
+        criticalSr.enabled = false;
     }
 
     // 倒れた時に非表示にする処理

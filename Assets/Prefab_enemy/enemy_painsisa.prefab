@@ -118,7 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34ab2b1962522454f8713b93db1ef20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sisa: {fileID: 6484744297676444400}
 --- !u!1 &855138819000935005
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,11 +752,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3470026037551520498}
+  - {fileID: 7935645529918884909}
   - {fileID: 5071746282592691127}
   - {fileID: 7796202826628927068}
-  - {fileID: 7935645529918884909}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &273122331669432309
 SpriteRenderer:
@@ -906,12 +905,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0cbda6157f6d754aabbd57450a242bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 6
   Name: "\u30D1\u30A4\u30F3\u30B7\u30FC\u30B5\u30FC"
-  basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
-  uniqueObject: {fileID: 5468205516251691096, guid: 1a5d1aab2f80a374dac99f9135c84f2a, type: 3}
   isAttack: 0
   isLeft: 1
+  range: {fileID: 5147714339764312309}
 --- !u!114 &7387623914749822165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1255,7 +1252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe2fcdced84af140bcb0d4200f37910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
+  hp: 200
   gravity: 6
 --- !u!114 &6278675627768292842
 MonoBehaviour:
