@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 
     protected bool isDead = false;
 
+    public AudioClip DamagedSE;
+
     protected GameObject basicObject;
     protected GameObject uniqueObject;
     protected GameObject HPObject;
@@ -121,7 +123,8 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 
     private void DecrementHP(float damage){
         HPObject.SetActive(true);
-        Debug.Log("set active true");
+        Debug.Log("enemys HP set active true");
+        GameManager.instance.PlaySE(DamagedSE);     // GMからダメージを受けた時のSEを鳴らす
         HP.UpdateHP(damage);
     }
 

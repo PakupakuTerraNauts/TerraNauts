@@ -125,7 +125,7 @@ Transform:
   - {fileID: 3896754739672082893}
   - {fileID: 7443417344780879555}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &269727774310172092
 SpriteRenderer:
@@ -320,6 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\u3060\u3044\u3053\u3093\u30DE\u30F3\u30C9\u30E9\u30B4\u30E9"
+  DamagedSE: {fileID: 8300000, guid: 10b52968b6e839848984560232940584, type: 3}
   range: {fileID: 8740843159503499445}
 --- !u!114 &8012396348402572593
 MonoBehaviour:

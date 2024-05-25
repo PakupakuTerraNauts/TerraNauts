@@ -14,24 +14,26 @@ public class Player : MonoBehaviour
     private float jumpLimitTime = 1.5f;
     public static bool isRestrained = false;
     public static Transform playerPos;
-    
-    #region // status
-    public static int HP = 100;
-    public static int nowHP = 100;
-    public static int HPincrement = 0;
 
-    public static int ATK = 100;
-    public static int ATKincrement = 0;
-    public static int DEF = 0;
-    public static int DEFincrement = 0;
-    public static int SPD = 100;
-    public static int SPDincrement = 0;
-    // ↓ Enemy.cs内で使用している
-    public static int CRITRATE = 50;
-    public static int CRITRATEincrement = 0;
-    public static int CRITDMG = 50;
-    public static int CRITDMGincrement = 0;
-    #endregion
+    public AudioClip NormalAttackSE;
+    
+        #region // status
+        public static int HP = 100;
+        public static int nowHP = 100;
+        public static int HPincrement = 0;
+
+        public static int ATK = 100;
+        public static int ATKincrement = 0;
+        public static int DEF = 0;
+        public static int DEFincrement = 0;
+        public static int SPD = 100;
+        public static int SPDincrement = 0;
+        // ↓ Enemy.cs内で使用している
+        public static int CRITRATE = 50;
+        public static int CRITRATEincrement = 0;
+        public static int CRITDMG = 50;
+        public static int CRITDMGincrement = 0;
+        #endregion
 
     public float attackCooltime;
     private float jumpPos = 0.0f;
@@ -61,14 +63,14 @@ public class Player : MonoBehaviour
     public PlayerFoodManager _playerFoodManager;
     public ParallaxBackground backGround;
 
-    #region // skills
-    // ジャンプ回数
-    public int maxJumpCount;    // 増やせば何段でも可
-    private int jumpCounter = 0;
-    // 視野
-    public float maxVision;
-    [SerializeField] private StageCamera vision;
-    #endregion
+        #region // skills
+        // ジャンプ回数
+        public int maxJumpCount;    // 増やせば何段でも可
+        private int jumpCounter = 0;
+        // 視野
+        public float maxVision;
+        [SerializeField] private StageCamera vision;
+        #endregion
     #endregion
 
     void Start()
@@ -430,10 +432,13 @@ public class Player : MonoBehaviour
         isAttackCool = true;
         isAttack = false;
 
-        if(isGround)    // 着地していたらNormalAttack
+        if(isGround){    // 着地していたらNormalAttack
             anim.SetTrigger("nAttack_neko");
-        else if (!isGround) // 空中ならAerialAttack
+            GameManager.instance.PlaySE(NormalAttackSE);
+        }
+        else if (!isGround){ // 空中ならAerialAttack
             anim.SetTrigger("aAttack_neko");
+        }
         
         yield return new WaitForSeconds(attackCooltime);  //クールタイム
         Debug.Log("cooltime " + attackCooltime + "s");

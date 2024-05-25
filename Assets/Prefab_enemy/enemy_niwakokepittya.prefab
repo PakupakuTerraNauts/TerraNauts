@@ -448,6 +448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\u306B\u308F\u3053\u3051\u30D4\u30C3\u30C1\u30E3\u30FC"
+  DamagedSE: {fileID: 8300000, guid: 10b52968b6e839848984560232940584, type: 3}
   Tama: {fileID: 1957454184950911145}
   isLeft: 1
 --- !u!114 &2606537794512555276

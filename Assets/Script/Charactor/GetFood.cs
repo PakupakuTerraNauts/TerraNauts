@@ -6,39 +6,46 @@ using UnityEngine;
 //アイテムをゲットした時に消す
 public class GetFood:MonoBehaviour
 {
-    private float gravity = 1.0f;
     public string _objName;
-    private Rigidbody2D rb = null;
+    private float second = 0.0f;
+    private bool blinked = false;
     private SpriteRenderer sr = null;
 
-    //Start
     void Start()
     {
         this.gameObject.name = _objName;
-        rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
-    {
+    void Update(){
         if(sr.isVisible){
-            // レシピはvelocity無効
-            if(this.gameObject.tag == "item"){
-                rb.velocity = new Vector2(0.0f, -gravity);
+            // タグがitemのものだけ レシピは自然消滅しない
+            // コルーチンは1度しか呼ばない
+            if(10.0f < second && !blinked && gameObject.tag == "item"){
+                blinked = true;
+                StartCoroutine(ItemBlink());
             }
+            second += Time.deltaTime;
         }
+    }
+
+    private IEnumerator ItemBlink(){
+        int i = 5;
+
+        while(0 < i){
+            sr.enabled = !sr.enabled;
+            yield return new WaitForSeconds(0.2f);
+            i -= 1;
+            Debug.Log("item blinking " + i);
+        }
+        Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //タグが "item" のアイテム
         if(collision.tag == "Player" || collision.tag == "DeadZone")
         {
             Destroy(this.gameObject);
-        }
-        if(collision.tag == "ground")
-        {
-            gravity = 0.0f;
         }
     }
 }
