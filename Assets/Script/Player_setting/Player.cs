@@ -434,11 +434,11 @@ public class Player : MonoBehaviour
 
         if(isGround){    // 着地していたらNormalAttack
             anim.SetTrigger("nAttack_neko");
-            GameManager.instance.PlaySE(NormalAttackSE);
         }
         else if (!isGround){ // 空中ならAerialAttack
             anim.SetTrigger("aAttack_neko");
         }
+            GameManager.instance.PlaySE(NormalAttackSE);
         
         yield return new WaitForSeconds(attackCooltime);  //クールタイム
         Debug.Log("cooltime " + attackCooltime + "s");

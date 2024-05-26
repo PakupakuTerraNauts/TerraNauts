@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-//繝ｬ繧ｷ繝斐′繧ｻ繝ｬ繧ｯ繝医＆繧後◆譎ゅ↓繝懊ち繝ｳ繧呈款縺吝�ｦ逅�
+//レシピがセレクトされた時にボタンを押す処理
 public class RecipeSelect:MonoBehaviour
 {
     GameObject _selectedObject;

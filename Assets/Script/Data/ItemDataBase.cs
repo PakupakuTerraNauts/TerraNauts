@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//ã‚¢ã‚¤ãƒ†ãƒ ã‚’ã¾ã¨ã‚ã¦ç®¡ç†
+//ƒAƒCƒeƒ€‚ğ‚Ü‚Æ‚ß‚ÄŠÇ—
 [SerializeField]
 [CreateAssetMenu(fileName = "ItemDataBase", menuName = "CreateItemDataBase")]
 public class ItemDataBase:ScriptableObject

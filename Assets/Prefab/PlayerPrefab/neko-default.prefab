@@ -277,6 +277,7 @@ MonoBehaviour:
   head: {fileID: 422874987791530711}
   gravity: 4
   jumpHeight: 5
+  NormalAttackSE: {fileID: 8300000, guid: 8de42e8d0c9cd904184310cdff6fddc4, type: 3}
   attackCooltime: 1.5
   JumpupCurve:
     serializedVersion: 2
@@ -303,6 +304,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _playerFoodManager: {fileID: 0}
+  backGround: {fileID: 0}
   maxJumpCount: 2
   maxVision: 7
   vision: {fileID: 0}

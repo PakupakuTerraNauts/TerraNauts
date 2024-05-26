@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingletonStage1 : MonoBehaviour
+public class SingletonStage : MonoBehaviour
 {
-    public static SingletonStage1 instance;
+    public static SingletonStage instance;
 
     public List<Transform> enemies;
 

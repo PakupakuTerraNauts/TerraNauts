@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class changeToStage2 : MonoBehaviour
 {
-    private SingletonStage1 singleton = SingletonStage1.instance;
+    private SingletonStage singleton = SingletonStage.instance;
 
     void OnTriggerStay2D(Collider2D other)
     {

@@ -1,16 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class houshi : MonoBehaviour // クラス名はローマ字
 {
     #region // variables
-
-    private float maxDistance = 0.0f;
-    private float speed = 0.0f;
     private float distanceCovered = 0.0f;
-    private float tf = 0.0f;
     private float hoshiInitialPosX = 0.0f;
 
     private bool isLeft = false;
@@ -28,11 +23,11 @@ public class houshi : MonoBehaviour // クラス名はローマ字
     }
 
     // houshiで乱数生成するとシードが同じになってしまうので、kinokohosushiから引数で受け取る 
-    public void Hoshi(System.Random rand){
+    public void Hoshi(){
         distanceCovered = 0.0f;
-        maxDistance = rand.Next(3, 9);
-        tf = rand.Next(0, 2);
-        speed = (float)rand.NextDouble();
+        float maxDistance = UnityEngine.Random.Range(3, 9);
+        float tf = UnityEngine.Random.Range(0, 2);
+        float speed = UnityEngine.Random.value;
         anim.Play("kinoko_hoshigrowing");
 
         if(tf == 1.0f){

@@ -9,35 +9,59 @@ public class GetFood:MonoBehaviour
     public string _objName;
     private float second = 0.0f;
     private bool blinked = false;
+    private bool isGround = false;
+
     private SpriteRenderer sr = null;
+    private Rigidbody2D rb = null;
+    public ItemDataBase _itemDataBase;
+    private FoodSourceData _foodSourceData;
+    public groundCheck ground;
 
     void Start()
     {
         this.gameObject.name = _objName;
+        _foodSourceData = _itemDataBase.ItemSearch(_objName);
         sr = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
+
+        if(_foodSourceData.itemType == ItemType.FOOD)
+            sr.sprite = _foodSourceData.icon;
+        else
+            sr.sprite = Resources.Load<Sprite>("Assets/UI/ItemUI/recipe");
     }
 
     void Update(){
         if(sr.isVisible){
-            // タグがitemのものだけ レシピは自然消滅しない
-            // コルーチンは1度しか呼ばない
-            if(10.0f < second && !blinked && gameObject.tag == "item"){
-                blinked = true;
-                StartCoroutine(ItemBlink());
+            // 重力を掛ける
+            if(!isGround && ground != null){
+                isGround = ground.IsGround();
+                rb.velocity = new Vector2(0f, -1.0f);
             }
-            second += Time.deltaTime;
+            else{
+                rb.velocity = Vector2.zero;
+            }
         }
+
+        // 食材だけ レシピは自然消滅しない
+        // コルーチンは1度しか呼ばない
+        if(10.0f < second && !blinked && _foodSourceData.itemType == ItemType.FOOD){
+            blinked = true;
+            StartCoroutine(ItemBlink());
+        }
+        second += Time.deltaTime;
     }
 
+    // 一定時間で点滅させた後自然消滅
     private IEnumerator ItemBlink(){
-        int i = 5;
+        second = 0.0f;
 
-        while(0 < i){
+        while(second < 2.5f){
             sr.enabled = !sr.enabled;
-            yield return new WaitForSeconds(0.2f);
-            i -= 1;
-            Debug.Log("item blinking " + i);
+            float waitTime = Mathf.Lerp(0.3f, 0.1f, second/2.5f);
+            yield return new WaitForSeconds(waitTime);
         }
+
+        yield return null;
         Destroy(this.gameObject);
     }
 

@@ -21,7 +21,7 @@ public class changeToRestroom : MonoBehaviour
             PlayerLocation = player.transform.position;
             PlayerStatusSave();
             // “|‚µ‚½“G‚ª•œŠˆ‚µ‚È‚­‚È‚é
-            SingletonStage1.instance.SaveDeadEnemy();
+            SingletonStage.instance.SaveDeadEnemy();
             SceneManager.LoadScene("restroom");
         }
     }

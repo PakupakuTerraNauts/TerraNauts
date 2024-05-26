@@ -65,7 +65,7 @@ public class GameOverMenu:MonoBehaviour
                 PlayerStatusReset();
                 SceneManager.LoadScene("stage1");
                 // “|‚³‚ê‚½ó‘Ô‚ğƒZ[ƒu‚³‚ê‚Ä‚¢‚È‚¢“G‚Í•œŠˆ‚·‚é
-                SingletonStage1.instance.RespawnDeadEnemy();
+                SingletonStage.instance.RespawnDeadEnemy();
                 break;
             case 1:
                 #if UNITY_EDITOR

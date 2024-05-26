@@ -15,6 +15,10 @@ public class cookingAnimation : MonoBehaviour
     public ItemDataBase _itemDataBase;
     FoodSourceData _foodSourceData;
 
+    public AudioClip podSE;
+    public AudioClip knifeSE;
+    public AudioClip knifeHighSE;
+
     Text cmp_Text;
     Text dishText;
     Image dishImage;
@@ -38,6 +42,7 @@ public class cookingAnimation : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.C) && PushCookButton.cookOK && animation)
         {
             Debug.Log("アニメーションスタート");
+            CookSE();
             _AnimationCanvas.SetActive(true);
             _animationChara.SetActive(true);
             _CompleteText.SetActive(false);
@@ -60,6 +65,23 @@ public class cookingAnimation : MonoBehaviour
                 animation = true;
                 animationText.text = "アニメーションオン";
             }
+        }
+    }
+
+    ///<summary>
+    /// ランダムに料理中SEを鳴らす
+    ///</summary>
+    private void CookSE(){
+        float SERate = UnityEngine.Random.value * 100.0f;
+
+        if(SERate < 30.0f){
+            GameManager.instance.PlaySE(podSE);
+        }
+        else if(30.0f <= SERate && SERate < 60.0f){
+            GameManager.instance.PlaySE(knifeHighSE);
+        }
+        else{
+            GameManager.instance.PlaySE(knifeSE);
         }
     }
 

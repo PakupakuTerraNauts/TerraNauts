@@ -95,7 +95,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         if(!isDead){
             if(collision.tag == "Sword"){
                 float atk = Player.ATK + Player.ATKincrement;
-                if(rand.Random((Player.CRITRATE + Player.CRITRATEincrement) / 5.0f)){
+                if(RandomTF((Player.CRITRATE + Player.CRITRATEincrement) / 5.0f)){
                     atk += (Player.CRITDMG + Player.CRITDMGincrement) * 2.0f;
                     StartCoroutine(CriticalHit());
                 }
@@ -124,7 +124,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     private void DecrementHP(float damage){
         HPObject.SetActive(true);
         Debug.Log("enemys HP set active true");
-        GameManager.instance.PlaySE(DamagedSE);     // GMからダメージを受けた時のSEを鳴らす
+        //GameManager.instance.PlaySE(DamagedSE);     // GMからダメージを受けた時のSEを鳴らす
         HP.UpdateHP(damage);
     }
 
@@ -138,7 +138,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     private IEnumerator Death(){
         Instantiate<GameObject>(basicObject, transform.position, Quaternion.identity); // Quater...は回転で今回は無回転
         // 固有の食材ドロップは3割
-        if(rand.Random(30.0f)){
+        if(RandomTF(30.0f)){
             Instantiate<GameObject>(uniqueObject, transform.position, Quaternion.identity);
         }
         yield return new WaitForSeconds(3.0f);
@@ -179,5 +179,16 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
             return true;
         }
         return false;
+    }
+
+    private bool RandomTF(float Persent){
+        float Rate = UnityEngine.Random.value * 100.0f;
+
+        if(Rate <= Persent){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

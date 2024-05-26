@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using Random = System.Random;
 
 public class kinokohoushi : Enemy
 {
@@ -11,7 +10,6 @@ public class kinokohoushi : Enemy
     [SerializeField] private houshi hoshi2;
     [SerializeField] private houshi hoshi3;
     [SerializeField] private houshi hoshi4;   // ç≈ëÂêî4
-    public Random rand = new Random();
     
     protected override void Initialize(){
         capcol = GetComponent<CapsuleCollider2D>();
@@ -32,12 +30,12 @@ public class kinokohoushi : Enemy
     }
 
     private void release(){
-        hoshi1.Hoshi(rand);
+        hoshi1.Hoshi();
         // 1~4Ç≈ñEéqÇÃêîÇí≤êÆâ¬î\
         try{
-            hoshi2.Hoshi(rand);
-            hoshi3.Hoshi(rand);
-            hoshi4.Hoshi(rand);
+            hoshi2.Hoshi();
+            hoshi3.Hoshi();
+            hoshi4.Hoshi();
         }
         catch(Exception){
             return;
