@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     /// SE‚ð–Â‚ç‚·
     ///</summary>
     public void PlaySE(AudioClip clip){
+        _audio.volume = Volume.nowSEVolume;
+
         if(_audio != null){
             _audio.PlayOneShot(clip);
         }

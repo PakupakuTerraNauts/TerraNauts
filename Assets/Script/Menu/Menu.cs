@@ -47,7 +47,8 @@ public class Menu:MonoBehaviour
     public Sprite _push_exitSprite;
 
     public GameObject _exit_button;
-    public GameObject _volume_slider;
+    public GameObject _BGMvolume_slider;
+    public GameObject _SEvolume_slider;
 
     void Start()
     {
@@ -112,7 +113,8 @@ public class Menu:MonoBehaviour
             case 3:
                 _setting.SetActive(true);
                 _settingButton.GetComponent<Image>().sprite = _push_settingSprite;
-                _volume_slider.GetComponent<Slider>().Select();
+                _BGMvolume_slider.GetComponent<Slider>().Select();
+                _SEvolume_slider.GetComponent<Slider>().Select();
                 break;
 
             case 4:

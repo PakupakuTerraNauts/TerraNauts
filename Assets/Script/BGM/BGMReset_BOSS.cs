@@ -8,7 +8,7 @@ public class BGMReset_BOSS : MonoBehaviour
     public AudioSource bossAudio;
 
     void Start(){
-        stageAudio.volume = Volume.nowVolume;
+        stageAudio.volume = Volume.nowBGMVolume;
         bossAudio.Pause();
     }
 
@@ -17,13 +17,13 @@ public class BGMReset_BOSS : MonoBehaviour
     }
 
     public void BossFightBGM_Start(){
-        bossAudio.volume = Volume.nowVolume;
+        bossAudio.volume = Volume.nowBGMVolume;
         bossAudio.UnPause();
     }
 
     public void BossFightBGM_Stop(){
         bossAudio.Stop();
-        stageAudio.volume = Volume.nowVolume;
+        stageAudio.volume = Volume.nowBGMVolume;
         stageAudio.UnPause();
     }
 }
