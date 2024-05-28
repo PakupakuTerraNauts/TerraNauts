@@ -2170,8 +2170,8 @@ MonoBehaviour:
   _push_loadSprite: {fileID: 21300000, guid: 69585208a8d8e4b54b09f6f0b57db45d, type: 3}
   _push_exitSprite: {fileID: 21300000, guid: 134b9c7c1e3c04f0ebfbb96d19d0ef52, type: 3}
   _exit_button: {fileID: 1513303628}
-  _BGMvolume_slider: {fileID: 0}
-  _SEvolume_slider: {fileID: 0}
+  _BGMvolume_slider: {fileID: 1828072963}
+  _SEvolume_slider: {fileID: 1059304534}
 --- !u!114 &318123545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5542,6 +5542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1059304535}
   - component: {fileID: 1059304538}
+  - component: {fileID: 1059304539}
   m_Layer: 5
   m_Name: SEVolume
   m_TagString: Untagged
@@ -5587,7 +5588,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 1828072965}
     m_SelectOnDown: {fileID: 37584847}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -5623,9 +5624,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1059304534}
-        m_TargetAssemblyTypeName: Volume, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1059304539}
+        m_TargetAssemblyTypeName: VolumeSE, Assembly-CSharp
+        m_MethodName: ChangeVolumeSE
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5635,6 +5636,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1059304539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059304534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98afebc578569c4885c30f954d5612b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1103817065
 GameObject:
   m_ObjectHideFlags: 0
@@ -8407,8 +8420,8 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 37584847}
+    m_SelectOnUp: {fileID: 938085101}
+    m_SelectOnDown: {fileID: 1059304538}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2

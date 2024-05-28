@@ -8,11 +8,9 @@ using System;
 public class Volume:MonoBehaviour
 {
     public static float nowBGMVolume = 0.5f;
-    public static float nowSEVolume = 1.0f;
     private AudioSource audioSource;
     private AudioSource audioSource_BOSS;
     private Slider BGMaudioSlider;
-    private Slider SEaudioSlider;
     private GameObject BGM;
 
 
@@ -21,12 +19,9 @@ public class Volume:MonoBehaviour
         BGM = GameObject.Find("BGM");
         audioSource = BGM.transform.GetChild(0).gameObject.GetComponent<AudioSource>();
         BGMaudioSlider = GameObject.Find("BGMVolume").GetComponent<Slider>();
-        SEaudioSlider = GameObject.Find("SEVolume").GetComponent<Slider>();
 
         audioSource.volume = nowBGMVolume;
         BGMaudioSlider.value = nowBGMVolume;
-        SEaudioSlider.value = nowSEVolume;
-
 
         try{    // ボスシーンでボス戦闘用BGMを取得する
             audioSource_BOSS = BGM.transform.GetChild(1).gameObject.GetComponent<AudioSource>();
@@ -45,7 +40,6 @@ public class Volume:MonoBehaviour
             audioSource_BOSS.volume = BGMaudioSlider.value;
         }
         nowBGMVolume = BGMaudioSlider.value;
-        nowSEVolume = SEaudioSlider.value;
         Debug.Log("nowVolume : " + nowBGMVolume);
     }
 

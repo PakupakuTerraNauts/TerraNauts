@@ -114,7 +114,7 @@ public class Menu:MonoBehaviour
                 _setting.SetActive(true);
                 _settingButton.GetComponent<Image>().sprite = _push_settingSprite;
                 _BGMvolume_slider.GetComponent<Slider>().Select();
-                _SEvolume_slider.GetComponent<Slider>().Select();
+                _SEvolume_slider.GetComponent<Slider>();
                 break;
 
             case 4:
