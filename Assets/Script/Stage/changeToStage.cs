@@ -13,8 +13,8 @@ public class changeToStage : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D other)
     {
-        bool wkey = Input.GetKey("w");
-        if (Input.GetKey(KeyCode.UpArrow) || wkey){
+        bool ekey = Input.GetKey("e");
+        if (ekey){
             SceneManager.LoadScene("stage1");
         }
     }

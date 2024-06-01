@@ -234,15 +234,16 @@ public class Player : MonoBehaviour
         return ySpeed;
     }
 
-
+///<summary>
+/// get input of 2ndJump
+/// </summary>
     private void GetInputTwoJump(){
-        // 2段ジャンプの押下を取得
         if(!isGround){
             if((Input.GetKeyDown("up") || Input.GetKeyDown("w")) && jumpCounter < maxJumpCount){   // カウンターが現在のジャンプ回数
                 anim.Play("neko_jump_2dan");
                 jumpCounter++;
                 isJump = true;
-                jumpPos2 = transform.position.y;
+                jumpPos2 = transform.position.y;    // canHightを更新するため 空中に高さの基準を取り直す
                 jumpTime = 0.0f;
             }
         }
@@ -408,6 +409,9 @@ public class Player : MonoBehaviour
         }
     }
 
+///<summary>
+/// decremant HP
+///</summary>
     private void DecrementHP(int damage){
         if(damage - (DEF + DEFincrement) < 0){
             nowHP--;        // 敵の攻撃力 < 防御力 のとき1ダメージ
@@ -454,8 +458,10 @@ public class Player : MonoBehaviour
         nowHP = HP;
         yield break;
     }
-
-    // ボスのHPカウントアップ等 イベント時に移動を制限したいときに呼ぶ
+///<summary>
+/// player rastrained
+///</summary>
+///<remarks> ボスのHPカウントアップ等 イベント時に移動を制限したいときに呼ぶ </remarks>
     public static void RestrainedByEvent(){
         isRestrained = true;
     }
@@ -465,7 +471,7 @@ public class Player : MonoBehaviour
 
 ///<summary>
 /// status level up
-/// </summary>
+///</summary>
     public static void HPincrease(int HPplus){
         HPincrement += HPplus;
         Debug.Log("HP level up!! + " + HPplus);

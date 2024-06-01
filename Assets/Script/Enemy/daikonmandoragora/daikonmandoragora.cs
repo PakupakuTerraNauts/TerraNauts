@@ -57,7 +57,8 @@ public class daikonmandoragora : Enemy
 
     private IEnumerator ChangeTag(){
         yield return new WaitForSeconds(4.0f);
-        gameObject.tag = "Enemy";
+        if(!isDead)     // ‹N“®’¼Œã‚É“|‚³‚ê‚éê‡‚ğœ‚­
+            gameObject.tag = "Enemy";
     }
     
 }

@@ -27,7 +27,7 @@ public class GetFood:MonoBehaviour
         if(_foodSourceData.itemType == ItemType.FOOD)
             sr.sprite = _foodSourceData.icon;
         else
-            sr.sprite = Resources.Load<Sprite>("Assets/UI/ItemUI/recipe");
+            sr.sprite = Resources.Load<Sprite>("UI/ItemUI/recipe");
     }
 
     void Update(){
@@ -46,6 +46,7 @@ public class GetFood:MonoBehaviour
         // コルーチンは1度しか呼ばない
         if(10.0f < second && !blinked && _foodSourceData.itemType == ItemType.FOOD){
             blinked = true;
+            Debug.Log(_objName+" is destroied");
             StartCoroutine(ItemBlink());
         }
         second += Time.deltaTime;
