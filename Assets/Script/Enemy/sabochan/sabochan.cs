@@ -22,8 +22,8 @@ public class sabochan : Enemy
     }
 
     protected override void Moving(){
-        Debug.Log(isAttack);
         if(isAttack){
+            // アニメーション名で判定
             if(anim.GetCurrentAnimatorStateInfo(0).IsName("saboten_stand")){
                 anim.Play("saboten_attack");
                 isAttack = false;
@@ -40,6 +40,9 @@ public class sabochan : Enemy
         anim.Play("saboten_die");
     }
 
+/// <summary>
+/// アニメーションから呼ぶ トゲボールを投げる
+/// </summary>
     private void release(){
         Togeboru.gameObject.SetActive(true);
         isAttack = Togeboru.ThrowBall();

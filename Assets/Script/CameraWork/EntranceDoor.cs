@@ -36,14 +36,19 @@ public class EntranceDoor : MonoBehaviour
         Invoke("CloseDoor", 1.0f);
     }
 */
+    /// <summary>
+    /// 自動ドアを閉じる
+    /// </summary>
     public void CloseDoor() {
         Debug.Log("ドア閉まるよ");
         automaticDoorAnimator.SetBool("Open", false);
         isOpen = false;
     }
-
+    
+    /// <summary>
+    /// プレイヤーが部屋に入った後 剣でドアを開けるのを防ぐ
+    /// </summary>
     public void JudgeDestory(){
-        // プレイヤーが部屋に入った後、剣でドアを開けるのを防ぐ
         boxcol.enabled = false;
     }
 }

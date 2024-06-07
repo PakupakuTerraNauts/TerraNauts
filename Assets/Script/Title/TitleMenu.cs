@@ -30,7 +30,8 @@ public class TitleMenu:MonoBehaviour
             button.Select();
             selectObj = firstSelect;
         }
-        Text = selectObj.transform.GetChild(0).GetComponent<Text>();
+        if(selectObj.transform.childCount > 0)
+            Text = selectObj.transform.GetChild(0).GetComponent<Text>();
 
         switch(selectObj.name)
         {
@@ -100,7 +101,7 @@ public class TitleMenu:MonoBehaviour
                 SceneManager.LoadScene("tutorial");
                 break;
             case 3:
-                MenuChange.LoadMenuScean();
+                MenuChange.LoadMenuScean(3);
                 break;
         }
     }

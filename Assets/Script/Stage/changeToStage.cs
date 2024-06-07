@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class changeToStage : MonoBehaviour
 {
     public int i;
+    public GameObject EnterInfo;
 
     void getNum(int num) {
         i = num;
@@ -15,7 +16,18 @@ public class changeToStage : MonoBehaviour
     {
         bool ekey = Input.GetKey("e");
         if (ekey){
-            SceneManager.LoadScene("stage1");
+            string stage = "stage" + GameManager.instance.nowStage;
+            SceneManager.LoadScene(stage);
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.tag == "Player")
+            EnterInfo.SetActive(true);
+    }
+
+    void OnTriggerExit2D(Collider2D other){
+        if(other.tag == "Player")
+            EnterInfo.SetActive(false);
     }
 }

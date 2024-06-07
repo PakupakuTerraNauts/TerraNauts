@@ -21,13 +21,17 @@ public class kakaokoumori : Enemy
     #endregion
 
     protected override void Initialize(){
-        rangeLeft.InitializeCallBack(onKakaoAttack, true);
-        rangeRight.InitializeCallBack(onKakaoAttack, false);
+        rangeLeft.InitializeCallBack(onKakaoAttack, true); // コールバック 左
+        rangeRight.InitializeCallBack(onKakaoAttack, false); // 右
 
         boxcol = GetComponent<BoxCollider2D>();
         boxcol.enabled = true;
     }
 
+/// <summary>
+/// 攻撃
+/// </summary>
+/// <param name="isLeft">左右どっちから呼ばれたか</param>
     private void onKakaoAttack(bool isLeft){
         if(!isSwoop){
             isSwoop = true;
@@ -59,7 +63,7 @@ public class kakaokoumori : Enemy
                 rb.velocity = new Vector2(speed, 0);
         }
 
-        if(1f < second){
+        if(1f < second){    // 攻撃終わり 
             isAttack = false;
             if(leftRange)
                 rb.velocity = new Vector2(-speed/4, Data.gravity);
@@ -70,7 +74,7 @@ public class kakaokoumori : Enemy
 
     protected override void Sleeping(){
         if(0 < second && !isDead){
-            gameObject.SetActive(false);
+            gameObject.SetActive(false);    // 画面外に出たとき既に攻撃が始まっていたら second<1 でも強制終了
         }
     }
 

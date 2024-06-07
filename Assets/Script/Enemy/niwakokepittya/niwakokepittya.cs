@@ -36,8 +36,9 @@ public class niwakokepittya : Enemy
         anim.Play("tori_die");
     }
 
-    // playerの方向を判定して、そっちを向く tori_pitch終了時に呼ぶ
-    // (animatorから同時に呼びたいのでdeletetamaを内蔵する) → 振り向いたときに球の当たり判定が残っていることがあるので非アクティブにする
+/// <summary>
+/// playerの方向を判定して そっちを向く アニメーション終了時に呼ぶ
+/// </summary>
     public void DirectJudge(){
         if(Player.playerPos.position.x > toriPosition_x && isLeft){
             transform.localScale = new Vector3(-1, 1, 1);
@@ -47,10 +48,13 @@ public class niwakokepittya : Enemy
             transform.localScale = new Vector3(1, 1, 1);
             isLeft = true;
         }
-        // deletetama()
+        // 振り向いたときに球の当たり判定が残っていることがあるので非アクティブに変更した
         Tama.gameObject.SetActive(false);
     }
 
+/// <summary>
+/// 球を投げる
+/// </summary>
     private void release(){
         Tama.gameObject.SetActive(true);
         Tama.TamaPitch(isLeft);

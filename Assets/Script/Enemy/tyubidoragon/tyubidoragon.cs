@@ -19,10 +19,13 @@ public class tyubidoragon : Enemy
         capcol = GetComponent<CapsuleCollider2D>();
         capcol.enabled = true;
 
+        // 左右に移動できる限界の距離を決めておく
+        // 任意の位置（プレイヤーがrangeに入ったところ）で攻撃が始まるから
         leftlim = transform.position.x - 5.0f;
         rightlim = transform.position.x + 5.0f;
     }
 
+    // fixedUpdate 左右に動く
     protected override void MovingF(){
         if(!isAttack){
             if(isLeft){
@@ -66,6 +69,9 @@ public class tyubidoragon : Enemy
         anim.Play("tyuubi_die");
     }
 
+/// <summary>
+/// アニメーションイベントから終了検知
+/// </summary>
     private void EndAnimation(){
         isAttack = false;
         anim.Play("tyuubi_walk");

@@ -11,7 +11,7 @@ public class BossCamera1 : MonoBehaviour
     public EntranceDoor entranceDoor;
     public ExitDoor exitDoor;
 
-    public float hallwaySpeed = 5f;  // 廊下の速さ
+    public float hallwaySpeed = 5f;  // 廊下での速さ
     public float bossRoomSpeed = 0.1f;  // ボス部屋での速さ
     public float fixedCameraDistance = 10f;  // フェーズ2でのカメラの固定距離
     private Vector3 targetPosition = new Vector3(0.0f, 0.0f, 0.0f);
@@ -59,22 +59,26 @@ public class BossCamera1 : MonoBehaviour
         }
     }
 
+/// <summary>
+/// 廊下でプレイヤーを追従
+/// </summary>
     void FollowPlayerInHallway()
-{
-    // Playerを追従
-    float targetX = Mathf.Min(player.position.x, Entrance.position.x - entranceDoorLimit);  // 右端の制限 廊下からボス部屋を覗けない
-    targetX = Mathf.Max(targetX, startPosLeftLimit);
-    transform.position = new Vector3(targetX, y, player.position.z - 20f);
-
-    // ボス部屋に近づいたらフェーズ2に移行
-    if (debidora.isEntered)
     {
-        phase = 2;
-        isBossRoom = true;
+        float targetX = Mathf.Min(player.position.x, Entrance.position.x - entranceDoorLimit);  // 右端の制限 廊下からボス部屋を覗けない
+        targetX = Mathf.Max(targetX, startPosLeftLimit);
+        transform.position = new Vector3(targetX, y, player.position.z - 20f);
+
+        // ボス部屋に近づいたらフェーズ2に移行
+        if (debidora.isEntered)
+        {
+            phase = 2;
+            isBossRoom = true;
+        }
     }
-}
 
-
+/// <summary>
+/// ボス部屋
+/// </summary>
     void FixedCameraInBossRoom()
     {
         if(isBossRoom){
@@ -107,7 +111,10 @@ public class BossCamera1 : MonoBehaviour
             Camera.main.orthographicSize = 5f;
         }
     }
-
+    
+/// <summary>
+/// ボス戦後 廊下でプレイヤー追従
+/// </summary>
     void FollowPlayerAfterBossDefeated()
     {
         // プレーヤーを追従

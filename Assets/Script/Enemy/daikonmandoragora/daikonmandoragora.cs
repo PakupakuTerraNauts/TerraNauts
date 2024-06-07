@@ -15,7 +15,7 @@ public class daikonmandoragora : Enemy
 
     protected override void Initialize()
     {
-        range.InitializeCallBack(onRadisshStapped);
+        range.InitializeCallBack(onRadisshStapped); // コールバック
         boxcol = GetComponent<BoxCollider2D>();
         edgcol = GetComponent<EdgeCollider2D>();
         boxcol.enabled = true;
@@ -28,12 +28,15 @@ public class daikonmandoragora : Enemy
 
     protected override void Sleeping(){
         if(!isDead){
-            anim.Play("radissh_umari");     // 画面外に出たらradissh_umariに戻る
+            anim.Play("radissh_umari");     // 画面外に出たら埋まった状態に戻る
             gameObject.tag = "EnemySleep";
             isSteppedOn = false;
         }
     }
 
+/// <summary>
+/// プレイヤーが近づいたとき 大根が地面から出現
+/// </summary>
     private void onRadisshStapped()
     {
         if(!isSteppedOn && !isDead){
@@ -57,8 +60,7 @@ public class daikonmandoragora : Enemy
 
     private IEnumerator ChangeTag(){
         yield return new WaitForSeconds(4.0f);
-        if(!isDead)     // 起動直後に倒される場合を除く
+        if(!isDead)     // コルーチン経過前に倒された場合を除くため
             gameObject.tag = "Enemy";
     }
-    
 }

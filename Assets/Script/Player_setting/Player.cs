@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Text.RegularExpressions;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     private float jumpLimitTime = 1.5f;
     public static bool isRestrained = false;
     public static Transform playerPos;
+    public static Vector2 playerStartPos;
 
     public AudioClip NormalAttackSE;
     
@@ -69,12 +71,16 @@ public class Player : MonoBehaviour
         private int jumpCounter = 0;
         // 視野
         public float maxVision;
-        [SerializeField] private StageCamera vision;
+        [SerializeField] private ZoomCamera vision;
         #endregion
     #endregion
 
     void Start()
     {
+        string SceneName = SceneManager.GetActiveScene().name;
+        if(Regex.IsMatch(SceneName, @"^Stage\d+$", RegexOptions.IgnoreCase))    // ステージのみ
+            gameObject.transform.position = playerStartPos;                     // 最後に取ったチェックポイントに移動する
+
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         capcol = GetComponent<CapsuleCollider2D>();
@@ -86,8 +92,6 @@ public class Player : MonoBehaviour
                 vision.JumpZoomOut(0.5f, maxVision);
         }
     }
-
-
 
 
     private void Update(){

@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    public int nowStage = 1;
+
     private AudioSource _audio = null;
     [HideInInspector] public float nowVolumeSE = 0.5f;
     

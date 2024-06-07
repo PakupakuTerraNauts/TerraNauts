@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class suraimu : Enemy
 {
-    #region //variables
     private CircleCollider2D circol = null;
-    #endregion
 
     protected override void Initialize(){
         circol = GetComponent<CircleCollider2D>();

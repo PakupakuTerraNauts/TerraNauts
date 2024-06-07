@@ -7,12 +7,9 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 {
     #region // variables
     protected float hp = 0.0f;
-    protected float ninzin_explosion = 10.0f;
     [SerializeField] protected string Name;
 
     protected bool isDead = false;
-
-    public AudioClip DamagedSE;
 
     protected GameObject basicObject;
     protected GameObject uniqueObject;
@@ -43,7 +40,9 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         criticalSr = criticalEffect.GetComponent<SpriteRenderer>();
     }
 
-    // 初期化 最初とゲームオーバーの後に呼ぶ
+/// <summary>
+/// 初期化 最初とゲームオーバーの後に呼ぶ
+/// </summary>
     public void Spawn(){
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -109,8 +108,8 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
                 hp -= hp;
             }
             if(collision.tag == "NinzinExp"){
-                DecrementHP(ninzin_explosion);
-                hp = hp - ninzin_explosion;
+                DecrementHP(ninzin.EXP);
+                hp = hp - ninzin.EXP;
             }
 
             if(hp <= 0.0f){
@@ -121,20 +120,29 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         }
     }
 
-    private void DecrementHP(float damage){
+/// <summary>
+/// HPバーでHPを減らす
+/// </summary>
+/// <param name="damage"></param>
+    protected void DecrementHP(float damage){
         HPObject.SetActive(true);
-        Debug.Log("enemys HP set active true");
-        //GameManager.instance.PlaySE(DamagedSE);     // GMからダメージを受けた時のSEを鳴らす
         HP.UpdateHP(damage);
     }
 
-    private IEnumerator CriticalHit(){
+/// <summary>
+/// クリティカルエフェクトを表示する
+/// </summary>
+/// <returns></returns>
+    protected IEnumerator CriticalHit(){
         criticalSr.enabled = true;
         yield return new WaitForSeconds(1.0f);
         criticalSr.enabled = false;
     }
 
-    // 倒れた時に非表示にする処理
+/// <summary>
+/// 倒れたとき アイテムドロップと非表示処理
+/// </summary>
+/// <returns></returns>
     private IEnumerator Death(){
         Instantiate<GameObject>(basicObject, transform.position, Quaternion.identity); // Quater...は回転で今回は無回転
         // 固有の食材ドロップは3割
@@ -143,7 +151,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         }
         yield return new WaitForSeconds(3.0f);
         this.gameObject.SetActive(false);
-        HPObject.SetActive(false);
+        //HPObject.SetActive(false);
     }
 
     protected virtual void Initialize(){
@@ -161,7 +169,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     protected virtual void Moving(){
         // 基本anim.Play("デフォルアニメーション")
         // 基本rb.velocity = new Vector2(x, y)
-        // その他、固有の特殊処理
+        // その他、固有の処理
     }
 
     protected virtual void MovingF(){
@@ -172,7 +180,10 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         // anim.Play("それぞれのdieアニメーション")
     }
 
-    // 倒された状態でセーブされたとき、シングルトンから削除する
+/// <summary>
+/// 倒された状態でセーブされたとき、シングルトンから削除する
+/// </summary>
+/// <returns></returns>
     public bool DeleteDead(){
         if(isDead){
             Destroy(this.gameObject);
@@ -181,7 +192,12 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         return false;
     }
 
-    private bool RandomTF(float Persent){
+/// <summary>
+/// 受け取った確率で事象が起こったかどうかを決定する
+/// </summary>
+/// <param name="Persent">確率</param>
+/// <returns>事象が起こるか 結果</returns>
+    protected bool RandomTF(float Persent){
         float Rate = UnityEngine.Random.value * 100.0f;
 
         if(Rate <= Persent){

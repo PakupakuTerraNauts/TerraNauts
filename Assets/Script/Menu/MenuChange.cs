@@ -3,43 +3,58 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//Escapeボタンでメニュー画面表示
-public class MenuChange:MonoBehaviour
+// Escapeボタンでメニュー画面表示
+public class MenuChange : MonoBehaviour
 {
     private static bool isLoaded = false;
     public static bool isMenuOpen = false;
-    //public KittenGet _kittenGet;
+    private static int menuButtonNum;
 
-    // Update is called once per frame
     [System.Obsolete]
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //if (!_kittenGet.isKittenLoaded)
-            //{
-                LoadMenuScean();
-            //}
-
+            LoadMenuScean(0);
         }
-
     }
 
-    public static void LoadMenuScean(){
+/// <summary>
+/// メニューシーンを表示する
+/// </summary>
+/// <param name="openMenuScene">最初に表示したいメニュー 左から0-5</param>
+    public static void LoadMenuScean(int openMenuScene)
+    {
         isLoaded = !isLoaded;
-        if(isLoaded)
-        {
+        if (isLoaded)
+        {Debug.Log("open menu");
             Time.timeScale = 0;
-            Application.LoadLevelAdditive("MenuScean");
+            SceneManager.LoadScene("MenuScean", LoadSceneMode.Additive);
             isMenuOpen = true;
+
+            menuButtonNum = openMenuScene;
+            SceneManager.sceneLoaded += MenuSceneLoaded;
         }
         else
         {
-            Application.UnloadLevel("MenuScean");
+            SceneManager.UnloadSceneAsync("MenuScean");
             Resources.UnloadUnusedAssets();
             isMenuOpen = false;
             Time.timeScale = 1;
         }
+        Debug.Log(isLoaded);
     }
 
+    private static void MenuSceneLoaded(Scene nextScene, LoadSceneMode mode)
+    {
+        Debug.Log("OnSceneLoaded: " + nextScene.name);
+        Debug.Log(mode);
+
+        // "Intaractable"オブジェクトをシーンから取得
+        var _interactable = GameObject.Find("MainScean").GetComponent<Interactable>();
+        if (_interactable != null)
+        {
+            _interactable.SetFirstSelect(menuButtonNum);
+        }
+    }
 }

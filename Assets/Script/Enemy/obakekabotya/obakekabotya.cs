@@ -22,15 +22,20 @@ public class obakekabotya : Enemy
     }
     
     protected override void Moving(){
+        bool allKReady = false;
         foreach(var k in kabo){
-            if(k != null){
-                if(!k.Ready)
-                    break;
+            if(!k.Ready)
+                break;
+            allKReady = true;   // 全てのカボチャが手元に帰ってきたら攻撃可能になる
+        }
+
+        if(allKReady){
+            foreach(var k in kabo)
                 k.gameObject.SetActive(true);
-            }
         }
     }
 
+    /// fixedUpdate 上下にフワフワしている
     protected override void MovingF(){
         second += Time.deltaTime;
 
@@ -50,6 +55,17 @@ public class obakekabotya : Enemy
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision){
+        recievedDamage(collision);
+    }
+
+    protected override void dieAnimation(){
+        anim.Play("kabotya_die");
+    }
+
+/// <summary>
+/// おばけの攻撃アニメーションと向き
+/// </summary>
     public void ThrowKabotya(){
         anim.Play("kabotya_attack");
         
@@ -64,13 +80,5 @@ public class obakekabotya : Enemy
             transform.localScale = new Vector3(1, 1, 1);
             isLeft = true;
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision){
-        recievedDamage(collision);
-    }
-
-    protected override void dieAnimation(){
-        anim.Play("kabotya_die");
     }
 }

@@ -15,10 +15,17 @@ public class ivyRange : MonoBehaviour
         boxcol = GetComponent<BoxCollider2D>(); //ivy.Start から InitializeRange を呼ぶため Awake
     }
 
+/// <summary>
+/// onIvyAttack コールバックをセット
+/// </summary>
+/// <param name="onIvyAttack">ツタ攻撃</param>
     public void InitializeCallBack(ivyAttack onIvyAttack){
         ivyAttackCallBack = onIvyAttack;
     }
 
+/// <summary>
+/// undulatingとbendingのときはrangeを大きくする
+/// </summary>
     public void InitializeRange(){
         boxcol.size = new Vector2(3f, 1f);
     }

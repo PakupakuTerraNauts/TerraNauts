@@ -13,19 +13,21 @@ public class EnteredBossRoom : MonoBehaviour
         boxcol = GetComponent<BoxCollider2D>();
     }
 
+    // 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(!debidora.isEntered){
-            if(collision.tag == "Player"){
-                Debug.Log("入った");
-                // BossCamera1のフェーズ２のフラグ
-                debidora.isEntered = true;
-                entrance.CloseDoor();
-                // １層ボスのHPバー操作
-                debidora.BossHPCountUp();
-                entrance.JudgeDestory();
-                boxcol.enabled = false;
-            }
+        if(!debidora.isEntered && collision.tag == "Player"){
+            Debug.Log("入った");
+
+            // BossCamera1のフェーズ２遷移フラグ
+            debidora.isEntered = true;
+            entrance.CloseDoor();
+
+            // １層ボスのHPバー操作
+            debidora.BossHPCountUp();
+            entrance.JudgeDestory();
+            boxcol.enabled = false;
+            
         }
     }
 }

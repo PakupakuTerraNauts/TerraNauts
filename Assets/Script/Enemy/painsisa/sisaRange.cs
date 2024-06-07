@@ -15,16 +15,20 @@ public class sisaRange : MonoBehaviour
         boxcol = GetComponent<BoxCollider2D>();
     }
 
+/// <summary>
+/// onSisaAttack コールバックをセット
+/// </summary>
+/// <param name="onSisaAttack">パインシーサー 攻撃</param>
     public void InitializeCallBack(sisaAttack onSisaAttack){
         sisaAttackCallBack = onSisaAttack;
     }
 
+    // 入ったとき 居続けるときに攻撃をする
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == "Player"){
             sisaAttackCallBack();
         }
     }
-
     private void OnTriggerStay2D(Collider2D collision){
         if(collision.tag == "Player"){
             sisaAttackCallBack();

@@ -5,15 +5,12 @@ using UnityEngine.SceneManagement;
  
 public class changeToRestroom : MonoBehaviour
 {
- 
-    [SerializeField] GameObject player;
     static public Vector2 PlayerLocation = new Vector2(-0.5f, 0.75f);
     public PlayerFoodManager _playerFoodManager;
     public GameObject EnterInfo;
 
-    private void Start() {
-        player.transform.position = PlayerLocation;
-        EnterInfo.SetActive(false);  
+    private void Awake() {
+        Player.playerStartPos = PlayerLocation;
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -22,13 +19,13 @@ public class changeToRestroom : MonoBehaviour
 
             bool ekey = Input.GetKey("e");
             if (ekey){
-                PlayerLocation = player.transform.position;
+                PlayerLocation = Player.playerPos.position;
                 PlayerStatusSave();
                 // ì|ÇµÇΩìGÇ™ïúäàÇµÇ»Ç≠Ç»ÇÈ
                 SingletonStage.instance.SaveDeadEnemy();
                 // ì¸Ç¡ÇΩÇÁUIï\é¶Çè¡Ç∑
-                if(EnterInfo.activeSelf)
-                    EnterInfo.SetActive(true);
+                //if(EnterInfo.activeSelf)
+                //    EnterInfo.SetActive(true);
                 SceneManager.LoadScene("restroom");
             }
         }
