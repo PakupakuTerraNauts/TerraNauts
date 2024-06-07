@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class nakabayashi : Enemy
 {
-    #region // variables
+    // variable
     private CircleCollider2D circol = null;
 
-    [SerializeField] private ivy[] venu = new ivy[8];
-    #endregion
-
+    // 攻撃はツタが行う 本体は特にすることがない
     protected override void Initialize(){
         circol = GetComponent<CircleCollider2D>();
         circol.enabled = true;

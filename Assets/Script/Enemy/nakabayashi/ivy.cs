@@ -37,13 +37,18 @@ public class ivy : MonoBehaviour
         }
     }
 
-    // ivyRangeからコールバック
+/// <summary>
+/// ツタ攻撃
+/// </summary>
     private void onIvyAttack(){
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("nakabayashi_ivy_default")){  // フラグ管理だとすり抜けてデッドロックすることがあるのでアニメーションで判定
             PlayAttackAnimation();
         }
     }
 
+/// <summary>
+/// 攻撃アニメーションを選択して再生
+/// </summary>
     public void PlayAttackAnimation(){
         switch(currentState){
             case State.piercing :
@@ -61,6 +66,9 @@ public class ivy : MonoBehaviour
         }
     }
 
+/// <summary>
+/// アニメーション終了
+/// </summary>
     private void EndAnimation(){
         anim.Play("nakabayashi_ivy_default");
     }

@@ -6,14 +6,17 @@ public class turara : MonoBehaviour
 {
     #region // variables
     public float gravity;
-    private bool isFall = false;
     private bool isBreak = false;
+    [HideInInspector] public bool isFall = false;
 
     private Vector3 StartPos;
     public neibysuraimu neiby;
     private Animator anim = null;
     private Rigidbody2D rb = null;
     private SpriteRenderer sr = null;
+
+    public delegate void turaraFallenCheck();
+    private turaraFallenCheck turaraFallenCheckCallBack;
     #endregion
 
     void Start(){
@@ -32,36 +35,59 @@ public class turara : MonoBehaviour
         }else{
             rb.velocity = new Vector2(0.0f, 0.0f);
         }
+
+        if(20f < StartPos.y - transform.position.y)
+            StartCoroutine(BreakTurara());
     }
 
+/// <summary>
+/// onTuraraFallenCheck コールバックをセット
+/// </summary>
+/// <param name="onTuraraFallenCheck">全ての攻撃が終了しているかチェック</param>
+    public void InitializeCallBack(turaraFallenCheck onTuraraFallenCheck){
+        turaraFallenCheckCallBack = onTuraraFallenCheck;
+    }
+
+/// <summary>
+/// 氷柱を降らせる
+/// </summary>
     public void Turara(){
         transform.position = StartPos;
         this.gameObject.SetActive(true);
+
         StartCoroutine(GenerateTurara());
         rb.WakeUp();
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
+        Debug.Log(collision.tag);
         if(collision.tag == "ground" || collision.tag == "Player" || collision.tag == "Sword"){
             StartCoroutine(BreakTurara());
         }
     }
 
+/// <summary>
+/// 氷柱を生成するコルーチン
+/// </summary>
+/// <returns></returns>
     private IEnumerator GenerateTurara(){
         anim.Play("neiby_turara_generate");
         yield return new WaitForSeconds(0.5f);
         isFall = true;
     }
+
+/// <summary>
+/// 氷柱を壊されたときのコルーチン
+/// </summary>
+/// <returns></returns>
     private IEnumerator BreakTurara(){
         isBreak = true;
         anim.Play("neiby_turara_break");
         yield return new WaitForSeconds(2.0f);
         this.gameObject.SetActive(false);
+        
         isFall = false;
+        turaraFallenCheckCallBack();
         isBreak = false;
-    }
-
-    public bool FallTF(){
-        return isFall;
     }
 }

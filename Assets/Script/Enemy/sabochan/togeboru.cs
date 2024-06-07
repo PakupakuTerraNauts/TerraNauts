@@ -26,6 +26,10 @@ public class togeboru : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+/// <summary>
+/// トゲボール 投げられ
+/// </summary>
+/// <returns></returns>
     public bool ThrowBall(){
         transform.rotation = Quaternion.identity;
         if(!isLeft){
@@ -45,7 +49,7 @@ public class togeboru : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == "Sword"){
-            anim.Play("saboten_togeboru_attacked");
+            anim.Play("saboten_togeboru_attacked"); // 剣で切られたらアニメーション流す 消えるわけではない
         }
     }
 

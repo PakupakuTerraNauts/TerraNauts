@@ -298,7 +298,7 @@ Transform:
   - {fileID: 8014816735860415709}
   - {fileID: 2448961188950974137}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7864426173593029205
 SpriteRenderer:
@@ -448,8 +448,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\u306B\u308F\u3053\u3051\u30D4\u30C3\u30C1\u30E3\u30FC"
+  DamagedSE: {fileID: 8300000, guid: 10b52968b6e839848984560232940584, type: 3}
   Tama: {fileID: 1957454184950911145}
-  isLeft: 0
+  isLeft: 1
 --- !u!114 &2606537794512555276
 MonoBehaviour:
   m_ObjectHideFlags: 0

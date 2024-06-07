@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Text.RegularExpressions;
 
 public class Player : MonoBehaviour
 {
@@ -14,24 +15,27 @@ public class Player : MonoBehaviour
     private float jumpLimitTime = 1.5f;
     public static bool isRestrained = false;
     public static Transform playerPos;
-    
-    #region // status
-    public static int HP = 100;
-    public static int nowHP = 100;
-    public static int HPincrement = 0;
+    public static Vector2 playerStartPos;
 
-    public static int ATK = 100;
-    public static int ATKincrement = 0;
-    public static int DEF = 0;
-    public static int DEFincrement = 0;
-    public static int SPD = 100;
-    public static int SPDincrement = 0;
-    // ↓ Enemy.cs内で使用している
-    public static int CRITRATE = 50;
-    public static int CRITRATEincrement = 0;
-    public static int CRITDMG = 50;
-    public static int CRITDMGincrement = 0;
-    #endregion
+    public AudioClip NormalAttackSE;
+    
+        #region // status
+        public static int HP = 100;
+        public static int nowHP = 100;
+        public static int HPincrement = 0;
+
+        public static int ATK = 100;
+        public static int ATKincrement = 0;
+        public static int DEF = 0;
+        public static int DEFincrement = 0;
+        public static int SPD = 100;
+        public static int SPDincrement = 0;
+        // ↓ Enemy.cs内で使用している
+        public static int CRITRATE = 50;
+        public static int CRITRATEincrement = 0;
+        public static int CRITDMG = 50;
+        public static int CRITDMGincrement = 0;
+        #endregion
 
     public float attackCooltime;
     private float jumpPos = 0.0f;
@@ -61,18 +65,22 @@ public class Player : MonoBehaviour
     public PlayerFoodManager _playerFoodManager;
     public ParallaxBackground backGround;
 
-    #region // skills
-    // ジャンプ回数
-    public int maxJumpCount;    // 増やせば何段でも可
-    private int jumpCounter = 0;
-    // 視野
-    public float maxVision;
-    [SerializeField] private StageCamera vision;
-    #endregion
+        #region // skills
+        // ジャンプ回数
+        public int maxJumpCount;    // 増やせば何段でも可
+        private int jumpCounter = 0;
+        // 視野
+        public float maxVision;
+        [SerializeField] private ZoomCamera vision;
+        #endregion
     #endregion
 
     void Start()
     {
+        string SceneName = SceneManager.GetActiveScene().name;
+        if(Regex.IsMatch(SceneName, @"^Stage\d+$", RegexOptions.IgnoreCase))    // ステージのみ
+            gameObject.transform.position = playerStartPos;                     // 最後に取ったチェックポイントに移動する
+
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         capcol = GetComponent<CapsuleCollider2D>();
@@ -230,15 +238,16 @@ public class Player : MonoBehaviour
         return ySpeed;
     }
 
-
+///<summary>
+/// get input of 2ndJump
+/// </summary>
     private void GetInputTwoJump(){
-        // 2段ジャンプの押下を取得
         if(!isGround){
             if((Input.GetKeyDown("up") || Input.GetKeyDown("w")) && jumpCounter < maxJumpCount){   // カウンターが現在のジャンプ回数
                 anim.Play("neko_jump_2dan");
                 jumpCounter++;
                 isJump = true;
-                jumpPos2 = transform.position.y;
+                jumpPos2 = transform.position.y;    // canHightを更新するため 空中に高さの基準を取り直す
                 jumpTime = 0.0f;
             }
         }
@@ -404,6 +413,9 @@ public class Player : MonoBehaviour
         }
     }
 
+///<summary>
+/// decremant HP
+///</summary>
     private void DecrementHP(int damage){
         if(damage - (DEF + DEFincrement) < 0){
             nowHP--;        // 敵の攻撃力 < 防御力 のとき1ダメージ
@@ -428,10 +440,13 @@ public class Player : MonoBehaviour
         isAttackCool = true;
         isAttack = false;
 
-        if(isGround)    // 着地していたらNormalAttack
+        if(isGround){    // 着地していたらNormalAttack
             anim.SetTrigger("nAttack_neko");
-        else if (!isGround) // 空中ならAerialAttack
+        }
+        else if (!isGround){ // 空中ならAerialAttack
             anim.SetTrigger("aAttack_neko");
+        }
+            GameManager.instance.PlaySE(NormalAttackSE);
         
         yield return new WaitForSeconds(attackCooltime);  //クールタイム
         Debug.Log("cooltime " + attackCooltime + "s");
@@ -447,8 +462,10 @@ public class Player : MonoBehaviour
         nowHP = HP;
         yield break;
     }
-
-    // ボスのHPカウントアップ等 イベント時に移動を制限したいときに呼ぶ
+///<summary>
+/// player rastrained
+///</summary>
+///<remarks> ボスのHPカウントアップ等 イベント時に移動を制限したいときに呼ぶ </remarks>
     public static void RestrainedByEvent(){
         isRestrained = true;
     }
@@ -458,7 +475,7 @@ public class Player : MonoBehaviour
 
 ///<summary>
 /// status level up
-/// </summary>
+///</summary>
     public static void HPincrease(int HPplus){
         HPincrement += HPplus;
         Debug.Log("HP level up!! + " + HPplus);

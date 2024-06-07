@@ -15,11 +15,16 @@ public class CharactorGetItem:MonoBehaviour
     public GameObject grassObject;
     public GameObject HPObject;
 
+    private CapsuleCollider2D capcol = null;
+
     private void Start()
     {
+        capcol = GetComponent<CapsuleCollider2D>();
+
         int count = 1;
         if(_playerRecipeManager.GetItemCount("meatBun") != 1)
         {
+            // 初期料理を設定
             _playerRecipeManager.CountItem("meatBun", count);
             _playerRecipeManager.CountItem("hamburger", count);
             _playerRecipeManager.CountItem("tapiocaMilkTea", count);
@@ -46,7 +51,6 @@ public class CharactorGetItem:MonoBehaviour
             int count = 1;
             //アイテム追加
             _playerFoodManager.CountItem(collision.gameObject.name, count);
-
         }
         //タグが "recipe" のアイテム
         else if(collision.tag == "recipe")
@@ -55,7 +59,6 @@ public class CharactorGetItem:MonoBehaviour
             //アイテム追加
             _playerRecipeManager.CountItem(collision.gameObject.name, count);
         }
-
     }
 
     //肉、水、草の所持数をゲーム画面に表示

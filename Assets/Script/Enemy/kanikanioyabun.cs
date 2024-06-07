@@ -20,6 +20,7 @@ public class kanikanioyabun : Enemy
         boxcol.enabled = true;
     }
 
+    // fixedUpdate ¶‰E‚ÉˆÚ“®‚·‚é
     protected override void MovingF(){
         second += Time.deltaTime;
         anim.Play("kani_default");

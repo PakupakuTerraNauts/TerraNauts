@@ -22,24 +22,18 @@ public class painsisa : Enemy
         }
     }
 
+/// <summary>
+/// 攻撃
+/// </summary>
     private void onSisaAttack(){
+        // フラグ管理だとすり抜けるのでアニメーション名で判定
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("pinesisa_stand")){
             anim.Play("pinesisa_attack");
         }
     }
-/*
-    protected override void Moving(){
-        rb.velocity = new Vector2(0, -gravity);
-        if(isAttack){
-            anim.Play("pinesisa_attack");
-        }
-        else{
-            anim.Play("pinesisa_stand");
-        }
-    }*/
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(collision.tag == "FallingTree"){
+        if(collision.tag == "FallingTree"){ // 他敵と違い 木で即死の専用アニメーションがあるのでフラグオンにしておく
             instantDeath = true;
         }
         recievedDamage(collision);
@@ -54,6 +48,9 @@ public class painsisa : Enemy
         }
     }
 
+/// <summary>
+/// アニメーションイベント 攻撃の終了を検知
+/// </summary>
     private void endAnimation(){
         isAttack = false;
     }

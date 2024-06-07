@@ -5,25 +5,40 @@ using UnityEngine.SceneManagement;
  
 public class changeToRestroom : MonoBehaviour
 {
- 
-    [SerializeField] GameObject player;
     static public Vector2 PlayerLocation = new Vector2(-0.5f, 0.75f);
     public PlayerFoodManager _playerFoodManager;
+    public GameObject EnterInfo;
 
-    private void Start() {
-        player.transform.position = PlayerLocation;    
+    private void Awake() {
+        Player.playerStartPos = PlayerLocation;
     }
 
     void OnTriggerStay2D(Collider2D other)
     {
-        bool wkey = Input.GetKey("w");
-        if (Input.GetKey(KeyCode.UpArrow) || wkey){
-            PlayerLocation = player.transform.position;
-            PlayerStatusSave();
-            // ì|ÇµÇΩìGÇ™ïúäàÇµÇ»Ç≠Ç»ÇÈ
-            SingletonStage1.instance.SaveDeadEnemy();
-            SceneManager.LoadScene("restroom");
+        if(other.tag == "Player"){
+
+            bool ekey = Input.GetKey("e");
+            if (ekey){
+                PlayerLocation = Player.playerPos.position;
+                PlayerStatusSave();
+                // ì|ÇµÇΩìGÇ™ïúäàÇµÇ»Ç≠Ç»ÇÈ
+                SingletonStage.instance.SaveDeadEnemy();
+                // ì¸Ç¡ÇΩÇÁUIï\é¶Çè¡Ç∑
+                //if(EnterInfo.activeSelf)
+                //    EnterInfo.SetActive(true);
+                SceneManager.LoadScene("restroom");
+            }
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.tag == "Player")
+            EnterInfo.SetActive(true);
+    }
+
+    void OnTriggerExit2D(Collider2D other){
+        if(other.tag == "Player")
+            EnterInfo.SetActive(false);
     }
 
     private void PlayerStatusSave(){

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Debidora : MonoBehaviour
 {
+    #region // variables
     [SerializeField] private string Name;
     [SerializeField] private GameObject FirePrefab;
     [SerializeField] private GameObject PainPrefab;
@@ -24,6 +25,8 @@ public class Debidora : MonoBehaviour
     [SerializeField] public HPBar HP;
     [SerializeField] public Canvas HP_canvas;
     [SerializeField] private BGMReset_BOSS BossBGM;
+    [SerializeField] private AudioClip RoarClip;
+    #endregion
 
     private bossData Data;
 
@@ -73,10 +76,6 @@ public class Debidora : MonoBehaviour
                 isStart = false;
                 StartCoroutine("Battle");
             }
-            // if(Input.GetKeyDown(KeyCode.Space) && isDead == false)
-            // {
-            //     nowhp -= 10;
-            // }
         }
     }
 
@@ -217,8 +216,9 @@ public class Debidora : MonoBehaviour
         }
     }
 
-    // ボスの登場と同時にHPバーを表示する
-    // BossCamera1 でフェーズ2に入ったときに呼ぶ
+    ///<summary>
+    /// ボス登場時 HPバーを表示する  BossCamera1フェーズ2で呼ぶ
+    ///</summary>
     public void BossHPCountUp(){
         BossBGM.StageBGM_Stop();
         
@@ -229,14 +229,16 @@ public class Debidora : MonoBehaviour
 
     private IEnumerator BossHPStart(){
         float countUpHP = nowhp;
-        Player.RestrainedByEvent();
+        Player.RestrainedByEvent(); // プレイヤーの動きを固定
+
+        GameManager.instance.PlaySE(RoarClip);
 
         while(nowhp < maxhp){   // nowhpはここで使うのでBossHPCountUpでも更新する
             HP.UpdateHP(-countUpHP);        
             nowhp = nowhp + countUpHP;
             yield return new WaitForSeconds(0.5f);
         }
-        Player.UnRestrainedByEvent();
+        Player.UnRestrainedByEvent(); // プレイヤーを開放
         BossBGM.BossFightBGM_Start();
     }
 }

@@ -46,38 +46,42 @@ public class butamogura : Enemy
         rb.velocity = new Vector2(0, -Data.gravity);
     }
 
-    // buta_attack の終了時に呼ばれる
+/// <summary>
+/// アニメーションイベントから 攻撃の終了検知
+/// </summary>
     private void endAnimation(){
         isEndAnim = true;
         //return;
     }
 
-    // buta_attack の途中、ブタが地面に潜ったら呼ぶ
+/// <summary>
+/// アニメーションイベントから ブタが地面に潜ったら呼ぶ
+/// </summary>
     private void Dived(){
         gameObject.tag = "ground";  // 地面に潜っているときのダメージ判定を防ぐ to player (groundにしてみた)
         isAttack = false;
     }
 
-    ///<summary>
-    /// 状態遷移
-    ///</summary>
+///<summary>
+/// 状態遷移
+///</summary>
     private void ChangeState(State next){
         nextState = next;
     }
 
 
-    /// <summary>
-    /// 待機→移動
-    /// </summary>
+/// <summary>
+/// 待機→移動
+/// </summary>
     private void inGroundUpdate(){
         if(sr.isVisible){
             ChangeState(State.Move);
             return;
         }
     }
-    /// <summary>
-    /// 移動→攻撃
-    /// </summary>
+/// <summary>
+/// 移動→攻撃
+/// </summary>
     private void MoveUpdate(){
         Vector2 butamoguraPosition = new Vector2(transform.position.x, transform.position.y);
         Vector2 targetPosition = new Vector2(Player.playerPos.position.x, this.transform.position.y);    // 移動をx軸方向だけにする.
@@ -97,9 +101,9 @@ public class butamogura : Enemy
             return;
         }
     }
-    /// <summary>
-    /// 攻撃→移動(待機)
-    /// </summary>
+/// <summary>
+/// 攻撃→移動(待機)
+/// </summary>
     private void AttackUpdate(){
         gameObject.tag = "Enemy";       // ブタが地上に出ている時だけダメージ判定 to player
         anim.Play("buta_attack");

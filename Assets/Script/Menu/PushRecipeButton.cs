@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//繝ｬ繧ｷ繝斐ユ繧ｭ繧ｹ繝磯∈謚槭〒鬟滓攝縲√せ繝�繝ｼ繧ｿ繧ｹ縺瑚｡ｨ遉ｺ
+//レシピテキスト選択で食材、ステータスが表示
 public class PushRecipeButton:MonoBehaviour
 {
     //Script

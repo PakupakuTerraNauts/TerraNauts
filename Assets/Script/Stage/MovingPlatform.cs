@@ -10,39 +10,39 @@ public class MovingPlatform : MonoBehaviour
 
     private void Start()
     {
-        //Rigidbodyã‚’å–å¾—
+        //Rigidbody‚ğæ“¾
         rb = GetComponent<Rigidbody2D>();
     }
     private void Update()
     {
-        // ç¾åœ¨ã®åºŠã®ä½ç½®ãŒç›®çš„åœ°ã«éå¸¸ã«è¿‘ã„å ´åˆ
+        // Œ»İ‚Ì°‚ÌˆÊ’u‚ª–Ú“I’n‚É”ñí‚É‹ß‚¢ê‡
         if (Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position) < .1f)
         {
             StartCoroutine(WaitTime());
-            // ç›®çš„åœ°ã‚’æ¬¡ã®ãƒã‚¤ãƒ³ãƒˆã«ã‚»ãƒƒãƒˆã™ã‚‹
+            // –Ú“I’n‚ğŸ‚Ìƒ|ƒCƒ“ƒg‚ÉƒZƒbƒg‚·‚é
             currentWaypointIndex++;
-            // æœ€å¾Œã¾ã§è¡Œã£ãŸã‚‰ã€ä¸€ç•ªæœ€åˆã®ãƒã‚¤ãƒ³ãƒˆã‚’ç›®çš„åœ°ã¨ã™ã‚‹
+            // ÅŒã‚Ü‚Ås‚Á‚½‚çCˆê”ÔÅ‰‚Ìƒ|ƒCƒ“ƒg‚ğ–Ú“I’n‚Æ‚·‚é
             if (currentWaypointIndex >= waypoints.Length)
             {
                 currentWaypointIndex = 0;
             }
         }
-        // ç¾åœ¨ã®åºŠã®ä½ç½®ã‹ã‚‰ã€ç›®çš„åœ°ã®ä½ç½®ã¾ã§ç§»å‹•ã™ã‚‹
+        // Œ»İ‚Ì°‚ÌˆÊ’u‚©‚çC–Ú“I’n‚ÌˆÊ’u‚Ü‚ÅˆÚ“®‚·‚é
         transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
     }
 
     IEnumerator WaitTime()
     {
-        // ç§»å‹•ã‚’åœæ­¢ã™ã‚‹
+        // ˆÚ“®‚ğ’â~‚·‚é
         rb.isKinematic = true;
-        // 0.5ç§’é–“å¾…æ©Ÿã™ã‚‹
+        // 0.5•bŠÔ‘Ò‹@‚·‚é
         yield return new WaitForSecondsRealtime(3f);
-        // ç§»å‹•ã‚’å†é–‹ã™ã‚‹
+        // ˆÚ“®‚ğÄŠJ‚·‚é
         rb.isKinematic = false;
        /*Pauser.Pause ();
-//æŠ€ã‚¿ã‚¤ãƒˆãƒ«ã‚«ãƒƒãƒˆã‚¤ãƒ³
+// ‹Zƒ^ƒCƒgƒ‹ƒJƒbƒgƒCƒ“
 ShowSpTitle(sp.spNo);
-//1ç§’å¾Œã«å†é–‹ã•ã›ã‚‹
+//1•bŒã‚ÉÄŠJ‚³‚¹‚é
 Timer timer = new Timer ();
 timer.Start (1f, 1f);
 timer.Finished += delegate() {

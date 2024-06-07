@@ -5,8 +5,7 @@ using UnityEngine;
 public class takotuborun : Enemy
 {
     #region // variables
-
-    [Header("チェックで向き反転")] public bool isLeft = true;
+    [Header("チェックで向きが反転する")] public bool isLeft = true;
 
     private CapsuleCollider2D capcol = null;
     #endregion

@@ -7,10 +7,10 @@ using System;
 [RequireComponent(typeof(AudioSource))]
 public class Volume:MonoBehaviour
 {
-    public static float nowVolume = 0.5f;
+    public static float nowBGMVolume = 0.5f;
     private AudioSource audioSource;
     private AudioSource audioSource_BOSS;
-    private Slider audioSlider;
+    private Slider BGMaudioSlider;
     private GameObject BGM;
 
 
@@ -18,28 +18,29 @@ public class Volume:MonoBehaviour
     {
         BGM = GameObject.Find("BGM");
         audioSource = BGM.transform.GetChild(0).gameObject.GetComponent<AudioSource>();
-        audioSlider = GameObject.Find("Volume").GetComponent<Slider>();
+        BGMaudioSlider = GameObject.Find("BGMVolume").GetComponent<Slider>();
 
-        audioSource.volume = nowVolume;
-        audioSlider.value = nowVolume;
+        audioSource.volume = nowBGMVolume;
+        BGMaudioSlider.value = nowBGMVolume;
 
-        try{
+        try{    // ボスシーンでボス戦闘用BGMを取得する
             audioSource_BOSS = BGM.transform.GetChild(1).gameObject.GetComponent<AudioSource>();
-            audioSource_BOSS.volume = nowVolume;
+            audioSource_BOSS.volume = nowBGMVolume;
         }
         catch(Exception){
             return;
         }
     }
 
+    // MenuシーンのBGMスライダーが変化したときにスライダーから呼ばれる
     public void ChangeVolume()
     {
-        audioSource.volume = audioSlider.value;
+        audioSource.volume = BGMaudioSlider.value;
         if(audioSource_BOSS != null){
-            audioSource_BOSS.volume = audioSlider.value;
+            audioSource_BOSS.volume = BGMaudioSlider.value;
         }
-        nowVolume = audioSlider.value;
-        Debug.Log("nowVolume : " + nowVolume);
+        nowBGMVolume = BGMaudioSlider.value;
+        Debug.Log("nowVolume : " + nowBGMVolume);
     }
 
 }

@@ -20,13 +20,17 @@ public class tama : MonoBehaviour
         InitialPosition = transform.position;
     }
 
+/// <summary>
+/// 投げられた球の移動
+/// </summary>
+/// <param name="isLeft">左右フラグ</param>
     public void TamaPitch(bool isLeft){
         transform.position = new Vector3(InitialPosition.x, InitialPosition.y, InitialPosition.z);      // 位置の初期化
         distanceCovered = 0.0f;
         anim.Play("tori_tama_pitch");
 
+        // 距離で制御
         while(distanceCovered < maxDistance){
-
             if(isLeft){
                 rb.velocity = new Vector2(-speed, 0.0f);
             }
@@ -38,7 +42,7 @@ public class tama : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(collision.tag == "Sword" || collision.tag == "ground"){
+        if(collision.tag == "Sword" || collision.tag == "ground"){  // 切られる 壁(ground)に当たる で消える
             this.gameObject.SetActive(false);
         }
     }

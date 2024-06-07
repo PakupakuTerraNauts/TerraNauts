@@ -9,6 +9,9 @@ public class ExitDoor : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+/// <summary>
+/// ボス部屋 出口を開ける
+/// </summary>
     public void OpenDoor(){
         anim.SetBool("Open", true);
         isOpen = true;

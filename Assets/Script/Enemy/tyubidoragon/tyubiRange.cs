@@ -13,12 +13,12 @@ public class tyubiRange : MonoBehaviour
         boxcol = GetComponent<BoxCollider2D>();
     }
 
+    // ‰Š‚É“ü‚Á‚½‚Æ‚«{Œp‘±‚Åƒ_ƒ[ƒW
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == "Player"){
             tyubi.isAttack = true;
         }
     }
-
     private void OnTriggerStay2D(Collider2D collision){
         if(collision.tag == "Player"){
             tyubi.isAttack = true;

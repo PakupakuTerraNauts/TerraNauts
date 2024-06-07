@@ -672,7 +672,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\u30AB\u30AB\u30AA\u3053\u3046\u3082\u308A"
-  speed: 0
+  DamagedSE: {fileID: 0}
+  speed: -23.22
   rangeLeft: {fileID: 4529346741403418062}
   rangeRight: {fileID: 880825162138004403}
   ground: {fileID: 7877869445713675446}

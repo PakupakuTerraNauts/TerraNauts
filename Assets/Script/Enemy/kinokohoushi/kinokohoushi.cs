@@ -1,17 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
-using Random = System.Random;
 
 public class kinokohoushi : Enemy
 {
+    #region // variables
     private CapsuleCollider2D capcol = null;
-    [SerializeField] private houshi hoshi1;
-    [SerializeField] private houshi hoshi2;
-    [SerializeField] private houshi hoshi3;
-    [SerializeField] private houshi hoshi4;   // 最大数4
-    public Random rand = new Random();
+    [SerializeField] private houshi[] hoshi = new houshi[4];
+    #endregion
     
     protected override void Initialize(){
         capcol = GetComponent<CapsuleCollider2D>();
@@ -31,27 +27,21 @@ public class kinokohoushi : Enemy
         anim.Play("kinoko_die");
     }
 
+/// <summary>
+/// アニメーションから呼ぶ 胞子を飛ばす
+/// </summary>
     private void release(){
-        hoshi1.Hoshi(rand);
-        // 1~4で胞子の数を調整可能
-        try{
-            hoshi2.Hoshi(rand);
-            hoshi3.Hoshi(rand);
-            hoshi4.Hoshi(rand);
-        }
-        catch(Exception){
-            return;
+        foreach(var h in hoshi){
+            h.Hoshi();
         }
     }
-    private void deletehoshi(){    
-        hoshi1.HoshiDelete();
-        try{
-            hoshi2.HoshiDelete();
-            hoshi3.HoshiDelete();
-            hoshi4.HoshiDelete();
-        }
-        catch(Exception){
-            return;
+
+/// <summary>
+/// アニメーションが終わったら胞子を消す
+/// </summary>
+    private void deletehoshi(){
+        foreach(var h in hoshi){
+            h.HoshiDelete();
         }
     }
 }

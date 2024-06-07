@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: EnemyData
   m_EditorClassIdentifier: 
   EnemyDataList:
+  - Name: "\u30C1\u30E5\u30FC\u30C8\u30EA\u30A2\u30EB\u30B9\u30E9\u30A4\u30E0"
+    flor: 0
+    maxHP: 10
+    gravity: 5
+    basicObject: {fileID: 4534490885142806426, guid: f5ee8281215e0493e920d2293c12a575, type: 3}
+    uniqueObject: {fileID: 8744671341141900407, guid: e657b5041d0e54718bff5a7861fdcddf, type: 3}
   - Name: "\u30B9\u30E9\u30A4\u30E0"
     flor: 1
     maxHP: 50

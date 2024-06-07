@@ -22,7 +22,6 @@ public class tree : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
 
         ATK_player = Player.ATK;
-        //hp = HP.maxHealth;
     }
 
     void Update(){
