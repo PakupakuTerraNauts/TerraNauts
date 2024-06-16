@@ -15,8 +15,7 @@ public class groundCheck : MonoBehaviour
         else if (isGroundExit){
             isGround = false;
         }
-        else{   // デバッグ アニメーションの関係でどうしてもexitが入らないことがある
-                // 空中にいるのにisGround=trueとなるのが致命的なのでデフォルトでfalseにする
+        else{
             isGround = false;
         }
 
@@ -26,18 +25,21 @@ public class groundCheck : MonoBehaviour
         return isGround;
     }
 
+    // 地面に着いたとき
     private void OnTriggerEnter2D(Collider2D collision){
         if (collision.tag == "ground"){
             isGroundEnter = true;
         }
     }
 
+    // 地面にいるとき
     private void OnTriggerStay2D(Collider2D collision){
         if (collision.tag == "ground"){
             isGroundStay = true;
         }
     }
 
+    // 地面から離れたとき
     private void OnTriggerExit2D(Collider2D collision){
         if (collision.tag == "ground"){
             isGroundExit = true;

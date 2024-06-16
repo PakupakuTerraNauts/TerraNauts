@@ -186,7 +186,7 @@ public class StatusPlus:MonoBehaviour
             Text _cloneText2 = _cloneObject.transform.GetChild(0).GetComponent<Text>();
             _foodSourceData_f = _itemDataBase.ItemSearch(foodTypes[k]);
             _cloneText.sprite = _foodSourceData_f.icon;
-            _cloneText2.text = "✖︎" + _foodSourceData.GetFoodValue(foodTypes[k]);
+            _cloneText2.text = "??" + _foodSourceData.GetFoodValue(foodTypes[k]);
             _cloneObject.name = foodTypes[k];
         }
     }

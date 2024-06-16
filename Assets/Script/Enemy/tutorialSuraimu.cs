@@ -37,7 +37,11 @@ public class tutorialSuraimu : Enemy
     protected override void dieAnimation(){
         anim.Play("suraimu_die");
     }
-    
+
+/// <summary>
+/// チュートリアル用 倒れてもすぐ復活する
+/// </summary>
+/// <returns></returns>
     private IEnumerator tutorialDeath(){
         Instantiate<GameObject>(basicObject, transform.position, Quaternion.identity); // Quater...は回転で今回は無回転
         // 固有の食材ドロップは3割

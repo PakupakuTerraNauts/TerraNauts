@@ -17,8 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: fd2265375ff72425b87990ae37f773ec
-  - enabled: 0
-    path: Assets/Scenes/enemy's script check.unity
+  - enabled: 1
+    path: Assets/Scenes/enemies.unity
     guid: 2c897d6178e619b41be1185c3a1241a5
   - enabled: 1
     path: Assets/Scenes/restroom.unity

@@ -5,27 +5,27 @@ using UnityEngine.SceneManagement;
  
 public class changeToRestroom : MonoBehaviour
 {
-    static public Vector2 PlayerLocation = new Vector2(-0.5f, 0.75f);
-    public PlayerFoodManager _playerFoodManager;
+    //static public Vector2 PlayerLocation = new Vector2(-0.5f, 0.75f);
     public GameObject EnterInfo;
+    public PlayerFoodManager _playerFoodManager;
 
-    private void Awake() {
-        Player.playerStartPos = PlayerLocation;
-    }
+    // private void Awake() {
+    //     Player.playerStartPos = PlayerLocation;
+    // }
 
     void OnTriggerStay2D(Collider2D other)
     {
         if(other.tag == "Player"){
 
-            bool ekey = Input.GetKey("e");
+            bool ekey = Input.GetKey(KeyCode.E);
             if (ekey){
-                PlayerLocation = Player.playerPos.position;
-                PlayerStatusSave();
+                //PlayerLocation = Player.playerPos.position;
+                Player.playerStartPos = this.gameObject.transform.position;
+                // セーブ処理
+                _playerFoodManager.UpdateSavedItemList();   // アイテム数
+                StatusManager.PlayerStatusSave();           // プレイヤーのステータス
                 // 倒した敵が復活しなくなる
                 SingletonStage.instance.SaveDeadEnemy();
-                // 入ったらUI表示を消す
-                //if(EnterInfo.activeSelf)
-                //    EnterInfo.SetActive(true);
                 SceneManager.LoadScene("restroom");
             }
         }
@@ -39,24 +39,5 @@ public class changeToRestroom : MonoBehaviour
     void OnTriggerExit2D(Collider2D other){
         if(other.tag == "Player")
             EnterInfo.SetActive(false);
-    }
-
-    private void PlayerStatusSave(){
-        // 持っているアイテムをセーブ
-        _playerFoodManager.UpdateSavedItemList();
-
-        // ステータスの上昇をセーブ
-        Player.HP += Player.HPincrement;
-        Player.HPincrement = 0;
-        Player.ATK += Player.ATKincrement;
-        Player.ATKincrement = 0;
-        Player.DEF += Player.DEFincrement;
-        Player.DEFincrement = 0;
-        Player.SPD += Player.SPDincrement;
-        Player.SPDincrement = 0;
-        Player.CRITRATE += Player.CRITDMGincrement;
-        Player.CRITRATEincrement = 0;
-        Player.CRITDMG += Player.CRITDMGincrement;
-        Player.CRITDMGincrement = 0;
     }
 }

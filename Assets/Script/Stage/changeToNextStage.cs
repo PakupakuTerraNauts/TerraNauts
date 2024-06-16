@@ -4,21 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class changeToStage2 : MonoBehaviour
+public class changeToNextStage : MonoBehaviour
 {
-    private SingletonStage singleton = SingletonStage.instance;
+    bool okey = false;
     public GameObject EnterInfo;
+
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.O)) // メニューシーンでE=左なのでEでなくてOを使用
+            okey = true;
+    }
 
     void OnTriggerStay2D(Collider2D other)
     {
-        bool okey = Input.GetKeyDown("o");
-        if (okey && !MenuChange.isMenuOpen){
-            MenuChange.LoadMenuScean(5);
-            //SceneManager.LoadScene("stage2");
-            if(singleton != null){
-                Destroy(singleton.gameObject);
-                singleton = null;
-            }
+        if (okey){
+            okey = false;
+            MenuChange.LoadMenuScean(5);    // 2ステージを作り終えるまでは終了ボタンに飛ばす
         }
     }
     

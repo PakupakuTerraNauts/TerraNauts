@@ -26,6 +26,9 @@ public class SingletonStage : MonoBehaviour
         }
     }
 
+/// <summary>
+/// ゲームオーバー時に呼ばれ 倒れている敵を復活させる
+/// </summary>
     public void RespawnDeadEnemy(){
         foreach(Transform t in enemies){
             Enemy enemy = t.GetComponent<Enemy>();
@@ -35,6 +38,9 @@ public class SingletonStage : MonoBehaviour
         }
     }
 
+/// <summary>
+/// セーブ時に呼ばれ 倒された敵はリストから削除する
+/// </summary>
     public void SaveDeadEnemy(){
         for (int i = enemies.Count - 1; i >= 0; i--){
             Transform t = enemies[i];

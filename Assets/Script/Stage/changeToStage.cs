@@ -14,8 +14,9 @@ public class changeToStage : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D other)
     {
-        bool ekey = Input.GetKey("e");
+        bool ekey = Input.GetKey(KeyCode.E);
         if (ekey){
+            // 現在のステージ数を取得し、restroom→stage の移動に使用
             string stage = "stage" + GameManager.instance.nowStage;
             SceneManager.LoadScene(stage);
         }

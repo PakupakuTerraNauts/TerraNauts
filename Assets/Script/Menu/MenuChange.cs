@@ -27,7 +27,7 @@ public class MenuChange : MonoBehaviour
     {
         isLoaded = !isLoaded;
         if (isLoaded)
-        {Debug.Log("open menu");
+        {
             Time.timeScale = 0;
             SceneManager.LoadScene("MenuScean", LoadSceneMode.Additive);
             isMenuOpen = true;
@@ -42,14 +42,10 @@ public class MenuChange : MonoBehaviour
             isMenuOpen = false;
             Time.timeScale = 1;
         }
-        Debug.Log(isLoaded);
     }
 
     private static void MenuSceneLoaded(Scene nextScene, LoadSceneMode mode)
     {
-        Debug.Log("OnSceneLoaded: " + nextScene.name);
-        Debug.Log(mode);
-
         // "Intaractable"オブジェクトをシーンから取得
         var _interactable = GameObject.Find("MainScean").GetComponent<Interactable>();
         if (_interactable != null)

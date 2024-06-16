@@ -74,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1440044947
-  m_SortingLayer: 1
-  m_SortingOrder: 3
+  m_SortingLayerID: 476255115
+  m_SortingLayer: 2
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 5060273ec2ca35e4c8bbfcb0545ee2f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -298,7 +298,7 @@ Transform:
   - {fileID: 8014816735860415709}
   - {fileID: 2448961188950974137}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7864426173593029205
 SpriteRenderer:
@@ -448,7 +448,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\u306B\u308F\u3053\u3051\u30D4\u30C3\u30C1\u30E3\u30FC"
-  DamagedSE: {fileID: 8300000, guid: 10b52968b6e839848984560232940584, type: 3}
   Tama: {fileID: 1957454184950911145}
   isLeft: 1
 --- !u!114 &2606537794512555276
@@ -557,7 +556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6323795074778429807
 Transform:
   m_ObjectHideFlags: 0
@@ -580,7 +579,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8298468777703252011}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

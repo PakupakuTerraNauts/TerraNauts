@@ -83,6 +83,9 @@ public class kakaokoumori : Enemy
     }
 
     protected override void dieAnimation(){
-        anim.Play("kakao_die");
+        if(isGround)
+            anim.Play("kakao_flydie");
+        else
+            anim.Play("kakao_die");
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 //アイテムをゲットした時に消す
 public class GetFood:MonoBehaviour
 {
+    #region // variables
     public string _objName;
     private float second = 0.0f;
     private bool blinked = false;
@@ -16,6 +17,8 @@ public class GetFood:MonoBehaviour
     public ItemDataBase _itemDataBase;
     private FoodSourceData _foodSourceData;
     public groundCheck ground;
+    public AudioClip dishSE;
+    #endregion
 
     void Start()
     {
@@ -70,6 +73,8 @@ public class GetFood:MonoBehaviour
     {
         if(collision.tag == "Player" || collision.tag == "DeadZone")
         {
+            if(_foodSourceData.itemType == ItemType.DISH && dishSE != null)
+                GameManager.instance.PlaySE(dishSE);
             Destroy(this.gameObject);
         }
     }

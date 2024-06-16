@@ -6,7 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-    public int nowStage = 1;
+    public int nowStage = 1;  // セーブ機能に使用
+
+    public float ninzinEXP = 80f;
 
     private AudioSource _audio = null;
     [HideInInspector] public float nowVolumeSE = 0.5f;
@@ -26,9 +28,9 @@ public class GameManager : MonoBehaviour
         _audio.volume = nowVolumeSE;
     }
 
-    ///<summary>
-    /// SEを鳴らす
-    ///</summary>
+///<summary>
+/// SEを鳴らす
+///</summary>
     public void PlaySE(AudioClip clip){
 
         if(_audio != null){
@@ -39,6 +41,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+/// <summary>
+/// SE音量を変更したとき VolumeSE から呼ぶ
+/// </summary>
+/// <param name="vol">音量</param>
     public void ChangeVolumeSE(float vol){
         _audio.volume = vol;
         nowVolumeSE = vol;

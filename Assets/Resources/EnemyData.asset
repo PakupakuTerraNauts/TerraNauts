@@ -70,7 +70,7 @@ MonoBehaviour:
   - Name: "\u304A\u3070\u3051\u304B\u307C\u3061\u3083"
     flor: 3
     maxHP: 250
-    gravity: 0
+    gravity: 0.5
     basicObject: {fileID: 3185009451249992532, guid: 7770417310d664a2e8f7dcccb0914241, type: 3}
     uniqueObject: {fileID: 1044133366195201680, guid: d9b6dd93164b0c4479d59894f072c28f, type: 3}
   - Name: "\u30B9\u30AB\u30A4\u30B9\u30E9\u30A4\u30E0"

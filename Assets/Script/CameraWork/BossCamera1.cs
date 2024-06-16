@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossCamera1 : MonoBehaviour
 {
+    #region // variables
     public Transform player;  // PlayerのTransform
     public Transform Entrance;  // ボス部屋のTransform
     public Transform Exit;  // 開く壁のTransform
@@ -17,9 +18,7 @@ public class BossCamera1 : MonoBehaviour
     private Vector3 targetPosition = new Vector3(0.0f, 0.0f, 0.0f);
 
     private int phase = 1;
-    private bool isBossRoom = false;
-
-    public Debidora debidora;
+    public bool isBossRoom = false;
 
     [SerializeField, Header("廊下からボス部屋を覗けないようにする")] private float entranceDoorLimit;
     [SerializeField, Header("ボス部屋でのカメラの中心点")] private float yHeightInBossRoom;
@@ -30,13 +29,12 @@ public class BossCamera1 : MonoBehaviour
 
     private float y;
     private float z;
+    #endregion
 
     void Start(){
         y = transform.position.y;
         z = transform.position.z;
     }
-
-    
 
     void Update()
     {
@@ -69,10 +67,9 @@ public class BossCamera1 : MonoBehaviour
         transform.position = new Vector3(targetX, y, player.position.z - 20f);
 
         // ボス部屋に近づいたらフェーズ2に移行
-        if (debidora.isEntered)
+        if (isBossRoom)
         {
             phase = 2;
-            isBossRoom = true;
         }
     }
 

@@ -321,7 +321,7 @@ MonoBehaviour:
   hallwaySpeed: 5
   bossRoomSpeed: 2
   fixedCameraDistance: 10
-  debidora: {fileID: 362808980}
+  isBossRoom: 0
   entranceDoorLimit: 8.5
   yHeightInBossRoom: 6
   startPosLeftLimit: -63
@@ -524,17 +524,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e034f3a5ab4675489a510a1110e2ca5, type: 3}
---- !u!114 &362808980 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5148395617855812467, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
-  m_PrefabInstance: {fileID: 1401369468}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06529c9e7f1f39146b0f0eec88436d1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &377946869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,7 +1576,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8e7a7a888995e40ad79b08246d720d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debidora: {fileID: 362808980}
+  onEnteredBossRoom:
+    m_PersistentCalls:
+      m_Calls: []
   entrance: {fileID: 391771899}
 --- !u!61 &1214862529
 BoxCollider2D:
@@ -2144,7 +2135,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1380237529}
     - target: {fileID: 5148395617855812467, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: bossCamera
+      value: 
+      objectReference: {fileID: 118631700}
+    - target: {fileID: 5148395617855812467, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
       propertyPath: enteredBossRoom
+      value: 
+      objectReference: {fileID: 1214862528}
+    - target: {fileID: 5148395617855812467, guid: 13689688851bfe441841cfc17dce54bc, type: 3}
+      propertyPath: HPCountUpTrigger
       value: 
       objectReference: {fileID: 1214862528}
     - target: {fileID: 5893539108592859972, guid: 13689688851bfe441841cfc17dce54bc, type: 3}

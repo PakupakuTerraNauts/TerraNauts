@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class chara_move : MonoBehaviour
 {
-     private float speed = 0.01f; //floatã¯å°æ•°ç‚¹
+     private float speed = 0.01f; //floa‚Í¬”“_
 
     void Update()
     {
@@ -10,7 +10,7 @@ public class chara_move : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            pos.x += speed;//å³ã«ç§»å‹•
+            pos.x += speed;//‰E‚ÉˆÚ“®
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
