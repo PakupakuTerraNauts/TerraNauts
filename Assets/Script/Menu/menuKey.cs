@@ -12,12 +12,7 @@ public class menuKey:MonoBehaviour
     public GameObject setting_button;
     public GameObject load_button;
     public GameObject exit_button;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    
 
     // Update is called once per frame
     void Update()

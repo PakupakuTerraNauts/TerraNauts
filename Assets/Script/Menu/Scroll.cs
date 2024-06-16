@@ -15,40 +15,40 @@ public class Scroll:MonoBehaviour
     }
     void Update()
     {
-        // ç¾åœ¨é¸æŠã•ã‚Œã¦ã„ã‚‹ UI è¦ç´ ã‚’EventSystemã‹ã‚‰å–å¾—
+        // Œ»İ‘I‘ğ‚³‚ê‚Ä‚¢‚é UI —v‘f‚ğEventSystem‚©‚çæ“¾
         GameObject selected = EventSystem.current.currentSelectedGameObject;
-        // å­˜åœ¨ã—ãªã„å ´åˆ
+        // ‘¶İ‚µ‚È‚¢ê‡
         if(selected == null)
         {
             return;
         }
-        // é¸æŠã—ãŸã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«é ˜åŸŸå†…ã«ãªã„å ´åˆ
+        // ‘I‘ğ‚µ‚½ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ªƒXƒNƒ[ƒ‹—Ìˆæ“à‚É‚È‚¢ê‡
         if(selected.transform.parent != contentPanel.transform)
         {
             return;
         }
-        // é¸æŠã—ãŸã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒæœ€å¾Œã®ãƒ•ãƒ¬ãƒ¼ãƒ ã¨åŒã˜ã‹ã©ã†ã‹
+        // ‘I‘ğ‚µ‚½ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ªÅŒã‚ÌƒtƒŒ[ƒ€‚Æ“¯‚¶‚©‚Ç‚¤‚©
         if(selected == lastSelected)
         {
             return;
         }
-        // é¸æŠã—ãŸã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å››è§’å½¢å¤‰æ›ã‚’å–å¾—
+        // ‘I‘ğ‚µ‚½ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ÌlŠpŒ`•ÏŠ·‚ğæ“¾
         selectedRectTransform = selected.GetComponent<RectTransform>();
-        // é¸æŠã—ãŸ UI è¦ç´ ã®ä½ç½®ã¯çµ¶å¯¾ã‚¢ãƒ³ã‚«ãƒ¼ä½ç½®ã§ã™ã€‚
-        // ã¤ã¾ã‚Šã€‚ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«å››è§’å½¢å†…ã®ãƒ­ãƒ¼ã‚«ãƒ«ä½ç½® + ãã®é«˜ã• (æ¬¡ã®å ´åˆ)
-        // ä¸‹ã«ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã—ã¾ã™ã€‚ä¸Šã«ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã—ã¦ã„ã‚‹å ´åˆã€ãã‚Œã¯å˜ãªã‚‹çµ¶å¯¾çš„ãªã‚¢ãƒ³ã‚«ãƒ¼ä½ç½®
+        // ‘I‘ğ‚µ‚½ UI —v‘f‚ÌˆÊ’u‚Íâ‘ÎƒAƒ“ƒJ[ˆÊ’u‚Å‚·B
+        // ‚Â‚Ü‚èBƒXƒNƒ[ƒ‹lŠpŒ`“à‚Ìƒ[ƒJƒ‹ˆÊ’u + ‚»‚Ì‚‚³ (Ÿ‚Ìê‡)
+        // ‰º‚ÉƒXƒNƒ[ƒ‹‚µ‚Ü‚·Bã‚ÉƒXƒNƒ[ƒ‹‚µ‚Ä‚¢‚éê‡A‚»‚ê‚Í’P‚È‚éâ‘Î“I‚ÈƒAƒ“ƒJ[ˆÊ’u
         float selectedPositionY = Mathf.Abs(selectedRectTransform.anchoredPosition.y) + selectedRectTransform.rect.height;
-        // ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ« ãƒ“ãƒ¥ãƒ¼ã®ä¸Šé™ã¯ã€ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã—ã¦ã„ã‚‹ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã®ã‚¢ãƒ³ã‚«ãƒ¼ä½ç½®
+        // ƒXƒNƒ[ƒ‹ ƒrƒ…[‚ÌãŒÀ‚ÍAƒXƒNƒ[ƒ‹‚µ‚Ä‚¢‚éƒRƒ“ƒeƒ“ƒc‚ÌƒAƒ“ƒJ[ˆÊ’u
         float scrollViewMinY = contentPanel.anchoredPosition.y;
-        // ä¸‹é™ã¯ã‚¢ãƒ³ã‚«ãƒ¼ä½ç½® + ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«å››è§’å½¢ã®é«˜ã•
+        // ‰ºŒÀ‚ÍƒAƒ“ƒJ[ˆÊ’u + ƒXƒNƒ[ƒ‹lŠpŒ`‚Ì‚‚³
         float scrollViewMaxY = contentPanel.anchoredPosition.y + scrollRectTransform.rect.height;
-        // é¸æŠã—ãŸä½ç½®ãŒã‚¹ã‚¯ãƒ­ãƒ¼ãƒ« ãƒ“ãƒ¥ãƒ¼ã®ç¾åœ¨ã®ä¸‹é™ã‚ˆã‚Šä¸‹ã«ã‚ã‚‹å ´åˆã¯ã€ä¸‹ã«ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«
+        // ‘I‘ğ‚µ‚½ˆÊ’u‚ªƒXƒNƒ[ƒ‹ ƒrƒ…[‚ÌŒ»İ‚Ì‰ºŒÀ‚æ‚è‰º‚É‚ ‚éê‡‚ÍA‰º‚ÉƒXƒNƒ[ƒ‹
         if(selectedPositionY > scrollViewMaxY)
         {
             float newY = selectedPositionY - scrollRectTransform.rect.height;
             contentPanel.anchoredPosition = new Vector2(contentPanel.anchoredPosition.x, newY);
         }
-        // é¸æŠã—ãŸä½ç½®ãŒã‚¹ã‚¯ãƒ­ãƒ¼ãƒ« ãƒ“ãƒ¥ãƒ¼ã®ç¾åœ¨ã®ä¸Šé™ã‚ˆã‚Šä¸Šã«ã‚ã‚‹å ´åˆã¯ã€ä¸Šã«ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«
+        // ‘I‘ğ‚µ‚½ˆÊ’u‚ªƒXƒNƒ[ƒ‹ ƒrƒ…[‚ÌŒ»İ‚ÌãŒÀ‚æ‚èã‚É‚ ‚éê‡‚ÍAã‚ÉƒXƒNƒ[ƒ‹
         else if(Mathf.Abs(selectedRectTransform.anchoredPosition.y) < scrollViewMinY)
         {
             contentPanel.anchoredPosition = new Vector2(contentPanel.anchoredPosition.x, Mathf.Abs(selectedRectTransform.anchoredPosition.y) - 50);

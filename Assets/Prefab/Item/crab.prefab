@@ -264,3 +264,5 @@ MonoBehaviour:
   _objName: crab
   _itemDataBase: {fileID: 11400000, guid: 0b37f3c9104f5421d8021c6705818be3, type: 2}
   ground: {fileID: 5084166593396809742}
+  foodSE: {fileID: 8300000, guid: 2622492592002fd4bacade4a6e04ad9c, type: 3}
+  dishSE: {fileID: 0}

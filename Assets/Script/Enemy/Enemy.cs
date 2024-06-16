@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 
     protected bool isDead = false;
 
+    //public AudioClip DamagedSE;
+
     protected GameObject basicObject;
     protected GameObject uniqueObject;
     protected GameObject HPObject;
@@ -108,8 +110,8 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
                 hp -= hp;
             }
             if(collision.tag == "NinzinExp"){
-                DecrementHP(ninzin.EXP);
-                hp = hp - ninzin.EXP;
+                DecrementHP(GameManager.instance.ninzinEXP);
+                hp = hp - GameManager.instance.ninzinEXP;
             }
 
             if(hp <= 0.0f){
@@ -126,6 +128,8 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 /// <param name="damage"></param>
     protected void DecrementHP(float damage){
         HPObject.SetActive(true);
+        Debug.Log("enemys HP set active true");
+        //GameManager.instance.PlaySE(DamagedSE);     // GMからダメージを受けた時のSEを鳴らす
         HP.UpdateHP(damage);
     }
 
@@ -151,7 +155,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
         }
         yield return new WaitForSeconds(3.0f);
         this.gameObject.SetActive(false);
-        //HPObject.SetActive(false);
+        HPObject.SetActive(false);
     }
 
     protected virtual void Initialize(){
@@ -169,7 +173,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     protected virtual void Moving(){
         // 基本anim.Play("デフォルアニメーション")
         // 基本rb.velocity = new Vector2(x, y)
-        // その他、固有の処理
+        // その他、固有の特殊処理
     }
 
     protected virtual void MovingF(){
@@ -193,7 +197,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     }
 
 /// <summary>
-/// 受け取った確率で事象が起こったかどうかを決定する
+/// 受け取った確率で事象が起こったかどうか決定する
 /// </summary>
 /// <param name="Persent">確率</param>
 /// <returns>事象が起こるか 結果</returns>

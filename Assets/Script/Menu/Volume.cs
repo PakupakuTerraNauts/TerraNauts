@@ -11,12 +11,11 @@ public class Volume:MonoBehaviour
     private AudioSource audioSource;
     private AudioSource audioSource_BOSS;
     private Slider BGMaudioSlider;
-    private GameObject BGM;
 
 
     private void Start()
     {
-        BGM = GameObject.Find("BGM");
+        GameObject BGM = GameObject.Find("BGM");
         audioSource = BGM.transform.GetChild(0).gameObject.GetComponent<AudioSource>();
         BGMaudioSlider = GameObject.Find("BGMVolume").GetComponent<Slider>();
 
@@ -31,8 +30,10 @@ public class Volume:MonoBehaviour
             return;
         }
     }
-
-    // MenuシーンのBGMスライダーが変化したときにスライダーから呼ばれる
+    
+/// <summary>
+/// MenuシーンのBGMスライダーが変化したときにスライダーから呼ばれる
+/// </summary>
     public void ChangeVolume()
     {
         audioSource.volume = BGMaudioSlider.value;

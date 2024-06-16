@@ -13,7 +13,10 @@ public class VolumeSE : MonoBehaviour
         SEaudioSlider.value = GameManager.instance.nowVolumeSE;
     }
 
+/// <summary>
+/// MenuシーンのSEスライダーが変化したときにスライダーから呼ばれる
+/// </summary>
     public void ChangeVolumeSE(){
-        GameManager.instance.ChangeVolumeSE(SEaudioSlider.value);
+        GameManager.instance.ChangeVolumeSE(SEaudioSlider.value);   // SEはすべてGMのオーディオを使用しているので変更しに行く
     }
 }

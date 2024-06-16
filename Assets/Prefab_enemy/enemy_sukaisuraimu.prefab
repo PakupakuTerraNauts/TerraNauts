@@ -191,7 +191,7 @@ Transform:
   - {fileID: 7211114719481132418}
   - {fileID: 6999552818900132199}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5149194949720785212
 SpriteRenderer:
@@ -353,7 +353,6 @@ MonoBehaviour:
   Name: "\u30B9\u30AB\u30A4\u30B9\u30E9\u30A4\u30E0"
   speed: 2
   Ninzin: {fileID: 1129944969117898727}
-  Sukaisuraimu: {fileID: 3209573373014703631}
 --- !u!114 &4126250054484642419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,7 +671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2926970703201982612
 Transform:
   m_ObjectHideFlags: 0
@@ -695,7 +694,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7093112641932892040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

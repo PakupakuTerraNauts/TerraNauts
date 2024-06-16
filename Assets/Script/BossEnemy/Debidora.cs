@@ -21,14 +21,16 @@ public class Debidora : MonoBehaviour
     
     private float ATK_player = 0.0f;
     public bool isEntered = false;
+    public EnteredBossRoom HPCountUpTrigger;
     [SerializeField] private ExitDoor exitDoor;
+    [SerializeField] private BossCamera1 bossCamera;
     [SerializeField] public HPBar HP;
     [SerializeField] public Canvas HP_canvas;
     [SerializeField] private BGMReset_BOSS BossBGM;
     [SerializeField] private AudioClip RoarClip;
-    #endregion
 
     private bossData Data;
+    #endregion
 
     void Awake(){
         var bossData = Resources.Load<BossData>("BossData");
@@ -48,6 +50,8 @@ public class Debidora : MonoBehaviour
         maxhp = Data.maxHP;
         nowhp = maxhp / 10.0f; // 登場時にカウントアップするため
         HP.SetHP(maxhp);
+
+        HPCountUpTrigger.onEnteredBossRoom.AddListener(BossHPCountUp);
     }
 
     // Update is called once per frame
@@ -220,6 +224,9 @@ public class Debidora : MonoBehaviour
     /// ボス登場時 HPバーを表示する  BossCamera1フェーズ2で呼ぶ
     ///</summary>
     public void BossHPCountUp(){
+        isEntered = true;
+        bossCamera.isBossRoom = true;
+
         BossBGM.StageBGM_Stop();
         
         HP_canvas.gameObject.SetActive(true);

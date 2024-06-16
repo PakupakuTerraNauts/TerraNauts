@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System;
 
 public class Pauser : MonoBehaviour {
-	static List<Pauser> targets = new List<Pauser>();	// ãƒãƒ¼ã‚ºå¯¾è±¡ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
+	static List<Pauser> targets = new List<Pauser>();	// ƒ|[ƒY‘ÎÛ‚ÌƒXƒNƒŠƒvƒg
 
-	// ãƒãƒ¼ã‚ºå¯¾è±¡ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+	// ƒ|[ƒY‘ÎÛ‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg
 	Behaviour[] pauseBehavs = null;
 
 	Rigidbody[] rgBodies = null;
@@ -17,25 +17,25 @@ public class Pauser : MonoBehaviour {
 	Vector2[] rg2dBodyVels = null;
 	float[] rg2dBodyAVels = null;
 
-	// åˆæœŸåŒ–
+	// ‰Šú‰»
 	void Start() {
-		// ãƒãƒ¼ã‚ºå¯¾è±¡ã«è¿½åŠ ã™ã‚‹
+		// ƒ|[ƒY‘ÎÛ‚É’Ç‰Á‚·‚é
 		targets.Add(this);
 	}
 
-	// ç ´æ£„ã•ã‚Œã‚‹ã¨ã
+	// ”jŠü‚³‚ê‚é‚Æ‚«
 	void OnDestory() {
-		// ãƒãƒ¼ã‚ºå¯¾è±¡ã‹ã‚‰é™¤å¤–ã™ã‚‹
+		// ƒ|[ƒY‘ÎÛ‚©‚çœŠO‚·‚é
 		targets.Remove(this);
 	}
 
-	// ãƒãƒ¼ã‚ºã•ã‚ŒãŸã¨ã
+	// ƒ|[ƒY‚³‚ê‚½‚Æ‚«
 	void OnPause() {
 		if ( pauseBehavs != null ) {
 			return;
 		}
 
-		// æœ‰åŠ¹ãªã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å–å¾—
+		// —LŒø‚ÈƒRƒ“ƒ|[ƒlƒ“ƒg‚ğæ“¾
 		pauseBehavs = Array.FindAll(GetComponentsInChildren<Behaviour>(), (obj) => { return obj.enabled; });
 		foreach ( var com in pauseBehavs ) {
 			com.enabled = false;
@@ -60,13 +60,13 @@ public class Pauser : MonoBehaviour {
 		}
 	}
 
-	// ãƒãƒ¼ã‚ºè§£é™¤ã•ã‚ŒãŸã¨ã
+	// ƒ|[ƒY‰ğœ‚³‚ê‚½‚Æ‚«
 	void OnResume() {
 		if ( pauseBehavs == null ) {
 			return;
 		}
 
-		// ãƒãƒ¼ã‚ºå‰ã®çŠ¶æ…‹ã«ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®æœ‰åŠ¹çŠ¶æ…‹ã‚’å¾©å…ƒ
+		// ƒ|[ƒY‘O‚Ìó‘Ô‚ÉƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì—LŒøó‘Ô‚ğ•œŒ³
 		foreach ( var com in pauseBehavs ) {
 			com.enabled = true;
 		}
@@ -94,14 +94,14 @@ public class Pauser : MonoBehaviour {
 		rg2dBodyAVels = null;
 	}
 
-	// ãƒãƒ¼ã‚º
+	// ƒ|[ƒY
 	public static void Pause() {
 		foreach ( var obj in targets ) {
 			obj.OnPause();
 		}
 	}
 
-	// ãƒãƒ¼ã‚ºè§£é™¤
+	// ƒ|[ƒY‰ğœ
 	public static void Resume() {
 		foreach ( var obj in targets ) {
 			obj.OnResume();

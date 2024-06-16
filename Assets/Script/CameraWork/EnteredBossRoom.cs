@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnteredBossRoom : MonoBehaviour
 {
-    public Debidora debidora;
+    public UnityEvent onEnteredBossRoom = new UnityEvent();
     public EntranceDoor entrance;
 
     private BoxCollider2D boxcol;
+    private bool isEntered = false;
 
     void Start(){
         boxcol = GetComponent<BoxCollider2D>();
@@ -16,15 +18,15 @@ public class EnteredBossRoom : MonoBehaviour
     // 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(!debidora.isEntered && collision.tag == "Player"){
+        if(!isEntered && collision.tag == "Player"){
+            isEntered = true;
             Debug.Log("入った");
 
             // BossCamera1のフェーズ２遷移フラグ
-            debidora.isEntered = true;
             entrance.CloseDoor();
 
             // １層ボスのHPバー操作
-            debidora.BossHPCountUp();
+            onEnteredBossRoom.Invoke(); // コールバック
             entrance.JudgeDestory();
             boxcol.enabled = false;
             

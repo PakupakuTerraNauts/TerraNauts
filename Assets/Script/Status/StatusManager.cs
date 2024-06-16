@@ -6,7 +6,8 @@ using UnityEngine.UI;
 //ステータス表示
 public class StatusManager:MonoBehaviour
 {
-
+    public PlayerFoodManager _playerFoodManager;
+    
     public GameObject HPObject;
     public GameObject ATKObject;
     public GameObject DEFObject;
@@ -48,5 +49,41 @@ public class StatusManager:MonoBehaviour
         string CRITDMG_S = CRITDMG.ToString("d");
         CRITDMGText.text = CRITDMG_S;
 
+    }
+
+/// <summary>
+/// ステータス上昇分をセーブ
+/// </summary>
+    public static void PlayerStatusSave(){
+        Player.HP += Player.HPincrement;
+        Player.HPincrement = 0;
+        Player.ATK += Player.ATKincrement;
+        Player.ATKincrement = 0;
+        Player.DEF += Player.DEFincrement;
+        Player.DEFincrement = 0;
+        Player.SPD += Player.SPDincrement;
+        Player.SPDincrement = 0;
+        Player.CRITRATE += Player.CRITDMGincrement;
+        Player.CRITRATEincrement = 0;
+        Player.CRITDMG += Player.CRITDMGincrement;
+        Player.CRITDMGincrement = 0;
+    }
+
+/// <summary>
+/// セーブしていないステータスをリセット
+/// </summary>
+    public static void PlayerStatusReset(){
+        Status.HP -= Player.HPincrement;
+        Status.ATK -= Player.ATKincrement;
+        Status.DEF -= Player.DEFincrement;
+        Status.SPD -= Player.SPDincrement;
+        Status.CRITRATE -= Player.CRITRATEincrement;
+        Status.CRITDMG -= Player.CRITDMGincrement;
+        Player.HPincrement = 0;
+        Player.ATKincrement = 0;
+        Player.DEFincrement = 0;
+        Player.SPDincrement = 0;
+        Player.CRITRATEincrement = 0;
+        Player.CRITDMGincrement = 0;
     }
 }

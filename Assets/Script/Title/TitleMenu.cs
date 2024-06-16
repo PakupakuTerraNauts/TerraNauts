@@ -12,6 +12,8 @@ public class TitleMenu:MonoBehaviour
     private GameObject firstSelect;
     Button button;
 
+    public PlayerFoodManager _playerFoodManager;
+
     GameObject selectObj;
     Text Text;
 
@@ -87,6 +89,14 @@ public class TitleMenu:MonoBehaviour
         switch(i)
         {
             case 0:
+                // 初期化
+                Player.InitializePlayerStatus();                        // プレイヤーのステータスをリセットする
+                Player.playerStartPos = new Vector2(-0.5f, 0.75f);      // プレイヤーを初期位置に移動
+                _playerFoodManager.ItemReset();                         // チュートリアルで取得したアイテムはリセット
+                if(SingletonStage.instance != null)
+                    Destroy(SingletonStage.instance.gameObject);
+
+                GameManager.instance.nowStage = 1;
                 SceneManager.LoadScene("stage1");
                 break;
             case 1:

@@ -9,7 +9,7 @@ public class changeToBoss : MonoBehaviour
  
     void OnTriggerStay2D(Collider2D other)
     {
-        bool ekey = Input.GetKey("e");
+        bool ekey = Input.GetKey(KeyCode.E);
         if (ekey){
             SceneManager.LoadScene("BossRoom1");
         }

@@ -38,6 +38,10 @@ public class GameOverMenu:MonoBehaviour
                 SetTextColor();
                 Text.color = Color.white;
                 break;
+            case "TitleButton":
+                SetTextColor();
+                Text.color = Color.white;
+                break;
             default:
                 break;
         }
@@ -53,7 +57,9 @@ public class GameOverMenu:MonoBehaviour
         GameObject ContinueButton = GameObject.Find("EndButton");
         Text1 = ContinueButton.transform.GetChild(0).GetComponent<Text>();
         Text1.color = Color.black;
-
+        GameObject TitleButton = GameObject.Find("TitleButton");
+        Text Text3 = TitleButton.transform.GetChild(0).GetComponent<Text>();
+        Text3.color = Color.black;
     }
 
     public void OnClickTitleButton(int i)
@@ -61,11 +67,16 @@ public class GameOverMenu:MonoBehaviour
         switch(i)
         {
             case 0:
-                // セーブしていないステータス上昇分はリセット
-                PlayerStatusReset();
-                SceneManager.LoadScene("stage1");
-                // 倒された状態をセーブされていない敵は復活する
-                SingletonStage.instance.RespawnDeadEnemy();
+                if(GameManager.instance.nowStage == 0)
+                    SceneManager.LoadScene("enemies");
+                else{
+                    // セーブしていないステータス上昇分はリセット
+                    StatusManager.PlayerStatusReset();
+                    string Stage = "stage" + GameManager.instance.nowStage;
+                    SceneManager.LoadScene(Stage);
+                    // 倒された状態をセーブされていない敵は復活する
+                    SingletonStage.instance.RespawnDeadEnemy();
+                }
                 break;
             case 1:
                 #if UNITY_EDITOR
@@ -74,21 +85,9 @@ public class GameOverMenu:MonoBehaviour
                 //ゲームプレイ終了
                 #endif
                 break;
+            case 2:
+                SceneManager.LoadScene("TitleScean");
+                break;
         }
-    }
-
-    private void PlayerStatusReset(){
-        Status.HP -= Player.HPincrement;
-        Status.ATK -= Player.ATKincrement;
-        Status.DEF -= Player.DEFincrement;
-        Status.SPD -= Player.SPDincrement;
-        Status.CRITRATE -= Player.CRITRATEincrement;
-        Status.CRITDMG -= Player.CRITDMGincrement;
-        Player.HPincrement = 0;
-        Player.ATKincrement = 0;
-        Player.DEFincrement = 0;
-        Player.SPDincrement = 0;
-        Player.CRITRATEincrement = 0;
-        Player.CRITDMGincrement = 0;
     }
 }

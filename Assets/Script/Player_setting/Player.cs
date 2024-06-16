@@ -93,6 +93,25 @@ public class Player : MonoBehaviour
         }
     }
 
+/// <summary>
+/// ステータスをリセット
+/// </summary>
+    public static void InitializePlayerStatus(){
+        HP = 100;
+        nowHP = 100;
+        HPincrement = 0;
+
+        ATK = 100;
+        ATKincrement = 0;
+        DEF = 0;
+        DEFincrement = 0;
+        SPD = 100;
+        SPDincrement = 0;
+        CRITRATE = 50;
+        CRITRATEincrement = 0;
+        CRITDMG = 50;
+        CRITDMGincrement = 0;
+    }
 
     private void Update(){
 
@@ -323,105 +342,92 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision){
 
         if(!isDamaged){
-            if(collision.collider.tag == "TutorialDamage"){
+            if(collision.collider.tag == "TutorialDamage")
                 isDamaged = true;
-            }
-            if(collision.collider.tag == "Enemy"){
+            if(collision.collider.tag == "Enemy")
                 DecrementHP(10);
-            }
-            if(collision.collider.tag == "Saboten"){
+            if(collision.collider.tag == "Saboten")
                 DecrementHP(80);
-            }
             
-            if(nowHP <= 0){
-                nowHP = 0;
-                anim.Play("neko_die");
-                isDown = true;
-                StartCoroutine(PlayerDie());
-            }
+            checkPlayerDie();
+        }
+    }
+
+    // 敵と接触しているときに継続ダメージ
+    private void OnCollisionStay2D(Collision2D collision){
+        if(!isDamaged){
+            if(collision.collider.tag == "Enemy")
+                DecrementHP(10);
+            checkPlayerDie();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(!isDamaged){
-            if(collision.tag == "TutorialDamage"){
+            if(collision.tag == "TutorialDamage")
                 isDamaged = true;
-            }
-            if(collision.tag == "Enemy"){
+            if(collision.tag == "Enemy")
                 DecrementHP(10);
-            }
-            if(collision.tag == "Sakebigoe" || collision.tag == "tama"){
-                DecrementHP(20);   // ダメージを喰らった時無敵時間にするためのフラグ
-            }
-            if(collision.tag == "Hoshi"){
+            if(collision.tag == "Sakebigoe" || collision.tag == "tama")
+                DecrementHP(20);
+            if(collision.tag == "Hoshi")
                 DecrementHP(40);
-            }
-            if(collision.tag == "Sumi"){
+            if(collision.tag == "Sumi")
                 DecrementHP(50);
-            }
-            if(collision.tag == "Tyubi" || collision.tag == "Kabotya"){
+            if(collision.tag == "Tyubi" || collision.tag == "Kabotya")
                 DecrementHP(60);
-            }
-            if(collision.tag == "Ninzin"){
+            if(collision.tag == "Ninzin")
                 DecrementHP(70);
-            }
-            if(collision.tag == "NinzinExp"){
-                DecrementHP(90);
-            }
-            if(collision.tag == "Turara" || collision.tag == "Debidora"){
+            if(collision.tag == "NinzinExp")
+                DecrementHP(GameManager.instance.ninzinEXP);
+            if(collision.tag == "Turara" || collision.tag == "Debidora")
                DecrementHP(130);
-            }
-            if(collision.tag == "Ivy"){
+            if(collision.tag == "Ivy")
                 DecrementHP(150);
-            }
-            if(collision.tag == "DebidoraFire"){
+            if(collision.tag == "DebidoraFire")
                 DecrementHP(180);
-            }
-            if(collision.tag == "DeadZone"){
+            if(collision.tag == "DeadZone")
                 DecrementHP(nowHP);
-            }
 
-            // 無敵時間の間は死んでも動けるかも.
-            if(nowHP <= 0){
-                nowHP = 0;
-                anim.Play("neko_die");
-                isDown = true;
-                StartCoroutine(PlayerDie());
-            }
+            checkPlayerDie();
         }
     }
 
     // 当たっている間 継続してダメージを受ける攻撃
     private void OnTriggerStay2D(Collider2D collision){
         if(!isDamaged){
-            if(collision.tag == "Sakebigoe"){
+            if(collision.tag == "Sakebigoe")
                 DecrementHP(20);
-            }
-            if(collision.tag == "Tyubi"){
+            if(collision.tag == "Tyubi")
                 DecrementHP(60);
-            }
-            if(collision.tag == "DebidoraFire"){
+            if(collision.tag == "DebidoraFire")
                 DecrementHP(80);
-            }
             
+            checkPlayerDie();
+        }
+    }
+
+/// <summary>
+/// ダメージを受けたとき，プレイヤーが倒れるかチェック
+/// </summary>
+    private void checkPlayerDie(){
             if(nowHP <= 0){
-                nowHP = 0;
+                nowHP = 0;  // マイナスにしない
                 anim.Play("neko_die");
                 isDown = true;
                 StartCoroutine(PlayerDie());
             }
-        }
     }
 
 ///<summary>
 /// decremant HP
 ///</summary>
-    private void DecrementHP(int damage){
-        if(damage - (DEF + DEFincrement) < 0){
+    private void DecrementHP(float damage){
+        if(damage - (DEF + DEFincrement) <= 0){
             nowHP--;        // 敵の攻撃力 < 防御力 のとき1ダメージ
         }
         else{
-            nowHP = nowHP - (damage - (DEF + DEFincrement));
+            nowHP = nowHP - ((int)damage - (DEF + DEFincrement));
         }
         isDamaged = true;
     }

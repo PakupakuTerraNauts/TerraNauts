@@ -174,3 +174,4 @@ MonoBehaviour:
   _objName: steamedRadish
   _itemDataBase: {fileID: 11400000, guid: 0b37f3c9104f5421d8021c6705818be3, type: 2}
   ground: {fileID: 0}
+  dishSE: {fileID: 8300000, guid: 7d0e11ed994893e41a7c7942a3bc2aca, type: 3}

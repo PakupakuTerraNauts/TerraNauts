@@ -810,6 +810,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: oyakodon
       objectReference: {fileID: 0}
+    - target: {fileID: 3484227602075378853, guid: 8c6e4042d228d4b9287298e32b273fdd, type: 3}
+      propertyPath: dishSE
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d0e11ed994893e41a7c7942a3bc2aca, type: 3}
     - target: {fileID: 3807999601566467106, guid: 8c6e4042d228d4b9287298e32b273fdd, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -66578,6 +66582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: steamedRadish
       objectReference: {fileID: 0}
+    - target: {fileID: 3484227602075378853, guid: 53c094a237f9d4b77870ba79f74fd02c, type: 3}
+      propertyPath: dishSE
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d0e11ed994893e41a7c7942a3bc2aca, type: 3}
     - target: {fileID: 3807999601566467106, guid: 53c094a237f9d4b77870ba79f74fd02c, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -72259,6 +72267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: salad
       objectReference: {fileID: 0}
+    - target: {fileID: 3484227602075378853, guid: fff32381645444649a91978bfb11bd98, type: 3}
+      propertyPath: dishSE
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d0e11ed994893e41a7c7942a3bc2aca, type: 3}
     - target: {fileID: 3807999601566467106, guid: fff32381645444649a91978bfb11bd98, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -74940,6 +74952,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: oden
       objectReference: {fileID: 0}
+    - target: {fileID: 3484227602075378853, guid: 54a86874cec7e4ba98793b3740cd189f, type: 3}
+      propertyPath: dishSE
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d0e11ed994893e41a7c7942a3bc2aca, type: 3}
     - target: {fileID: 3807999601566467106, guid: 54a86874cec7e4ba98793b3740cd189f, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -77440,10 +77456,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 3892134154838543567, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4457948176857028963, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
       propertyPath: HPObject
       value: 
@@ -77468,10 +77480,6 @@ PrefabInstance:
       propertyPath: _playerRecipeManager
       value: 
       objectReference: {fileID: 1876327028}
-    - target: {fileID: 7416488816508398780, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 7531280226514145607, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
       propertyPath: orthographic size
       value: 5
