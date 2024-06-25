@@ -186,7 +186,6 @@ MonoBehaviour:
   speed: 0.025
   waitingTime: 4
   Ready: 1
-  obake: {fileID: 8073656169074753406}
 --- !u!1 &1706279496188863338
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +391,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3015384408535077219}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.899998, y: -37.762, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -918,4 +917,3 @@ MonoBehaviour:
   speed: 0.025
   waitingTime: 4
   Ready: 1
-  obake: {fileID: 8073656169074753406}

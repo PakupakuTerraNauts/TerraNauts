@@ -2760,7 +2760,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b358be418f0024cb77a7848062f72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerFoodManager: {fileID: 1917210527}
   EnterInfo: {fileID: 942901608}
 --- !u!1 &950570615
 GameObject:
@@ -3994,7 +3993,6 @@ MonoBehaviour:
   speed: 0.025
   waitingTime: 4
   Ready: 1
-  obake: {fileID: 1804269252}
 --- !u!50 &1171642103
 Rigidbody2D:
   serializedVersion: 4
@@ -54719,17 +54717,6 @@ PrefabInstance:
       addedObject: {fileID: 2066652733}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d460cc8be0e8b446a007a8df4cf23f0, type: 3}
---- !u!114 &1804269252 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8073656169074753406, guid: 3d460cc8be0e8b446a007a8df4cf23f0, type: 3}
-  m_PrefabInstance: {fileID: 1804269251}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f594d8f92a1b81e48829178ecddcf272, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1804269253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5096509702909943781, guid: 3d460cc8be0e8b446a007a8df4cf23f0, type: 3}
@@ -54868,17 +54855,6 @@ PrefabInstance:
       addedObject: {fileID: 1941165030}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d460cc8be0e8b446a007a8df4cf23f0, type: 3}
---- !u!114 &1855454206 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8073656169074753406, guid: 3d460cc8be0e8b446a007a8df4cf23f0, type: 3}
-  m_PrefabInstance: {fileID: 1855454205}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f594d8f92a1b81e48829178ecddcf272, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1855454207 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5096509702909943781, guid: 3d460cc8be0e8b446a007a8df4cf23f0, type: 3}
@@ -54971,7 +54947,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b358be418f0024cb77a7848062f72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerFoodManager: {fileID: 1917210527}
   EnterInfo: {fileID: 1905790419}
 --- !u!1001 &1917210525
 PrefabInstance:
@@ -55153,7 +55128,6 @@ MonoBehaviour:
   speed: 0.025
   waitingTime: 4
   Ready: 1
-  obake: {fileID: 1855454206}
 --- !u!50 &1941165026
 Rigidbody2D:
   serializedVersion: 4
@@ -55545,7 +55519,6 @@ MonoBehaviour:
   speed: 0.025
   waitingTime: 4
   Ready: 1
-  obake: {fileID: 1804269252}
 --- !u!50 &2066652729
 Rigidbody2D:
   serializedVersion: 4
@@ -55787,7 +55760,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b358be418f0024cb77a7848062f72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerFoodManager: {fileID: 1917210527}
   EnterInfo: {fileID: 2085937748}
 --- !u!1001 &2086644545
 PrefabInstance:
@@ -56939,6 +56911,10 @@ PrefabInstance:
     - target: {fileID: 4708094705165566395, guid: 69e965857035594438b3d04145a5d2f0, type: 3}
       propertyPath: m_Name
       value: enemy_nakabayashi
+      objectReference: {fileID: 0}
+    - target: {fileID: 6194895392408427329, guid: 69e965857035594438b3d04145a5d2f0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6213836546838096820, guid: 69e965857035594438b3d04145a5d2f0, type: 3}
       propertyPath: m_LocalPosition.x

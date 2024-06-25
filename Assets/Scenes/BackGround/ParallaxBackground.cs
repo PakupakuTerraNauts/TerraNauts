@@ -94,7 +94,7 @@ public class ParallaxBackground : MonoBehaviour
 
 //前にスクロールが呼ばれた時のプレイヤーの位置。
 //休憩所⇔ステージ の移動で値を保持しておくためにstatic
-	static Vector3 previousPlayerPosition = Vector3.zero;
+	static Vector3 previousPlayerPosition = Player.playerStartPos;
 
 //一時的に使用。
 	Canvas parallaxBackgroundCanvas;
@@ -185,7 +185,7 @@ public class ParallaxBackground : MonoBehaviour
 			scrollVelocities[i] = Vector2.zero;
 		}
 
-		previousPlayerPosition = Vector3.zero;
+		previousPlayerPosition = Player.playerStartPos;
 
 		if (scroll != null) {
 			StopCoroutine(scroll);
