@@ -46,7 +46,7 @@ public class Debidora : MonoBehaviour
         _animator.SetBool("IsWaiting", true);
 
         //HP = GetComponent<HPBar>();
-        ATK_player = Player.ATK;
+        ATK_player = StatusManager.ATK;
         maxhp = Data.maxHP;
         nowhp = maxhp / 10.0f; // 登場時にカウントアップするため
         HP.SetHP(maxhp);

@@ -75,27 +75,27 @@ public class PushRecipeButton:MonoBehaviour
             switch(statusTypes[i])
             {
                 case "HP":
-                    _cloneText2.text = Status.HP.ToString("d");
+                    _cloneText2.text = StatusManager.HP.ToString("d");
                     _cloneText3.text = "+" + statusCount.ToString("d");
                     break;
                 case "ATK":
-                    _cloneText2.text = Status.ATK.ToString("d");
+                    _cloneText2.text = StatusManager.ATK.ToString("d");
                     _cloneText3.text = "+" + statusCount.ToString("d");
                     break;
                 case "DEF":
-                    _cloneText2.text = Status.DEF.ToString("d");
+                    _cloneText2.text = StatusManager.DEF.ToString("d");
                     _cloneText3.text = "+" + statusCount.ToString("d");
                     break;
                 case "SPD":
-                    _cloneText2.text = Status.SPD.ToString("d");
+                    _cloneText2.text = StatusManager.SPD.ToString("d");
                     _cloneText3.text = "+" + statusCount.ToString("d");
                     break;
                 case "CRITRATE":
-                    _cloneText2.text = Status.CRITRATE.ToString("d");
+                    _cloneText2.text = StatusManager.CRITRATE.ToString("d");
                     _cloneText3.text = "+" + statusCount.ToString("d");
                     break;
                 case "CRITDMG":
-                    _cloneText2.text = Status.CRITDMG.ToString("d");
+                    _cloneText2.text = StatusManager.CRITDMG.ToString("d");
                     _cloneText3.text = "+" + statusCount.ToString("d");
                     break;
             }

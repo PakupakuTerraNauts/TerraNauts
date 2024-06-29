@@ -18,24 +18,6 @@ public class Player : MonoBehaviour
     public static Vector2 playerStartPos;
 
     public AudioClip NormalAttackSE;
-    
-        #region // status
-        public static int HP = 100;
-        public static int nowHP = 100;
-        public static int HPincrement = 0;
-
-        public static int ATK = 100;
-        public static int ATKincrement = 0;
-        public static int DEF = 0;
-        public static int DEFincrement = 0;
-        public static int SPD = 100;
-        public static int SPDincrement = 0;
-        // ↓ Enemy.cs内で使用している
-        public static int CRITRATE = 50;
-        public static int CRITRATEincrement = 0;
-        public static int CRITDMG = 50;
-        public static int CRITDMGincrement = 0;
-        #endregion
 
     public float attackCooltime;
     private float jumpPos = 0.0f;
@@ -93,28 +75,8 @@ public class Player : MonoBehaviour
         }
     }
 
-/// <summary>
-/// ステータスをリセット
-/// </summary>
-    public static void InitializePlayerStatus(){
-        HP = 100;
-        nowHP = 100;
-        HPincrement = 0;
-
-        ATK = 100;
-        ATKincrement = 0;
-        DEF = 0;
-        DEFincrement = 0;
-        SPD = 100;
-        SPDincrement = 0;
-        CRITRATE = 50;
-        CRITRATEincrement = 0;
-        CRITDMG = 50;
-        CRITDMGincrement = 0;
-    }
-
     private void Update(){
-
+        
         if(!isDown){
             
             // プレイヤーの方向を向く敵 等が参照する
@@ -279,7 +241,7 @@ public class Player : MonoBehaviour
     private float GetXSpeed(){
         float horizontalKey = Input.GetAxis("Horizontal");
         float xSpeed = 0.0f;
-        float speed = 5.0f + (float)((SPD + SPDincrement) / 50);
+        float speed = 5.0f + (float)(StatusManager.SPD / 50);
         bool dKey = Input.GetKey("d");
         bool rightKey = Input.GetKey("right");
         bool aKey = Input.GetKey("a");
@@ -325,7 +287,6 @@ public class Player : MonoBehaviour
 
         return false;
     }
-
 
     public void ContinuePlayer(){
         isDown = false;
@@ -387,7 +348,7 @@ public class Player : MonoBehaviour
             if(collision.tag == "DebidoraFire")
                 DecrementHP(180);
             if(collision.tag == "DeadZone")
-                DecrementHP(nowHP);
+                DecrementHP(StatusManager.nowHP);
 
             checkPlayerDie();
         }
@@ -411,8 +372,8 @@ public class Player : MonoBehaviour
 /// ダメージを受けたとき，プレイヤーが倒れるかチェック
 /// </summary>
     private void checkPlayerDie(){
-            if(nowHP <= 0){
-                nowHP = 0;  // マイナスにしない
+            if(StatusManager.nowHP <= 0){
+                StatusManager.nowHP = 0;  // マイナスにしない
                 anim.Play("neko_die");
                 isDown = true;
                 StartCoroutine(PlayerDie());
@@ -423,11 +384,11 @@ public class Player : MonoBehaviour
 /// decremant HP
 ///</summary>
     private void DecrementHP(float damage){
-        if(damage - (DEF + DEFincrement) <= 0){
-            nowHP--;        // 敵の攻撃力 < 防御力 のとき1ダメージ
+        if(damage - StatusManager.DEF <= 0){
+            StatusManager.nowHP--;        // 敵の攻撃力 < 防御力 のとき1ダメージ
         }
         else{
-            nowHP = nowHP - ((int)damage - (DEF + DEFincrement));
+            StatusManager.nowHP = StatusManager.nowHP - ((int)damage - StatusManager.DEF);
         }
         isDamaged = true;
     }
@@ -465,9 +426,10 @@ public class Player : MonoBehaviour
         _playerFoodManager.ApplySavedItemList();
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("GameOver");
-        nowHP = HP;
+        StatusManager.nowHP = StatusManager.HP;
         yield break;
     }
+
 ///<summary>
 /// player rastrained
 ///</summary>
@@ -479,31 +441,4 @@ public class Player : MonoBehaviour
         isRestrained = false;
     }
 
-///<summary>
-/// status level up
-///</summary>
-    public static void HPincrease(int HPplus){
-        HPincrement += HPplus;
-        Debug.Log("HP level up!! + " + HPplus);
-    }
-    public static void ATKincrease(int ATKplus){
-        ATKincrement += ATKplus;
-        Debug.Log("Attack level up!! + " + ATKplus);
-    }
-    public static void DEFincrease(int DEFplus){
-        DEFincrement += DEFplus;
-        Debug.Log("Defence level up!! + " + DEFplus);
-    }
-    public static void SPDincrease(int SPDplus){
-        SPDincrement += SPDplus;
-        Debug.Log("Speed level up!! + " + SPDplus);
-    }
-    public static void CRITRATEincrease(int CRplus){
-        CRITRATEincrement += CRplus;
-        Debug.Log("CriticalRate level up!! + " + CRplus);
-    }
-    public static void CRITDMGincrease(int CDplus){
-        CRITDMGincrement += CDplus;
-        Debug.Log("CriticalDamage level up!! + " + CDplus);
-    }
 }

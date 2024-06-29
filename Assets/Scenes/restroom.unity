@@ -906,6 +906,10 @@ PrefabInstance:
       propertyPath: m_SleepingMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 668411892918089995, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
+      propertyPath: HPObject
+      value: 
+      objectReference: {fileID: 1786687049}
     - target: {fileID: 2879555459971201280, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
       propertyPath: speed
       value: 6

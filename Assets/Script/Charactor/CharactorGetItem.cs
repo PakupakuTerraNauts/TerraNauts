@@ -13,7 +13,6 @@ public class CharactorGetItem:MonoBehaviour
     public GameObject meatObject;
     public GameObject waterObject;
     public GameObject grassObject;
-    public GameObject HPObject;
 
     private CapsuleCollider2D capcol = null;
 
@@ -38,8 +37,6 @@ public class CharactorGetItem:MonoBehaviour
         SetText("meat", meatObject);
         SetText("water", waterObject);
         SetText("grass", grassObject);
-        SetHPText();
-        SetHpBar();
     }
 
     //アイテムと衝突
@@ -70,23 +67,4 @@ public class CharactorGetItem:MonoBehaviour
         _text.text = _textS;
     }
 
-    //HPテキストを表示
-    public void SetHPText()
-    {
-        Text hptext = HPObject.GetComponent<Text>();
-        int HP = Player.HP + Player.HPincrement;
-        string maxHP = HP.ToString();
-        string nowHP = Player.nowHP.ToString();
-        hptext.text = nowHP + "/" + maxHP;
-    }
-
-    //HPバーを表示
-    public void SetHpBar()
-    {
-        GameObject _HPSlider = GameObject.Find("HPSlider");
-        Slider HPSlider_S = _HPSlider.GetComponent<Slider>();
-        int HP = Player.HP + Player.HPincrement;
-        HPSlider_S.maxValue = HP;
-        HPSlider_S.value = Player.nowHP;
-    }
 }

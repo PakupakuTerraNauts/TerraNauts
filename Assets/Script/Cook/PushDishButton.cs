@@ -157,17 +157,17 @@ public class PushDishButton:MonoBehaviour
 
     public void StatusRe()
     {
-        _HP_plusF_text.text = Status.HP.ToString("d");
+        _HP_plusF_text.text = StatusManager.HP.ToString("d");
         _HP_plus_text.text = "";
-        _ATK_plusF_text.text = Status.ATK.ToString("d");
+        _ATK_plusF_text.text = StatusManager.ATK.ToString("d");
         _ATK_plus_text.text = "";
-        _DEF_plusF_text.text = Status.DEF.ToString("d");
+        _DEF_plusF_text.text = StatusManager.DEF.ToString("d");
         _DEF_plus_text.text = "";
-        _SPD_plusF_text.text = Status.SPD.ToString("d");
+        _SPD_plusF_text.text = StatusManager.SPD.ToString("d");
         _SPD_plus_text.text = "";
-        _CRATE_plusF_text.text = Status.CRITRATE.ToString("d");
+        _CRATE_plusF_text.text = StatusManager.CRITRATE.ToString("d");
         _CRATE_plus_text.text = "";
-        _CDMG_plusF_text.text = Status.CRITDMG.ToString("d");
+        _CDMG_plusF_text.text = StatusManager.CRITDMG.ToString("d");
         _CDMG_plus_text.text = "";
     }
 

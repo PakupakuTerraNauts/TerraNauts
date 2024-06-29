@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 420341895002523061}
   - component: {fileID: 2879555459971201280}
   - component: {fileID: 4457948176857028963}
+  - component: {fileID: 668411892918089995}
   m_Layer: 3
   m_Name: neko-default
   m_TagString: Player
@@ -325,6 +326,18 @@ MonoBehaviour:
   meatObject: {fileID: 0}
   waterObject: {fileID: 0}
   grassObject: {fileID: 0}
+--- !u!114 &668411892918089995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3136481711131276926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa8b052c72f524d47bbec8a3f5cf9930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   HPObject: {fileID: 0}
 --- !u!1 &3815003573297691649
 GameObject:

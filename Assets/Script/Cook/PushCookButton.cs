@@ -121,34 +121,29 @@ public class PushCookButton:MonoBehaviour
                     switch(statusTypes[i])
                     {
                         case "HP":
-                            Status.HP += statusCount;
-                            Player.HPincrease(statusCount);
+                            StatusManager.HPincrease(statusCount);
                             break;
                         case "ATK":
-                            Status.ATK += statusCount;
-                            Player.ATKincrease(statusCount);
+                            StatusManager.ATKincrease(statusCount);
                             break;
                         case "DEF":
-                            Status.DEF += statusCount;
-                            Player.DEFincrease(statusCount);
+                            StatusManager.DEFincrease(statusCount);
                             break;
                         case "SPD":
-                            Status.SPD += statusCount;
-                            Player.SPDincrease(statusCount);
+                            StatusManager.SPDincrease(statusCount);
                             break;
                         case "CRITRATE":
-                            Status.CRITRATE += statusCount;
-                            Player.CRITRATEincrease(statusCount);
+                            StatusManager.CRITRATEincrease(statusCount);
                             break;
                         case "CRITDMG":
-                            Status.CRITDMG += statusCount;
-                            Player.CRITDMGincrease(statusCount);
+                            StatusManager.CRITDMGincrease(statusCount);
                             break;
                     }
                 }
 
                 Debug.Log("óøóùäÆóπ");
-                Player.nowHP = Player.HP + Player.HPincrement;
+                //HP ÇâÒïú
+                StatusManager.nowHP = StatusManager.HP;
             }
 
             ChangeText();
@@ -222,17 +217,17 @@ public class PushCookButton:MonoBehaviour
 
     public void StatusRe()
     {
-        _HP_plusF_text.text = Status.HP.ToString("d");
+        _HP_plusF_text.text = StatusManager.HP.ToString("d");
         _HP_plus_text.text = "";
-        _ATK_plusF_text.text = Status.ATK.ToString("d");
+        _ATK_plusF_text.text = StatusManager.ATK.ToString("d");
         _ATK_plus_text.text = "";
-        _DEF_plusF_text.text = Status.DEF.ToString("d");
+        _DEF_plusF_text.text = StatusManager.DEF.ToString("d");
         _DEF_plus_text.text = "";
-        _SPD_plusF_text.text = Status.SPD.ToString("d");
+        _SPD_plusF_text.text = StatusManager.SPD.ToString("d");
         _SPD_plus_text.text = "";
-        _CRATE_plusF_text.text = Status.CRITRATE.ToString("d");
+        _CRATE_plusF_text.text = StatusManager.CRITRATE.ToString("d");
         _CRATE_plus_text.text = "";
-        _CDMG_plusF_text.text = Status.CRITDMG.ToString("d");
+        _CDMG_plusF_text.text = StatusManager.CRITDMG.ToString("d");
         _CDMG_plus_text.text = "";
     }
 }

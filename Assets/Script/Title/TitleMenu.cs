@@ -90,7 +90,7 @@ public class TitleMenu:MonoBehaviour
         {
             case 0:
                 // 初期化
-                Player.InitializePlayerStatus();                        // プレイヤーのステータスをリセットする
+                StatusManager.InitializePlayerStatus();                        // プレイヤーのステータスをリセットする
                 Player.playerStartPos = new Vector2(-0.5f, 0.75f);      // プレイヤーを初期位置に移動
                 _playerFoodManager.ItemReset();                         // チュートリアルで取得したアイテムはリセット
                 if(SingletonStage.instance != null)

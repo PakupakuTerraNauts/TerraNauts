@@ -21,7 +21,7 @@ public class tree : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
 
-        ATK_player = Player.ATK;
+        ATK_player = StatusManager.ATK;
     }
 
     void Update(){

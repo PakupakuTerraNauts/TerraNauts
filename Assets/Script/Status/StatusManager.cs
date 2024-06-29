@@ -8,19 +8,30 @@ public class StatusManager:MonoBehaviour
 {
     public PlayerFoodManager _playerFoodManager;
     
+        #region // status
+        public static int HP = 100;
+        public static int nowHP = 100;
+        public static int HPincrement = 0;
+
+        public static int ATK = 100;
+        public static int ATKincrement = 0;
+        public static int DEF = 0;
+        public static int DEFincrement = 0;
+        public static int SPD = 100;
+        public static int SPDincrement = 0;
+        // ↓ Enemy.cs内で使用している
+        public static int CRITRATE = 50;
+        public static int CRITRATEincrement = 0;
+        public static int CRITDMG = 50;
+        public static int CRITDMGincrement = 0;
+        #endregion
+
     public GameObject HPObject;
     public GameObject ATKObject;
     public GameObject DEFObject;
     public GameObject SPDObject;
     public GameObject CRITRATEObject;
     public GameObject CRITDMGObject;
-
-    private int HP = Player.HP + Player.HPincrement;
-    private int ATK = Player.ATK + Player.ATKincrement;
-    private int DEF = Player.DEF + Player.DEFincrement;
-    private int SPD = Player.SPD + Player.SPDincrement;
-    private int CRITRATE = Player.CRITRATE + Player.CRITRATEincrement;
-    private int CRITDMG = Player.CRITDMG + Player.CRITDMGincrement;
 
     // Update is called once per frame
     void Update()
@@ -55,35 +66,94 @@ public class StatusManager:MonoBehaviour
 /// ステータス上昇分をセーブ
 /// </summary>
     public static void PlayerStatusSave(){
-        Player.HP += Player.HPincrement;
-        Player.HPincrement = 0;
-        Player.ATK += Player.ATKincrement;
-        Player.ATKincrement = 0;
-        Player.DEF += Player.DEFincrement;
-        Player.DEFincrement = 0;
-        Player.SPD += Player.SPDincrement;
-        Player.SPDincrement = 0;
-        Player.CRITRATE += Player.CRITDMGincrement;
-        Player.CRITRATEincrement = 0;
-        Player.CRITDMG += Player.CRITDMGincrement;
-        Player.CRITDMGincrement = 0;
+        HPincrement = 0;
+        ATKincrement = 0;
+        DEFincrement = 0;
+        SPDincrement = 0;
+        CRITRATEincrement = 0;
+        CRITDMGincrement = 0;
     }
 
 /// <summary>
 /// セーブしていないステータスをリセット
 /// </summary>
     public static void PlayerStatusReset(){
-        Status.HP -= Player.HPincrement;
-        Status.ATK -= Player.ATKincrement;
-        Status.DEF -= Player.DEFincrement;
-        Status.SPD -= Player.SPDincrement;
-        Status.CRITRATE -= Player.CRITRATEincrement;
-        Status.CRITDMG -= Player.CRITDMGincrement;
-        Player.HPincrement = 0;
-        Player.ATKincrement = 0;
-        Player.DEFincrement = 0;
-        Player.SPDincrement = 0;
-        Player.CRITRATEincrement = 0;
-        Player.CRITDMGincrement = 0;
+        HP -= HPincrement;
+        ATK -= ATKincrement;
+        DEF -= DEFincrement;
+        SPD -= SPDincrement;
+        CRITRATE -= CRITRATEincrement;
+        CRITDMG -= CRITDMGincrement;
+        
+        PlayerStatusSave();
+    }
+
+/// <summary>
+/// ステータスを初期化
+/// </summary>
+    public static void InitializePlayerStatus(){
+        HP = 100;
+        nowHP = 100;
+        HPincrement = 0;
+
+        ATK = 100;
+        ATKincrement = 0;
+        DEF = 0;
+        DEFincrement = 0;
+        SPD = 100;
+        SPDincrement = 0;
+        CRITRATE = 50;
+        CRITRATEincrement = 0;
+        CRITDMG = 50;
+        CRITDMGincrement = 0;
+    }
+
+///<summary>
+/// HP レベルアップ
+///</summary>
+    public static void HPincrease(int HPplus){
+        HP += HPplus;       // 最大値アップ
+        HPincrement += HPplus;
+        Debug.Log("HP level up!! + " + HPplus);
+    }
+///<summary>
+/// ATK レベルアップ
+///</summary>
+    public static void ATKincrease(int ATKplus){
+        ATK += ATKplus;
+        ATKincrement += ATKplus;
+        Debug.Log("Attack level up!! + " + ATKplus);
+    }
+///<summary>
+/// DEF レベルアップ
+///</summary>
+    public static void DEFincrease(int DEFplus){
+        DEF += DEFplus;
+        DEFincrement += DEFplus;
+        Debug.Log("Defence level up!! + " + DEFplus);
+    }
+///<summary>
+/// SPD レベルアップ
+///</summary>
+    public static void SPDincrease(int SPDplus){
+        SPD += SPDplus;
+        SPDincrement += SPDplus;
+        Debug.Log("Speed level up!! + " + SPDplus);
+    }
+///<summary>
+/// CRITRATE レベルアップ
+///</summary>
+    public static void CRITRATEincrease(int CRplus){
+        CRITRATE += CRplus;
+        CRITRATEincrement += CRplus;
+        Debug.Log("CriticalRate level up!! + " + CRplus);
+    }
+///<summary>
+/// CRITDMG レベルアップ
+///</summary>
+    public static void CRITDMGincrease(int CDplus){
+        CRITDMG += CDplus;
+        CRITDMGincrement += CDplus;
+        Debug.Log("CriticalDamage level up!! + " + CDplus);
     }
 }
