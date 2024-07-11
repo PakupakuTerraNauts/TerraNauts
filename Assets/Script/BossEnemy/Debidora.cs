@@ -19,7 +19,6 @@ public class Debidora : MonoBehaviour
     //private bool isNoHP = true;
     private Vector3 nowPosition;
     
-    private float ATK_player = 0.0f;
     public bool isEntered = false;
     public EnteredBossRoom HPCountUpTrigger;
     [SerializeField] private ExitDoor exitDoor;
@@ -46,7 +45,6 @@ public class Debidora : MonoBehaviour
         _animator.SetBool("IsWaiting", true);
 
         //HP = GetComponent<HPBar>();
-        ATK_player = StatusManager.ATK;
         maxhp = Data.maxHP;
         nowhp = maxhp / 10.0f; // 登場時にカウントアップするため
         HP.SetHP(maxhp);
@@ -215,9 +213,17 @@ public class Debidora : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == "Sword" && !isDead){
-            HP.UpdateHP(ATK_player);
-            nowhp = nowhp - ATK_player;
+            int atk = GameManager.instance.CalculateDamage(onCriticalEffect);
+            HP.UpdateHP(atk);
+            nowhp = nowhp - atk;
         }
+    }
+
+/// <summary>
+/// クリティカルエフェクト表示
+/// </summary>
+    public void onCriticalEffect(){
+        //critEffectPool;
     }
 
     ///<summary>

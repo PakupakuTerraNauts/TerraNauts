@@ -109,7 +109,7 @@ Transform:
   m_Children:
   - {fileID: 3848336786678593081}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8224028981682298234
 SpriteRenderer:
@@ -220,9 +220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a07eada72378d4bbf5478a7ad4c42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3136481711131276926, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
-  _playerFoodManager: {fileID: 7557163237129372500, guid: 186abd328bc5942a4a0b2e93c8cc1820, type: 3}
   EnterInfo: {fileID: 8375202185854483593}
+  _playerFoodManager: {fileID: 7557163237129372500, guid: 186abd328bc5942a4a0b2e93c8cc1820, type: 3}
+  _statusChange: {fileID: 4420871922622735839, guid: 7717879c7b818d74aa0807c7a9d63fac, type: 3}
 --- !u!1 &5970246581985850915
 GameObject:
   m_ObjectHideFlags: 0

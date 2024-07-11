@@ -26,6 +26,7 @@ TagManager:
   - TutorialDamage
   - Debidora
   - Ivy
+  - menu
   layers:
   - Default
   - TransparentFX
@@ -80,4 +81,7 @@ TagManager:
     locked: 0
   - name: HPBar
     uniqueID: 2661586203
+    locked: 0
+  - name: UI
+    uniqueID: 1985455243
     locked: 0

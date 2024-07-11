@@ -14,6 +14,7 @@ public class kabotya : MonoBehaviour
     private SpriteRenderer sr = null;
     private Rigidbody2D rb = null;
 
+    private Vector3 targetPosition;
     private Vector3 defaultPos;
     public delegate void ThrowKabotya();
     private ThrowKabotya ThrowKabotyaCallBack;
@@ -103,8 +104,8 @@ public class kabotya : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);  // おばけのアニメーションが入ってからかぼちゃを動かすため.
 
-        transform.position = Vector3.MoveTowards(transform.position, Player.playerPos.position, speed); // Player.playerPosX → static なPlayerの位置
-        if(Vector3.Distance(transform.position, Player.playerPos.position) < 1.0f){
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed); // Player.playerPosX → static なPlayerの位置
+        if(Vector3.Distance(transform.position, targetPosition) < 1.0f){
             ChangeState(State.Invalid);
         }
     }
@@ -131,5 +132,20 @@ public class kabotya : MonoBehaviour
 /// </summary>
     public void ObakeDead(){
         isDead = true;
+    }
+
+/// <summary>
+/// 攻撃を中止 向きを反転したとき等
+/// </summary>
+    public void AttackCancel(){
+        ChangeState(State.Invalid);
+    }
+
+/// <summary>
+/// カボチャのターゲットにプレイヤーの位置を設定する
+/// </summary>
+/// <param name="playerPosition"></param>
+    public void setTargetPosition(Transform playerPosition){
+        targetPosition = playerPosition.position;
     }
 }

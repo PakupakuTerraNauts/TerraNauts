@@ -10,6 +10,8 @@ public class sukaisuraimu : Enemy
 
     private bool isFall = false;
 
+    [SerializeField]
+    private Player _player;
     [Header ("‚É‚ñ‚¶‚ñ")] public ninzin Ninzin;
     private enum State{
         Wait,
@@ -71,7 +73,8 @@ public class sukaisuraimu : Enemy
         // lQ‚ÉˆÊ’u‚ğ“n‚µ‚Ä’Ç]‚³‚¹‚é
         Ninzin.Reload(this.transform.position);
 
-        if(Player.playerPos.position.x < transform.position.x){
+        float playerPosition_X = _player.PlayerNowPosition.position.x;
+        if(playerPosition_X < transform.position.x){
             transform.localScale = new Vector3(1, 1, 1);
             rb.velocity = new Vector2(-speed, 0.0f);
         }
@@ -79,7 +82,7 @@ public class sukaisuraimu : Enemy
             transform.localScale = new Vector3(-1, 1, 1);
             rb.velocity = new Vector2(speed, 0.0f);
         }
-        if(Mathf.Abs(this.transform.position.x - Player.playerPos.position.x) < 3.0f){
+        if(Mathf.Abs(this.transform.position.x - playerPosition_X) < 3.0f){
             ChangeState(State.Attack);
             return;
         }

@@ -7,7 +7,8 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 {
     #region // variables
     protected float hp = 0.0f;
-    [SerializeField] protected string Name;
+    [SerializeField]
+    protected string Name;
 
     protected bool isDead = false;
 
@@ -21,7 +22,6 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     protected Animator anim = null;
     protected Rigidbody2D rb = null;
     protected SpriteRenderer sr = null;
-    protected SpriteRenderer criticalSr = null;
 
     protected enemyData Data;
     #endregion
@@ -36,10 +36,8 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     }
 
     void Start(){
-        HPObject = transform.GetChild(1).gameObject;
+        HPObject = transform.GetChild(0).gameObject;
         Spawn();
-        GameObject criticalEffect = transform.GetChild(0).gameObject;
-        criticalSr = criticalEffect.GetComponent<SpriteRenderer>();
     }
 
 /// <summary>
@@ -95,11 +93,7 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     protected void recievedDamage(Collider2D collision){
         if(!isDead){
             if(collision.tag == "Sword"){
-                float atk = StatusManager.ATK + StatusManager.ATKincrement;
-                if(RandomTF((StatusManager.CRITRATE + StatusManager.CRITRATEincrement) / 5.0f)){
-                    atk += (StatusManager.CRITDMG + StatusManager.CRITDMGincrement) * 2.0f;
-                    StartCoroutine(CriticalHit());
-                }
+                int atk = GameManager.instance.CalculateDamage(onCriticalEffect);
                 DecrementHP(atk);
                 hp = hp - atk;
             }
@@ -134,23 +128,13 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     }
 
 /// <summary>
-/// クリティカルエフェクトを表示する
-/// </summary>
-/// <returns></returns>
-    protected IEnumerator CriticalHit(){
-        criticalSr.enabled = true;
-        yield return new WaitForSeconds(1.0f);
-        criticalSr.enabled = false;
-    }
-
-/// <summary>
 /// 倒れたとき アイテムドロップと非表示処理
 /// </summary>
 /// <returns></returns>
     private IEnumerator Death(){
         Instantiate<GameObject>(basicObject, transform.position, Quaternion.identity); // Quater...は回転で今回は無回転
         // 固有の食材ドロップは3割
-        if(RandomTF(30.0f)){
+        if(Rand.RandomTF(30.0f)){
             Instantiate<GameObject>(uniqueObject, transform.position, Quaternion.identity);
         }
         yield return new WaitForSeconds(3.0f);
@@ -197,18 +181,17 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
     }
 
 /// <summary>
-/// 受け取った確率で事象が起こったかどうか決定する
+/// プレイヤーに敵接触ダメージを返す
 /// </summary>
-/// <param name="Persent">確率</param>
-/// <returns>事象が起こるか 結果</returns>
-    protected bool RandomTF(float Persent){
-        float Rate = UnityEngine.Random.value * 100.0f;
+/// <returns>接触ダメージ</returns>
+    public int EnemyContactDamage(){
+        return 10 * Data.flor;    // 10はデフォダメージ
+    }
 
-        if(Rate <= Persent){
-            return true;
-        }
-        else{
-            return false;
-        }
+/// <summary>
+/// クリティカルエフェクト表示
+/// </summary>
+    protected virtual void onCriticalEffect(){
+        CritEffect.instance.CriticalHit(transform.position, Data.critRatio);
     }
 }

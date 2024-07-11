@@ -6,6 +6,12 @@ using UnityEngine.UI;
 public class PlayerHP : MonoBehaviour
 {
     public GameObject HPObject;
+    private PlayerStatusData _playerStatusData;
+
+    void Awake()
+    {
+        _playerStatusData = Resources.Load<PlayerStatusData>("PlayerStatusData");
+    }
 
     void Update()
     {
@@ -17,9 +23,9 @@ public class PlayerHP : MonoBehaviour
     public void SetHPText()
     {
         Text hptext = HPObject.GetComponent<Text>();
-        int HP = StatusManager.HP;
+        int HP = _playerStatusData.HP;
         string maxHP = HP.ToString();
-        string nowHP = StatusManager.nowHP.ToString();
+        string nowHP = _playerStatusData.nowHP.ToString();
         hptext.text = nowHP + "/" + maxHP;
     }
 
@@ -28,8 +34,8 @@ public class PlayerHP : MonoBehaviour
     {
         GameObject _HPSlider = GameObject.Find("HPSlider");
         Slider HPSlider_S = _HPSlider.GetComponent<Slider>();
-        int HP = StatusManager.HP;
+        int HP = _playerStatusData.HP;
         HPSlider_S.maxValue = HP;
-        HPSlider_S.value = StatusManager.nowHP;
+        HPSlider_S.value = _playerStatusData.nowHP;
     }
 }

@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class Frame : MonoBehaviour
 {
-    private GameObject _light;
     public AudioClip itemGetSE;
-    // Start is called before the first frame update
+    
     void Start()
     {
         StartCoroutine(MoveFrame());
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -24,7 +16,9 @@ public class Frame : MonoBehaviour
         if(collider.tag == "Player")
         {
             GameManager.instance.PlaySE(itemGetSE);
-            _light = GameObject.Find("FrameLight");
+            GameManager.instance.callLoadingClear();
+
+            GameObject _light = GameObject.Find("FrameLight");
             Destroy(_light);
             Destroy(gameObject);
         }

@@ -13,6 +13,9 @@ public class obakekabotya : Enemy
     
     private CapsuleCollider2D capcol = null;
 
+    [SerializeField]
+    private Player _player;
+
     [SerializeField] private kabotya[] kabo = new kabotya[5];
     #endregion
 
@@ -56,6 +59,9 @@ public class obakekabotya : Enemy
                 second = 0.0f;
             }
         }
+        
+        foreach(var k in kabo)
+            k.setTargetPosition(_player.PlayerNowPosition);
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
@@ -76,16 +82,23 @@ public class obakekabotya : Enemy
             anim.Play("kabotya_attack");
             
             float kaboPosition_x = transform.position.x;
-            float playerPosition_x = Player.playerPos.position.x;
+            float playerPosition_x = _player.PlayerNowPosition.position.x;
 
             if(playerPosition_x > kaboPosition_x && isLeft){
                 transform.localScale = new Vector3(-1, 1, 1);
-                isLeft = false;
+                kabotyaTurning();
             }
             else if(playerPosition_x < kaboPosition_x && !isLeft){
                 transform.localScale = new Vector3(1, 1, 1);
-                isLeft = true;
+                kabotyaTurning();
             }
         }
+    }
+
+    // ‚¨‚Î‚¯‚Ì”½“]‚É‚æ‚Á‚ÄƒJƒ{ƒ`ƒƒ‚ÌˆÊ’u‚à”½“]‚·‚é‚Ì‚ð–h‚®
+    private void kabotyaTurning(){
+        isLeft = !isLeft;
+        foreach(var k in kabo)
+            k.AttackCancel();
     }
 }

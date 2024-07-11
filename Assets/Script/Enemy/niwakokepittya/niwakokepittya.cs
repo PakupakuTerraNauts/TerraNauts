@@ -9,11 +9,15 @@ public class niwakokepittya : Enemy
 
     private float toriPosition_x = 0.0f;
 
+    [SerializeField]
+    private Player _player;
+
     public bool isLeft = true;     // 初期状態 左向き
     private CapsuleCollider2D capcol = null;
     #endregion
 
     protected override void Initialize(){
+        toriPosition_x = transform.position.x;
         if(!isLeft)
             transform.localScale = new Vector3(-1, 1, 1);
         capcol = GetComponent<CapsuleCollider2D>();
@@ -21,7 +25,6 @@ public class niwakokepittya : Enemy
     }
 
     protected override void Moving(){
-        toriPosition_x = transform.position.x;
         anim.Play("tori_pitch");
         rb.velocity = new Vector2(0, -Data.gravity);
     }
@@ -40,11 +43,13 @@ public class niwakokepittya : Enemy
 /// playerの方向を判定して そっちを向く アニメーション終了時に呼ぶ
 /// </summary>
     public void DirectJudge(){
-        if(Player.playerPos.position.x > toriPosition_x && isLeft){
+        Debug.Log(_player.PlayerNowPosition);
+        float playerPosition_x = _player.PlayerNowPosition.position.x;
+        if(playerPosition_x > toriPosition_x && isLeft){
             transform.localScale = new Vector3(-1, 1, 1);
             isLeft = false;
         }
-        else if(Player.playerPos.position.x < toriPosition_x && !isLeft){
+        else if(playerPosition_x < toriPosition_x && !isLeft){
             transform.localScale = new Vector3(1, 1, 1);
             isLeft = true;
         }

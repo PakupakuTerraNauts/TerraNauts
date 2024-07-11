@@ -134,4 +134,11 @@ public class PlayerFoodManager:MonoBehaviour
             _itemDataList[i].Delete();
         }
     }
+
+    // セーブしたアイテム数を0で上書きする
+    public void SavedItemDelete(){
+        for(int i = 0; i < _savedItemList.Count; i++){
+            _savedItemList[i].Delete();
+        }
+    }
 }

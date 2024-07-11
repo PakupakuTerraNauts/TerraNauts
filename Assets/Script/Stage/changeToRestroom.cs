@@ -7,11 +7,12 @@ public class changeToRestroom : MonoBehaviour
 {
     //static public Vector2 PlayerLocation = new Vector2(-0.5f, 0.75f);
     public GameObject EnterInfo;
-    public PlayerFoodManager _playerFoodManager;
-
-    // private void Awake() {
-    //     Player.playerStartPos = PlayerLocation;
-    // }
+    [SerializeField]
+    private Player _player;
+    [SerializeField]
+    PlayerFoodManager _playerFoodManager;
+    [SerializeField]
+    PlayerStatusChange _statusChange;
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -20,10 +21,10 @@ public class changeToRestroom : MonoBehaviour
             bool ekey = Input.GetKey(KeyCode.E);
             if (ekey){
                 //PlayerLocation = Player.playerPos.position;
-                Player.playerStartPos = this.gameObject.transform.position;
+                _player.PlayerStartPosition = this.gameObject.transform.position;
                 // セーブ処理
                 _playerFoodManager.UpdateSavedItemList();   // アイテム数
-                StatusManager.PlayerStatusSave();           // プレイヤーのステータス
+                _statusChange.PlayerStatusSave();          // プレイヤーのステータス
                 // 倒した敵が復活しなくなる
                 SingletonStage.instance.SaveDeadEnemy();
                 SceneManager.LoadScene("restroom");

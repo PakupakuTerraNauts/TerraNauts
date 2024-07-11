@@ -55,10 +55,8 @@ public class neibysuraimu : Enemy
     private void onTuraraFallenCheck(){
         foreach(var t in ice){
             if(t.isFall){
-                Debug.Log("return");
                 return;
             }
-            Debug.Log(t.name + t.isFall);
         }
             
         allTuraraFallen = true;

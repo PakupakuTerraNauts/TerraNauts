@@ -16,5 +16,7 @@ public class bossData
     public float maxHP;
     
     public GameObject basicObject;
+
+    public float critRatio;
 }
 

@@ -72,30 +72,31 @@ public class PushRecipeButton:MonoBehaviour
             Text _cloneText3 = _cloneObject.transform.GetChild(1).GetComponent<Text>();
             _cloneText.text = statusTypes[i];
             statusCount = _foodSourceData.GetStatusValue(statusTypes[i]);
+            var playerStatusData = Resources.Load<PlayerStatusData>("PlayerStatusData");
             switch(statusTypes[i])
             {
                 case "HP":
-                    _cloneText2.text = StatusManager.HP.ToString("d");
+                    _cloneText2.text = playerStatusData.HP.ToString("d");
                     _cloneText3.text = "+" + statusCount.ToString("d");
                     break;
                 case "ATK":
-                    _cloneText2.text = StatusManager.ATK.ToString("d");
+                    _cloneText2.text = playerStatusData.ATK.ToString("d");
                     _cloneText3.text = "+" + statusCount.ToString("d");
                     break;
                 case "DEF":
-                    _cloneText2.text = StatusManager.DEF.ToString("d");
+                    _cloneText2.text = playerStatusData.DEF.ToString("d");
                     _cloneText3.text = "+" + statusCount.ToString("d");
                     break;
                 case "SPD":
-                    _cloneText2.text = StatusManager.SPD.ToString("d");
+                    _cloneText2.text = playerStatusData.SPD.ToString("d");
                     _cloneText3.text = "+" + statusCount.ToString("d");
                     break;
                 case "CRITRATE":
-                    _cloneText2.text = StatusManager.CRITRATE.ToString("d");
+                    _cloneText2.text = playerStatusData.CRITRATE.ToString("d");
                     _cloneText3.text = "+" + statusCount.ToString("d");
                     break;
                 case "CRITDMG":
-                    _cloneText2.text = StatusManager.CRITDMG.ToString("d");
+                    _cloneText2.text = playerStatusData.CRITDMG.ToString("d");
                     _cloneText3.text = "+" + statusCount.ToString("d");
                     break;
             }

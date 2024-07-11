@@ -24,4 +24,6 @@ public class enemyData
     public GameObject basicObject;
     // 固有アイテム
     public GameObject uniqueObject;
+
+    public float critRatio;
 }

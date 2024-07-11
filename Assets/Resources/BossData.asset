@@ -16,3 +16,4 @@ MonoBehaviour:
   - Name: "\u30C7\u30D3\u30C9\u30E9"
     maxHP: 5000
     basicObject: {fileID: 2467968411915414626, guid: 4a010850351694590b87fb040ee07f03, type: 3}
+    critRatio: 3.5

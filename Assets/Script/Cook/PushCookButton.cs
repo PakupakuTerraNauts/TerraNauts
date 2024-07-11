@@ -8,6 +8,8 @@ public class PushCookButton:MonoBehaviour
 {
     //Script
     public ItemDataBase _itemDataBase;
+    [SerializeField]
+    PlayerStatusChange _statusChange;
     PlayerFoodManager _playerFoodManager;
     FoodSourceData _foodSourceData;
     FoodSourceData _foodSourceData_f;
@@ -121,29 +123,31 @@ public class PushCookButton:MonoBehaviour
                     switch(statusTypes[i])
                     {
                         case "HP":
-                            StatusManager.HPincrease(statusCount);
+                            _statusChange.HPincrease(statusCount);
                             break;
                         case "ATK":
-                            StatusManager.ATKincrease(statusCount);
+                            _statusChange.ATKincrease(statusCount);
                             break;
                         case "DEF":
-                            StatusManager.DEFincrease(statusCount);
+                            _statusChange.DEFincrease(statusCount);
                             break;
                         case "SPD":
-                            StatusManager.SPDincrease(statusCount);
+                            _statusChange.SPDincrease(statusCount);
                             break;
                         case "CRITRATE":
-                            StatusManager.CRITRATEincrease(statusCount);
+                            _statusChange.CRITRATEincrease(statusCount);
                             break;
                         case "CRITDMG":
-                            StatusManager.CRITDMGincrease(statusCount);
+                            _statusChange.CRITDMGincrease(statusCount);
                             break;
                     }
                 }
 
                 Debug.Log("óøóùäÆóπ");
+
                 //HP ÇâÒïú
-                StatusManager.nowHP = StatusManager.HP;
+                var playerStatusData = Resources.Load<PlayerStatusData>("PlayerStatusData");
+                playerStatusData.nowHP = playerStatusData.HP;
             }
 
             ChangeText();
@@ -217,17 +221,19 @@ public class PushCookButton:MonoBehaviour
 
     public void StatusRe()
     {
-        _HP_plusF_text.text = StatusManager.HP.ToString("d");
+        var playerStatusData = Resources.Load<PlayerStatusData>("PlayerStatusData");
+
+        _HP_plusF_text.text = playerStatusData.HP.ToString("d");
         _HP_plus_text.text = "";
-        _ATK_plusF_text.text = StatusManager.ATK.ToString("d");
+        _ATK_plusF_text.text = playerStatusData.ATK.ToString("d");
         _ATK_plus_text.text = "";
-        _DEF_plusF_text.text = StatusManager.DEF.ToString("d");
+        _DEF_plusF_text.text = playerStatusData.DEF.ToString("d");
         _DEF_plus_text.text = "";
-        _SPD_plusF_text.text = StatusManager.SPD.ToString("d");
+        _SPD_plusF_text.text = playerStatusData.SPD.ToString("d");
         _SPD_plus_text.text = "";
-        _CRATE_plusF_text.text = StatusManager.CRITRATE.ToString("d");
+        _CRATE_plusF_text.text = playerStatusData.CRITRATE.ToString("d");
         _CRATE_plus_text.text = "";
-        _CDMG_plusF_text.text = StatusManager.CRITDMG.ToString("d");
+        _CDMG_plusF_text.text = playerStatusData.CRITDMG.ToString("d");
         _CDMG_plus_text.text = "";
     }
 }

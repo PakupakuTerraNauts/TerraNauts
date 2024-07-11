@@ -10,6 +10,9 @@ public class butamogura : Enemy
     private bool isEndAnim = true;
     private bool isAttack = false;
 
+    [SerializeField]
+    private Player _player;
+
     private CircleCollider2D circol = null;
     // 状態
     private enum State{
@@ -84,7 +87,7 @@ public class butamogura : Enemy
 /// </summary>
     private void MoveUpdate(){
         Vector2 butamoguraPosition = new Vector2(transform.position.x, transform.position.y);
-        Vector2 targetPosition = new Vector2(Player.playerPos.position.x, this.transform.position.y);    // 移動をx軸方向だけにする.
+        Vector2 targetPosition = new Vector2(_player.PlayerNowPosition.position.x, this.transform.position.y);    // 移動をx軸方向だけにする.
         
         RaycastHit2D hit = Physics2D.Raycast(butamoguraPosition, targetPosition - butamoguraPosition, Mathf.Abs(butamoguraPosition.x - targetPosition.x), LayerMask.GetMask("Ground"));
         if(hit.collider != null){  // ぶたもぐらとプレイヤーの間に障害物があったら 貫通しないように
@@ -96,7 +99,7 @@ public class butamogura : Enemy
 
         // 距離を詰める        
         transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, speed); // 自分, ターゲット, スピード
-        if(Vector3.Distance(this.transform.position, Player.playerPos.position) < 4.0f){
+        if(Vector3.Distance(this.transform.position, _player.PlayerNowPosition.position) < 4.0f){
             ChangeState(State.Attack);
             return;
         }

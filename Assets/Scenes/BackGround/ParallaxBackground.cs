@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class ParallaxBackground : MonoBehaviour
 {
+	[SerializeField]
+	private Player _player;
+
 	[HideInInspector]
 	[SerializeField]
 	bool isInitialized = false;
@@ -94,7 +97,7 @@ public class ParallaxBackground : MonoBehaviour
 
 //前にスクロールが呼ばれた時のプレイヤーの位置。
 //休憩所⇔ステージ の移動で値を保持しておくためにstatic
-	static Vector3 previousPlayerPosition = Player.playerStartPos;
+	static Vector2 previousPlayerPosition;
 
 //一時的に使用。
 	Canvas parallaxBackgroundCanvas;
@@ -109,6 +112,8 @@ public class ParallaxBackground : MonoBehaviour
 
 	void Awake()
 	{
+		previousPlayerPosition = _player.PlayerStartPosition;
+
 		if (!isInitialized)
 			CreateParallaxBackground();
 
@@ -185,7 +190,7 @@ public class ParallaxBackground : MonoBehaviour
 			scrollVelocities[i] = Vector2.zero;
 		}
 
-		previousPlayerPosition = Player.playerStartPos;
+		previousPlayerPosition = _player.PlayerStartPosition;
 
 		if (scroll != null) {
 			StopCoroutine(scroll);

@@ -11,6 +11,9 @@ public class GameOverMenu:MonoBehaviour
     private GameObject firstSelect;
     Button button;
 
+    [SerializeField]
+    private PlayerStatusChange _statusChange;
+
     GameObject selectObj;
     Text Text;
 
@@ -71,7 +74,7 @@ public class GameOverMenu:MonoBehaviour
                     SceneManager.LoadScene("enemies");
                 else{
                     // セーブしていないステータス上昇分はリセット
-                    StatusManager.PlayerStatusReset();
+                    _statusChange.PlayerStatusReset();
                     string Stage = "stage" + GameManager.instance.nowStage;
                     SceneManager.LoadScene(Stage);
                     // 倒された状態をセーブされていない敵は復活する

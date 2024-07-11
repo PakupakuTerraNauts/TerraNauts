@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class CheatCode : MonoBehaviour
 {
-    // public bool cheat = false;
-    // void Start()
-    // {
-    //     if(cheat){
-    //         Player.ATK = 124;
-    //         Player.DEF = 12;
-    //         Player.SPD = 139;
-    //         Player.CRITRATE = 200;
-    //         Player.CRITDMG = 71;
-    //     }
-    // }
+    public bool cheat = false;
+    private PlayerStatusData statusData;
+
+    void Awake()
+    {
+        statusData = Resources.Load<PlayerStatusData>("PlayerStatusData");
+    }
+
+    void Start()
+    {
+        if(cheat){
+            statusData.ATK = 5240;
+            statusData.DEF = 600;
+            statusData.SPD = 550;
+            statusData.CRITRATE = 500;
+            statusData.CRITDMG = 1200;
+        }
+    }
 }

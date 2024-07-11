@@ -14,8 +14,8 @@ public class Player : MonoBehaviour
     public float jumpHeight;
     private float jumpLimitTime = 1.5f;
     public static bool isRestrained = false;
-    public static Transform playerPos;
-    public static Vector2 playerStartPos;
+    private static Transform _playerNowPosition;
+    private static Vector2 _playerStartPosition;
 
     public AudioClip NormalAttackSE;
 
@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
 
     public AnimationCurve JumpupCurve;
 
+    private PlayerStatusData _playerStatusData;
     public PlayerFoodManager _playerFoodManager;
     public ParallaxBackground backGround;
 
@@ -57,11 +58,16 @@ public class Player : MonoBehaviour
         #endregion
     #endregion
 
+    void Awake()
+    {
+        _playerStatusData = Resources.Load<PlayerStatusData>("PlayerStatusData");
+    }
+
     void Start()
     {
         string SceneName = SceneManager.GetActiveScene().name;
         if(Regex.IsMatch(SceneName, @"^Stage\d+$", RegexOptions.IgnoreCase))    // ステージのみ
-            gameObject.transform.position = playerStartPos;                     // 最後に取ったチェックポイントに移動する
+            gameObject.transform.position = _playerStartPosition;                     // 最後に取ったチェックポイントに移動する
 
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -80,7 +86,7 @@ public class Player : MonoBehaviour
         if(!isDown){
             
             // プレイヤーの方向を向く敵 等が参照する
-            playerPos = gameObject.transform;
+            _playerNowPosition = gameObject.transform;
 
             GetInputTwoJump();
             isAttack = PlayerAttack();
@@ -152,7 +158,7 @@ public class Player : MonoBehaviour
 /// player's attack both Normal Aerial
 ///</summary>
     private bool PlayerAttack(){
-        if(Input.GetKeyDown("return") && !isAttack){
+        if(Input.GetKeyDown("return") && !isAttack && !isRestrained){
             return true;
         }
         return false;
@@ -234,14 +240,13 @@ public class Player : MonoBehaviour
         }
     }
 
-
 ///<summary>
 /// calculate X conponent, return speed.
 ///</summary>
     private float GetXSpeed(){
         float horizontalKey = Input.GetAxis("Horizontal");
         float xSpeed = 0.0f;
-        float speed = 5.0f + (float)(StatusManager.SPD / 50);
+        float speed = 5.0f + (float)(_playerStatusData.SPD / 50);
         bool dKey = Input.GetKey("d");
         bool rightKey = Input.GetKey("right");
         bool aKey = Input.GetKey("a");
@@ -292,7 +297,6 @@ public class Player : MonoBehaviour
         isDown = false;
         anim.Play("neko_die");
         ResetDefaultAnimation();
-        //isContinue = true;
     }
 
     public void ResetDefaultAnimation(){
@@ -301,79 +305,109 @@ public class Player : MonoBehaviour
     }
     
     private void OnCollisionEnter2D(Collision2D collision){
+        if(isDamaged) return;
 
-        if(!isDamaged){
-            if(collision.collider.tag == "TutorialDamage")
+        switch(collision.collider.tag){
+            case "TutorialDamage":
                 isDamaged = true;
-            if(collision.collider.tag == "Enemy")
-                DecrementHP(10);
-            if(collision.collider.tag == "Saboten")
+                break;
+            case "Enemy":
+                Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+                DecrementHP(enemy.EnemyContactDamage());
+                break;
+            case "Saboten":
                 DecrementHP(80);
-            
-            checkPlayerDie();
+                break;
         }
+            
+        checkPlayerDie();
     }
 
     // 敵と接触しているときに継続ダメージ
     private void OnCollisionStay2D(Collision2D collision){
-        if(!isDamaged){
-            if(collision.collider.tag == "Enemy")
-                DecrementHP(10);
-            checkPlayerDie();
+        if(isDamaged) return;
+
+        if(collision.collider.tag == "Enemy"){
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            DecrementHP(enemy.EnemyContactDamage());
         }
+        checkPlayerDie();
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(!isDamaged){
-            if(collision.tag == "TutorialDamage")
+        if(isDamaged) return;
+            
+        switch(collision.tag){
+            case "TutorialDamage":
                 isDamaged = true;
-            if(collision.tag == "Enemy")
-                DecrementHP(10);
-            if(collision.tag == "Sakebigoe" || collision.tag == "tama")
+                break;
+            case "Enemy":
+                Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+                DecrementHP(enemy.EnemyContactDamage());
+                break;
+            case "Sakebigoe":
+            case "tama":
                 DecrementHP(20);
-            if(collision.tag == "Hoshi")
+                break;
+            case "Hoshi":
                 DecrementHP(40);
-            if(collision.tag == "Sumi")
+                break;
+            case "Sumi":
                 DecrementHP(50);
-            if(collision.tag == "Tyubi" || collision.tag == "Kabotya")
+                break;
+            case "Tyubi":
+            case "Kabotya":
                 DecrementHP(60);
-            if(collision.tag == "Ninzin")
+                break;
+            case "Ninzin":
                 DecrementHP(70);
-            if(collision.tag == "NinzinExp")
+                break;
+            case "NinzinExp":
                 DecrementHP(GameManager.instance.ninzinEXP);
-            if(collision.tag == "Turara" || collision.tag == "Debidora")
-               DecrementHP(130);
-            if(collision.tag == "Ivy")
+                break;
+            case "Turara":
+            case "Debidora":
+                DecrementHP(130);
+                break;
+            case "Ivy":
                 DecrementHP(150);
-            if(collision.tag == "DebidoraFire")
+                break;
+            case "DebidoraFire":
                 DecrementHP(180);
-            if(collision.tag == "DeadZone")
-                DecrementHP(StatusManager.nowHP);
-
-            checkPlayerDie();
+                break;
+            case "DeadZone":
+                DecrementHP(_playerStatusData.nowHP);
+                break;
         }
+
+        checkPlayerDie();
     }
 
     // 当たっている間 継続してダメージを受ける攻撃
     private void OnTriggerStay2D(Collider2D collision){
-        if(!isDamaged){
-            if(collision.tag == "Sakebigoe")
+        if(isDamaged) return;
+
+        switch(collision.tag){
+            case "Sakebigoe":
                 DecrementHP(20);
-            if(collision.tag == "Tyubi")
+                break;
+            case "Tyubi":
                 DecrementHP(60);
-            if(collision.tag == "DebidoraFire")
+                break;
+            case "DebidoraFire":
                 DecrementHP(80);
-            
-            checkPlayerDie();
+                break;
         }
+
+        checkPlayerDie();
     }
 
 /// <summary>
 /// ダメージを受けたとき，プレイヤーが倒れるかチェック
 /// </summary>
     private void checkPlayerDie(){
-            if(StatusManager.nowHP <= 0){
-                StatusManager.nowHP = 0;  // マイナスにしない
+            if(_playerStatusData.nowHP <= 0){
+                _playerStatusData.nowHP = 0;  // 表示をマイナスにしないように
                 anim.Play("neko_die");
                 isDown = true;
                 StartCoroutine(PlayerDie());
@@ -383,12 +417,12 @@ public class Player : MonoBehaviour
 ///<summary>
 /// decremant HP
 ///</summary>
-    private void DecrementHP(float damage){
-        if(damage - StatusManager.DEF <= 0){
-            StatusManager.nowHP--;        // 敵の攻撃力 < 防御力 のとき1ダメージ
+    private void DecrementHP(int damage){
+        if(damage - _playerStatusData.DEF <= 0){
+            _playerStatusData.nowHP--;        // 敵の攻撃力 < 防御力 のとき1ダメージ
         }
         else{
-            StatusManager.nowHP = StatusManager.nowHP - ((int)damage - StatusManager.DEF);
+            _playerStatusData.nowHP = _playerStatusData.nowHP - (damage - _playerStatusData.DEF);
         }
         isDamaged = true;
     }
@@ -426,7 +460,7 @@ public class Player : MonoBehaviour
         _playerFoodManager.ApplySavedItemList();
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("GameOver");
-        StatusManager.nowHP = StatusManager.HP;
+        _playerStatusData.nowHP = _playerStatusData.HP;
         yield break;
     }
 
@@ -439,6 +473,16 @@ public class Player : MonoBehaviour
     }
     public static void UnRestrainedByEvent(){
         isRestrained = false;
+    }
+
+    public Transform PlayerNowPosition{
+        get { return _playerNowPosition; }
+        set { _playerNowPosition = value; }
+    }
+
+    public Vector2 PlayerStartPosition{
+        get { return _playerStartPosition; }
+        set { _playerStartPosition = value; }
     }
 
 }

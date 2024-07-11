@@ -54,4 +54,12 @@ public class painsisa : Enemy
     private void endAnimation(){
         isAttack = false;
     }
+    
+/// <summary>
+/// クリティカルエフェクト表示
+/// </summary>
+    protected override void onCriticalEffect(){
+        Vector3 critPos = new Vector3(transform.position.x - 0.8f, transform.position.y - 1.7f, 0f); // デフォルトだとエフェクトの位置がずれる敵はオーバーライドして調整する
+        CritEffect.instance.CriticalHit(critPos, Data.critRatio);
+    }
 }

@@ -18,11 +18,8 @@ public class tutorialSuraimu : Enemy
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == "Sword"){
-            float atk = StatusManager.ATK + StatusManager.ATKincrement;
-            if(RandomTF((StatusManager.CRITRATE + StatusManager.CRITRATEincrement) / 5.0f)){
-                atk += (StatusManager.CRITDMG + StatusManager.CRITDMGincrement) * 2.0f;
-                StartCoroutine(CriticalHit());
-            }
+            int atk = GameManager.instance.CalculateDamage(onCriticalEffect);
+
             DecrementHP(atk);
             hp = hp - atk;
         
@@ -45,7 +42,7 @@ public class tutorialSuraimu : Enemy
     private IEnumerator tutorialDeath(){
         Instantiate<GameObject>(basicObject, transform.position, Quaternion.identity); // Quater...は回転で今回は無回転
         // 固有の食材ドロップは3割
-        if(RandomTF(30.0f)){
+        if(Rand.RandomTF(30.0f)){
             Instantiate<GameObject>(uniqueObject, transform.position, Quaternion.identity);
         }
         yield return new WaitForSeconds(3.0f);

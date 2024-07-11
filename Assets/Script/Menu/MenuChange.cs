@@ -38,6 +38,7 @@ public class MenuChange : MonoBehaviour
         else
         {
             SceneManager.UnloadSceneAsync("MenuScean");
+            SceneManager.sceneLoaded -= MenuSceneLoaded;
             Resources.UnloadUnusedAssets();
             isMenuOpen = false;
             Time.timeScale = 1;

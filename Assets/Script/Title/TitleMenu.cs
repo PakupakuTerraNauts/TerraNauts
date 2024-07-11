@@ -12,10 +12,16 @@ public class TitleMenu:MonoBehaviour
     private GameObject firstSelect;
     Button button;
 
-    public PlayerFoodManager _playerFoodManager;
+    [SerializeField]
+    PlayerFoodManager _playerFoodManager;
+    [SerializeField]
+    PlayerStatusChange _statusChange;
 
     GameObject selectObj;
     Text Text;
+
+    [SerializeField]
+    private Player _player;
 
     // Start is called before the first frame update
     void Start()
@@ -90,12 +96,8 @@ public class TitleMenu:MonoBehaviour
         {
             case 0:
                 // 初期化
-                StatusManager.InitializePlayerStatus();                        // プレイヤーのステータスをリセットする
-                Player.playerStartPos = new Vector2(-0.5f, 0.75f);      // プレイヤーを初期位置に移動
-                _playerFoodManager.ItemReset();                         // チュートリアルで取得したアイテムはリセット
-                if(SingletonStage.instance != null)
-                    Destroy(SingletonStage.instance.gameObject);
-
+                Init();
+                
                 GameManager.instance.nowStage = 1;
                 SceneManager.LoadScene("stage1");
                 break;
@@ -114,5 +116,14 @@ public class TitleMenu:MonoBehaviour
                 MenuChange.LoadMenuScean(3);
                 break;
         }
+    }
+
+    private void Init(){
+        _statusChange.InitializePlayerStatus();                    // プレイヤーのステータスをリセットする
+        _player.PlayerStartPosition = new Vector2(-0.5f, 0.75f);   // プレイヤーを初期位置に移動
+        _playerFoodManager.ItemReset();                            // チュートリアルで取得したアイテムはリセット
+        _playerFoodManager.SavedItemDelete();                      // セーブ→デス→タイトル→初めから のときセーブしてあるアイテムを消す
+        if(SingletonStage.instance != null)
+            Destroy(SingletonStage.instance.gameObject);
     }
 }

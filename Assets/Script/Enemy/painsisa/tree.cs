@@ -6,7 +6,6 @@ public class tree : MonoBehaviour
 {
     #region // variables
     [SerializeField] private float hp;
-    private float ATK_player = 0.0f;
     public float gravity;
 
     private HPBar HP;
@@ -20,8 +19,6 @@ public class tree : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-
-        ATK_player = StatusManager.ATK;
     }
 
     void Update(){
@@ -36,6 +33,9 @@ public class tree : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == "Sword"){
+            var playerStatusData = Resources.Load<PlayerStatusData>("PlayerStatusData");
+
+            int ATK_player = playerStatusData.ATK + playerStatusData.ATKincrement;
             HP.UpdateHP(ATK_player);
             hp = hp - ATK_player;
         }
