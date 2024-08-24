@@ -27,6 +27,7 @@ TagManager:
   - Debidora
   - Ivy
   - menu
+  - Climb
   layers:
   - Default
   - TransparentFX

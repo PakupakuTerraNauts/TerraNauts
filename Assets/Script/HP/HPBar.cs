@@ -17,7 +17,6 @@ public class HPBar : MonoBehaviour
     
     public void UpdateHP(float damage){
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
-        Debug.Log("damage : " + damage + "currentHealth : " + currentHealth);
         hpGauge.fillAmount = currentHealth / maxHealth;
     }
     

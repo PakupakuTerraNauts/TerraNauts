@@ -13,17 +13,12 @@ public class CritEffect : MonoBehaviour {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
-        else{
+        else
             Destroy(this.gameObject);
-        }
     }
 
     void Start(){
         pool = ObjectPool.instance;
-        if(pool != null)
-            Debug.Log(pool);
-            else
-                Debug.Log("nuul + " + pool);
     }
 
 /// <summary>

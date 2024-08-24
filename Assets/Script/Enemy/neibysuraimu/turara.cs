@@ -60,7 +60,6 @@ public class turara : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        Debug.Log(collision.tag);
         if(collision.tag == "ground" || collision.tag == "Player" || collision.tag == "Sword"){
             StartCoroutine(BreakTurara());
         }

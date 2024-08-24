@@ -45,4 +45,11 @@ public class groundCheck : MonoBehaviour
             isGroundExit = true;
         }
     }
+
+    // アイテム用
+    void OnEnable(){
+        isGroundEnter = false;
+        isGroundStay = false;
+        isGroundExit = true;
+    }
 }

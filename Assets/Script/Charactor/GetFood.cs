@@ -49,7 +49,6 @@ public class GetFood:MonoBehaviour
         // コルーチンは1度しか呼ばない
         if(10.0f < second && !blinked && _foodSourceData.itemType == ItemType.FOOD){
             blinked = true;
-            Debug.Log(_objName+" is destroied");
             StartCoroutine(ItemBlink());
         }
         second += Time.deltaTime;
@@ -66,7 +65,7 @@ public class GetFood:MonoBehaviour
         }
 
         yield return null;
-        Destroy(this.gameObject);
+        ObjectPool.instance.ReturnObject(this.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -75,7 +74,12 @@ public class GetFood:MonoBehaviour
         {
             if(_foodSourceData.itemType == ItemType.DISH && dishSE != null)
                 GameManager.instance.PlaySE(dishSE);
-            Destroy(this.gameObject);
+            ObjectPool.instance.ReturnObject(this.gameObject);
         }
+    }
+
+    void OnEnable(){
+        second = 0.0f;
+        isGround = false;
     }
 }

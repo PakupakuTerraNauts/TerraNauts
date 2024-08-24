@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     private bool isDown = false;
     private bool isAttack = false;
     private bool isAttackCool = false;
+    private bool isClimb = false;
     //private bool isContinue = false;
     private bool isDamaged = false;
     public static bool viewLock = false;
@@ -169,10 +170,17 @@ public class Player : MonoBehaviour
 /// calculate Y conponent, return speed.
 ///</summary>
     private float GetYSpeed(){
+
         float verticalKey = Input.GetAxis("Vertical");
         bool wKey = Input.GetKey("w");
         bool upKey = Input.GetKey("up");
         float ySpeed = -gravity;
+
+        if(isClimb && (verticalKey > 0 || wKey || upKey)){
+            ySpeed = jumpSpeed;
+            return ySpeed;
+        }
+
 
         if(isGround){   // 地面にいるとき
             jumpCounter = 0;
@@ -338,6 +346,7 @@ public class Player : MonoBehaviour
         if(isDamaged) return;
             
         switch(collision.tag){
+            #region // enemy
             case "TutorialDamage":
                 isDamaged = true;
                 break;
@@ -378,6 +387,13 @@ public class Player : MonoBehaviour
             case "DeadZone":
                 DecrementHP(_playerStatusData.nowHP);
                 break;
+            #endregion
+
+            #region // stage
+            case "Climb":
+                isClimb = true;
+                break;
+            #endregion
         }
 
         checkPlayerDie();
@@ -400,6 +416,11 @@ public class Player : MonoBehaviour
         }
 
         checkPlayerDie();
+    }
+
+    private void OnTriggerExit2D(Collider2D collision){
+        if(collision.tag == "Climb")
+            isClimb = false;
     }
 
 /// <summary>
@@ -434,6 +455,7 @@ public class Player : MonoBehaviour
         anim.SetBool("jump_neko", isJump);
         anim.SetBool("ground_neko", isGround);
         anim.SetBool("walk_neko", isWalk);
+        anim.SetBool("climb_neko", isClimb);
     }
 
     private IEnumerator AttackCool(){
@@ -450,7 +472,6 @@ public class Player : MonoBehaviour
             GameManager.instance.PlaySE(NormalAttackSE);
         
         yield return new WaitForSeconds(attackCooltime);  //クールタイム
-        Debug.Log("cooltime " + attackCooltime + "s");
         cooltimemaker.SetActive(true);
         isAttackCool = false;
     }

@@ -122,7 +122,6 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 /// <param name="damage"></param>
     protected void DecrementHP(float damage){
         HPObject.SetActive(true);
-        Debug.Log("enemys HP set active true");
         //GameManager.instance.PlaySE(DamagedSE);     // GMからダメージを受けた時のSEを鳴らす
         HP.UpdateHP(damage);
     }
@@ -132,10 +131,12 @@ public class Enemy : MonoBehaviour // 敵スクリプト　スーパークラス
 /// </summary>
 /// <returns></returns>
     private IEnumerator Death(){
-        Instantiate<GameObject>(basicObject, transform.position, Quaternion.identity); // Quater...は回転で今回は無回転
+        //Instantiate<GameObject>(basicObject, transform.position, Quaternion.identity); // Quater...は回転で今回は無回転
+        ItemPool.instance.GenerateItem(basicObject, gameObject.transform.position);
         // 固有の食材ドロップは3割
         if(Rand.RandomTF(30.0f)){
-            Instantiate<GameObject>(uniqueObject, transform.position, Quaternion.identity);
+            //Instantiate<GameObject>(uniqueObject, transform.position, Quaternion.identity);
+            ItemPool.instance.GenerateItem(uniqueObject, gameObject.transform.position);
         }
         yield return new WaitForSeconds(3.0f);
         this.gameObject.SetActive(false);

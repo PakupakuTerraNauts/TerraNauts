@@ -43,7 +43,6 @@ public class niwakokepittya : Enemy
 /// playerの方向を判定して そっちを向く アニメーション終了時に呼ぶ
 /// </summary>
     public void DirectJudge(){
-        Debug.Log(_player.PlayerNowPosition);
         float playerPosition_x = _player.PlayerNowPosition.position.x;
         if(playerPosition_x > toriPosition_x && isLeft){
             transform.localScale = new Vector3(-1, 1, 1);
